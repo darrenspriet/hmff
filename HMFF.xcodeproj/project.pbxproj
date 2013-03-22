@@ -24,6 +24,7 @@
 		E03C068516FBE667002AC531 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C066416FBE667002AC531 /* CoreData.framework */; };
 		E03C068D16FBE667002AC531 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E03C068B16FBE667002AC531 /* InfoPlist.strings */; };
 		E03C069016FBE667002AC531 /* HMFFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E03C068F16FBE667002AC531 /* HMFFTests.m */; };
+		E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03C069916FBE6A4002AC531 /* Storyboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		E03C068C16FBE667002AC531 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E03C068E16FBE667002AC531 /* HMFFTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMFFTests.h; sourceTree = "<group>"; };
 		E03C068F16FBE667002AC531 /* HMFFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMFFTests.m; sourceTree = "<group>"; };
+		E03C069916FBE6A4002AC531 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +124,6 @@
 			children = (
 				E03C066F16FBE667002AC531 /* HMAppDelegate.h */,
 				E03C067016FBE667002AC531 /* HMAppDelegate.m */,
-				E03C067816FBE667002AC531 /* HMFF.xcdatamodeld */,
 				E03C066716FBE667002AC531 /* Supporting Files */,
 			);
 			path = HMFF;
@@ -131,6 +132,8 @@
 		E03C066716FBE667002AC531 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E03C069916FBE6A4002AC531 /* Storyboard.storyboard */,
+				E03C067816FBE667002AC531 /* HMFF.xcdatamodeld */,
 				E03C066816FBE667002AC531 /* HMFF-Info.plist */,
 				E03C066916FBE667002AC531 /* InfoPlist.strings */,
 				E03C066C16FBE667002AC531 /* main.m */,
@@ -237,6 +240,7 @@
 				E03C067316FBE667002AC531 /* Default.png in Resources */,
 				E03C067516FBE667002AC531 /* Default@2x.png in Resources */,
 				E03C067716FBE667002AC531 /* Default-568h@2x.png in Resources */,
+				E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
