@@ -25,6 +25,11 @@
 		E03C068D16FBE667002AC531 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E03C068B16FBE667002AC531 /* InfoPlist.strings */; };
 		E03C069016FBE667002AC531 /* HMFFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E03C068F16FBE667002AC531 /* HMFFTests.m */; };
 		E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03C069916FBE6A4002AC531 /* Storyboard.storyboard */; };
+		E0CCA16C16FBEA73007BC613 /* HMLineUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA16B16FBEA73007BC613 /* HMLineUpViewController.m */; };
+		E0CCA16F16FBEB39007BC613 /* HMNewsFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA16E16FBEB39007BC613 /* HMNewsFeedViewController.m */; };
+		E0CCA17216FBEB48007BC613 /* HMTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17116FBEB48007BC613 /* HMTwitterViewController.m */; };
+		E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */; };
+		E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +65,16 @@
 		E03C068E16FBE667002AC531 /* HMFFTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMFFTests.h; sourceTree = "<group>"; };
 		E03C068F16FBE667002AC531 /* HMFFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMFFTests.m; sourceTree = "<group>"; };
 		E03C069916FBE6A4002AC531 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		E0CCA16A16FBEA73007BC613 /* HMLineUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLineUpViewController.h; sourceTree = "<group>"; };
+		E0CCA16B16FBEA73007BC613 /* HMLineUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLineUpViewController.m; sourceTree = "<group>"; };
+		E0CCA16D16FBEB39007BC613 /* HMNewsFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedViewController.h; sourceTree = "<group>"; };
+		E0CCA16E16FBEB39007BC613 /* HMNewsFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedViewController.m; sourceTree = "<group>"; };
+		E0CCA17016FBEB48007BC613 /* HMTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTwitterViewController.h; sourceTree = "<group>"; };
+		E0CCA17116FBEB48007BC613 /* HMTwitterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTwitterViewController.m; sourceTree = "<group>"; };
+		E0CCA17316FBEB56007BC613 /* HMSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSocialViewController.h; sourceTree = "<group>"; };
+		E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSocialViewController.m; sourceTree = "<group>"; };
+		E0CCA17616FBEB63007BC613 /* HMMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreViewController.h; sourceTree = "<group>"; };
+		E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +137,6 @@
 		E03C066616FBE667002AC531 /* HMFF */ = {
 			isa = PBXGroup;
 			children = (
-				E03C066F16FBE667002AC531 /* HMAppDelegate.h */,
-				E03C067016FBE667002AC531 /* HMAppDelegate.m */,
 				E03C069B16FBE901002AC531 /* Line Up */,
 				E03C069C16FBE926002AC531 /* News Feed */,
 				E03C069D16FBE92A002AC531 /* Twitter */,
@@ -141,6 +154,8 @@
 			children = (
 				E03C069916FBE6A4002AC531 /* Storyboard.storyboard */,
 				E03C067816FBE667002AC531 /* HMFF.xcdatamodeld */,
+				E03C066F16FBE667002AC531 /* HMAppDelegate.h */,
+				E03C067016FBE667002AC531 /* HMAppDelegate.m */,
 				E03C066816FBE667002AC531 /* HMFF-Info.plist */,
 				E03C066916FBE667002AC531 /* InfoPlist.strings */,
 				E03C066C16FBE667002AC531 /* main.m */,
@@ -174,6 +189,8 @@
 		E03C069B16FBE901002AC531 /* Line Up */ = {
 			isa = PBXGroup;
 			children = (
+				E0CCA16A16FBEA73007BC613 /* HMLineUpViewController.h */,
+				E0CCA16B16FBEA73007BC613 /* HMLineUpViewController.m */,
 			);
 			name = "Line Up";
 			sourceTree = "<group>";
@@ -181,6 +198,8 @@
 		E03C069C16FBE926002AC531 /* News Feed */ = {
 			isa = PBXGroup;
 			children = (
+				E0CCA16D16FBEB39007BC613 /* HMNewsFeedViewController.h */,
+				E0CCA16E16FBEB39007BC613 /* HMNewsFeedViewController.m */,
 			);
 			name = "News Feed";
 			sourceTree = "<group>";
@@ -188,6 +207,8 @@
 		E03C069D16FBE92A002AC531 /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				E0CCA17016FBEB48007BC613 /* HMTwitterViewController.h */,
+				E0CCA17116FBEB48007BC613 /* HMTwitterViewController.m */,
 			);
 			name = Twitter;
 			sourceTree = "<group>";
@@ -195,6 +216,8 @@
 		E03C069E16FBE92F002AC531 /* Social */ = {
 			isa = PBXGroup;
 			children = (
+				E0CCA17316FBEB56007BC613 /* HMSocialViewController.h */,
+				E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */,
 			);
 			name = Social;
 			sourceTree = "<group>";
@@ -202,6 +225,8 @@
 		E03C069F16FBE932002AC531 /* More */ = {
 			isa = PBXGroup;
 			children = (
+				E0CCA17616FBEB63007BC613 /* HMMoreViewController.h */,
+				E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -334,6 +359,11 @@
 				E03C066D16FBE667002AC531 /* main.m in Sources */,
 				E03C067116FBE667002AC531 /* HMAppDelegate.m in Sources */,
 				E03C067A16FBE667002AC531 /* HMFF.xcdatamodeld in Sources */,
+				E0CCA16C16FBEA73007BC613 /* HMLineUpViewController.m in Sources */,
+				E0CCA16F16FBEB39007BC613 /* HMNewsFeedViewController.m in Sources */,
+				E0CCA17216FBEB48007BC613 /* HMTwitterViewController.m in Sources */,
+				E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */,
+				E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +538,7 @@
 				E03C069516FBE667002AC531 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E03C069616FBE667002AC531 /* Build configuration list for PBXNativeTarget "HMFFTests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +547,7 @@
 				E03C069816FBE667002AC531 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
