@@ -124,6 +124,13 @@
 			children = (
 				E03C066F16FBE667002AC531 /* HMAppDelegate.h */,
 				E03C067016FBE667002AC531 /* HMAppDelegate.m */,
+				E03C069B16FBE901002AC531 /* Line Up */,
+				E03C069C16FBE926002AC531 /* News Feed */,
+				E03C069D16FBE92A002AC531 /* Twitter */,
+				E03C069E16FBE92F002AC531 /* Social */,
+				E03C069F16FBE932002AC531 /* More */,
+				E03C06A116FBE96F002AC531 /* Images */,
+				E03C06A016FBE936002AC531 /* Core Data */,
 				E03C066716FBE667002AC531 /* Supporting Files */,
 			);
 			path = HMFF;
@@ -162,6 +169,55 @@
 				E03C068B16FBE667002AC531 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E03C069B16FBE901002AC531 /* Line Up */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Line Up";
+			sourceTree = "<group>";
+		};
+		E03C069C16FBE926002AC531 /* News Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "News Feed";
+			sourceTree = "<group>";
+		};
+		E03C069D16FBE92A002AC531 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
+		E03C069E16FBE92F002AC531 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Social;
+			sourceTree = "<group>";
+		};
+		E03C069F16FBE932002AC531 /* More */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = More;
+			sourceTree = "<group>";
+		};
+		E03C06A016FBE936002AC531 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		E03C06A116FBE96F002AC531 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
