@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -11,9 +11,27 @@
                     <view key="view" contentMode="scaleToFill" id="vsl-uA-LT4">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qh9-3a-9oX">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Uaw-Oy-Tfo" id="lGl-eA-E39"/>
+                                    <outlet property="delegate" destination="Uaw-Oy-Tfo" id="3iG-9g-3nF"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" type="default" id="19R-CO-yv6"/>
+                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="Cp6-G3-fLT"/>
+                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="R7r-z9-RzQ"/>
+                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="bottom" secondItem="vsl-uA-LT4" secondAttribute="bottom" type="default" id="rDc-EQ-N1o"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News Feed" id="Kjj-m3-Nlf"/>
+                    <connections>
+                        <outlet property="tableView" destination="Qh9-3a-9oX" id="XYl-Ga-bqt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75I-wG-s7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -102,23 +120,6 @@
             <point key="canvasLocation" x="-73" y="36"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="HMLineUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMLineUpViewController.h"/>
-        </class>
-        <class className="HMMoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreViewController.h"/>
-        </class>
-        <class className="HMNewsFeedViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedViewController.h"/>
-        </class>
-        <class className="HMSocialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialViewController.h"/>
-        </class>
-        <class className="HMTwitterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

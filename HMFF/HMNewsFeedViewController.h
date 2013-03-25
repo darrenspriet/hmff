@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMNewsFeedViewController : UIViewController
+@interface HMNewsFeedViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, NSURLConnectionDataDelegate>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end

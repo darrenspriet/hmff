@@ -30,6 +30,7 @@
 		E0CCA17216FBEB48007BC613 /* HMTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17116FBEB48007BC613 /* HMTwitterViewController.m */; };
 		E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */; };
 		E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */; };
+		E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSocialViewController.m; sourceTree = "<group>"; };
 		E0CCA17616FBEB63007BC613 /* HMMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreViewController.h; sourceTree = "<group>"; };
 		E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreViewController.m; sourceTree = "<group>"; };
+		E0D4E7C9170086A9002AC1E4 /* HMCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCoreDataHelper.h; sourceTree = "<group>"; };
+		E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCoreDataHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +237,8 @@
 		E03C06A016FBE936002AC531 /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				E0D4E7C9170086A9002AC1E4 /* HMCoreDataHelper.h */,
+				E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -364,6 +369,7 @@
 				E0CCA17216FBEB48007BC613 /* HMTwitterViewController.m in Sources */,
 				E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */,
 				E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */,
+				E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
