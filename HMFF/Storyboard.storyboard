@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -14,6 +14,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qh9-3a-9oX">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="441" id="0tb-Kx-rwh"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lOa-lz-btc">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -30,12 +33,53 @@
                                     <outlet property="delegate" destination="Uaw-Oy-Tfo" id="3iG-9g-3nF"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qFc-GG-GMw">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r2h-0C-aif">
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="HMFFlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="VXN-SZ-DHa">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="141" id="LDp-4y-Fky"/>
+                                            <constraint firstAttribute="height" constant="45" id="Nfy-rt-QRU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ooV-eP-aee">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="hpr-Kt-406"/>
+                                            <constraint firstAttribute="height" constant="32" id="lEd-JJ-blm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Button" image="ticketButton.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="r2h-0C-aif" firstAttribute="top" secondItem="qFc-GG-GMw" secondAttribute="top" constant="59" id="76I-aS-jev"/>
+                                    <constraint firstItem="VXN-SZ-DHa" firstAttribute="centerX" secondItem="r2h-0C-aif" secondAttribute="centerX" type="default" id="AAY-Hd-uTC"/>
+                                    <constraint firstItem="VXN-SZ-DHa" firstAttribute="top" secondItem="ooV-eP-aee" secondAttribute="top" type="default" id="RGf-HJ-1Qw"/>
+                                    <constraint firstItem="r2h-0C-aif" firstAttribute="trailing" secondItem="qFc-GG-GMw" secondAttribute="trailing" type="default" id="g6r-Rb-kZ1"/>
+                                    <constraint firstItem="r2h-0C-aif" firstAttribute="bottom" secondItem="qFc-GG-GMw" secondAttribute="bottom" type="default" id="gtj-yM-VaZ"/>
+                                    <constraint firstAttribute="height" constant="60" type="user" id="hi8-dK-ezE"/>
+                                    <constraint firstAttribute="trailing" secondItem="ooV-eP-aee" secondAttribute="trailing" constant="9" id="kGS-nR-Yvb"/>
+                                    <constraint firstItem="VXN-SZ-DHa" firstAttribute="top" secondItem="qFc-GG-GMw" secondAttribute="top" constant="12" id="mh9-n6-yP7"/>
+                                    <constraint firstItem="r2h-0C-aif" firstAttribute="leading" secondItem="qFc-GG-GMw" secondAttribute="leading" type="default" id="xum-5F-TcT"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" type="default" id="19R-CO-yv6"/>
+                            <constraint firstItem="qFc-GG-GMw" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="2MZ-5l-aiC"/>
                             <constraint firstItem="Qh9-3a-9oX" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="Cp6-G3-fLT"/>
                             <constraint firstItem="Qh9-3a-9oX" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="R7r-z9-RzQ"/>
+                            <constraint firstItem="qFc-GG-GMw" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="gz3-RN-gUk"/>
+                            <constraint firstItem="qFc-GG-GMw" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" type="user" id="pyS-Tb-wIM"/>
                             <constraint firstItem="Qh9-3a-9oX" firstAttribute="bottom" secondItem="vsl-uA-LT4" secondAttribute="bottom" type="default" id="rDc-EQ-N1o"/>
                         </constraints>
                     </view>
@@ -55,13 +99,59 @@
                     <view key="view" contentMode="scaleToFill" id="faU-aG-uOm">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mcq-IV-9Cc">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X7p-8n-3dB">
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="HMFFlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="eD6-oX-N8w">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="CNi-j1-DL8"/>
+                                            <constraint firstAttribute="width" constant="141" id="Hzm-xZ-IsP"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgo-Xa-GBi">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="hQ3-Ck-rvO"/>
+                                            <constraint firstAttribute="width" constant="56" id="sIV-Sy-oP5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Button" image="ticketButton.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="X7p-8n-3dB" firstAttribute="leading" secondItem="mcq-IV-9Cc" secondAttribute="leading" type="default" id="6Ur-ej-A71"/>
+                                    <constraint firstItem="eD6-oX-N8w" firstAttribute="centerX" secondItem="X7p-8n-3dB" secondAttribute="centerX" type="default" id="7tA-6w-2xg"/>
+                                    <constraint firstItem="eD6-oX-N8w" firstAttribute="top" secondItem="mcq-IV-9Cc" secondAttribute="top" constant="12" id="9Gk-aL-dlZ"/>
+                                    <constraint firstItem="X7p-8n-3dB" firstAttribute="bottom" secondItem="mcq-IV-9Cc" secondAttribute="bottom" type="default" id="NcA-su-hKu"/>
+                                    <constraint firstItem="X7p-8n-3dB" firstAttribute="top" secondItem="mcq-IV-9Cc" secondAttribute="top" constant="59" id="SSb-Xd-Xfw"/>
+                                    <constraint firstItem="eD6-oX-N8w" firstAttribute="top" secondItem="wgo-Xa-GBi" secondAttribute="top" type="default" id="d0v-Nz-Vdz"/>
+                                    <constraint firstItem="X7p-8n-3dB" firstAttribute="trailing" secondItem="mcq-IV-9Cc" secondAttribute="trailing" type="default" id="do1-Ym-pUG"/>
+                                    <constraint firstAttribute="trailing" secondItem="wgo-Xa-GBi" secondAttribute="trailing" constant="9" id="khu-c3-gw4"/>
+                                    <constraint firstAttribute="height" constant="60" type="user" id="nmn-eL-jz1"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mcq-IV-9Cc" firstAttribute="trailing" secondItem="faU-aG-uOm" secondAttribute="trailing" type="default" id="O8d-K9-QWD"/>
+                            <constraint firstItem="mcq-IV-9Cc" firstAttribute="top" secondItem="faU-aG-uOm" secondAttribute="top" type="user" id="bjf-Nx-FBC"/>
+                            <constraint firstItem="mcq-IV-9Cc" firstAttribute="leading" secondItem="faU-aG-uOm" secondAttribute="leading" type="default" id="pO1-yf-IDh"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Twitter" id="LRS-BU-ik0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8k-Ww-d2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="687" y="-329"/>
+            <point key="canvasLocation" x="709" y="55"/>
         </scene>
         <!--Social View Controller - Social-->
         <scene sceneID="ma6-yu-EU5">
@@ -70,7 +160,54 @@
                     <view key="view" contentMode="scaleToFill" id="ZVo-e5-d7X">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zif-Nd-qJ1">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSg-fB-WKr">
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="HMFFlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="pxU-s3-qXN">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="IY7-k5-pUf"/>
+                                            <constraint firstAttribute="width" constant="141" id="jnj-SS-GcL"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZFx-KW-IAd">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="56" id="6It-Jl-YAa"/>
+                                            <constraint firstAttribute="height" constant="32" id="Tyf-er-F7I"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Button" image="ticketButton.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="pxU-s3-qXN" firstAttribute="centerX" secondItem="oSg-fB-WKr" secondAttribute="centerX" type="default" id="2Nw-Ge-Ua2"/>
+                                    <constraint firstItem="pxU-s3-qXN" firstAttribute="top" secondItem="ZFx-KW-IAd" secondAttribute="top" type="default" id="2uX-Bt-YqJ"/>
+                                    <constraint firstItem="oSg-fB-WKr" firstAttribute="leading" secondItem="Zif-Nd-qJ1" secondAttribute="leading" type="default" id="6zV-YT-GoA"/>
+                                    <constraint firstItem="pxU-s3-qXN" firstAttribute="top" secondItem="Zif-Nd-qJ1" secondAttribute="top" constant="12" id="9nI-tc-qEC"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" type="user" id="CTY-r4-T4R"/>
+                                    <constraint firstItem="oSg-fB-WKr" firstAttribute="top" secondItem="Zif-Nd-qJ1" secondAttribute="top" constant="59" id="KDR-fa-sMO"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZFx-KW-IAd" secondAttribute="trailing" constant="9" id="Mzp-Ih-hvF"/>
+                                    <constraint firstItem="oSg-fB-WKr" firstAttribute="bottom" secondItem="Zif-Nd-qJ1" secondAttribute="bottom" type="default" id="XMW-Dv-clv"/>
+                                    <constraint firstAttribute="height" constant="60" type="user" id="kyB-jt-gE4"/>
+                                    <constraint firstItem="oSg-fB-WKr" firstAttribute="trailing" secondItem="Zif-Nd-qJ1" secondAttribute="trailing" type="default" id="oQD-lQ-msg"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zif-Nd-qJ1" firstAttribute="top" secondItem="ZVo-e5-d7X" secondAttribute="top" type="default" id="Iyo-qq-wse"/>
+                            <constraint firstItem="Zif-Nd-qJ1" firstAttribute="leading" secondItem="ZVo-e5-d7X" secondAttribute="leading" type="default" id="btz-nx-Fc1"/>
+                            <constraint firstItem="Zif-Nd-qJ1" firstAttribute="trailing" secondItem="ZVo-e5-d7X" secondAttribute="trailing" type="default" id="rt7-Le-q4Z"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Social" id="Wr3-6l-Tbr"/>
                 </viewController>
@@ -85,7 +222,54 @@
                     <view key="view" contentMode="scaleToFill" id="PBr-NZ-V73">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UIu-12-gFw">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6z-uO-fXl">
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="HMFFlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="XUI-34-1OS">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="141" id="klC-Ll-G8E"/>
+                                            <constraint firstAttribute="height" constant="45" id="mcF-Ux-BGO"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKj-uZ-oet">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="KRD-FG-3do"/>
+                                            <constraint firstAttribute="width" constant="56" id="bSt-xw-zwn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Button" image="ticketButton.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" type="user" id="58x-gb-qN7"/>
+                                    <constraint firstItem="XUI-34-1OS" firstAttribute="centerX" secondItem="E6z-uO-fXl" secondAttribute="centerX" type="default" id="7T0-ko-u8O"/>
+                                    <constraint firstItem="XUI-34-1OS" firstAttribute="top" secondItem="UIu-12-gFw" secondAttribute="top" constant="12" id="Dal-Ch-LPU"/>
+                                    <constraint firstItem="XUI-34-1OS" firstAttribute="top" secondItem="aKj-uZ-oet" secondAttribute="top" type="default" id="Ihk-hW-76N"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" type="user" id="LKj-Rw-KR3"/>
+                                    <constraint firstItem="E6z-uO-fXl" firstAttribute="trailing" secondItem="UIu-12-gFw" secondAttribute="trailing" type="default" id="R4o-ao-u2P"/>
+                                    <constraint firstItem="E6z-uO-fXl" firstAttribute="leading" secondItem="UIu-12-gFw" secondAttribute="leading" type="default" id="cKe-fu-wnn"/>
+                                    <constraint firstAttribute="trailing" secondItem="aKj-uZ-oet" secondAttribute="trailing" constant="9" id="f4e-Te-wZS"/>
+                                    <constraint firstItem="E6z-uO-fXl" firstAttribute="top" secondItem="UIu-12-gFw" secondAttribute="top" constant="59" id="qDW-zm-qmj"/>
+                                    <constraint firstItem="E6z-uO-fXl" firstAttribute="bottom" secondItem="UIu-12-gFw" secondAttribute="bottom" type="default" id="qL1-oV-HGT"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UIu-12-gFw" firstAttribute="trailing" secondItem="PBr-NZ-V73" secondAttribute="trailing" type="default" id="C31-Hg-JNo"/>
+                            <constraint firstItem="UIu-12-gFw" firstAttribute="leading" secondItem="PBr-NZ-V73" secondAttribute="leading" type="default" id="Yki-JX-ELG"/>
+                            <constraint firstItem="UIu-12-gFw" firstAttribute="top" secondItem="PBr-NZ-V73" secondAttribute="top" type="user" id="iGC-eb-Xo2"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Line Up" id="Gaa-pl-uns"/>
                 </viewController>
@@ -100,7 +284,53 @@
                     <view key="view" contentMode="scaleToFill" id="OOP-8e-LEa">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JxP-ii-WBu">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vns-5c-ViN">
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="HMFFlogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="CAA-H5-hwg">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="D22-5W-wWX"/>
+                                            <constraint firstAttribute="width" constant="141" id="IIC-JP-0ey"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Odr-wP-i7X">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="2zA-Pc-ljo"/>
+                                            <constraint firstAttribute="width" constant="56" id="kC3-yq-5mN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Button" image="ticketButton.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="CAA-H5-hwg" firstAttribute="top" secondItem="JxP-ii-WBu" secondAttribute="top" constant="12" id="333-Qq-3P2"/>
+                                    <constraint firstAttribute="trailing" secondItem="Odr-wP-i7X" secondAttribute="trailing" constant="9" id="50d-8S-wXZ"/>
+                                    <constraint firstItem="Vns-5c-ViN" firstAttribute="top" secondItem="JxP-ii-WBu" secondAttribute="top" constant="59" id="5N1-PC-eDm"/>
+                                    <constraint firstItem="Vns-5c-ViN" firstAttribute="leading" secondItem="JxP-ii-WBu" secondAttribute="leading" type="default" id="VTJ-Tz-RYh"/>
+                                    <constraint firstAttribute="height" constant="60" type="user" id="gw6-4V-Itv"/>
+                                    <constraint firstItem="Vns-5c-ViN" firstAttribute="trailing" secondItem="JxP-ii-WBu" secondAttribute="trailing" type="default" id="mgz-Oq-sTT"/>
+                                    <constraint firstItem="Vns-5c-ViN" firstAttribute="bottom" secondItem="JxP-ii-WBu" secondAttribute="bottom" type="default" id="nQe-mx-X66"/>
+                                    <constraint firstItem="CAA-H5-hwg" firstAttribute="centerX" secondItem="Vns-5c-ViN" secondAttribute="centerX" type="default" id="vsn-aM-0rX"/>
+                                    <constraint firstItem="CAA-H5-hwg" firstAttribute="top" secondItem="Odr-wP-i7X" secondAttribute="top" type="default" id="yM8-t3-3iB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JxP-ii-WBu" firstAttribute="trailing" secondItem="OOP-8e-LEa" secondAttribute="trailing" type="default" id="35N-an-5VJ"/>
+                            <constraint firstItem="JxP-ii-WBu" firstAttribute="top" secondItem="OOP-8e-LEa" secondAttribute="top" type="default" id="R21-Qw-wnA"/>
+                            <constraint firstItem="JxP-ii-WBu" firstAttribute="leading" secondItem="OOP-8e-LEa" secondAttribute="leading" type="default" id="u7M-6F-eEa"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="more" id="JtT-LE-DkN"/>
                 </viewController>
@@ -108,10 +338,11 @@
             </objects>
             <point key="canvasLocation" x="-670" y="922"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="2GC-w8-A2E">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="w40-RZ-D02" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="w40-RZ-D02" customClass="HMTabBarViewController" sceneMemberID="viewController">
+                    <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="H0K-Em-pLX">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -131,6 +362,10 @@
             <point key="canvasLocation" x="-73" y="36"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="HMFFlogo.png" width="319" height="144"/>
+        <image name="ticketButton.png" width="160" height="89"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0139AD217023288000AE5B7 /* HMFFlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD117023288000AE5B7 /* HMFFlogo.png */; };
+		E0139AD8170238CD000AE5B7 /* HMFFlogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */; };
+		E0139ADA17023C3F000AE5B7 /* ticketButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD917023C3F000AE5B7 /* ticketButton.png */; };
+		E0139ADC17023C63000AE5B7 /* ticketButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139ADB17023C63000AE5B7 /* ticketButton@2x.png */; };
+		E0139AE417024018000AE5B7 /* HMFFIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE317024018000AE5B7 /* HMFFIcon57.png */; };
+		E0139AE61702401C000AE5B7 /* HMFFIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE51702401C000AE5B7 /* HMFFIcon114.png */; };
+		E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */; };
 		E03C065F16FBE667002AC531 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C065E16FBE667002AC531 /* UIKit.framework */; };
 		E03C066116FBE667002AC531 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C066016FBE667002AC531 /* Foundation.framework */; };
 		E03C066316FBE667002AC531 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C066216FBE667002AC531 /* CoreGraphics.framework */; };
@@ -44,6 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0139AD117023288000AE5B7 /* HMFFlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFlogo.png; sourceTree = "<group>"; };
+		E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo@2x.png"; sourceTree = "<group>"; };
+		E0139AD917023C3F000AE5B7 /* ticketButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticketButton.png; sourceTree = "<group>"; };
+		E0139ADB17023C63000AE5B7 /* ticketButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticketButton@2x.png"; sourceTree = "<group>"; };
+		E0139AE317024018000AE5B7 /* HMFFIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFIcon57.png; sourceTree = "<group>"; };
+		E0139AE51702401C000AE5B7 /* HMFFIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFIcon114.png; sourceTree = "<group>"; };
+		E0139AE7170240C9000AE5B7 /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
+		E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarViewController.m; sourceTree = "<group>"; };
 		E03C065B16FBE667002AC531 /* HMFF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMFF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03C065E16FBE667002AC531 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E03C066016FBE667002AC531 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -109,6 +124,8 @@
 		E03C065216FBE667002AC531 = {
 			isa = PBXGroup;
 			children = (
+				E0139AE51702401C000AE5B7 /* HMFFIcon114.png */,
+				E0139AE317024018000AE5B7 /* HMFFIcon57.png */,
 				E03C066616FBE667002AC531 /* HMFF */,
 				E03C068816FBE667002AC531 /* HMFFTests */,
 				E03C065D16FBE667002AC531 /* Frameworks */,
@@ -155,6 +172,8 @@
 		E03C066716FBE667002AC531 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E0139AE7170240C9000AE5B7 /* HMTabBarViewController.h */,
+				E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */,
 				E03C069916FBE6A4002AC531 /* Storyboard.storyboard */,
 				E03C067816FBE667002AC531 /* HMFF.xcdatamodeld */,
 				E03C066F16FBE667002AC531 /* HMAppDelegate.h */,
@@ -246,6 +265,10 @@
 		E03C06A116FBE96F002AC531 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0139ADB17023C63000AE5B7 /* ticketButton@2x.png */,
+				E0139AD917023C3F000AE5B7 /* ticketButton.png */,
+				E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */,
+				E0139AD117023288000AE5B7 /* HMFFlogo.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -327,6 +350,12 @@
 				E03C067516FBE667002AC531 /* Default@2x.png in Resources */,
 				E03C067716FBE667002AC531 /* Default-568h@2x.png in Resources */,
 				E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */,
+				E0139AD217023288000AE5B7 /* HMFFlogo.png in Resources */,
+				E0139AD8170238CD000AE5B7 /* HMFFlogo@2x.png in Resources */,
+				E0139ADA17023C3F000AE5B7 /* ticketButton.png in Resources */,
+				E0139ADC17023C63000AE5B7 /* ticketButton@2x.png in Resources */,
+				E0139AE417024018000AE5B7 /* HMFFIcon57.png in Resources */,
+				E0139AE61702401C000AE5B7 /* HMFFIcon114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +399,7 @@
 				E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */,
 				E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */,
 				E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */,
+				E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
