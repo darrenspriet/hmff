@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -15,7 +15,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qh9-3a-9oX">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="441" id="0tb-Kx-rwh"/>
+                                    <constraint firstAttribute="height" constant="441" type="user" id="0tb-Kx-rwh"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lOa-lz-btc">
@@ -77,10 +77,10 @@
                         <constraints>
                             <constraint firstItem="qFc-GG-GMw" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="2MZ-5l-aiC"/>
                             <constraint firstItem="Qh9-3a-9oX" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="Cp6-G3-fLT"/>
+                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" constant="58" type="user" id="Hwe-D5-fYl"/>
                             <constraint firstItem="Qh9-3a-9oX" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="R7r-z9-RzQ"/>
                             <constraint firstItem="qFc-GG-GMw" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="gz3-RN-gUk"/>
                             <constraint firstItem="qFc-GG-GMw" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" type="user" id="pyS-Tb-wIM"/>
-                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="bottom" secondItem="vsl-uA-LT4" secondAttribute="bottom" type="default" id="rDc-EQ-N1o"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" id="Kjj-m3-Nlf"/>
@@ -139,22 +139,11 @@
                                     <constraint firstAttribute="height" constant="60" type="user" id="nmn-eL-jz1"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz0-ie-eqd">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="bBo-9z-OMn"/>
-                                    <constraint firstAttribute="height" constant="40" id="zaH-zd-bVL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
-                                <state key="normal" title="TWEET" backgroundImage="TwitterButton.png">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3my-qB-IpW">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="379" type="user" id="MnZ-Y1-PCg"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="acM-QN-f45">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>
@@ -230,17 +219,48 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-J4-h9V">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rUb-Sm-7vL">
+                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gz0-ie-eqd">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="oQ6-98-88b"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="30"/>
+                                        <state key="normal" title="TWEET" backgroundImage="TwitterButton.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Gz0-ie-eqd" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="4OS-tD-XQn"/>
+                                    <constraint firstItem="rUb-Sm-7vL" firstAttribute="trailing" secondItem="t7O-J4-h9V" secondAttribute="trailing" type="default" id="boe-QV-cSW"/>
+                                    <constraint firstItem="Gz0-ie-eqd" firstAttribute="leading" secondItem="t7O-J4-h9V" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="l7u-SA-gck"/>
+                                    <constraint firstItem="Gz0-ie-eqd" firstAttribute="centerY" secondItem="t7O-J4-h9V" secondAttribute="centerY" type="default" id="o0W-EY-i1p"/>
+                                    <constraint firstItem="rUb-Sm-7vL" firstAttribute="top" secondItem="t7O-J4-h9V" secondAttribute="top" constant="59" id="oSw-Dg-0Z1"/>
+                                    <constraint firstItem="rUb-Sm-7vL" firstAttribute="leading" secondItem="t7O-J4-h9V" secondAttribute="leading" type="default" id="qsT-mP-eQH"/>
+                                    <constraint firstItem="rUb-Sm-7vL" firstAttribute="bottom" secondItem="t7O-J4-h9V" secondAttribute="bottom" type="default" id="vXM-SP-dPt"/>
+                                    <constraint firstAttribute="height" constant="60" type="user" id="vgv-Ud-NSU"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Gz0-ie-eqd" firstAttribute="top" secondItem="mcq-IV-9Cc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5zZ-uV-eQ6"/>
-                            <constraint firstItem="3my-qB-IpW" firstAttribute="top" secondItem="Gz0-ie-eqd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="AzO-M2-8DW"/>
+                            <constraint firstItem="t7O-J4-h9V" firstAttribute="leading" secondItem="faU-aG-uOm" secondAttribute="leading" type="default" id="4TA-jb-4o6"/>
+                            <constraint firstItem="t7O-J4-h9V" firstAttribute="trailing" secondItem="faU-aG-uOm" secondAttribute="trailing" type="default" id="G3f-Il-dgr"/>
+                            <constraint firstItem="t7O-J4-h9V" firstAttribute="top" secondItem="faU-aG-uOm" secondAttribute="top" constant="60" id="KBW-Rs-i7T"/>
                             <constraint firstItem="3my-qB-IpW" firstAttribute="trailing" secondItem="faU-aG-uOm" secondAttribute="trailing" type="default" id="NsX-0M-TWR"/>
                             <constraint firstItem="mcq-IV-9Cc" firstAttribute="trailing" secondItem="faU-aG-uOm" secondAttribute="trailing" type="default" id="O8d-K9-QWD"/>
                             <constraint firstItem="mcq-IV-9Cc" firstAttribute="top" secondItem="faU-aG-uOm" secondAttribute="top" type="user" id="bjf-Nx-FBC"/>
-                            <constraint firstItem="Gz0-ie-eqd" firstAttribute="centerX" secondItem="mcq-IV-9Cc" secondAttribute="centerX" type="default" id="lLC-CS-pem"/>
+                            <constraint firstItem="3my-qB-IpW" firstAttribute="top" secondItem="faU-aG-uOm" secondAttribute="top" constant="120" type="user" id="jdw-wd-FuY"/>
                             <constraint firstItem="mcq-IV-9Cc" firstAttribute="leading" secondItem="faU-aG-uOm" secondAttribute="leading" type="default" id="pO1-yf-IDh"/>
-                            <constraint firstItem="3my-qB-IpW" firstAttribute="bottom" secondItem="faU-aG-uOm" secondAttribute="bottom" type="default" id="xbz-eM-ycf"/>
                             <constraint firstItem="3my-qB-IpW" firstAttribute="leading" secondItem="faU-aG-uOm" secondAttribute="leading" type="default" id="zyL-6V-y51"/>
                         </constraints>
                     </view>
@@ -480,7 +500,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1wF-VT-a0q">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="4Zw-B5-ER3"/>
-                                    <constraint firstAttribute="height" constant="40" id="F4P-8u-wg0"/>
+                                    <constraint firstAttribute="height" constant="40" type="user" id="F4P-8u-wg0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -491,13 +511,18 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="NoteIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="QeU-P1-Y30"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1wF-VT-a0q" firstAttribute="centerX" secondItem="S66-My-aDo" secondAttribute="centerX" type="default" id="07H-GE-mjT"/>
                             <constraint firstItem="JxP-ii-WBu" firstAttribute="trailing" secondItem="OOP-8e-LEa" secondAttribute="trailing" type="default" id="35N-an-5VJ"/>
+                            <constraint firstItem="QeU-P1-Y30" firstAttribute="top" secondItem="OOP-8e-LEa" secondAttribute="top" constant="288" type="user" id="IR3-Po-FuO"/>
                             <constraint firstItem="JxP-ii-WBu" firstAttribute="top" secondItem="OOP-8e-LEa" secondAttribute="top" type="default" id="R21-Qw-wnA"/>
-                            <constraint firstItem="1wF-VT-a0q" firstAttribute="top" secondItem="OOP-8e-LEa" secondAttribute="top" constant="240" id="gvx-a6-zIe"/>
+                            <constraint firstItem="QeU-P1-Y30" firstAttribute="centerX" secondItem="1wF-VT-a0q" secondAttribute="centerX" type="default" id="aEB-Vx-Yqq"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QeU-P1-Y30" secondAttribute="bottom" constant="33" type="user" id="gHT-sD-acX"/>
+                            <constraint firstItem="1wF-VT-a0q" firstAttribute="top" secondItem="OOP-8e-LEa" secondAttribute="top" constant="240" type="user" id="gvx-a6-zIe"/>
+                            <constraint firstItem="QeU-P1-Y30" firstAttribute="top" secondItem="1wF-VT-a0q" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="hhj-QT-Ogp"/>
                             <constraint firstItem="JxP-ii-WBu" firstAttribute="leading" secondItem="OOP-8e-LEa" secondAttribute="leading" type="default" id="u7M-6F-eEa"/>
                             <constraint firstItem="S66-My-aDo" firstAttribute="top" secondItem="OOP-8e-LEa" secondAttribute="top" constant="60" id="uD7-Bw-8df"/>
                             <constraint firstItem="S66-My-aDo" firstAttribute="leading" secondItem="OOP-8e-LEa" secondAttribute="leading" type="default" id="vnz-U4-xoR"/>
@@ -538,6 +563,7 @@
         <image name="EmailButton.png" width="250" height="40"/>
         <image name="EmailButtonSelected.png" width="249" height="40"/>
         <image name="HMFFlogo.png" width="319" height="144"/>
+        <image name="NoteIcon.png" width="90" height="90"/>
         <image name="TwitterButton.png" width="249" height="40"/>
         <image name="ticketButton.png" width="160" height="89"/>
     </resources>
