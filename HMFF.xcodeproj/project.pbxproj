@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E00231561704BC2E00C78F1A /* ticketButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E00231541704BC2E00C78F1A /* ticketButton.png */; };
+		E00231571704BC2E00C78F1A /* ticketButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E00231551704BC2E00C78F1A /* ticketButton@2x.png */; };
+		E002315A1704BC3400C78F1A /* TwitterButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E00231581704BC3400C78F1A /* TwitterButton@2x.png */; };
+		E002315B1704BC3400C78F1A /* TwitterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E00231591704BC3400C78F1A /* TwitterButton.png */; };
+		E00231621704BDDF00C78F1A /* TwitterBird@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E00231601704BDDF00C78F1A /* TwitterBird@2x.png */; };
+		E00231631704BDDF00C78F1A /* TwitterBird.png in Resources */ = {isa = PBXBuildFile; fileRef = E00231611704BDDF00C78F1A /* TwitterBird.png */; };
+		E00231681704DD1900C78F1A /* HMTwitterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00231671704DD1900C78F1A /* HMTwitterTableViewController.m */; };
 		E0139AD217023288000AE5B7 /* HMFFlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD117023288000AE5B7 /* HMFFlogo.png */; };
 		E0139AD8170238CD000AE5B7 /* HMFFlogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */; };
-		E0139ADA17023C3F000AE5B7 /* ticketButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD917023C3F000AE5B7 /* ticketButton.png */; };
-		E0139ADC17023C63000AE5B7 /* ticketButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139ADB17023C63000AE5B7 /* ticketButton@2x.png */; };
 		E0139AE417024018000AE5B7 /* HMFFIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE317024018000AE5B7 /* HMFFIcon57.png */; };
 		E0139AE61702401C000AE5B7 /* HMFFIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE51702401C000AE5B7 /* HMFFIcon114.png */; };
 		E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */; };
@@ -33,12 +38,10 @@
 		E03C069016FBE667002AC531 /* HMFFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E03C068F16FBE667002AC531 /* HMFFTests.m */; };
 		E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03C069916FBE6A4002AC531 /* Storyboard.storyboard */; };
 		E0A89A581703DCF70070F731 /* NoteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A89A571703DCF70070F731 /* NoteIcon.png */; };
-		E0BC622D17036A6100EFB287 /* TwitterButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC622C17036A6100EFB287 /* TwitterButton@2x.png */; };
 		E0BC623017036D7200EFB287 /* EmailButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC622E17036D7200EFB287 /* EmailButton@2x.png */; };
 		E0BC623117036D7200EFB287 /* EmailButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC622F17036D7200EFB287 /* EmailButton.png */; };
 		E0BC62341703723F00EFB287 /* EmailButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC62321703723F00EFB287 /* EmailButtonSelected.png */; };
 		E0BC62351703723F00EFB287 /* EmailButtonSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC62331703723F00EFB287 /* EmailButtonSelected@2x.png */; };
-		E0BC658F17036808009FA678 /* TwitterButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC658E17036808009FA678 /* TwitterButton.png */; };
 		E0CCA16C16FBEA73007BC613 /* HMLineUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA16B16FBEA73007BC613 /* HMLineUpViewController.m */; };
 		E0CCA16F16FBEB39007BC613 /* HMNewsFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA16E16FBEB39007BC613 /* HMNewsFeedViewController.m */; };
 		E0CCA17216FBEB48007BC613 /* HMTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17116FBEB48007BC613 /* HMTwitterViewController.m */; };
@@ -58,10 +61,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E00231541704BC2E00C78F1A /* ticketButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticketButton.png; sourceTree = "<group>"; };
+		E00231551704BC2E00C78F1A /* ticketButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticketButton@2x.png"; sourceTree = "<group>"; };
+		E00231581704BC3400C78F1A /* TwitterButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterButton@2x.png"; sourceTree = "<group>"; };
+		E00231591704BC3400C78F1A /* TwitterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterButton.png; sourceTree = "<group>"; };
+		E00231601704BDDF00C78F1A /* TwitterBird@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterBird@2x.png"; sourceTree = "<group>"; };
+		E00231611704BDDF00C78F1A /* TwitterBird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterBird.png; sourceTree = "<group>"; };
+		E00231661704DD1900C78F1A /* HMTwitterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTwitterTableViewController.h; sourceTree = "<group>"; };
+		E00231671704DD1900C78F1A /* HMTwitterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTwitterTableViewController.m; sourceTree = "<group>"; };
 		E0139AD117023288000AE5B7 /* HMFFlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFlogo.png; sourceTree = "<group>"; };
 		E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo@2x.png"; sourceTree = "<group>"; };
-		E0139AD917023C3F000AE5B7 /* ticketButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticketButton.png; sourceTree = "<group>"; };
-		E0139ADB17023C63000AE5B7 /* ticketButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticketButton@2x.png"; sourceTree = "<group>"; };
 		E0139AE317024018000AE5B7 /* HMFFIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFIcon57.png; sourceTree = "<group>"; };
 		E0139AE51702401C000AE5B7 /* HMFFIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFIcon114.png; sourceTree = "<group>"; };
 		E0139AE7170240C9000AE5B7 /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
@@ -89,12 +98,10 @@
 		E03C068F16FBE667002AC531 /* HMFFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMFFTests.m; sourceTree = "<group>"; };
 		E03C069916FBE6A4002AC531 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		E0A89A571703DCF70070F731 /* NoteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoteIcon.png; sourceTree = "<group>"; };
-		E0BC622C17036A6100EFB287 /* TwitterButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterButton@2x.png"; sourceTree = "<group>"; };
 		E0BC622E17036D7200EFB287 /* EmailButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmailButton@2x.png"; sourceTree = "<group>"; };
 		E0BC622F17036D7200EFB287 /* EmailButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButton.png; sourceTree = "<group>"; };
 		E0BC62321703723F00EFB287 /* EmailButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButtonSelected.png; sourceTree = "<group>"; };
 		E0BC62331703723F00EFB287 /* EmailButtonSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmailButtonSelected@2x.png"; sourceTree = "<group>"; };
-		E0BC658E17036808009FA678 /* TwitterButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterButton.png; sourceTree = "<group>"; };
 		E0CCA16A16FBEA73007BC613 /* HMLineUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLineUpViewController.h; sourceTree = "<group>"; };
 		E0CCA16B16FBEA73007BC613 /* HMLineUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLineUpViewController.m; sourceTree = "<group>"; };
 		E0CCA16D16FBEB39007BC613 /* HMNewsFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedViewController.h; sourceTree = "<group>"; };
@@ -245,6 +252,8 @@
 			children = (
 				E0CCA17016FBEB48007BC613 /* HMTwitterViewController.h */,
 				E0CCA17116FBEB48007BC613 /* HMTwitterViewController.m */,
+				E00231661704DD1900C78F1A /* HMTwitterTableViewController.h */,
+				E00231671704DD1900C78F1A /* HMTwitterTableViewController.m */,
 			);
 			name = Twitter;
 			sourceTree = "<group>";
@@ -279,15 +288,17 @@
 		E03C06A116FBE96F002AC531 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E00231601704BDDF00C78F1A /* TwitterBird@2x.png */,
+				E00231611704BDDF00C78F1A /* TwitterBird.png */,
+				E00231581704BC3400C78F1A /* TwitterButton@2x.png */,
+				E00231591704BC3400C78F1A /* TwitterButton.png */,
+				E00231541704BC2E00C78F1A /* ticketButton.png */,
+				E00231551704BC2E00C78F1A /* ticketButton@2x.png */,
 				E0A89A571703DCF70070F731 /* NoteIcon.png */,
 				E0BC62321703723F00EFB287 /* EmailButtonSelected.png */,
 				E0BC62331703723F00EFB287 /* EmailButtonSelected@2x.png */,
 				E0BC622E17036D7200EFB287 /* EmailButton@2x.png */,
 				E0BC622F17036D7200EFB287 /* EmailButton.png */,
-				E0BC658E17036808009FA678 /* TwitterButton.png */,
-				E0BC622C17036A6100EFB287 /* TwitterButton@2x.png */,
-				E0139ADB17023C63000AE5B7 /* ticketButton@2x.png */,
-				E0139AD917023C3F000AE5B7 /* ticketButton.png */,
 				E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */,
 				E0139AD117023288000AE5B7 /* HMFFlogo.png */,
 			);
@@ -373,17 +384,19 @@
 				E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */,
 				E0139AD217023288000AE5B7 /* HMFFlogo.png in Resources */,
 				E0139AD8170238CD000AE5B7 /* HMFFlogo@2x.png in Resources */,
-				E0139ADA17023C3F000AE5B7 /* ticketButton.png in Resources */,
-				E0139ADC17023C63000AE5B7 /* ticketButton@2x.png in Resources */,
 				E0139AE417024018000AE5B7 /* HMFFIcon57.png in Resources */,
 				E0139AE61702401C000AE5B7 /* HMFFIcon114.png in Resources */,
-				E0BC658F17036808009FA678 /* TwitterButton.png in Resources */,
-				E0BC622D17036A6100EFB287 /* TwitterButton@2x.png in Resources */,
 				E0BC623017036D7200EFB287 /* EmailButton@2x.png in Resources */,
 				E0BC623117036D7200EFB287 /* EmailButton.png in Resources */,
 				E0BC62341703723F00EFB287 /* EmailButtonSelected.png in Resources */,
 				E0BC62351703723F00EFB287 /* EmailButtonSelected@2x.png in Resources */,
 				E0A89A581703DCF70070F731 /* NoteIcon.png in Resources */,
+				E00231561704BC2E00C78F1A /* ticketButton.png in Resources */,
+				E00231571704BC2E00C78F1A /* ticketButton@2x.png in Resources */,
+				E002315A1704BC3400C78F1A /* TwitterButton@2x.png in Resources */,
+				E002315B1704BC3400C78F1A /* TwitterButton.png in Resources */,
+				E00231621704BDDF00C78F1A /* TwitterBird@2x.png in Resources */,
+				E00231631704BDDF00C78F1A /* TwitterBird.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +441,7 @@
 				E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */,
 				E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */,
 				E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */,
+				E00231681704DD1900C78F1A /* HMTwitterTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
