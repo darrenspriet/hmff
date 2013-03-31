@@ -30,7 +30,7 @@
     array = [[NSMutableArray alloc]init];
     
     //This was in the Action in the Previous project
-    NSURL *url =[NSURL URLWithString:@"http://localhost:8888/?json=get_recent_posts"];
+    NSURL *url =[NSURL URLWithString:@"http://www.hmff.com/?json=get_recent_posts&count=100"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     connection = [NSURLConnection connectionWithRequest:request delegate:self];
     if(connection){

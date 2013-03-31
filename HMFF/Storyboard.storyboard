@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -124,7 +124,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="EwO-A3-tha" firstAttribute="bottom" secondItem="faU-aG-uOm" secondAttribute="bottom" type="default" id="6If-bH-Tej"/>
-                            <constraint firstItem="EwO-A3-tha" firstAttribute="top" secondItem="faU-aG-uOm" secondAttribute="top" constant="60" id="Nba-dI-iKF"/>
+                            <constraint firstItem="EwO-A3-tha" firstAttribute="top" secondItem="faU-aG-uOm" secondAttribute="top" constant="59" id="FHm-aR-uyY"/>
                             <constraint firstItem="t7O-J4-h9V" firstAttribute="top" secondItem="faU-aG-uOm" secondAttribute="top" type="default" id="Pyi-Vg-V8V"/>
                             <constraint firstItem="EwO-A3-tha" firstAttribute="trailing" secondItem="faU-aG-uOm" secondAttribute="trailing" type="default" id="QVq-VJ-1Yv"/>
                             <constraint firstItem="EwO-A3-tha" firstAttribute="leading" secondItem="faU-aG-uOm" secondAttribute="leading" type="default" id="Xex-Ck-4iu"/>
@@ -170,7 +170,7 @@
             <objects>
                 <tableViewController id="wx8-zC-B03" customClass="HMTwitterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="109" sectionHeaderHeight="22" sectionFooterHeight="22" id="hVz-uy-I5K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Twitter/Twitter.h>
+#import <Accounts/Accounts.h>
 
 @interface HMTwitterTableViewController : UITableViewController
 
--(void)fetchTweets;
-@property (nonatomic)NSArray *tweets;
-
+@property (nonatomic, strong) NSArray *dataSource;
+//@property (nonatomic, weak) IBOutlet UIActivityIndicatorView *activityIndicatorView;
+- (void)requestTimeline;
+//- (IBAction)requestMentions:(id)sender;
 @end
 
 
