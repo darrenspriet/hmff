@@ -13,7 +13,8 @@
 
 
 @interface HMTwitterTableViewController : UITableViewController{
-NSArray *tweets;
+//    NSDictionary *tweets;
+    NSArray *tweets;
 }
 
 - (void)fetchTweets;

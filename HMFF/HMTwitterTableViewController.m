@@ -26,8 +26,8 @@
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData* data = [NSData dataWithContentsOfURL:
-//                         [NSURL URLWithString:@"http://search.twitter.com/search.json?q=%23hmff"]];
-                        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&count=100"]];
+//                        [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
+                        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
         
         NSError* error;
         
@@ -67,6 +67,19 @@
     
     cell.textLabel.text = text;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"by %@", name];
+    
+    return cell;
+    
+//    NSArray *tweet = [tweets objectForKey:@"results"];
+//    //    NSString *text = [tweet objectForKey:@"text"];
+//    NSDictionary *othertweet =[tweet objectAtIndex:indexPath.row];
+//    NSString *text = [othertweet objectForKey:@"text" ];
+//    NSString *name = [othertweet objectForKey: @"from_user_name"];
+//    
+//    
+//    
+//    cell.textLabel.text = text;
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"by %@", name];
     
     return cell;
 }
@@ -126,10 +139,10 @@
     if ([segue.identifier isEqualToString:@"showTweet"]) {
         
         NSInteger row = [[self tableView].indexPathForSelectedRow row];
-        NSDictionary *tweet = [tweets objectAtIndex:row];
+//        NSDictionary *tweet = [tweets objectAtIndex:row];
         
         HMTwitterDetailViewController *twitterDetailViewController = segue.destinationViewController;
-        twitterDetailViewController.detailItem = tweet;
+//        twitterDetailViewController.detailItem = tweet;
     }
 }
 
