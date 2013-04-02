@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -168,17 +168,18 @@
         <!--Twitter Table View Controller-->
         <scene sceneID="n65-SJ-KQD">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yyO-X6-rWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="wx8-zC-B03" customClass="HMTwitterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="109" sectionHeaderHeight="22" sectionFooterHeight="22" id="hVz-uy-I5K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Tweet Cell" textLabel="czN-6W-XDd" detailTextLabel="c9B-EA-3Hl" rowHeight="109" style="IBUITableViewCellStyleSubtitle" id="Qc8-6j-hnN">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Tweet Cell" textLabel="czN-6W-XDd" detailTextLabel="c9B-EA-3Hl" rowHeight="109" style="IBUITableViewCellStyleSubtitle" id="Qc8-6j-hnN">
                                 <rect key="frame" x="0.0" y="22" width="320" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="108"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="108"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czN-6W-XDd">
@@ -194,6 +195,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="EAI-lg-KOF" kind="push" identifier="showTweet" id="3Q7-j5-Td8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -202,9 +206,62 @@
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yyO-X6-rWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1769" y="60"/>
+        </scene>
+        <!--Twitter Detail View Controller-->
+        <scene sceneID="Zqj-B9-QRB">
+            <objects>
+                <viewController id="EAI-lg-KOF" customClass="HMTwitterDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v04-hY-qpr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bx-Yo-9qc">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Ti1-x1-VcO"/>
+                                    <constraint firstAttribute="height" constant="138" id="baT-d6-i96"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name goes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GW5-ww-nOw">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="Fpk-EY-ZDQ"/>
+                                    <constraint firstAttribute="height" constant="47" id="h9M-ks-Bxv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tweet Goes here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rHC-nU-LrG">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Q2A-Gq-ZDT"/>
+                                    <constraint firstAttribute="height" constant="35" id="pAl-9r-JXk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GW5-ww-nOw" firstAttribute="trailing" secondItem="rHC-nU-LrG" secondAttribute="trailing" type="default" id="53t-ov-eK4"/>
+                            <constraint firstItem="0Bx-Yo-9qc" firstAttribute="top" secondItem="v04-hY-qpr" secondAttribute="top" constant="20" symbolic="YES" type="default" id="Cvr-FW-L55"/>
+                            <constraint firstItem="rHC-nU-LrG" firstAttribute="leading" secondItem="v04-hY-qpr" secondAttribute="leading" constant="47" id="QjL-7Z-0Vv"/>
+                            <constraint firstItem="0Bx-Yo-9qc" firstAttribute="leading" secondItem="v04-hY-qpr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="dmJ-21-6zI"/>
+                            <constraint firstItem="GW5-ww-nOw" firstAttribute="top" secondItem="v04-hY-qpr" secondAttribute="top" constant="65" id="khE-Tb-6H6"/>
+                            <constraint firstAttribute="bottom" secondItem="rHC-nU-LrG" secondAttribute="bottom" constant="179" id="pTn-X3-9ff"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qUJ-Og-dvG"/>
+                    <connections>
+                        <outlet property="nameLabel" destination="GW5-ww-nOw" id="sIF-3N-vqS"/>
+                        <outlet property="profileImage" destination="0Bx-Yo-9qc" id="Ccj-8L-pSA"/>
+                        <outlet property="tweetLabel" destination="rHC-nU-LrG" id="rW0-iV-lgK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rok-67-xCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2247" y="19"/>
         </scene>
         <!--Social View Controller-->
         <scene sceneID="ma6-yu-EU5">
@@ -644,35 +701,6 @@
         <image name="TwitterButton.png" width="518" height="104"/>
         <image name="ticketButton.png" width="160" height="89"/>
     </resources>
-    <classes>
-        <class className="HMLineUpViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMLineUpViewController.h"/>
-        </class>
-        <class className="HMMoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreViewController.h"/>
-        </class>
-        <class className="HMNewsFeedViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="HMSocialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialViewController.h"/>
-        </class>
-        <class className="HMTabBarViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTabBarViewController.h"/>
-        </class>
-        <class className="HMTwitterTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterTableViewController.h"/>
-        </class>
-        <class className="HMTwitterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

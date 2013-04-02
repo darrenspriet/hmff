@@ -121,4 +121,16 @@
      */
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showTweet"]) {
+        
+        NSInteger row = [[self tableView].indexPathForSelectedRow row];
+        NSDictionary *tweet = [tweets objectAtIndex:row];
+        
+        HMTwitterDetailViewController *twitterDetailViewController = segue.destinationViewController;
+        twitterDetailViewController.detailItem = tweet;
+    }
+}
+
 @end
