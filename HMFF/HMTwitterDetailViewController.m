@@ -53,18 +53,18 @@
         }
         NSString *text = [tweet objectForKey:@"text"];
         
-        tweetLabel.lineBreakMode = UILineBreakModeWordWrap;
-        tweetLabel.numberOfLines = 0;
+        self.tweetLabel.lineBreakMode = UILineBreakModeWordWrap;
+        self.tweetLabel.numberOfLines = 0;
         
-        nameLabel.text = name;
-        tweetLabel.text = text;
+        self.nameLabel.text = name;
+        self.tweetLabel.text = text;
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                profileImage.image = [UIImage imageWithData:data];
+                self.profileImage.image = [UIImage imageWithData:data];
             });
         });
     }

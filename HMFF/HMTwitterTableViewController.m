@@ -26,12 +26,15 @@
 {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData* data = [NSData dataWithContentsOfURL:
-//                        [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
-                        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
+                        
+//This is used for a Search if needed                 
+//     [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
+                        
+        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
 
         NSError* error;
         
-        tweets = [NSJSONSerialization JSONObjectWithData:data
+        self.tweets = [NSJSONSerialization JSONObjectWithData:data
                                                  options:kNilOptions
                                                    error:&error];
         
@@ -49,21 +52,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return tweets.count;
+    return self.tweets.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Tweet Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    HMTweetCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[HMTweetCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
-    NSDictionary *tweet = [tweets objectAtIndex:indexPath.row];
+    NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
     NSString *text = [tweet objectForKey:@"text"];
-//    NSString *tweet1 =[tweet objectForKey:@"]
+    NSString *date =  [tweet objectForKey:@"created_at"];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+//
+//    [dateFormatter setDateFormat:@"EEE, MMM d, yyyy"];
+//
+//    NSDate *date1 = [dateFormatter dateFromString:preDate];
+//    [dateFormatter setDateFormat:@"EEE, MMM d, yyyy"];
+//   NSString *date = [dateFormatter stringFromDate:date1];
+//    NSLog(@"date %@", preDate);
+//    NSLog(@"newdate %@", date);
+
+
     NSString *name;
     
     if ([tweet objectForKey:@"retweeted_status"]) {
@@ -73,31 +87,21 @@
         name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
    
     }
-    
-//    NSLog(@"retweeted %@", retweeted);
-//    if (retweeted) {
-//        
-//    }
-    
-
-    
-    cell.textLabel.text = text;
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"by %@", name];
+    [cell.tweet setText:text];
+    [cell.userName setText:[NSString stringWithFormat:@"by %@", name]];
+    [cell.date setText:date];
     
     return cell;
     
+    //This is used for a Search if needed
 //    NSArray *tweet = [tweets objectForKey:@"results"];
 //    //    NSString *text = [tweet objectForKey:@"text"];
 //    NSDictionary *othertweet =[tweet objectAtIndex:indexPath.row];
 //    NSString *text = [othertweet objectForKey:@"text" ];
 //    NSString *name = [othertweet objectForKey: @"from_user_name"];
-//    
-//    
-//    
 //    cell.textLabel.text = text;
 //    cell.detailTextLabel.text = [NSString stringWithFormat:@"by %@", name];
-    
-    return cell;
+//    return cell;
 }
 
 // Override to support conditional editing of the table view.
@@ -105,6 +109,19 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
 }
 
 /*
@@ -137,25 +154,15 @@
 }
 */
 
-#pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
+#pragma mark - Prepare for Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showTweet"]) {
         
         NSInteger row = [[self tableView].indexPathForSelectedRow row];
-        NSDictionary *tweet = [tweets objectAtIndex:row];
+        NSDictionary *tweet = [self.tweets objectAtIndex:row];
         
         HMTwitterDetailViewController *twitterDetailViewController = segue.destinationViewController;
         twitterDetailViewController.detailItem = tweet;

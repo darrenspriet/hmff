@@ -10,14 +10,19 @@
 #import <Twitter/Twitter.h>
 #import <Accounts/Accounts.h>
 #import "HMTwitterDetailViewController.h"
+#import "HMTweetCell.h"
 
 
-@interface HMTwitterTableViewController : UITableViewController{
-//    NSDictionary *tweets;
-    NSArray *tweets;
-}
+
+@interface HMTwitterTableViewController : UITableViewController
+
+@property (nonatomic, strong)NSArray *tweets;
 
 - (void)fetchTweets;
+
+//This is used for a Search if needed
+//@property (nonatomic, strong)NSDictionary *tweets;
+
 @end
 
 

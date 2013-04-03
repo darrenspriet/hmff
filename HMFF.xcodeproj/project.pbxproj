@@ -50,6 +50,7 @@
 		E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */; };
 		E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */; };
 		E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */; };
+		E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F1D2A7170C72280045983F /* HMTweetCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,8 @@
 		E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreViewController.m; sourceTree = "<group>"; };
 		E0D4E7C9170086A9002AC1E4 /* HMCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCoreDataHelper.h; sourceTree = "<group>"; };
 		E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCoreDataHelper.m; sourceTree = "<group>"; };
+		E0F1D2A6170C72280045983F /* HMTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTweetCell.h; sourceTree = "<group>"; };
+		E0F1D2A7170C72280045983F /* HMTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTweetCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +266,8 @@
 				E00231671704DD1900C78F1A /* HMTwitterTableViewController.m */,
 				E006ED55170B1B960062CA5F /* HMTwitterDetailViewController.h */,
 				E006ED56170B1B960062CA5F /* HMTwitterDetailViewController.m */,
+				E0F1D2A6170C72280045983F /* HMTweetCell.h */,
+				E0F1D2A7170C72280045983F /* HMTweetCell.m */,
 			);
 			name = Twitter;
 			sourceTree = "<group>";
@@ -452,6 +457,7 @@
 				E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */,
 				E00231681704DD1900C78F1A /* HMTwitterTableViewController.m in Sources */,
 				E006ED57170B1B960062CA5F /* HMTwitterDetailViewController.m in Sources */,
+				E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

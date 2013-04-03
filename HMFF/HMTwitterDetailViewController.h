@@ -8,13 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMTwitterDetailViewController : UIViewController{
-    IBOutlet UIImageView *profileImage;
-    IBOutlet UILabel *nameLabel;
-    IBOutlet UILabel *tweetLabel;
+@interface HMTwitterDetailViewController : UIViewController
 
-}
-
+@property (nonatomic, weak) IBOutlet UIImageView *profileImage;
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
+@property (nonatomic, weak)  IBOutlet UILabel *tweetLabel;
 @property (nonatomic)NSDictionary *detailItem;
 
 @end

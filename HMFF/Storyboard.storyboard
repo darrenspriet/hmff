@@ -174,27 +174,55 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Tweet Cell" textLabel="czN-6W-XDd" detailTextLabel="c9B-EA-3Hl" rowHeight="109" style="IBUITableViewCellStyleSubtitle" id="Qc8-6j-hnN">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Tweet Cell" rowHeight="109" id="Qc8-6j-hnN" customClass="HMTweetCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="109"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="108"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="25" translatesAutoresizingMaskIntoConstraints="NO" id="czN-6W-XDd">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tweet" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="WdN-bi-lJr">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="4nR-Eg-PkZ"/>
+                                                <constraint firstAttribute="width" constant="260" id="XaZ-H2-3H1"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="47" translatesAutoresizingMaskIntoConstraints="NO" id="c9B-EA-3Hl">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="userName" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="7" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yn0-dQ-OIq">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="dL2-Kq-AnU"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfc-DP-0lz">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="118" id="L87-xI-R8C"/>
+                                                <constraint firstAttribute="height" constant="21" id="lNj-fq-k46"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="WdN-bi-lJr" firstAttribute="leading" secondItem="Qc8-6j-hnN" secondAttribute="leading" constant="20" type="default" id="4Qf-XH-4oJ"/>
+                                    <constraint firstItem="yn0-dQ-OIq" firstAttribute="top" secondItem="WdN-bi-lJr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="FQR-Kw-N6V"/>
+                                    <constraint firstItem="yn0-dQ-OIq" firstAttribute="trailing" secondItem="WdN-bi-lJr" secondAttribute="trailing" type="default" id="Ihx-Gq-4st"/>
+                                    <constraint firstItem="yn0-dQ-OIq" firstAttribute="leading" secondItem="Qc8-6j-hnN" secondAttribute="leading" constant="20" type="default" id="O1I-iV-Svu"/>
+                                    <constraint firstItem="WdN-bi-lJr" firstAttribute="top" secondItem="Qc8-6j-hnN" secondAttribute="top" constant="30" id="erC-kH-G2W"/>
+                                    <constraint firstAttribute="trailing" secondItem="hfc-DP-0lz" secondAttribute="trailing" constant="20" type="default" id="oE8-WW-A0i"/>
+                                    <constraint firstAttribute="bottom" secondItem="hfc-DP-0lz" secondAttribute="bottom" constant="7" id="qUD-bL-a22"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="date" destination="hfc-DP-0lz" id="YRE-oy-3EA"/>
+                                    <outlet property="tweet" destination="WdN-bi-lJr" id="6Dh-ei-M0Z"/>
+                                    <outlet property="userName" destination="yn0-dQ-OIq" id="OIb-fU-5m1"/>
                                     <segue destination="EAI-lg-KOF" kind="push" identifier="showTweet" id="3Q7-j5-Td8"/>
                                 </connections>
                             </tableViewCell>
@@ -719,6 +747,14 @@
         </class>
         <class className="HMTabBarViewController" superclassName="UITabBarController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTabBarViewController.h"/>
+        </class>
+        <class className="HMTweetCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTweetCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tweet" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
+            </relationships>
         </class>
         <class className="HMTwitterDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterDetailViewController.h"/>
