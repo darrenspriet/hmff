@@ -76,7 +76,8 @@
 //   NSString *date = [dateFormatter stringFromDate:date1];
 //    NSLog(@"date %@", preDate);
 //    NSLog(@"newdate %@", date);
-
+    NSArray *array = [date componentsSeparatedByString:@","];
+    NSString *newsting = [NSString stringWithFormat:<#(NSString *), ...#>]
 
     NSString *name;
     
