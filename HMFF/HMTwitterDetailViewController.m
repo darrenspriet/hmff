@@ -39,18 +39,28 @@
 {
     if (self.detailItem) {
         NSDictionary *tweet = self.detailItem;
+        NSString *name;
+        NSString *imageUrl;
         
-        NSString *text = [[tweet objectForKey:@"user"] objectForKey:@"name"];
-        NSString *name = [tweet objectForKey:@"text"];
+        if ([tweet objectForKey:@"retweeted_status"]) {
+            name = [[[tweet objectForKey:@"retweeted_status"] objectForKey:@"user"] objectForKey:@"name"];
+        imageUrl= [[[tweet objectForKey:@"retweeted_status"] objectForKey:@"user"] objectForKey:@"profile_image_url"];
+        }
+        else{
+            name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
+             imageUrl= [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+            
+        }
+        NSString *text = [tweet objectForKey:@"text"];
         
         tweetLabel.lineBreakMode = UILineBreakModeWordWrap;
         tweetLabel.numberOfLines = 0;
         
-        nameLabel.text = text;
-        tweetLabel.text = name;
+        nameLabel.text = name;
+        tweetLabel.text = text;
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSString *imageUrl = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
             
             dispatch_async(dispatch_get_main_queue(), ^{

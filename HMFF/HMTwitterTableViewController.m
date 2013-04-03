@@ -28,7 +28,7 @@
         NSData* data = [NSData dataWithContentsOfURL:
 //                        [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
                         [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
-        
+
         NSError* error;
         
         tweets = [NSJSONSerialization JSONObjectWithData:data
@@ -63,7 +63,23 @@
     
     NSDictionary *tweet = [tweets objectAtIndex:indexPath.row];
     NSString *text = [tweet objectForKey:@"text"];
-    NSString *name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
+//    NSString *tweet1 =[tweet objectForKey:@"]
+    NSString *name;
+    
+    if ([tweet objectForKey:@"retweeted_status"]) {
+        name = [[[tweet objectForKey:@"retweeted_status"] objectForKey:@"user"] objectForKey:@"name"];
+    }
+    else{
+        name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
+   
+    }
+    
+//    NSLog(@"retweeted %@", retweeted);
+//    if (retweeted) {
+//        
+//    }
+    
+
     
     cell.textLabel.text = text;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"by %@", name];
@@ -139,10 +155,10 @@
     if ([segue.identifier isEqualToString:@"showTweet"]) {
         
         NSInteger row = [[self tableView].indexPathForSelectedRow row];
-//        NSDictionary *tweet = [tweets objectAtIndex:row];
+        NSDictionary *tweet = [tweets objectAtIndex:row];
         
         HMTwitterDetailViewController *twitterDetailViewController = segue.destinationViewController;
-//        twitterDetailViewController.detailItem = tweet;
+        twitterDetailViewController.detailItem = tweet;
     }
 }
 
