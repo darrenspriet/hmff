@@ -67,17 +67,9 @@
     NSDictionary *tweet = [self.tweets objectAtIndex:indexPath.row];
     NSString *text = [tweet objectForKey:@"text"];
     NSString *date =  [tweet objectForKey:@"created_at"];
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
-//
-//    [dateFormatter setDateFormat:@"EEE, MMM d, yyyy"];
-//
-//    NSDate *date1 = [dateFormatter dateFromString:preDate];
-//    [dateFormatter setDateFormat:@"EEE, MMM d, yyyy"];
-//   NSString *date = [dateFormatter stringFromDate:date1];
-//    NSLog(@"date %@", preDate);
-//    NSLog(@"newdate %@", date);
-    NSArray *array = [date componentsSeparatedByString:@","];
-    NSString *newsting = [NSString stringWithFormat:<#(NSString *), ...#>]
+    
+    NSArray *array = [date componentsSeparatedByString:@" "];
+    NSString *newsting = [NSString stringWithFormat:@"%@%@%@%@%@%@%@",[array objectAtIndex:0], @" ", [array objectAtIndex:1],@" ", [array objectAtIndex:2],@" ", [array objectAtIndex:5]];
 
     NSString *name;
     
@@ -90,7 +82,7 @@
     }
     [cell.tweet setText:text];
     [cell.userName setText:[NSString stringWithFormat:@"by %@", name]];
-    [cell.date setText:date];
+    [cell.date setText:newsting];
     
     return cell;
     
