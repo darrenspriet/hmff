@@ -20,6 +20,7 @@
 		E0139AE417024018000AE5B7 /* HMFFIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE317024018000AE5B7 /* HMFFIcon57.png */; };
 		E0139AE61702401C000AE5B7 /* HMFFIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE51702401C000AE5B7 /* HMFFIcon114.png */; };
 		E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */; };
+		E01FDA0E170E1E43007FC32D /* HMMoreWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01FDA0D170E1E43007FC32D /* HMMoreWebBrowserViewController.m */; };
 		E03C065F16FBE667002AC531 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C065E16FBE667002AC531 /* UIKit.framework */; };
 		E03C066116FBE667002AC531 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C066016FBE667002AC531 /* Foundation.framework */; };
 		E03C066316FBE667002AC531 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C066216FBE667002AC531 /* CoreGraphics.framework */; };
@@ -51,6 +52,7 @@
 		E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */; };
 		E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */; };
 		E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F1D2A7170C72280045983F /* HMTweetCell.m */; };
+		E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		E0139AE51702401C000AE5B7 /* HMFFIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFIcon114.png; sourceTree = "<group>"; };
 		E0139AE7170240C9000AE5B7 /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
 		E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarViewController.m; sourceTree = "<group>"; };
+		E01FDA0C170E1E43007FC32D /* HMMoreWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMMoreWebBrowserViewController.h; path = ../../HMMoreWebBrowserViewController.h; sourceTree = "<group>"; };
+		E01FDA0D170E1E43007FC32D /* HMMoreWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMMoreWebBrowserViewController.m; path = ../../HMMoreWebBrowserViewController.m; sourceTree = "<group>"; };
 		E03C065B16FBE667002AC531 /* HMFF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMFF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03C065E16FBE667002AC531 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E03C066016FBE667002AC531 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +126,8 @@
 		E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCoreDataHelper.m; sourceTree = "<group>"; };
 		E0F1D2A6170C72280045983F /* HMTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTweetCell.h; sourceTree = "<group>"; };
 		E0F1D2A7170C72280045983F /* HMTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTweetCell.m; sourceTree = "<group>"; };
+		E0FADB3C170DFB310006C833 /* HMMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreTableViewController.h; sourceTree = "<group>"; };
+		E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -286,6 +292,10 @@
 			children = (
 				E0CCA17616FBEB63007BC613 /* HMMoreViewController.h */,
 				E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */,
+				E0FADB3C170DFB310006C833 /* HMMoreTableViewController.h */,
+				E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */,
+				E01FDA0C170E1E43007FC32D /* HMMoreWebBrowserViewController.h */,
+				E01FDA0D170E1E43007FC32D /* HMMoreWebBrowserViewController.m */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -458,6 +468,8 @@
 				E00231681704DD1900C78F1A /* HMTwitterTableViewController.m in Sources */,
 				E006ED57170B1B960062CA5F /* HMTwitterDetailViewController.m in Sources */,
 				E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */,
+				E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */,
+				E01FDA0E170E1E43007FC32D /* HMMoreWebBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
