@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *tweet;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end

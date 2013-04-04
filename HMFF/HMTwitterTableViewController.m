@@ -72,17 +72,30 @@
     NSString *newsting = [NSString stringWithFormat:@"%@%@%@%@%@%@%@",[array objectAtIndex:0], @" ", [array objectAtIndex:1],@" ", [array objectAtIndex:2],@" ", [array objectAtIndex:5]];
 
     NSString *name;
+    NSString *imageUrl;
     
     if ([tweet objectForKey:@"retweeted_status"]) {
         name = [[[tweet objectForKey:@"retweeted_status"] objectForKey:@"user"] objectForKey:@"name"];
+        imageUrl= [[[tweet objectForKey:@"retweeted_status"] objectForKey:@"user"] objectForKey:@"profile_image_url"];
     }
     else{
         name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
-   
+        imageUrl= [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+        
     }
+
     [cell.tweet setText:text];
     [cell.userName setText:[NSString stringWithFormat:@"by %@", name]];
     [cell.date setText:newsting];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [cell.image setImage:[UIImage imageWithData:data]];
+        });
+    });
+
     
     return cell;
     
