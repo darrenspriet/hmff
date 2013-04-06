@@ -28,6 +28,8 @@
     [super viewDidLoad];
     NSURL *url =[NSURL URLWithString:self.passedURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.moreWebBrowser setScalesPageToFit:YES];
+    
     [self.moreWebBrowser loadRequest:request];
     
 	// Do any additional setup after loading the view.

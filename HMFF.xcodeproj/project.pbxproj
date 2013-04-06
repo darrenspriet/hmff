@@ -55,6 +55,7 @@
 		E0FB26CF170FD6260038E3FE /* HMFFlogo2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CE170FD6260038E3FE /* HMFFlogo2.png */; };
 		E0FB26D5170FD6830038E3FE /* HMFFlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26D4170FD6830038E3FE /* HMFFlogo.png */; };
 		E0FB26D7170FD6B10038E3FE /* HMFFlogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26D6170FD6B10038E3FE /* HMFFlogo@2x.png */; };
+		E0FB26DA1710BCE30038E3FE /* HMNewsFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FB26D91710BCE30038E3FE /* HMNewsFeedTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,8 @@
 		E0FB26CE170FD6260038E3FE /* HMFFlogo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFlogo2.png; sourceTree = "<group>"; };
 		E0FB26D4170FD6830038E3FE /* HMFFlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFlogo.png; sourceTree = "<group>"; };
 		E0FB26D6170FD6B10038E3FE /* HMFFlogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo@2x.png"; sourceTree = "<group>"; };
+		E0FB26D81710BCE30038E3FE /* HMNewsFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedTableViewController.h; sourceTree = "<group>"; };
+		E0FB26D91710BCE30038E3FE /* HMNewsFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +266,8 @@
 			children = (
 				E0CCA16D16FBEB39007BC613 /* HMNewsFeedViewController.h */,
 				E0CCA16E16FBEB39007BC613 /* HMNewsFeedViewController.m */,
+				E0FB26D81710BCE30038E3FE /* HMNewsFeedTableViewController.h */,
+				E0FB26D91710BCE30038E3FE /* HMNewsFeedTableViewController.m */,
 			);
 			name = "News Feed";
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 				E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */,
 				E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */,
 				E00E0A0A170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m in Sources */,
+				E0FB26DA1710BCE30038E3FE /* HMNewsFeedTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

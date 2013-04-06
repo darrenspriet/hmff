@@ -12,31 +12,19 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qh9-3a-9oX">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="lOa-lz-btc">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                    </tableViewCell>
-                                </prototypes>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvq-Vt-iFe">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="Uaw-Oy-Tfo" id="lGl-eA-E39"/>
-                                    <outlet property="delegate" destination="Uaw-Oy-Tfo" id="3iG-9g-3nF"/>
+                                    <segue destination="jtw-ey-lVs" kind="embed" id="SQg-LS-jNu"/>
                                 </connections>
-                            </tableView>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="Cp6-G3-fLT"/>
-                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="R7r-z9-RzQ"/>
-                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" type="default" id="XN7-oK-WdD"/>
-                            <constraint firstItem="Qh9-3a-9oX" firstAttribute="bottom" secondItem="vsl-uA-LT4" secondAttribute="bottom" type="default" id="v85-pr-twg"/>
+                            <constraint firstItem="Cvq-Vt-iFe" firstAttribute="bottom" secondItem="vsl-uA-LT4" secondAttribute="bottom" type="default" id="2Yo-GH-A2a"/>
+                            <constraint firstItem="Cvq-Vt-iFe" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="8P6-7W-dm0"/>
+                            <constraint firstItem="Cvq-Vt-iFe" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" type="default" id="CM1-gq-Xlq"/>
+                            <constraint firstItem="Cvq-Vt-iFe" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="c6h-Tb-Hvm"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HWY-xZ-KXb">
@@ -55,13 +43,39 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="tableView" destination="Qh9-3a-9oX" id="XYl-Ga-bqt"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75I-wG-s7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1397" y="-998"/>
+        </scene>
+        <!--News Feed Table View Controller-->
+        <scene sceneID="0SH-7e-wbe">
+            <objects>
+                <tableViewController id="jtw-ey-lVs" customClass="HMNewsFeedTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="RIC-Ih-gGK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="EKB-Ak-9T7">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jtw-ey-lVs" id="wSV-wq-eWG"/>
+                            <outlet property="delegate" destination="jtw-ey-lVs" id="d75-Sj-8F9"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Au7-3t-G89" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1847" y="-998"/>
         </scene>
         <!--Twitter View Controller-->
         <scene sceneID="y0O-N2-pN8">
@@ -496,6 +510,9 @@
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPH-Vj-ZLl">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="I8A-sJ-me8" id="wCz-YV-Tqz"/>
+                                </connections>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -697,6 +714,20 @@
             </objects>
             <point key="canvasLocation" x="-301" y="-992"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="GVY-Kq-wYv">
+            <objects>
+                <viewController id="wEV-6m-Dxa" sceneMemberID="viewController">
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="ifI-dq-rWJ">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gI-i2-Se8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
     </scenes>
     <resources>
         <image name="EmailButton.png" width="250" height="40"/>
@@ -723,11 +754,11 @@
                 <relationship kind="outlet" name="moreWebBrowser" candidateClass="UIWebView"/>
             </relationships>
         </class>
+        <class className="HMNewsFeedTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedTableViewController.h"/>
+        </class>
         <class className="HMNewsFeedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
         </class>
         <class className="HMSocialViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialViewController.h"/>
