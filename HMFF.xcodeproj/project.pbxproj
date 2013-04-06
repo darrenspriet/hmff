@@ -15,12 +15,12 @@
 		E00231631704BDDF00C78F1A /* TwitterBird.png in Resources */ = {isa = PBXBuildFile; fileRef = E00231611704BDDF00C78F1A /* TwitterBird.png */; };
 		E00231681704DD1900C78F1A /* HMTwitterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00231671704DD1900C78F1A /* HMTwitterTableViewController.m */; };
 		E006ED57170B1B960062CA5F /* HMTwitterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E006ED56170B1B960062CA5F /* HMTwitterDetailViewController.m */; };
+		E00E0A0A170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */; };
 		E0139AD217023288000AE5B7 /* HMFFlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD117023288000AE5B7 /* HMFFlogo.png */; };
 		E0139AD8170238CD000AE5B7 /* HMFFlogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */; };
 		E0139AE417024018000AE5B7 /* HMFFIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE317024018000AE5B7 /* HMFFIcon57.png */; };
 		E0139AE61702401C000AE5B7 /* HMFFIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE51702401C000AE5B7 /* HMFFIcon114.png */; };
 		E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */; };
-		E01FDA0E170E1E43007FC32D /* HMMoreWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E01FDA0D170E1E43007FC32D /* HMMoreWebBrowserViewController.m */; };
 		E03C065F16FBE667002AC531 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C065E16FBE667002AC531 /* UIKit.framework */; };
 		E03C066116FBE667002AC531 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C066016FBE667002AC531 /* Foundation.framework */; };
 		E03C066316FBE667002AC531 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C066216FBE667002AC531 /* CoreGraphics.framework */; };
@@ -76,14 +76,14 @@
 		E00231671704DD1900C78F1A /* HMTwitterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTwitterTableViewController.m; sourceTree = "<group>"; };
 		E006ED55170B1B960062CA5F /* HMTwitterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTwitterDetailViewController.h; sourceTree = "<group>"; };
 		E006ED56170B1B960062CA5F /* HMTwitterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTwitterDetailViewController.m; sourceTree = "<group>"; };
+		E00E0A08170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreWebBrowserViewController.h; sourceTree = "<group>"; };
+		E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreWebBrowserViewController.m; sourceTree = "<group>"; };
 		E0139AD117023288000AE5B7 /* HMFFlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFlogo.png; sourceTree = "<group>"; };
 		E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo@2x.png"; sourceTree = "<group>"; };
 		E0139AE317024018000AE5B7 /* HMFFIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFIcon57.png; sourceTree = "<group>"; };
 		E0139AE51702401C000AE5B7 /* HMFFIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFIcon114.png; sourceTree = "<group>"; };
 		E0139AE7170240C9000AE5B7 /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
 		E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTabBarViewController.m; sourceTree = "<group>"; };
-		E01FDA0C170E1E43007FC32D /* HMMoreWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HMMoreWebBrowserViewController.h; path = ../../HMMoreWebBrowserViewController.h; sourceTree = "<group>"; };
-		E01FDA0D170E1E43007FC32D /* HMMoreWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HMMoreWebBrowserViewController.m; path = ../../HMMoreWebBrowserViewController.m; sourceTree = "<group>"; };
 		E03C065B16FBE667002AC531 /* HMFF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMFF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03C065E16FBE667002AC531 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E03C066016FBE667002AC531 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -294,8 +294,8 @@
 				E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */,
 				E0FADB3C170DFB310006C833 /* HMMoreTableViewController.h */,
 				E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */,
-				E01FDA0C170E1E43007FC32D /* HMMoreWebBrowserViewController.h */,
-				E01FDA0D170E1E43007FC32D /* HMMoreWebBrowserViewController.m */,
+				E00E0A08170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.h */,
+				E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -469,7 +469,7 @@
 				E006ED57170B1B960062CA5F /* HMTwitterDetailViewController.m in Sources */,
 				E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */,
 				E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */,
-				E01FDA0E170E1E43007FC32D /* HMMoreWebBrowserViewController.m in Sources */,
+				E00E0A0A170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
