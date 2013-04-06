@@ -22,6 +22,7 @@
 //    [self.window makeKeyAndVisible];
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    
     return YES;
 }
 

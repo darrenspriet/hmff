@@ -27,6 +27,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     array = [[NSMutableArray alloc]init];
     
     //This was in the Action in the Previous project

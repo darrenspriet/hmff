@@ -16,8 +16,6 @@
 		E00231681704DD1900C78F1A /* HMTwitterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00231671704DD1900C78F1A /* HMTwitterTableViewController.m */; };
 		E006ED57170B1B960062CA5F /* HMTwitterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E006ED56170B1B960062CA5F /* HMTwitterDetailViewController.m */; };
 		E00E0A0A170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */; };
-		E0139AD217023288000AE5B7 /* HMFFlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD117023288000AE5B7 /* HMFFlogo.png */; };
-		E0139AD8170238CD000AE5B7 /* HMFFlogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */; };
 		E0139AE417024018000AE5B7 /* HMFFIcon57.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE317024018000AE5B7 /* HMFFIcon57.png */; };
 		E0139AE61702401C000AE5B7 /* HMFFIcon114.png in Resources */ = {isa = PBXBuildFile; fileRef = E0139AE51702401C000AE5B7 /* HMFFIcon114.png */; };
 		E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */; };
@@ -53,6 +51,10 @@
 		E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */; };
 		E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F1D2A7170C72280045983F /* HMTweetCell.m */; };
 		E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */; };
+		E0FB26CD170FD61A0038E3FE /* HMFFlogo2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */; };
+		E0FB26CF170FD6260038E3FE /* HMFFlogo2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CE170FD6260038E3FE /* HMFFlogo2.png */; };
+		E0FB26D5170FD6830038E3FE /* HMFFlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26D4170FD6830038E3FE /* HMFFlogo.png */; };
+		E0FB26D7170FD6B10038E3FE /* HMFFlogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26D6170FD6B10038E3FE /* HMFFlogo@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,8 +80,6 @@
 		E006ED56170B1B960062CA5F /* HMTwitterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTwitterDetailViewController.m; sourceTree = "<group>"; };
 		E00E0A08170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreWebBrowserViewController.h; sourceTree = "<group>"; };
 		E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreWebBrowserViewController.m; sourceTree = "<group>"; };
-		E0139AD117023288000AE5B7 /* HMFFlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFlogo.png; sourceTree = "<group>"; };
-		E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo@2x.png"; sourceTree = "<group>"; };
 		E0139AE317024018000AE5B7 /* HMFFIcon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFIcon57.png; sourceTree = "<group>"; };
 		E0139AE51702401C000AE5B7 /* HMFFIcon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFIcon114.png; sourceTree = "<group>"; };
 		E0139AE7170240C9000AE5B7 /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
@@ -128,6 +128,10 @@
 		E0F1D2A7170C72280045983F /* HMTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTweetCell.m; sourceTree = "<group>"; };
 		E0FADB3C170DFB310006C833 /* HMMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreTableViewController.h; sourceTree = "<group>"; };
 		E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreTableViewController.m; sourceTree = "<group>"; };
+		E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo2@2x.png"; sourceTree = "<group>"; };
+		E0FB26CE170FD6260038E3FE /* HMFFlogo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFlogo2.png; sourceTree = "<group>"; };
+		E0FB26D4170FD6830038E3FE /* HMFFlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFlogo.png; sourceTree = "<group>"; };
+		E0FB26D6170FD6B10038E3FE /* HMFFlogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +316,8 @@
 		E03C06A116FBE96F002AC531 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0FB26D6170FD6B10038E3FE /* HMFFlogo@2x.png */,
+				E0FB26D4170FD6830038E3FE /* HMFFlogo.png */,
 				E00231601704BDDF00C78F1A /* TwitterBird@2x.png */,
 				E00231611704BDDF00C78F1A /* TwitterBird.png */,
 				E00231581704BC3400C78F1A /* TwitterButton@2x.png */,
@@ -323,8 +329,8 @@
 				E0BC62331703723F00EFB287 /* EmailButtonSelected@2x.png */,
 				E0BC622E17036D7200EFB287 /* EmailButton@2x.png */,
 				E0BC622F17036D7200EFB287 /* EmailButton.png */,
-				E0139AD7170238CD000AE5B7 /* HMFFlogo@2x.png */,
-				E0139AD117023288000AE5B7 /* HMFFlogo.png */,
+				E0FB26CE170FD6260038E3FE /* HMFFlogo2.png */,
+				E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -406,8 +412,6 @@
 				E03C067516FBE667002AC531 /* Default@2x.png in Resources */,
 				E03C067716FBE667002AC531 /* Default-568h@2x.png in Resources */,
 				E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */,
-				E0139AD217023288000AE5B7 /* HMFFlogo.png in Resources */,
-				E0139AD8170238CD000AE5B7 /* HMFFlogo@2x.png in Resources */,
 				E0139AE417024018000AE5B7 /* HMFFIcon57.png in Resources */,
 				E0139AE61702401C000AE5B7 /* HMFFIcon114.png in Resources */,
 				E0BC623017036D7200EFB287 /* EmailButton@2x.png in Resources */,
@@ -421,6 +425,10 @@
 				E002315B1704BC3400C78F1A /* TwitterButton.png in Resources */,
 				E00231621704BDDF00C78F1A /* TwitterBird@2x.png in Resources */,
 				E00231631704BDDF00C78F1A /* TwitterBird.png in Resources */,
+				E0FB26CD170FD61A0038E3FE /* HMFFlogo2@2x.png in Resources */,
+				E0FB26CF170FD6260038E3FE /* HMFFlogo2.png in Resources */,
+				E0FB26D5170FD6830038E3FE /* HMFFlogo.png in Resources */,
+				E0FB26D7170FD6B10038E3FE /* HMFFlogo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

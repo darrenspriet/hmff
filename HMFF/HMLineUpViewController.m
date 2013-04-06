@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
 	// Do any additional setup after loading the view.
 }
 
