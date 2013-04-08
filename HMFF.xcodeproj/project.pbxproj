@@ -49,6 +49,9 @@
 		E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */; };
 		E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */; };
 		E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */; };
+		E0EDD7F317133323004BBB54 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD7F217133323004BBB54 /* backButton.png */; };
+		E0EDD7F5171333F9004BBB54 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD7F4171333F9004BBB54 /* backButton@2x.png */; };
+		E0EDD7FE17134DA7004BBB54 /* HMNewsFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */; };
 		E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F1D2A7170C72280045983F /* HMTweetCell.m */; };
 		E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */; };
 		E0FB26CD170FD61A0038E3FE /* HMFFlogo2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */; };
@@ -125,6 +128,10 @@
 		E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreViewController.m; sourceTree = "<group>"; };
 		E0D4E7C9170086A9002AC1E4 /* HMCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCoreDataHelper.h; sourceTree = "<group>"; };
 		E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCoreDataHelper.m; sourceTree = "<group>"; };
+		E0EDD7F217133323004BBB54 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
+		E0EDD7F4171333F9004BBB54 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
+		E0EDD7FC17134DA7004BBB54 /* HMNewsFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedDetailViewController.h; sourceTree = "<group>"; };
+		E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedDetailViewController.m; sourceTree = "<group>"; };
 		E0F1D2A6170C72280045983F /* HMTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTweetCell.h; sourceTree = "<group>"; };
 		E0F1D2A7170C72280045983F /* HMTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTweetCell.m; sourceTree = "<group>"; };
 		E0FADB3C170DFB310006C833 /* HMMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreTableViewController.h; sourceTree = "<group>"; };
@@ -268,6 +275,8 @@
 				E0CCA16E16FBEB39007BC613 /* HMNewsFeedViewController.m */,
 				E0FB26D81710BCE30038E3FE /* HMNewsFeedTableViewController.h */,
 				E0FB26D91710BCE30038E3FE /* HMNewsFeedTableViewController.m */,
+				E0EDD7FC17134DA7004BBB54 /* HMNewsFeedDetailViewController.h */,
+				E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */,
 			);
 			name = "News Feed";
 			sourceTree = "<group>";
@@ -321,6 +330,8 @@
 		E03C06A116FBE96F002AC531 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0EDD7F217133323004BBB54 /* backButton.png */,
+				E0EDD7F4171333F9004BBB54 /* backButton@2x.png */,
 				E0FB26D6170FD6B10038E3FE /* HMFFlogo@2x.png */,
 				E0FB26D4170FD6830038E3FE /* HMFFlogo.png */,
 				E00231601704BDDF00C78F1A /* TwitterBird@2x.png */,
@@ -434,6 +445,8 @@
 				E0FB26CF170FD6260038E3FE /* HMFFlogo2.png in Resources */,
 				E0FB26D5170FD6830038E3FE /* HMFFlogo.png in Resources */,
 				E0FB26D7170FD6B10038E3FE /* HMFFlogo@2x.png in Resources */,
+				E0EDD7F317133323004BBB54 /* backButton.png in Resources */,
+				E0EDD7F5171333F9004BBB54 /* backButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +497,7 @@
 				E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */,
 				E00E0A0A170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m in Sources */,
 				E0FB26DA1710BCE30038E3FE /* HMNewsFeedTableViewController.m in Sources */,
+				E0EDD7FE17134DA7004BBB54 /* HMNewsFeedDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,15 +8,7 @@
 
 #import "HMNewsFeedTableViewController.h"
 
-@interface HMNewsFeedTableViewController (){
-    NSMutableData *newsFeedData;
-    NSURLConnection *connection;
-    NSMutableArray *titleArray;
-    NSMutableArray *contentArray;
-    
-}
-
-@end
+@interface HMNewsFeedTableViewController ()@end
 
 @implementation HMNewsFeedTableViewController
 
@@ -33,16 +25,16 @@
 {
     [super viewDidLoad];
 
-    titleArray = [[NSMutableArray alloc]init];
-    contentArray = [[NSMutableArray alloc]init];
+    self.titleArray = [[NSMutableArray alloc]init];
+    self.contentArray = [[NSMutableArray alloc]init];
     
     
     //This was in the Action in the Previous project
-    NSURL *url =[NSURL URLWithString:@"http://www.hmff.com/?json=get_recent_posts&count=100"];
+    NSURL *url =[NSURL URLWithString:@"http://www.hmff.com/?json=get_recent_posts&count=1000"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    connection = [NSURLConnection connectionWithRequest:request delegate:self];
-    if(connection){
-        newsFeedData = [[NSMutableData alloc]init];
+    self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
+    if(self.connection){
+        self.newsFeedData = [[NSMutableData alloc]init];
     }
 }
 
@@ -61,7 +53,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of rows in the section.
-    return [titleArray count];
+    return [self.titleArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -71,19 +63,19 @@
     if(!cell){
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text =[titleArray objectAtIndex:indexPath.row];
+    cell.textLabel.text =[self.titleArray objectAtIndex:indexPath.row];
     return cell;
 }
 
 #pragma mark - NSURL Connections
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    [newsFeedData setLength:0];
+    [self.newsFeedData setLength:0];
     NSLog(@"Did Recieve a Response");
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-    [newsFeedData appendData:data];
+    [self.newsFeedData appendData:data];
     NSLog(@"Did Recieve Data");
 }
 
@@ -93,19 +85,19 @@
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-    NSDictionary *dataDictionary= [NSJSONSerialization JSONObjectWithData:newsFeedData options:0 error:nil];
+    NSDictionary *dataDictionary= [NSJSONSerialization JSONObjectWithData:self.newsFeedData options:0 error:nil];
     NSArray *title = [dataDictionary objectForKey:@"posts"];
     NSArray *content =[dataDictionary objectForKey:@"posts"];
     
     for(NSDictionary *diction in title){
         NSString  *title =[diction objectForKey:@"title"];
         NSLog(@"this is the title %@", title);
-        [titleArray addObject:title];
+        [self.titleArray addObject:title];
     }
     for(NSDictionary *diction in content){
         NSString  *content =[diction objectForKey:@"excerpt"];
         NSLog(@"this is the content %@", content);
-        [contentArray addObject:content];
+        [self.contentArray addObject:content];
     }
     
     [[self tableView] reloadData];
@@ -160,6 +152,18 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+#pragma mark - Prepare for Segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showNewsDetail"]) {
+        
+        NSInteger row = [[self tableView].indexPathForSelectedRow row];
+        NSDictionary *newsFeed =[[NSDictionary alloc]initWithObjectsAndKeys:[self.titleArray objectAtIndex:row],@"title", [self.contentArray objectAtIndex:row], @"content", nil];
+        HMNewsFeedDetailViewController *newsFeedDetailViewController = segue.destinationViewController;
+        newsFeedDetailViewController.detailItem = newsFeed;
+    }
 }
 
 @end

@@ -53,9 +53,6 @@
         }
         NSString *text = [tweet objectForKey:@"text"];
         
-        self.tweetLabel.lineBreakMode = UILineBreakModeWordWrap;
-        self.tweetLabel.numberOfLines = 0;
-        
         self.nameLabel.text = name;
         self.tweetLabel.text = text;
         

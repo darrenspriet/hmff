@@ -79,13 +79,17 @@
     //When the View is loaded it this container sets the delegats
     if ([segue.identifier isEqualToString:@"submitABand"]){
         webBrowser.passedURL=@"http://www.hmff.com/?page_id=403";
+        [webBrowser setTitle:@"Submit A Band"];
     }
     else if([segue.identifier isEqualToString:@"submitAVideo"]){
         webBrowser.passedURL=@"http://www.hmff.com/?page_id=407";
+        [webBrowser setTitle:@"Submit A Video"];
+
 
     }
     else if([segue.identifier isEqualToString:@"goToTheWebsite"]){
         webBrowser.passedURL=@"http://www.hmff.com";
+          [webBrowser setTitle:@"www.HMFF.com"];
 
     }
     
