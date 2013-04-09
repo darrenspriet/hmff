@@ -27,6 +27,7 @@
 
     self.titleArray = [[NSMutableArray alloc]init];
     self.contentArray = [[NSMutableArray alloc]init];
+    self.dateArray =[[NSMutableArray alloc]init];
     
     
     //This was in the Action in the Previous project
@@ -57,13 +58,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"newsCell";
+    HMNewsFeedCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+    NSString *date =  [self.dateArray objectAtIndex:indexPath.row];
+    NSArray *array = [date componentsSeparatedByString:@"-"];
+    NSString *month = [self getMonth:array];
+    
+    NSString *dateString = [NSString stringWithFormat:@"%@%@%@%@%@",month, @" ", [array objectAtIndex:1],@" ", [array  objectAtIndex:0]];
     
     if(!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[HMNewsFeedCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    cell.textLabel.text =[self.titleArray objectAtIndex:indexPath.row];
+    [cell.title setText:[self.titleArray objectAtIndex:indexPath.row]];
+    [cell.date setText:dateString];
     return cell;
 }
 
@@ -88,20 +96,29 @@
     NSDictionary *dataDictionary= [NSJSONSerialization JSONObjectWithData:self.newsFeedData options:0 error:nil];
     NSArray *title = [dataDictionary objectForKey:@"posts"];
     NSArray *content =[dataDictionary objectForKey:@"posts"];
+    NSArray *date =[dataDictionary objectForKey:@"posts"];
     
     for(NSDictionary *diction in title){
         NSString  *title =[diction objectForKey:@"title"];
         NSLog(@"this is the title %@", title);
         [self.titleArray addObject:title];
     }
+    for(NSDictionary *diction in date){
+        NSString  *date =[diction objectForKey:@"date"];
+        NSLog(@"this is the date %@", date);
+        [self.dateArray addObject:date];
+    }
     for(NSDictionary *diction in content){
         NSString  *content =[diction objectForKey:@"excerpt"];
         NSLog(@"this is the content %@", content);
         [self.contentArray addObject:content];
     }
+
     
     [[self tableView] reloadData];
 }
+
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -164,6 +181,44 @@
         HMNewsFeedDetailViewController *newsFeedDetailViewController = segue.destinationViewController;
         newsFeedDetailViewController.detailItem = newsFeed;
     }
+}
+-(NSString*)getMonth:(NSArray*)array{
+    if ([array[1] isEqualToString:@"01"]) {
+        return @"JAN";
+    }
+    else if ([array[1] isEqualToString:@"02"]) {
+        return @"FEB";
+    }
+    else if ([array[1] isEqualToString:@"03"]) {
+        return @"MAR";
+    }
+    else if ([array[1] isEqualToString:@"04"]) {
+        return @"APR";
+    }
+    else if ([array[1] isEqualToString:@"05"]) {
+        return @"MAY";
+    }
+    else if ([array[1] isEqualToString:@"06"]) {
+        return @"JUN";
+    }
+    else if ([array[1] isEqualToString:@"07"]) {
+        return @"JUL";
+    }
+    else if ([array[1] isEqualToString:@"08"]) {
+        return @"AUG";
+    }
+    else if ([array[1] isEqualToString:@"09"]) {
+        return @"SEP";
+    }
+    else if ([array[1] isEqualToString:@"10"]) {
+        return @"OCT";
+    }
+    else if ([array[1] isEqualToString:@"11"]) {
+        return @"NOV";
+    }
+    else  {
+        return @"DEC";
+    }   
 }
 
 @end

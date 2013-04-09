@@ -49,6 +49,10 @@
 		E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */; };
 		E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */; };
 		E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */; };
+		E0EB5EB2171447E900C444CE /* HMNewsFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */; };
+		E0EB5EB51714598500C444CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB31714596A00C444CE /* MessageUI.framework */; };
+		E0EB5EBA17145A7000C444CE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB617145A5C00C444CE /* Social.framework */; };
+		E0EB5EBB17145A7600C444CE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB817145A6300C444CE /* Accounts.framework */; };
 		E0EDD7F317133323004BBB54 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD7F217133323004BBB54 /* backButton.png */; };
 		E0EDD7F5171333F9004BBB54 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD7F4171333F9004BBB54 /* backButton@2x.png */; };
 		E0EDD7FE17134DA7004BBB54 /* HMNewsFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */; };
@@ -128,6 +132,11 @@
 		E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreViewController.m; sourceTree = "<group>"; };
 		E0D4E7C9170086A9002AC1E4 /* HMCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCoreDataHelper.h; sourceTree = "<group>"; };
 		E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCoreDataHelper.m; sourceTree = "<group>"; };
+		E0EB5EB0171447E900C444CE /* HMNewsFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedCell.h; sourceTree = "<group>"; };
+		E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedCell.m; sourceTree = "<group>"; };
+		E0EB5EB31714596A00C444CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E0EB5EB617145A5C00C444CE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		E0EB5EB817145A6300C444CE /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E0EDD7F217133323004BBB54 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
 		E0EDD7F4171333F9004BBB54 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
 		E0EDD7FC17134DA7004BBB54 /* HMNewsFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedDetailViewController.h; sourceTree = "<group>"; };
@@ -149,6 +158,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0EB5EBB17145A7600C444CE /* Accounts.framework in Frameworks */,
+				E0EB5EBA17145A7000C444CE /* Social.framework in Frameworks */,
+				E0EB5EB51714598500C444CE /* MessageUI.framework in Frameworks */,
 				E0A89A5B170521D60070F731 /* Twitter.framework in Frameworks */,
 				E03C065F16FBE667002AC531 /* UIKit.framework in Frameworks */,
 				E03C066116FBE667002AC531 /* Foundation.framework in Frameworks */,
@@ -195,6 +207,9 @@
 		E03C065D16FBE667002AC531 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0EB5EB817145A6300C444CE /* Accounts.framework */,
+				E0EB5EB617145A5C00C444CE /* Social.framework */,
+				E0EB5EB31714596A00C444CE /* MessageUI.framework */,
 				E0A89A591705219D0070F731 /* Twitter.framework */,
 				E03C065E16FBE667002AC531 /* UIKit.framework */,
 				E03C066016FBE667002AC531 /* Foundation.framework */,
@@ -277,6 +292,8 @@
 				E0FB26D91710BCE30038E3FE /* HMNewsFeedTableViewController.m */,
 				E0EDD7FC17134DA7004BBB54 /* HMNewsFeedDetailViewController.h */,
 				E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */,
+				E0EB5EB0171447E900C444CE /* HMNewsFeedCell.h */,
+				E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */,
 			);
 			name = "News Feed";
 			sourceTree = "<group>";
@@ -498,6 +515,7 @@
 				E00E0A0A170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m in Sources */,
 				E0FB26DA1710BCE30038E3FE /* HMNewsFeedTableViewController.m in Sources */,
 				E0EDD7FE17134DA7004BBB54 /* HMNewsFeedDetailViewController.m in Sources */,
+				E0EB5EB2171447E900C444CE /* HMNewsFeedCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

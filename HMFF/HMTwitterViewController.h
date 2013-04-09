@@ -7,9 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Social/Social.h>
+#import <Accounts/Accounts.h>
+
 
 @interface HMTwitterViewController : UIViewController
 
+- (IBAction)postTweet:(UIButton *)sender;
 
 @end
 

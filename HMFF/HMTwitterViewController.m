@@ -40,4 +40,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (IBAction)postTweet:(UIButton *)sender {
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+    {
+        SLComposeViewController *tweetSheet = [SLComposeViewController
+                                               composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [tweetSheet setInitialText:@"Great fun to learn iOS programming at appcoda.com!"];
+        [self presentViewController:tweetSheet animated:YES completion:nil];
+    }
+}
 @end
