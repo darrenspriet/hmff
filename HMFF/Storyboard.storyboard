@@ -378,8 +378,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcF-vd-EU2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="S0z-3c-DKK"/>
+                                    <constraint firstAttribute="height" constant="70" id="bz5-Nt-33o"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Facebook">
+                                <state key="normal" backgroundImage="FacebookImage.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -391,8 +395,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-dQ-SMX">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="1Yv-g3-ab8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="You Tube">
+                                <state key="normal" backgroundImage="YouTubeImage.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -404,8 +411,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Idt-eU-5IX">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="IhW-c6-YdE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Twitter">
+                                <state key="normal" backgroundImage="TwitterImage.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -418,7 +428,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2uB-kg-BUP">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Vimeo">
+                                <state key="normal" backgroundImage="VimeoImage.png">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -429,17 +439,41 @@
                                     <segue destination="zQw-le-wFB" kind="push" identifier="vimeoSegue" id="hKU-ea-e6i"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Lk-t6-gjJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="173" id="XV6-Qy-nbe"/>
+                                    <constraint firstAttribute="height" constant="70" id="tdG-gQ-1RM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" image="HMFFButtonImage.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zQw-le-wFB" kind="push" identifier="HMFFSegue" id="ayU-hk-aBq"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fcF-vd-EU2" firstAttribute="top" secondItem="ZVo-e5-d7X" secondAttribute="top" constant="76" id="3E6-0s-bir"/>
-                            <constraint firstItem="hSt-dQ-SMX" firstAttribute="baseline" secondItem="fcF-vd-EU2" secondAttribute="baseline" type="default" id="3sC-fc-Cas"/>
-                            <constraint firstItem="2uB-kg-BUP" firstAttribute="leading" secondItem="hSt-dQ-SMX" secondAttribute="leading" type="default" id="CCz-8u-F19"/>
-                            <constraint firstItem="Idt-eU-5IX" firstAttribute="top" secondItem="ZVo-e5-d7X" secondAttribute="top" constant="143" id="JDl-pz-rA6"/>
-                            <constraint firstItem="hSt-dQ-SMX" firstAttribute="leading" secondItem="fcF-vd-EU2" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="SEO-ai-JZE"/>
+                            <constraint firstItem="hSt-dQ-SMX" firstAttribute="bottom" secondItem="fcF-vd-EU2" secondAttribute="bottom" type="default" id="0Xc-tD-lLe"/>
+                            <constraint firstItem="Idt-eU-5IX" firstAttribute="bottom" secondItem="2uB-kg-BUP" secondAttribute="bottom" type="default" id="48x-ph-UIB"/>
+                            <constraint firstItem="fcF-vd-EU2" firstAttribute="top" secondItem="ZVo-e5-d7X" secondAttribute="top" constant="51" id="4Y0-HV-3N8"/>
+                            <constraint firstItem="Idt-eU-5IX" firstAttribute="top" secondItem="2uB-kg-BUP" secondAttribute="top" type="default" id="8VD-YN-2xl"/>
+                            <constraint firstItem="7Lk-t6-gjJ" firstAttribute="top" secondItem="ZVo-e5-d7X" secondAttribute="top" constant="211" id="PAO-D0-vHi"/>
+                            <constraint firstItem="7Lk-t6-gjJ" firstAttribute="centerX" secondItem="ZVo-e5-d7X" secondAttribute="centerX" type="default" id="PCs-eC-nci"/>
+                            <constraint firstItem="Idt-eU-5IX" firstAttribute="top" secondItem="ZVo-e5-d7X" secondAttribute="top" constant="131" id="SCI-O1-112"/>
                             <constraint firstItem="Idt-eU-5IX" firstAttribute="leading" secondItem="fcF-vd-EU2" secondAttribute="leading" type="default" id="XKg-t2-yve"/>
-                            <constraint firstItem="Idt-eU-5IX" firstAttribute="leading" secondItem="ZVo-e5-d7X" secondAttribute="leading" constant="65" id="ikB-Hz-PfB"/>
-                            <constraint firstItem="2uB-kg-BUP" firstAttribute="baseline" secondItem="Idt-eU-5IX" secondAttribute="baseline" type="default" id="xuu-cM-z3a"/>
+                            <constraint firstItem="hSt-dQ-SMX" firstAttribute="top" secondItem="fcF-vd-EU2" secondAttribute="top" type="default" id="aTM-rp-IQQ"/>
+                            <constraint firstItem="hSt-dQ-SMX" firstAttribute="leading" secondItem="2uB-kg-BUP" secondAttribute="leading" type="default" id="cnQ-8M-CHF"/>
+                            <constraint firstItem="7Lk-t6-gjJ" firstAttribute="trailing" secondItem="2uB-kg-BUP" secondAttribute="trailing" type="default" id="eKl-Ai-auw"/>
+                            <constraint firstItem="hSt-dQ-SMX" firstAttribute="trailing" secondItem="2uB-kg-BUP" secondAttribute="trailing" type="default" id="fPh-rK-kSR"/>
+                            <constraint firstItem="7Lk-t6-gjJ" firstAttribute="leading" secondItem="Idt-eU-5IX" secondAttribute="leading" type="default" id="hds-WD-Bp9"/>
+                            <constraint firstItem="Idt-eU-5IX" firstAttribute="trailing" secondItem="fcF-vd-EU2" secondAttribute="trailing" type="default" id="jOl-up-vlI"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HHb-Xy-CqW">
@@ -1046,20 +1080,115 @@
     <resources>
         <image name="EmailButton.png" width="250" height="40"/>
         <image name="EmailButtonSelected.png" width="249" height="40"/>
+        <image name="FacebookImage.png" width="70" height="70"/>
+        <image name="HMFFButtonImage.png" width="140" height="65"/>
         <image name="HMFFlogo.png" width="137" height="42"/>
         <image name="NoteIcon.png" width="90" height="90"/>
         <image name="TwitterBird.png" width="30" height="30"/>
         <image name="TwitterButton.png" width="518" height="104"/>
+        <image name="TwitterImage.png" width="70" height="70"/>
+        <image name="VimeoImage.png" width="70" height="70"/>
+        <image name="YouTubeImage.png" width="70" height="70"/>
         <image name="backButton.png" width="13" height="14"/>
         <image name="ticketButton.png" width="160" height="89"/>
     </resources>
+    <classes>
+        <class className="HMLineUpViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMLineUpViewController.h"/>
+        </class>
+        <class className="HMMoreTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreTableViewController.h"/>
+        </class>
+        <class className="HMMoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreViewController.h"/>
+        </class>
+        <class className="HMMoreWebBrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreWebBrowserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="content" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="newsTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedTableViewController.h"/>
+        </class>
+        <class className="HMNewsFeedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedViewController.h"/>
+        </class>
+        <class className="HMSocialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialViewController.h"/>
+        </class>
+        <class className="HMSocialWebBrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialWebBrowserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTabBarViewController.h"/>
+        </class>
+        <class className="HMTweetCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTweetCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tweet" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMTwitterDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tweetLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMTwitterTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterTableViewController.h"/>
+        </class>
+        <class className="HMTwitterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="postTweet:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="hKU-ea-e6i"/>
         <segue reference="XeU-mA-6aW"/>
+        <segue reference="mjR-NM-uON"/>
     </inferredMetricsTieBreakers>
 </document>

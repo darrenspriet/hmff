@@ -89,7 +89,7 @@
     }
     else if([segue.identifier isEqualToString:@"goToTheWebsite"]){
         webBrowser.passedURL=@"http://www.hmff.com";
-          [webBrowser setTitle:@"www.HMFF.com"];
+          [webBrowser setTitle:@"HMFF.com"];
 
     }
     

@@ -37,6 +37,9 @@
 		E03C068D16FBE667002AC531 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E03C068B16FBE667002AC531 /* InfoPlist.strings */; };
 		E03C069016FBE667002AC531 /* HMFFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E03C068F16FBE667002AC531 /* HMFFTests.m */; };
 		E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03C069916FBE6A4002AC531 /* Storyboard.storyboard */; };
+		E04B1109171604A6006A52EF /* TwitterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1107171604A6006A52EF /* TwitterImage.png */; };
+		E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1108171604A6006A52EF /* TwitterImage@2x.png */; };
+		E04B110E1716069A006A52EF /* HMFFButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B110D1716069A006A52EF /* HMFFButtonImage.png */; };
 		E0A89A581703DCF70070F731 /* NoteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A89A571703DCF70070F731 /* NoteIcon.png */; };
 		E0A89A5B170521D60070F731 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A89A591705219D0070F731 /* Twitter.framework */; };
 		E0BC623017036D7200EFB287 /* EmailButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC622E17036D7200EFB287 /* EmailButton@2x.png */; };
@@ -58,6 +61,12 @@
 		E0EDD7FE17134DA7004BBB54 /* HMNewsFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */; };
 		E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F1D2A7170C72280045983F /* HMTweetCell.m */; };
 		E0F453621715C85A000F97D0 /* HMSocialWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F453611715C85A000F97D0 /* HMSocialWebBrowserViewController.m */; };
+		E0F4538C1715D717000F97D0 /* FacebookImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F453881715D717000F97D0 /* FacebookImage.png */; };
+		E0F4538D1715D717000F97D0 /* VimeoImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F453891715D717000F97D0 /* VimeoImage@2x.png */; };
+		E0F4538E1715D717000F97D0 /* FacebookImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F4538A1715D717000F97D0 /* FacebookImage@2x.png */; };
+		E0F4538F1715D717000F97D0 /* VimeoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F4538B1715D717000F97D0 /* VimeoImage.png */; };
+		E0F4539A1715E0D4000F97D0 /* YouTubeImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F453981715E0D4000F97D0 /* YouTubeImage@2x.png */; };
+		E0F4539B1715E0D4000F97D0 /* YouTubeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F453991715E0D4000F97D0 /* YouTubeImage.png */; };
 		E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */; };
 		E0FB26CD170FD61A0038E3FE /* HMFFlogo2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */; };
 		E0FB26CF170FD6260038E3FE /* HMFFlogo2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CE170FD6260038E3FE /* HMFFlogo2.png */; };
@@ -115,6 +124,9 @@
 		E03C068E16FBE667002AC531 /* HMFFTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HMFFTests.h; sourceTree = "<group>"; };
 		E03C068F16FBE667002AC531 /* HMFFTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HMFFTests.m; sourceTree = "<group>"; };
 		E03C069916FBE6A4002AC531 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		E04B1107171604A6006A52EF /* TwitterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterImage.png; sourceTree = "<group>"; };
+		E04B1108171604A6006A52EF /* TwitterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterImage@2x.png"; sourceTree = "<group>"; };
+		E04B110D1716069A006A52EF /* HMFFButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFButtonImage.png; sourceTree = "<group>"; };
 		E0A89A571703DCF70070F731 /* NoteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoteIcon.png; sourceTree = "<group>"; };
 		E0A89A591705219D0070F731 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		E0BC622E17036D7200EFB287 /* EmailButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmailButton@2x.png"; sourceTree = "<group>"; };
@@ -146,6 +158,12 @@
 		E0F1D2A7170C72280045983F /* HMTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTweetCell.m; sourceTree = "<group>"; };
 		E0F453601715C85A000F97D0 /* HMSocialWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSocialWebBrowserViewController.h; sourceTree = "<group>"; };
 		E0F453611715C85A000F97D0 /* HMSocialWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSocialWebBrowserViewController.m; sourceTree = "<group>"; };
+		E0F453881715D717000F97D0 /* FacebookImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookImage.png; sourceTree = "<group>"; };
+		E0F453891715D717000F97D0 /* VimeoImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "VimeoImage@2x.png"; sourceTree = "<group>"; };
+		E0F4538A1715D717000F97D0 /* FacebookImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FacebookImage@2x.png"; sourceTree = "<group>"; };
+		E0F4538B1715D717000F97D0 /* VimeoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VimeoImage.png; sourceTree = "<group>"; };
+		E0F453981715E0D4000F97D0 /* YouTubeImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YouTubeImage@2x.png"; sourceTree = "<group>"; };
+		E0F453991715E0D4000F97D0 /* YouTubeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouTubeImage.png; sourceTree = "<group>"; };
 		E0FADB3C170DFB310006C833 /* HMMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreTableViewController.h; sourceTree = "<group>"; };
 		E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreTableViewController.m; sourceTree = "<group>"; };
 		E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo2@2x.png"; sourceTree = "<group>"; };
@@ -352,6 +370,14 @@
 		E03C06A116FBE96F002AC531 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				E04B1107171604A6006A52EF /* TwitterImage.png */,
+				E04B1108171604A6006A52EF /* TwitterImage@2x.png */,
+				E0F453991715E0D4000F97D0 /* YouTubeImage.png */,
+				E0F453981715E0D4000F97D0 /* YouTubeImage@2x.png */,
+				E0F453881715D717000F97D0 /* FacebookImage.png */,
+				E0F4538A1715D717000F97D0 /* FacebookImage@2x.png */,
+				E0F4538B1715D717000F97D0 /* VimeoImage.png */,
+				E0F453891715D717000F97D0 /* VimeoImage@2x.png */,
 				E0EDD7F217133323004BBB54 /* backButton.png */,
 				E0EDD7F4171333F9004BBB54 /* backButton@2x.png */,
 				E0FB26D6170FD6B10038E3FE /* HMFFlogo@2x.png */,
@@ -367,6 +393,7 @@
 				E0BC62331703723F00EFB287 /* EmailButtonSelected@2x.png */,
 				E0BC622E17036D7200EFB287 /* EmailButton@2x.png */,
 				E0BC622F17036D7200EFB287 /* EmailButton.png */,
+				E04B110D1716069A006A52EF /* HMFFButtonImage.png */,
 				E0FB26CE170FD6260038E3FE /* HMFFlogo2.png */,
 				E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */,
 			);
@@ -469,6 +496,15 @@
 				E0FB26D7170FD6B10038E3FE /* HMFFlogo@2x.png in Resources */,
 				E0EDD7F317133323004BBB54 /* backButton.png in Resources */,
 				E0EDD7F5171333F9004BBB54 /* backButton@2x.png in Resources */,
+				E0F4538C1715D717000F97D0 /* FacebookImage.png in Resources */,
+				E0F4538D1715D717000F97D0 /* VimeoImage@2x.png in Resources */,
+				E0F4538E1715D717000F97D0 /* FacebookImage@2x.png in Resources */,
+				E0F4538F1715D717000F97D0 /* VimeoImage.png in Resources */,
+				E0F4539A1715E0D4000F97D0 /* YouTubeImage@2x.png in Resources */,
+				E0F4539B1715E0D4000F97D0 /* YouTubeImage.png in Resources */,
+				E04B1109171604A6006A52EF /* TwitterImage.png in Resources */,
+				E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */,
+				E04B110E1716069A006A52EF /* HMFFButtonImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -57,7 +57,10 @@
         webBrowser.passedURL=@"http://vimeo.com/search?q=hmff";
         [webBrowser setTitle:@"vimeo.com/HMFF"];
     }
-        
+    else if ([segue.identifier isEqualToString:@"HMFFSegue"]){
+        webBrowser.passedURL=@"http://www.hmff.com";
+        [webBrowser setTitle:@"HMFF.com"];
+    }
 }
 
 @end
