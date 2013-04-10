@@ -37,4 +37,27 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma Prepare for Segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    HMSocialWebBrowserViewController *webBrowser = segue.destinationViewController;
+    //When the View is loaded it this container sets the delegats
+    if ([segue.identifier isEqualToString:@"facebookSegue"]){
+        webBrowser.passedURL=@"http://www.facebook.com/pages/Hmff/85087895652";
+        [webBrowser setTitle:@"facebook.com/HMFF"];
+    }
+    else if ([segue.identifier isEqualToString:@"youTubeSegue"]){
+        webBrowser.passedURL=@"http://www.youtube.com/user/HMFFESTIVAL?feature=watch";
+        [webBrowser setTitle:@"youTube.com/HMFFESTIVAL"];
+    }
+    else if ([segue.identifier isEqualToString:@"twitterSegue"]){
+        webBrowser.passedURL=@"http://twitter.com/HMFFEST";
+        [webBrowser setTitle:@"twitter.com/HMFFEST"];
+    }
+    else if ([segue.identifier isEqualToString:@"vimeoSegue"]){
+        webBrowser.passedURL=@"http://vimeo.com/search?q=hmff";
+        [webBrowser setTitle:@"vimeo.com/HMFF"];
+    }
+        
+}
+
 @end

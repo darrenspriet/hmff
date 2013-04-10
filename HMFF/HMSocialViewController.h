@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMSocialWebBrowserViewController.h"
 
 @interface HMSocialViewController : UIViewController
+
 
 @end

@@ -57,6 +57,7 @@
 		E0EDD7F5171333F9004BBB54 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD7F4171333F9004BBB54 /* backButton@2x.png */; };
 		E0EDD7FE17134DA7004BBB54 /* HMNewsFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */; };
 		E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F1D2A7170C72280045983F /* HMTweetCell.m */; };
+		E0F453621715C85A000F97D0 /* HMSocialWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F453611715C85A000F97D0 /* HMSocialWebBrowserViewController.m */; };
 		E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */; };
 		E0FB26CD170FD61A0038E3FE /* HMFFlogo2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */; };
 		E0FB26CF170FD6260038E3FE /* HMFFlogo2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CE170FD6260038E3FE /* HMFFlogo2.png */; };
@@ -143,6 +144,8 @@
 		E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedDetailViewController.m; sourceTree = "<group>"; };
 		E0F1D2A6170C72280045983F /* HMTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTweetCell.h; sourceTree = "<group>"; };
 		E0F1D2A7170C72280045983F /* HMTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTweetCell.m; sourceTree = "<group>"; };
+		E0F453601715C85A000F97D0 /* HMSocialWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSocialWebBrowserViewController.h; sourceTree = "<group>"; };
+		E0F453611715C85A000F97D0 /* HMSocialWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSocialWebBrowserViewController.m; sourceTree = "<group>"; };
 		E0FADB3C170DFB310006C833 /* HMMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreTableViewController.h; sourceTree = "<group>"; };
 		E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreTableViewController.m; sourceTree = "<group>"; };
 		E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo2@2x.png"; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 			children = (
 				E0CCA17316FBEB56007BC613 /* HMSocialViewController.h */,
 				E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */,
+				E0F453601715C85A000F97D0 /* HMSocialWebBrowserViewController.h */,
+				E0F453611715C85A000F97D0 /* HMSocialWebBrowserViewController.m */,
 			);
 			name = Social;
 			sourceTree = "<group>";
@@ -516,6 +521,7 @@
 				E0FB26DA1710BCE30038E3FE /* HMNewsFeedTableViewController.m in Sources */,
 				E0EDD7FE17134DA7004BBB54 /* HMNewsFeedDetailViewController.m in Sources */,
 				E0EB5EB2171447E900C444CE /* HMNewsFeedCell.m in Sources */,
+				E0F453621715C85A000F97D0 /* HMSocialWebBrowserViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
