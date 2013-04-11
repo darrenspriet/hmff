@@ -23,6 +23,22 @@
     return self;
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //this checks whether the internet is accessible and if it isn't, it will display a message
+    HMCheckInternetAccess *internetAccess = [[HMCheckInternetAccess alloc]init];
+    if ([internetAccess isInternetReachable]) {
+        NSLog(@"Internet is Working!");
+    }
+    else{
+        NSLog(@"Something wrong with the internet");
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This page requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
+        [alert show];
+    }
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

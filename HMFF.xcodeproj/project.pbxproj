@@ -67,6 +67,8 @@
 		E0F4538F1715D717000F97D0 /* VimeoImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F4538B1715D717000F97D0 /* VimeoImage.png */; };
 		E0F4539A1715E0D4000F97D0 /* YouTubeImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F453981715E0D4000F97D0 /* YouTubeImage@2x.png */; };
 		E0F4539B1715E0D4000F97D0 /* YouTubeImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F453991715E0D4000F97D0 /* YouTubeImage.png */; };
+		E0F89C6B171748B500BD5755 /* HMCheckInternetAccess.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F89C6A171748B500BD5755 /* HMCheckInternetAccess.m */; };
+		E0F89C6D171749C100BD5755 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F89C6C171749C100BD5755 /* SystemConfiguration.framework */; };
 		E0FADB3E170DFB320006C833 /* HMMoreTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */; };
 		E0FB26CD170FD61A0038E3FE /* HMFFlogo2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */; };
 		E0FB26CF170FD6260038E3FE /* HMFFlogo2.png in Resources */ = {isa = PBXBuildFile; fileRef = E0FB26CE170FD6260038E3FE /* HMFFlogo2.png */; };
@@ -164,6 +166,9 @@
 		E0F4538B1715D717000F97D0 /* VimeoImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = VimeoImage.png; sourceTree = "<group>"; };
 		E0F453981715E0D4000F97D0 /* YouTubeImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "YouTubeImage@2x.png"; sourceTree = "<group>"; };
 		E0F453991715E0D4000F97D0 /* YouTubeImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouTubeImage.png; sourceTree = "<group>"; };
+		E0F89C69171748B500BD5755 /* HMCheckInternetAccess.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCheckInternetAccess.h; sourceTree = "<group>"; };
+		E0F89C6A171748B500BD5755 /* HMCheckInternetAccess.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCheckInternetAccess.m; sourceTree = "<group>"; };
+		E0F89C6C171749C100BD5755 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E0FADB3C170DFB310006C833 /* HMMoreTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreTableViewController.h; sourceTree = "<group>"; };
 		E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreTableViewController.m; sourceTree = "<group>"; };
 		E0FB26CC170FD61A0038E3FE /* HMFFlogo2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HMFFlogo2@2x.png"; sourceTree = "<group>"; };
@@ -179,6 +184,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0F89C6D171749C100BD5755 /* SystemConfiguration.framework in Frameworks */,
 				E0EB5EBB17145A7600C444CE /* Accounts.framework in Frameworks */,
 				E0EB5EBA17145A7000C444CE /* Social.framework in Frameworks */,
 				E0EB5EB51714598500C444CE /* MessageUI.framework in Frameworks */,
@@ -207,6 +213,7 @@
 		E03C065216FBE667002AC531 = {
 			isa = PBXGroup;
 			children = (
+				E0F89C6C171749C100BD5755 /* SystemConfiguration.framework */,
 				E0139AE51702401C000AE5B7 /* HMFFIcon114.png */,
 				E0139AE317024018000AE5B7 /* HMFFIcon57.png */,
 				E03C066616FBE667002AC531 /* HMFF */,
@@ -259,6 +266,8 @@
 		E03C066716FBE667002AC531 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E0F89C69171748B500BD5755 /* HMCheckInternetAccess.h */,
+				E0F89C6A171748B500BD5755 /* HMCheckInternetAccess.m */,
 				E0139AE7170240C9000AE5B7 /* HMTabBarViewController.h */,
 				E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */,
 				E03C069916FBE6A4002AC531 /* Storyboard.storyboard */,
@@ -558,6 +567,7 @@
 				E0EDD7FE17134DA7004BBB54 /* HMNewsFeedDetailViewController.m in Sources */,
 				E0EB5EB2171447E900C444CE /* HMNewsFeedCell.m in Sources */,
 				E0F453621715C85A000F97D0 /* HMSocialWebBrowserViewController.m in Sources */,
+				E0F89C6B171748B500BD5755 /* HMCheckInternetAccess.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

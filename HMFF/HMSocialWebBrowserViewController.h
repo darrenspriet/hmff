@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMCheckInternetAccess.h"
+
 
 @interface HMSocialWebBrowserViewController : UIViewController
 
