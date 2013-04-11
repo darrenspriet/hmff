@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMLineUpViewController.h"
+
 
 @interface HMTabBarViewController : UITabBarController <UITabBarControllerDelegate>
 

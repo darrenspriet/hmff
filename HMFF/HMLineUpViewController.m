@@ -25,6 +25,13 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [self.scrollView setContentSize:CGSizeMake(640, self.scrollView.frame.size.height)];
+    [self dataForTables];
+    self.tableViewOne.rowHeight = 44;
+    self.tableViewTwo.rowHeight = 60;
+    [self.tableViewOne reloadData];
+    [self.tableViewTwo reloadData];
+    NSLog(@"view did appear");
+
 }
 
 
@@ -36,11 +43,9 @@
 
 
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     [self dataForTables];
-    
     self.tableViewOne.rowHeight = 44;
     self.tableViewTwo.rowHeight = 60;
     
@@ -67,16 +72,8 @@
     }
     return 0;
 }
-//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-//    
-//    if (tableView.tag == 100) {
-//        return [NSString stringWithFormat:@"%@ %d", @"Plain", section];
-//    }
-//    if (tableView.tag == 101) {
-//        return [NSString stringWithFormat:@"%@ %d", @"Group", section];
-//    }
-//    return nil;
-//}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if (tableView.tag == 100) {
@@ -89,7 +86,7 @@
 
         }
         cell.textLabel.text = [self.tableOneArray objectAtIndex:indexPath.row];
-
+        NSLog(@"type 1 made with index.row %ld", (long)indexPath.row);
         return cell;
     }
     
@@ -103,11 +100,24 @@
         }
         cell.textLabel.text = [self.tableTwoArray objectAtIndex:indexPath.row];
         cell.detailTextLabel.text = [self.tableOneArray objectAtIndex:indexPath.row];
+        NSLog(@"type 2 made with index.row %ld", (long)indexPath.row);
+
         return cell;
     }
     
     return nil;
 }
+
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+//
+//    if (tableView.tag == 100) {
+//        return [NSString stringWithFormat:@"%@ %d", @"Plain", section];
+//    }
+//    if (tableView.tag == 101) {
+//        return [NSString stringWithFormat:@"%@ %d", @"Group", section];
+//    }
+//    return nil;
+//}
 
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //    

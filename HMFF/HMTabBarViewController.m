@@ -23,6 +23,7 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -37,6 +38,7 @@
 }
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    
    
     if (viewController == [self.viewControllers objectAtIndex:0]){
         NSLog(@"Line Up Tab");
