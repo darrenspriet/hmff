@@ -47,7 +47,7 @@
     {
         SLComposeViewController *tweetSheet = [SLComposeViewController
                                                composeViewControllerForServiceType:SLServiceTypeTwitter];
-        [tweetSheet setInitialText:@"Great fun to learn iOS programming at appcoda.com!"];
+        [tweetSheet setInitialText:@"@HMFFEST"];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
 }

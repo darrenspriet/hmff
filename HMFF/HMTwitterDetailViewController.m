@@ -53,7 +53,7 @@
         }
         NSString *text = [tweet objectForKey:@"text"];
         
-        self.nameLabel.text = name;
+        [self.nameLabel setText:[NSString stringWithFormat:@"by %@", name]];
         self.tweetLabel.text = text;
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{

@@ -47,7 +47,7 @@
     }
     else if ([segue.identifier isEqualToString:@"youTubeSegue"]){
         webBrowser.passedURL=@"http://www.youtube.com/user/HMFFESTIVAL?feature=watch";
-        [webBrowser setTitle:@"youTube.com/HMFFESTIVAL"];
+        [webBrowser setTitle:@"youTube.com/HMFF"];
     }
     else if ([segue.identifier isEqualToString:@"twitterSegue"]){
         webBrowser.passedURL=@"http://twitter.com/HMFFEST";
