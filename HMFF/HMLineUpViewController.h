@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMLineUpViewController : UIViewController
+@interface HMLineUpViewController : UIViewController <UIScrollViewDelegate>
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewOne;
+@property (weak, nonatomic) IBOutlet UITableView *tableViewTwo;
 
+
+@property (nonatomic, retain) NSArray *tableOneArray;
+@property (nonatomic, retain) NSArray *tableTwoArray;
 @end

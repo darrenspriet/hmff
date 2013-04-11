@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="75I-wG-s7c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1397" y="-998"/>
+            <point key="canvasLocation" x="1321" y="-614"/>
         </scene>
         <!--News Feed Table View Controller-->
         <scene sceneID="0SH-7e-wbe">
@@ -106,7 +106,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Au7-3t-G89" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1847" y="-998"/>
+            <point key="canvasLocation" x="1771" y="-614"/>
         </scene>
         <!--News Feed Detail View Controller-->
         <scene sceneID="yMO-qa-uBj">
@@ -151,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZQ-Fu-P9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2257" y="-1015"/>
+            <point key="canvasLocation" x="2181" y="-631"/>
         </scene>
         <!--Twitter View Controller-->
         <scene sceneID="y0O-N2-pN8">
@@ -232,7 +232,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8k-Ww-d2B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1275" y="19"/>
+            <point key="canvasLocation" x="1331" y="147"/>
         </scene>
         <!--Twitter Table View Controller-->
         <scene sceneID="n65-SJ-KQD">
@@ -313,7 +313,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yyO-X6-rWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1769" y="60"/>
+            <point key="canvasLocation" x="1825" y="188"/>
         </scene>
         <!--Twitter Detail View Controller-->
         <scene sceneID="Zqj-B9-QRB">
@@ -364,7 +364,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rok-67-xCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2247" y="19"/>
+            <point key="canvasLocation" x="2303" y="147"/>
         </scene>
         <!--Social View Controller-->
         <scene sceneID="ma6-yu-EU5">
@@ -496,7 +496,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGr-2z-2NL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1993" y="746"/>
+            <point key="canvasLocation" x="1313" y="914"/>
         </scene>
         <!--Line Up View Controller-->
         <scene sceneID="yRD-Vc-tFs">
@@ -513,33 +513,62 @@
                                             <constraint firstAttribute="width" constant="200" id="dc8-jJ-5eH"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ena-CJ-bYc" firstAttribute="centerX" secondItem="n9G-iE-AFI" secondAttribute="centerX" type="default" id="C5r-fM-cN7"/>
+                                    <constraint firstAttribute="height" constant="44" type="user" id="GHq-an-VBR"/>
                                     <constraint firstItem="ena-CJ-bYc" firstAttribute="top" secondItem="n9G-iE-AFI" secondAttribute="top" constant="11" id="q9Y-hL-LJk"/>
                                 </constraints>
                             </view>
-                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lyk-aj-dol">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-8Z-jHa">
+                                <subviews>
+                                    <tableView clipsSubviews="YES" tag="100" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JYM-3K-Enz">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="3ub-qd-Ghb" id="tC5-uo-RiW"/>
+                                            <outlet property="delegate" destination="3ub-qd-Ghb" id="2Kl-sv-gcf"/>
+                                        </connections>
+                                    </tableView>
+                                    <tableView clipsSubviews="YES" tag="101" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Mv5-Fm-ycN">
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="xGH-2J-Flr"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="3ub-qd-Ghb" id="nOV-mb-hRx"/>
+                                            <outlet property="delegate" destination="3ub-qd-Ghb" id="5bd-kT-kuY"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JYM-3K-Enz" firstAttribute="leading" secondItem="HDv-8Z-jHa" secondAttribute="leading" type="default" id="1QX-cm-452"/>
+                                    <constraint firstItem="Mv5-Fm-ycN" firstAttribute="centerY" secondItem="HDv-8Z-jHa" secondAttribute="centerY" type="default" id="8OI-pp-PRk"/>
+                                    <constraint firstItem="JYM-3K-Enz" firstAttribute="trailing" secondItem="HDv-8Z-jHa" secondAttribute="trailing" type="default" id="8Pv-SF-sRx"/>
+                                    <constraint firstItem="Mv5-Fm-ycN" firstAttribute="bottom" secondItem="HDv-8Z-jHa" secondAttribute="bottom" type="default" id="Ue8-mf-fXE"/>
+                                    <constraint firstItem="JYM-3K-Enz" firstAttribute="bottom" secondItem="HDv-8Z-jHa" secondAttribute="bottom" type="default" id="ZvO-dI-D37"/>
+                                    <constraint firstItem="Mv5-Fm-ycN" firstAttribute="leading" secondItem="HDv-8Z-jHa" secondAttribute="leading" constant="320" id="ah7-5S-N72"/>
+                                    <constraint firstItem="JYM-3K-Enz" firstAttribute="top" secondItem="HDv-8Z-jHa" secondAttribute="top" type="default" id="gxo-AR-bpf"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mv5-Fm-ycN" secondAttribute="trailing" constant="-320" id="la9-ma-896"/>
+                                    <constraint firstItem="Mv5-Fm-ycN" firstAttribute="top" secondItem="HDv-8Z-jHa" secondAttribute="top" type="default" id="ora-er-R21"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="cbT-Pn-vpK" kind="embed" id="Cb1-v4-Nek"/>
+                                    <outlet property="delegate" destination="PBr-NZ-V73" id="Rhy-tt-aIu"/>
                                 </connections>
-                            </containerView>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HDv-8Z-jHa" firstAttribute="top" secondItem="PBr-NZ-V73" secondAttribute="top" constant="43" id="6TU-qh-mxc"/>
                             <constraint firstItem="n9G-iE-AFI" firstAttribute="leading" secondItem="PBr-NZ-V73" secondAttribute="leading" type="default" id="7ia-rG-Oy7"/>
-                            <constraint firstItem="Lyk-aj-dol" firstAttribute="leading" secondItem="PBr-NZ-V73" secondAttribute="leading" type="default" id="PKk-61-uRQ"/>
-                            <constraint firstItem="Lyk-aj-dol" firstAttribute="top" secondItem="n9G-iE-AFI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="f6l-bV-5Rg"/>
-                            <constraint firstItem="n9G-iE-AFI" firstAttribute="top" secondItem="PBr-NZ-V73" secondAttribute="top" type="default" id="g3V-sf-Abe"/>
-                            <constraint firstItem="Lyk-aj-dol" firstAttribute="bottom" secondItem="PBr-NZ-V73" secondAttribute="bottom" type="default" id="let-1s-tSe"/>
+                            <constraint firstItem="HDv-8Z-jHa" firstAttribute="trailing" secondItem="PBr-NZ-V73" secondAttribute="trailing" type="default" id="K9D-A7-73m"/>
+                            <constraint firstItem="HDv-8Z-jHa" firstAttribute="bottom" secondItem="PBr-NZ-V73" secondAttribute="bottom" type="default" id="Lfh-e2-ngK"/>
+                            <constraint firstItem="n9G-iE-AFI" firstAttribute="top" secondItem="PBr-NZ-V73" secondAttribute="top" type="user" id="g3V-sf-Abe"/>
+                            <constraint firstItem="HDv-8Z-jHa" firstAttribute="leading" secondItem="PBr-NZ-V73" secondAttribute="leading" type="default" id="gFb-zi-3Un"/>
                             <constraint firstItem="n9G-iE-AFI" firstAttribute="trailing" secondItem="PBr-NZ-V73" secondAttribute="trailing" type="default" id="lj8-m9-epr"/>
-                            <constraint firstItem="Lyk-aj-dol" firstAttribute="trailing" secondItem="PBr-NZ-V73" secondAttribute="trailing" type="default" id="n0K-fY-L1Y"/>
-                            <constraint firstItem="Lyk-aj-dol" firstAttribute="top" secondItem="PBr-NZ-V73" secondAttribute="top" constant="52" id="yLf-JL-osU"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UbN-dn-Rw1">
@@ -559,39 +588,15 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="scrollView" destination="HDv-8Z-jHa" id="gij-ch-aQl"/>
+                        <outlet property="tableViewOne" destination="JYM-3K-Enz" id="G0A-0a-6kQ"/>
+                        <outlet property="tableViewTwo" destination="Mv5-Fm-ycN" id="HeW-Ej-ma8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="89t-j6-md7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="261" y="-1512"/>
-        </scene>
-        <!--Table View Controller-->
-        <scene sceneID="ySd-e6-FUt">
-            <objects>
-                <tableViewController id="cbT-Pn-vpK" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ipD-QV-wwJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="403"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="xXb-oT-LKz">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="cbT-Pn-vpK" id="nY2-ht-Ikc"/>
-                            <outlet property="delegate" destination="cbT-Pn-vpK" id="Q8k-n3-V3D"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S4M-ff-3ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="778" y="-1570"/>
+            <point key="canvasLocation" x="1373" y="-1416"/>
         </scene>
         <!--More View Controller-->
         <scene sceneID="e2A-zW-fBE">
@@ -661,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h2z-MI-1Rd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="74" y="898"/>
+            <point key="canvasLocation" x="1290" y="1642"/>
         </scene>
         <!--More Table View Controller-->
         <scene sceneID="45H-a0-sGV">
@@ -741,7 +746,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQT-G9-dII" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="928"/>
+            <point key="canvasLocation" x="1814" y="1672"/>
         </scene>
         <!--More Web Browser View Controller-->
         <scene sceneID="Gs6-MY-dbV">
@@ -817,7 +822,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARw-Hu-Yag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1000" y="1002"/>
+            <point key="canvasLocation" x="2216" y="1746"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="2GC-w8-A2E">
@@ -863,7 +868,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HBJ-gP-O0R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-421" y="898"/>
+            <point key="canvasLocation" x="795" y="1642"/>
         </scene>
         <!--Navigation Controller - Twitter-->
         <scene sceneID="nM2-LC-Az7">
@@ -884,7 +889,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1M-Xa-T0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="749" y="19"/>
+            <point key="canvasLocation" x="805" y="147"/>
         </scene>
         <!--Navigation Controller - Social-->
         <scene sceneID="84s-5P-3Ae">
@@ -905,7 +910,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0eb-Le-qkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1485" y="730"/>
+            <point key="canvasLocation" x="805" y="898"/>
         </scene>
         <!--Navigation Controller - News-->
         <scene sceneID="fRZ-4Y-Whk">
@@ -926,7 +931,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hDJ-IV-O5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871" y="-998"/>
+            <point key="canvasLocation" x="795" y="-614"/>
         </scene>
         <!--Navigation Controller - Schedule-->
         <scene sceneID="Hp5-OD-U0p">
@@ -997,7 +1002,7 @@
                     </button>
                 </barButtonItem>
             </objects>
-            <point key="canvasLocation" x="-265" y="-1512"/>
+            <point key="canvasLocation" x="847" y="-1416"/>
         </scene>
         <!--Social Web Browser View Controller-->
         <scene sceneID="D5O-gt-5rp">
@@ -1072,7 +1077,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pYe-oD-70P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2471" y="746"/>
+            <point key="canvasLocation" x="1791" y="914"/>
         </scene>
     </scenes>
     <resources>
@@ -1093,6 +1098,11 @@
     <classes>
         <class className="HMLineUpViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMLineUpViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
+                <relationship kind="outlet" name="tableViewOne" candidateClass="UITableView"/>
+                <relationship kind="outlet" name="tableViewTwo" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="HMMoreTableViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreTableViewController.h"/>
@@ -1186,7 +1196,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="hKU-ea-e6i"/>
         <segue reference="XeU-mA-6aW"/>
-        <segue reference="mjR-NM-uON"/>
     </inferredMetricsTieBreakers>
 </document>
