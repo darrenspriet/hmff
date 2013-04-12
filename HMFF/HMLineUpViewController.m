@@ -34,7 +34,7 @@
 //    [self dataForTables];
 
 //    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
-
+    NSLog(@"called");
     UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:nil];

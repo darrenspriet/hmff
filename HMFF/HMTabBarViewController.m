@@ -40,6 +40,10 @@
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     
     if (viewController == [self.viewControllers objectAtIndex:0]){
+        
+
+
+        
 //        HMLineUpViewController *linup =(HMLineUpViewController*)[[self.viewControllers objectAtIndex:0]topViewController];
 //        [linup.scrollView setContentOffset:CGPointZero];
 ////        [linup.scrollView scrollRectToVisible:CGRectMake(-320, 0, linup.tableViewOne.frame.size.width, linup.tableViewOne.frame.size.height) animated:YES];

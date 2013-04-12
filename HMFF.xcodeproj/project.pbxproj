@@ -43,6 +43,8 @@
 		E09FCFC8171851A400DFD7C9 /* HMLineUpScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFC7171851A400DFD7C9 /* HMLineUpScrollViewController.m */; };
 		E09FCFCB171851CF00DFD7C9 /* HMFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFCA171851CF00DFD7C9 /* HMFirstTableViewController.m */; };
 		E09FCFCE171851DC00DFD7C9 /* HMSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFCD171851DC00DFD7C9 /* HMSecondTableViewController.m */; };
+		E09FCFD2171896A500DFD7C9 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09FCFD1171896A500DFD7C9 /* Schedule.storyboard */; };
+		E09FCFD51718979900DFD7C9 /* HMScheduleNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFD41718979900DFD7C9 /* HMScheduleNavigationViewController.m */; };
 		E0A89A581703DCF70070F731 /* NoteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A89A571703DCF70070F731 /* NoteIcon.png */; };
 		E0A89A5B170521D60070F731 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A89A591705219D0070F731 /* Twitter.framework */; };
 		E0BC623017036D7200EFB287 /* EmailButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC622E17036D7200EFB287 /* EmailButton@2x.png */; };
@@ -138,6 +140,9 @@
 		E09FCFCA171851CF00DFD7C9 /* HMFirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFirstTableViewController.m; sourceTree = "<group>"; };
 		E09FCFCC171851DC00DFD7C9 /* HMSecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSecondTableViewController.h; sourceTree = "<group>"; };
 		E09FCFCD171851DC00DFD7C9 /* HMSecondTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSecondTableViewController.m; sourceTree = "<group>"; };
+		E09FCFD1171896A500DFD7C9 /* Schedule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
+		E09FCFD31718979900DFD7C9 /* HMScheduleNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScheduleNavigationViewController.h; sourceTree = "<group>"; };
+		E09FCFD41718979900DFD7C9 /* HMScheduleNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScheduleNavigationViewController.m; sourceTree = "<group>"; };
 		E0A89A571703DCF70070F731 /* NoteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoteIcon.png; sourceTree = "<group>"; };
 		E0A89A591705219D0070F731 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		E0BC622E17036D7200EFB287 /* EmailButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmailButton@2x.png"; sourceTree = "<group>"; };
@@ -279,6 +284,7 @@
 				E0F89C6A171748B500BD5755 /* HMCheckInternetAccess.m */,
 				E0139AE7170240C9000AE5B7 /* HMTabBarViewController.h */,
 				E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */,
+				E09FCFD1171896A500DFD7C9 /* Schedule.storyboard */,
 				E03C069916FBE6A4002AC531 /* Storyboard.storyboard */,
 				E03C067816FBE667002AC531 /* HMFF.xcdatamodeld */,
 				E03C066F16FBE667002AC531 /* HMAppDelegate.h */,
@@ -324,6 +330,8 @@
 				E09FCFCA171851CF00DFD7C9 /* HMFirstTableViewController.m */,
 				E09FCFCC171851DC00DFD7C9 /* HMSecondTableViewController.h */,
 				E09FCFCD171851DC00DFD7C9 /* HMSecondTableViewController.m */,
+				E09FCFD31718979900DFD7C9 /* HMScheduleNavigationViewController.h */,
+				E09FCFD41718979900DFD7C9 /* HMScheduleNavigationViewController.m */,
 			);
 			name = "Line Up";
 			sourceTree = "<group>";
@@ -529,6 +537,7 @@
 				E04B1109171604A6006A52EF /* TwitterImage.png in Resources */,
 				E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */,
 				E04B110E1716069A006A52EF /* HMFFButtonImage.png in Resources */,
+				E09FCFD2171896A500DFD7C9 /* Schedule.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +595,7 @@
 				E09FCFC8171851A400DFD7C9 /* HMLineUpScrollViewController.m in Sources */,
 				E09FCFCB171851CF00DFD7C9 /* HMFirstTableViewController.m in Sources */,
 				E09FCFCE171851DC00DFD7C9 /* HMSecondTableViewController.m in Sources */,
+				E09FCFD51718979900DFD7C9 /* HMScheduleNavigationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
