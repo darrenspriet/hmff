@@ -39,12 +39,25 @@
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     
-   
     if (viewController == [self.viewControllers objectAtIndex:0]){
-        NSLog(@"Line Up Tab");
-    }
-    else if (viewController == [self.viewControllers objectAtIndex:1]){
-        NSLog(@"News Feed Tab");
+//        HMLineUpViewController *linup =(HMLineUpViewController*)[[self.viewControllers objectAtIndex:0]topViewController];
+//        [linup.scrollView setContentOffset:CGPointZero];
+////        [linup.scrollView scrollRectToVisible:CGRectMake(-320, 0, linup.tableViewOne.frame.size.width, linup.tableViewOne.frame.size.height) animated:YES];
+//        [linup.tableViewOne setContentOffset:CGPointZero];
+//        [linup.tableViewTwo setContentOffset:CGPointZero];
+//        [linup.scrollView setPagingEnabled:YES];
+//        [linup.scrollView setFrame:CGRectMake(0, 0, linup.scrollView.frame.size.width, linup.scrollView.frame.size.height)];
+//        
+//        [linup.tableViewTwo reloadData];
+//        [linup.tableViewOne reloadData];
+//        [linup setPassed:@"num1"];
+//        NSLog(@"what is table 2 set to %f", linup.tableViewTwo.frame.origin.x);
+//
+//        NSLog(@"what is scrollview set to %f", linup.scrollView.frame.origin.x);
+//        NSLog(@"Line Up Tab");
+//    }
+//    else if (viewController == [self.viewControllers objectAtIndex:1]){
+//        NSLog(@"News Feed Tab");
 
     }
     else if (viewController == [self.viewControllers objectAtIndex:2]){

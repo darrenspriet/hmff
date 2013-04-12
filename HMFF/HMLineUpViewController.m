@@ -24,13 +24,19 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    
+
+    [super viewDidAppear:animated];
+    [self.scrollView setDelegate:self];
     [self.scrollView setContentSize:CGSizeMake(640, self.scrollView.frame.size.height)];
-    [self dataForTables];
-    self.tableViewOne.rowHeight = 44;
-    self.tableViewTwo.rowHeight = 60;
-    [self.tableViewOne reloadData];
+    [self.scrollView setPagingEnabled:YES];
+
+
     [self.tableViewTwo reloadData];
-    NSLog(@"view did appear");
+    [self.tableViewOne reloadData];
+
+////    [self.scrollView scrollRectToVisible:CGRectMake(0, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:NO];
+//    NSLog(@"view did appear");
 
 }
 
@@ -46,10 +52,9 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self dataForTables];
-    self.tableViewOne.rowHeight = 44;
-    self.tableViewTwo.rowHeight = 60;
-    
-    
+
+    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+
     UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:nil];
@@ -64,19 +69,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    if (tableView.tag == 100) {
+    if (tableView.tag == 101) {
         return self.tableOneArray.count;
     }
-    if (tableView.tag == 101) {
+    else{
         return self.tableTwoArray.count;
     }
-    return 0;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView.tag==101) {
+        return 44.0f;
+    }
+    else{
+        return 60.0f;
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (tableView.tag == 100) {
+    
+    if (tableView.tag == 101) {
         static NSString *cellIdentifier1 = @"cellIdentifier1";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier1];
         if (cell == nil) {
@@ -90,7 +104,7 @@
         return cell;
     }
     
-    if (tableView.tag == 101) {
+   else{
         static NSString *cellIdentifier2 = @"cellIdentifier2";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier2];
         if (cell == nil) {
@@ -105,7 +119,7 @@
         return cell;
     }
     
-    return nil;
+
 }
 
 //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {

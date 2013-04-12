@@ -79,16 +79,16 @@
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
     [self.newsFeedData setLength:0];
-    NSLog(@"Did Recieve a Response");
+//    NSLog(@"Did Recieve a Response");
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
     [self.newsFeedData appendData:data];
-    NSLog(@"Did Recieve Data");
+//    NSLog(@"Did Recieve Data");
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-    NSLog(@"Failed with error %@", error);
+//    NSLog(@"Failed with error %@", error);
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection
@@ -100,17 +100,17 @@
     
     for(NSDictionary *diction in title){
         NSString  *title =[diction objectForKey:@"title"];
-        NSLog(@"this is the title %@", title);
+//        NSLog(@"this is the title %@", title);
         [self.titleArray addObject:title];
     }
     for(NSDictionary *diction in date){
         NSString  *date =[diction objectForKey:@"date"];
-        NSLog(@"this is the date %@", date);
+//        NSLog(@"this is the date %@", date);
         [self.dateArray addObject:date];
     }
     for(NSDictionary *diction in content){
         NSString  *content =[diction objectForKey:@"excerpt"];
-        NSLog(@"this is the content %@", content);
+//        NSLog(@"this is the content %@", content);
         [self.contentArray addObject:content];
     }
 

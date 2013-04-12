@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -523,26 +523,26 @@
                                     <constraint firstItem="ena-CJ-bYc" firstAttribute="centerX" secondItem="n9G-iE-AFI" secondAttribute="centerX" type="default" id="C5r-fM-cN7"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-8Z-jHa">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HDv-8Z-jHa">
                                 <subviews>
-                                    <tableView clipsSubviews="YES" tag="100" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JYM-3K-Enz">
+                                    <tableView clipsSubviews="YES" tag="100" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="JYM-3K-Enz">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="396" id="dPp-wy-MwI"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="3ub-qd-Ghb" id="tC5-uo-RiW"/>
-                                            <outlet property="delegate" destination="3ub-qd-Ghb" id="2Kl-sv-gcf"/>
+                                            <outlet property="delegate" destination="3ub-qd-Ghb" id="KZd-tE-gRt"/>
                                         </connections>
                                     </tableView>
-                                    <tableView clipsSubviews="YES" tag="101" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Mv5-Fm-ycN">
+                                    <tableView clipsSubviews="YES" tag="101" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Mv5-Fm-ycN">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="320" id="xGH-2J-Flr"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="3ub-qd-Ghb" id="nOV-mb-hRx"/>
-                                            <outlet property="delegate" destination="3ub-qd-Ghb" id="5bd-kT-kuY"/>
+                                            <outlet property="delegate" destination="3ub-qd-Ghb" id="f85-vf-qs5"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
@@ -552,13 +552,13 @@
                                     <constraint firstItem="JYM-3K-Enz" firstAttribute="trailing" secondItem="HDv-8Z-jHa" secondAttribute="trailing" type="default" id="8Pv-SF-sRx"/>
                                     <constraint firstItem="JYM-3K-Enz" firstAttribute="bottom" secondItem="HDv-8Z-jHa" secondAttribute="bottom" type="default" id="GLo-UQ-owe"/>
                                     <constraint firstItem="JYM-3K-Enz" firstAttribute="centerX" secondItem="HDv-8Z-jHa" secondAttribute="centerX" type="default" id="W8E-54-k0b"/>
-                                    <constraint firstItem="Mv5-Fm-ycN" firstAttribute="leading" secondItem="HDv-8Z-jHa" secondAttribute="leading" constant="320" id="ah7-5S-N72"/>
+                                    <constraint firstItem="Mv5-Fm-ycN" firstAttribute="leading" secondItem="HDv-8Z-jHa" secondAttribute="leading" constant="320" type="user" id="ah7-5S-N72"/>
                                     <constraint firstItem="JYM-3K-Enz" firstAttribute="top" secondItem="HDv-8Z-jHa" secondAttribute="top" type="default" id="gxo-AR-bpf"/>
                                     <constraint firstItem="Mv5-Fm-ycN" firstAttribute="top" secondItem="HDv-8Z-jHa" secondAttribute="top" type="default" id="ora-er-R21"/>
                                     <constraint firstItem="Mv5-Fm-ycN" firstAttribute="bottom" secondItem="HDv-8Z-jHa" secondAttribute="bottom" type="default" id="zfB-CY-OCz"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="delegate" destination="PBr-NZ-V73" id="Rhy-tt-aIu"/>
+                                    <outlet property="delegate" destination="3ub-qd-Ghb" id="76f-1R-GQl"/>
                                 </connections>
                             </scrollView>
                         </subviews>
