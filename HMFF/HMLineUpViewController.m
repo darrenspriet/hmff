@@ -23,104 +23,84 @@
     return self;
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    
-
-    [super viewDidAppear:animated];
-    [self.scrollView setDelegate:self];
-    [self.scrollView setContentSize:CGSizeMake(640, self.scrollView.frame.size.height)];
-    [self.scrollView setPagingEnabled:YES];
 
 
-    [self.tableViewTwo reloadData];
-    [self.tableViewOne reloadData];
 
-////    [self.scrollView scrollRectToVisible:CGRectMake(0, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height) animated:NO];
-//    NSLog(@"view did appear");
-
-}
-
-
-- (void)dataForTables {
-    
-    self.tableOneArray = [[NSArray alloc] initWithObjects:@"BAND1", @"BAND2", @"BAND3", @"BAND4", @"BAND5", @"BAND6", @"BAND7",@"BAND8",@"BAND9",@"BAND10",nil];
-    self.tableTwoArray = [[NSArray alloc] initWithObjects:@"VIDEO 1", @"VIDEO 2", @"VIDEO 3", @"VIDEO 4",@"VIDEO 5",@"VIDEO 6",@"VIDEO 7",@"VIDEO 8", nil];
-}
 
 
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self dataForTables];
+//    [self dataForTables];
 
-    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+//    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
 
     UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:nil];
 }
 
-#pragma mark - UITableViewDelegate
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    
-
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    if (tableView.tag == 101) {
-        return self.tableOneArray.count;
-    }
-    else{
-        return self.tableTwoArray.count;
-    }
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView.tag==101) {
-        return 44.0f;
-    }
-    else{
-        return 60.0f;
-    }
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-    if (tableView.tag == 101) {
-        static NSString *cellIdentifier1 = @"cellIdentifier1";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier1];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier1];
-            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
-        }
-        cell.textLabel.text = [self.tableOneArray objectAtIndex:indexPath.row];
-        NSLog(@"type 1 made with index.row %ld", (long)indexPath.row);
-        return cell;
-    }
-    
-   else{
-        static NSString *cellIdentifier2 = @"cellIdentifier2";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier2];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier2];
-            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }
-        cell.textLabel.text = [self.tableTwoArray objectAtIndex:indexPath.row];
-        cell.detailTextLabel.text = [self.tableOneArray objectAtIndex:indexPath.row];
-        NSLog(@"type 2 made with index.row %ld", (long)indexPath.row);
-
-        return cell;
-    }
-    
-
-}
+//#pragma mark - UITableViewDelegate
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//    
+//
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//    
+//    if (tableView.tag == 101) {
+//        return self.tableOneArray.count;
+//    }
+//    else{
+//        return self.tableTwoArray.count;
+//    }
+//}
+//
+//-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+//    if (tableView.tag==101) {
+//        return 44.0f;
+//    }
+//    else{
+//        return 60.0f;
+//    }
+//}
+//
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    
+//    if (tableView.tag == 101) {
+//        static NSString *cellIdentifier1 = @"cellIdentifier1";
+//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier1];
+//        if (cell == nil) {
+//            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier1];
+//            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//
+//        }
+//        cell.textLabel.text = [self.tableOneArray objectAtIndex:indexPath.row];
+//        NSLog(@"type 1 made with index.row %ld", (long)indexPath.row);
+//        return cell;
+//    }
+//    
+//   else{
+//        static NSString *cellIdentifier2 = @"cellIdentifier2";
+//        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier2];
+//        if (cell == nil) {
+//            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier2];
+//            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+//            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        }
+//        cell.textLabel.text = [self.tableTwoArray objectAtIndex:indexPath.row];
+//        cell.detailTextLabel.text = [self.tableOneArray objectAtIndex:indexPath.row];
+//        NSLog(@"type 2 made with index.row %ld", (long)indexPath.row);
+//
+//        return cell;
+//    }
+//    
+//
+//}
 
 //- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 //
