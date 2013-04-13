@@ -169,32 +169,6 @@
     <resources>
         <image name="ticketButton.png" width="160" height="89"/>
     </resources>
-    <classes>
-        <class className="HMFirstTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMFirstTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableOne" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="HMScheduleScrollViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMScheduleScrollViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="HMScheduleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMScheduleViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateForEvent" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HMSecondTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSecondTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableTwo" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
