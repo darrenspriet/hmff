@@ -37,4 +37,45 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)SendAnEmail:(UIButton *)sender {
+    // Email Subject
+    NSString *emailTitle = @"HMFF Support";
+    // Email Content
+    NSString *messageBody = @"I love HMFF";
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"support@hmff.com"];
+    
+    MFMailComposeViewController *messageComposer = [[MFMailComposeViewController alloc] init];
+    [messageComposer setMailComposeDelegate: self];
+    [messageComposer setSubject:emailTitle];
+    [messageComposer setMessageBody:messageBody isHTML:NO];
+    [messageComposer setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:messageComposer animated:YES completion:NULL];
+}
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 @end

@@ -40,10 +40,6 @@
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     
     if (viewController == [self.viewControllers objectAtIndex:0]){
-        
-
-
-        
 //        HMLineUpViewController *linup =(HMLineUpViewController*)[[self.viewControllers objectAtIndex:0]topViewController];
 //        [linup.scrollView setContentOffset:CGPointZero];
 ////        [linup.scrollView scrollRectToVisible:CGRectMake(-320, 0, linup.tableViewOne.frame.size.width, linup.tableViewOne.frame.size.height) animated:YES];
@@ -59,9 +55,9 @@
 //
 //        NSLog(@"what is scrollview set to %f", linup.scrollView.frame.origin.x);
 //        NSLog(@"Line Up Tab");
-//    }
-//    else if (viewController == [self.viewControllers objectAtIndex:1]){
-//        NSLog(@"News Feed Tab");
+    }
+    else if (viewController == [self.viewControllers objectAtIndex:1]){
+        NSLog(@"News Feed Tab");
 
     }
     else if (viewController == [self.viewControllers objectAtIndex:2]){

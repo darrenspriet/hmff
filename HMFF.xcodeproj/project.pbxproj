@@ -40,18 +40,18 @@
 		E04B1109171604A6006A52EF /* TwitterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1107171604A6006A52EF /* TwitterImage.png */; };
 		E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1108171604A6006A52EF /* TwitterImage@2x.png */; };
 		E04B110E1716069A006A52EF /* HMFFButtonImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B110D1716069A006A52EF /* HMFFButtonImage.png */; };
-		E09FCFC8171851A400DFD7C9 /* HMLineUpScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFC7171851A400DFD7C9 /* HMLineUpScrollViewController.m */; };
 		E09FCFCB171851CF00DFD7C9 /* HMFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFCA171851CF00DFD7C9 /* HMFirstTableViewController.m */; };
 		E09FCFCE171851DC00DFD7C9 /* HMSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFCD171851DC00DFD7C9 /* HMSecondTableViewController.m */; };
 		E09FCFD2171896A500DFD7C9 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09FCFD1171896A500DFD7C9 /* Schedule.storyboard */; };
 		E09FCFD51718979900DFD7C9 /* HMScheduleNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFD41718979900DFD7C9 /* HMScheduleNavigationViewController.m */; };
+		E09FCFD81718F17400DFD7C9 /* HMScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFD71718F17400DFD7C9 /* HMScheduleViewController.m */; };
+		E09FCFDB1718F1F800DFD7C9 /* HMScheduleScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFDA1718F1F800DFD7C9 /* HMScheduleScrollViewController.m */; };
 		E0A89A581703DCF70070F731 /* NoteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A89A571703DCF70070F731 /* NoteIcon.png */; };
 		E0A89A5B170521D60070F731 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A89A591705219D0070F731 /* Twitter.framework */; };
 		E0BC623017036D7200EFB287 /* EmailButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC622E17036D7200EFB287 /* EmailButton@2x.png */; };
 		E0BC623117036D7200EFB287 /* EmailButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC622F17036D7200EFB287 /* EmailButton.png */; };
 		E0BC62341703723F00EFB287 /* EmailButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC62321703723F00EFB287 /* EmailButtonSelected.png */; };
 		E0BC62351703723F00EFB287 /* EmailButtonSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC62331703723F00EFB287 /* EmailButtonSelected@2x.png */; };
-		E0CCA16C16FBEA73007BC613 /* HMLineUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA16B16FBEA73007BC613 /* HMLineUpViewController.m */; };
 		E0CCA16F16FBEB39007BC613 /* HMNewsFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA16E16FBEB39007BC613 /* HMNewsFeedViewController.m */; };
 		E0CCA17216FBEB48007BC613 /* HMTwitterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17116FBEB48007BC613 /* HMTwitterViewController.m */; };
 		E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */; };
@@ -134,8 +134,6 @@
 		E04B1107171604A6006A52EF /* TwitterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterImage.png; sourceTree = "<group>"; };
 		E04B1108171604A6006A52EF /* TwitterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterImage@2x.png"; sourceTree = "<group>"; };
 		E04B110D1716069A006A52EF /* HMFFButtonImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFButtonImage.png; sourceTree = "<group>"; };
-		E09FCFC6171851A400DFD7C9 /* HMLineUpScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLineUpScrollViewController.h; sourceTree = "<group>"; };
-		E09FCFC7171851A400DFD7C9 /* HMLineUpScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLineUpScrollViewController.m; sourceTree = "<group>"; };
 		E09FCFC9171851CF00DFD7C9 /* HMFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFirstTableViewController.h; sourceTree = "<group>"; };
 		E09FCFCA171851CF00DFD7C9 /* HMFirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFirstTableViewController.m; sourceTree = "<group>"; };
 		E09FCFCC171851DC00DFD7C9 /* HMSecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSecondTableViewController.h; sourceTree = "<group>"; };
@@ -143,14 +141,16 @@
 		E09FCFD1171896A500DFD7C9 /* Schedule.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Schedule.storyboard; sourceTree = "<group>"; };
 		E09FCFD31718979900DFD7C9 /* HMScheduleNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScheduleNavigationViewController.h; sourceTree = "<group>"; };
 		E09FCFD41718979900DFD7C9 /* HMScheduleNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScheduleNavigationViewController.m; sourceTree = "<group>"; };
+		E09FCFD61718F17400DFD7C9 /* HMScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScheduleViewController.h; sourceTree = "<group>"; };
+		E09FCFD71718F17400DFD7C9 /* HMScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScheduleViewController.m; sourceTree = "<group>"; };
+		E09FCFD91718F1F800DFD7C9 /* HMScheduleScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScheduleScrollViewController.h; sourceTree = "<group>"; };
+		E09FCFDA1718F1F800DFD7C9 /* HMScheduleScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScheduleScrollViewController.m; sourceTree = "<group>"; };
 		E0A89A571703DCF70070F731 /* NoteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoteIcon.png; sourceTree = "<group>"; };
 		E0A89A591705219D0070F731 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		E0BC622E17036D7200EFB287 /* EmailButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmailButton@2x.png"; sourceTree = "<group>"; };
 		E0BC622F17036D7200EFB287 /* EmailButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButton.png; sourceTree = "<group>"; };
 		E0BC62321703723F00EFB287 /* EmailButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButtonSelected.png; sourceTree = "<group>"; };
 		E0BC62331703723F00EFB287 /* EmailButtonSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmailButtonSelected@2x.png"; sourceTree = "<group>"; };
-		E0CCA16A16FBEA73007BC613 /* HMLineUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLineUpViewController.h; sourceTree = "<group>"; };
-		E0CCA16B16FBEA73007BC613 /* HMLineUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLineUpViewController.m; sourceTree = "<group>"; };
 		E0CCA16D16FBEB39007BC613 /* HMNewsFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedViewController.h; sourceTree = "<group>"; };
 		E0CCA16E16FBEB39007BC613 /* HMNewsFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedViewController.m; sourceTree = "<group>"; };
 		E0CCA17016FBEB48007BC613 /* HMTwitterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTwitterViewController.h; sourceTree = "<group>"; };
@@ -227,7 +227,6 @@
 		E03C065216FBE667002AC531 = {
 			isa = PBXGroup;
 			children = (
-				E0F89C6C171749C100BD5755 /* SystemConfiguration.framework */,
 				E0139AE51702401C000AE5B7 /* HMFFIcon114.png */,
 				E0139AE317024018000AE5B7 /* HMFFIcon57.png */,
 				E03C066616FBE667002AC531 /* HMFF */,
@@ -249,6 +248,7 @@
 		E03C065D16FBE667002AC531 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0F89C6C171749C100BD5755 /* SystemConfiguration.framework */,
 				E0EB5EB817145A6300C444CE /* Accounts.framework */,
 				E0EB5EB617145A5C00C444CE /* Social.framework */,
 				E0EB5EB31714596A00C444CE /* MessageUI.framework */,
@@ -265,7 +265,7 @@
 		E03C066616FBE667002AC531 /* HMFF */ = {
 			isa = PBXGroup;
 			children = (
-				E03C069B16FBE901002AC531 /* Line Up */,
+				E03C069B16FBE901002AC531 /* Schedule */,
 				E03C069C16FBE926002AC531 /* News Feed */,
 				E03C069D16FBE92A002AC531 /* Twitter */,
 				E03C069E16FBE92F002AC531 /* Social */,
@@ -319,13 +319,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E03C069B16FBE901002AC531 /* Line Up */ = {
+		E03C069B16FBE901002AC531 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				E0CCA16A16FBEA73007BC613 /* HMLineUpViewController.h */,
-				E0CCA16B16FBEA73007BC613 /* HMLineUpViewController.m */,
-				E09FCFC6171851A400DFD7C9 /* HMLineUpScrollViewController.h */,
-				E09FCFC7171851A400DFD7C9 /* HMLineUpScrollViewController.m */,
+				E09FCFD61718F17400DFD7C9 /* HMScheduleViewController.h */,
+				E09FCFD71718F17400DFD7C9 /* HMScheduleViewController.m */,
+				E09FCFD91718F1F800DFD7C9 /* HMScheduleScrollViewController.h */,
+				E09FCFDA1718F1F800DFD7C9 /* HMScheduleScrollViewController.m */,
 				E09FCFC9171851CF00DFD7C9 /* HMFirstTableViewController.h */,
 				E09FCFCA171851CF00DFD7C9 /* HMFirstTableViewController.m */,
 				E09FCFCC171851DC00DFD7C9 /* HMSecondTableViewController.h */,
@@ -333,7 +333,7 @@
 				E09FCFD31718979900DFD7C9 /* HMScheduleNavigationViewController.h */,
 				E09FCFD41718979900DFD7C9 /* HMScheduleNavigationViewController.m */,
 			);
-			name = "Line Up";
+			name = Schedule;
 			sourceTree = "<group>";
 		};
 		E03C069C16FBE926002AC531 /* News Feed */ = {
@@ -575,7 +575,6 @@
 				E03C066D16FBE667002AC531 /* main.m in Sources */,
 				E03C067116FBE667002AC531 /* HMAppDelegate.m in Sources */,
 				E03C067A16FBE667002AC531 /* HMFF.xcdatamodeld in Sources */,
-				E0CCA16C16FBEA73007BC613 /* HMLineUpViewController.m in Sources */,
 				E0CCA16F16FBEB39007BC613 /* HMNewsFeedViewController.m in Sources */,
 				E0CCA17216FBEB48007BC613 /* HMTwitterViewController.m in Sources */,
 				E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */,
@@ -592,10 +591,11 @@
 				E0EB5EB2171447E900C444CE /* HMNewsFeedCell.m in Sources */,
 				E0F453621715C85A000F97D0 /* HMSocialWebBrowserViewController.m in Sources */,
 				E0F89C6B171748B500BD5755 /* HMCheckInternetAccess.m in Sources */,
-				E09FCFC8171851A400DFD7C9 /* HMLineUpScrollViewController.m in Sources */,
 				E09FCFCB171851CF00DFD7C9 /* HMFirstTableViewController.m in Sources */,
 				E09FCFCE171851DC00DFD7C9 /* HMSecondTableViewController.m in Sources */,
 				E09FCFD51718979900DFD7C9 /* HMScheduleNavigationViewController.m in Sources */,
+				E09FCFD81718F17400DFD7C9 /* HMScheduleViewController.m in Sources */,
+				E09FCFDB1718F1F800DFD7C9 /* HMScheduleScrollViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,22 +22,6 @@
     }
     return self;
 }
-//- (void)setPageZero{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [UIView animateWithDuration:0
-//                              delay:0 options:UIViewAnimationOptionLayoutSubviews
-//                         animations:^{
-//                             
-//                             [self.tableOne setContentOffset:CGPointMake(0, 0) animated:YES]
-//                             ;                         }
-//                         completion:^(BOOL finished) {                             NSLog(@"called");
-//                         }];
-//    });
-//}
-//-(void)viewDidAppear:(BOOL)animated{
-//    [self setPageZero];
-//    [self.tableOne reloadData];
-//}
 
 - (void)viewDidLoad
 {
@@ -90,7 +74,6 @@
             
         }
         cell.textLabel.text = [self.tableOneArray objectAtIndex:indexPath.row];
-        NSLog(@"type 1 made with index.row %ld", (long)indexPath.row);
         return cell;
        
     

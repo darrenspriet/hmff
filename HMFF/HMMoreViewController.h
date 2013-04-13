@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface HMMoreViewController : UIViewController
 
+@interface HMMoreViewController : UIViewController <MFMailComposeViewControllerDelegate>
+
+- (IBAction)SendAnEmail:(UIButton *)sender;
 @end

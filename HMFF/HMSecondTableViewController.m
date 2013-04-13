@@ -23,23 +23,7 @@
     return self;
 }
 
-//
-//- (void)setPageZero{
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//        [UIView animateWithDuration:0
-//                              delay:0 options:UIViewAnimationOptionLayoutSubviews
-//                         animations:^{
-//                             
-//                             [self.tableTwo setContentOffset:CGPointMake(0, 0) animated:YES]
-//                             ;                         }
-//                         completion:^(BOOL finished) {                             NSLog(@"called");
-//                         }];
-//    });
-//}
-//-(void)viewDidAppear:(BOOL)animated{
-//    [self setPageZero];
-//    [self.tableTwo reloadData];
-//}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -88,9 +72,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleBlue;
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
-        cell.textLabel.text = [self.tableTwoArray objectAtIndex:indexPath.row];
-        NSLog(@"type 2 made with index.row %ld", (long)indexPath.row);
-        
+        cell.textLabel.text = [self.tableTwoArray objectAtIndex:indexPath.row];        
         return cell;
    
     
