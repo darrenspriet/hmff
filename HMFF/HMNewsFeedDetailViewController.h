@@ -12,7 +12,7 @@
 
 @property (nonatomic)NSDictionary *detailItem;
 @property (weak, nonatomic) IBOutlet UILabel *newsTitle;
-@property (weak, nonatomic) IBOutlet UILabel *content;
+@property (weak, nonatomic) IBOutlet UITextView *content;
 
 
 @end

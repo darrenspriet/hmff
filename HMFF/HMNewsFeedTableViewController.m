@@ -70,7 +70,10 @@
     if(!cell){
         cell = [[HMNewsFeedCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    [cell.title setText:[self.titleArray objectAtIndex:indexPath.row]];
+    
+    NSString *title =[self decodeHtmlUnicodeCharactersToString:[self.titleArray objectAtIndex:indexPath.row]];
+    
+    [cell.title setText:title];
     [cell.date setText:dateString];
     return cell;
 }
@@ -219,6 +222,35 @@
     else  {
         return @"DEC";
     }   
+}
+- (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)str
+{
+    NSMutableString* string = [[NSMutableString alloc] initWithString:str];
+    NSString* uniCodeString = nil;
+    NSString* replaceString = nil;
+    int counter = -1;
+    
+    for(int i = 0; i < [string length]; ++i)
+    {
+        unichar character1 = [string characterAtIndex:i];
+        for (int k = i + 1; k < [string length] - 1; ++k)
+        {
+            unichar character2 = [string characterAtIndex:k];
+            
+            if (character1 == '&'  && character2 == '#')
+            {
+                ++counter;
+                uniCodeString = [string substringWithRange:NSMakeRange(i + 3 , 2)];
+                replaceString = [string substringWithRange:NSMakeRange (i, 8)];    
+                [string replaceCharactersInRange: [string rangeOfString:replaceString] withString:[NSString stringWithFormat:@"%c",[uniCodeString intValue]]];
+                break;
+            }
+        }
+    }
+    if (counter > 1)
+        return  [self decodeHtmlUnicodeCharactersToString:string];
+    else
+        return string;
 }
 
 @end

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="w40-RZ-D02">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -39,12 +39,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Cvq-Vt-iFe" secondAttribute="bottom" constant="-60" id="1Ck-Cs-u10"/>
                             <constraint firstItem="Cvq-Vt-iFe" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="8P6-7W-dm0"/>
                             <constraint firstItem="g9a-rG-K0L" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="RhA-v8-jTb"/>
                             <constraint firstItem="Cvq-Vt-iFe" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="c6h-Tb-Hvm"/>
                             <constraint firstItem="g9a-rG-K0L" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" type="user" id="fBg-1d-0Rg"/>
                             <constraint firstItem="Cvq-Vt-iFe" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" constant="60" id="kGx-Vp-YYG"/>
+                            <constraint firstItem="Cvq-Vt-iFe" firstAttribute="bottom" secondItem="vsl-uA-LT4" secondAttribute="bottom" type="default" id="kQs-gE-upA"/>
                             <constraint firstItem="g9a-rG-K0L" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="t1f-1K-Lzw"/>
                         </constraints>
                     </view>
@@ -74,7 +74,7 @@
             <objects>
                 <tableViewController id="jtw-ey-lVs" customClass="HMNewsFeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="RIC-Ih-gGK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -85,12 +85,12 @@
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="68"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="News title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="UqD-Bs-MfC">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="News title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="260" translatesAutoresizingMaskIntoConstraints="NO" id="UqD-Bs-MfC">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="14" id="F7f-yq-cqT"/>
+                                                <constraint firstAttribute="height" constant="57" id="8N6-fl-iCy"/>
                                                 <constraint firstAttribute="width" constant="260" id="Ogc-0S-rr8"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -100,17 +100,17 @@
                                                 <constraint firstAttribute="width" constant="107" id="fgm-jz-gf2"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="nKj-Nk-Qml" firstAttribute="bottom" secondItem="EKB-Ak-9T7" secondAttribute="bottom" type="default" id="0uQ-dz-fcn"/>
                                     <constraint firstItem="UqD-Bs-MfC" firstAttribute="leading" secondItem="EKB-Ak-9T7" secondAttribute="leading" constant="20" type="default" id="2pL-2n-mHs"/>
-                                    <constraint firstItem="UqD-Bs-MfC" firstAttribute="top" secondItem="EKB-Ak-9T7" secondAttribute="top" constant="11" id="8c4-3L-1io"/>
                                     <constraint firstItem="nKj-Nk-Qml" firstAttribute="trailing" secondItem="UqD-Bs-MfC" secondAttribute="trailing" type="default" id="C80-Vg-7cH"/>
-                                    <constraint firstItem="nKj-Nk-Qml" firstAttribute="top" secondItem="UqD-Bs-MfC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="K95-Mb-Dyk"/>
+                                    <constraint firstItem="UqD-Bs-MfC" firstAttribute="top" secondItem="EKB-Ak-9T7" secondAttribute="top" constant="5" id="g1g-jO-WbR"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="date" destination="nKj-Nk-Qml" id="uQh-FQ-yQG"/>
@@ -134,39 +134,39 @@
             <objects>
                 <viewController id="dlc-h9-Onv" customClass="HMNewsFeedDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mYm-af-p44">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title Goes Here" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" minimumFontSize="9" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-3n-m3V">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title Goes Here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-3n-m3V">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="uJz-XY-D3H"/>
+                                    <constraint firstAttribute="width" constant="280" id="a4g-p7-h8t"/>
+                                    <constraint firstAttribute="height" constant="82" id="qhn-Aq-B0r"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="content Goes Here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="k33-gW-gd5">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bo-Na-lJW">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="335" id="klW-LO-O7t"/>
+                                    <constraint firstAttribute="height" constant="336" type="user" id="XNx-uj-onq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="k33-gW-gd5" firstAttribute="leading" secondItem="mYm-af-p44" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0TK-di-awd"/>
-                            <constraint firstItem="7N9-3n-m3V" firstAttribute="leading" secondItem="mYm-af-p44" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="6rq-vl-CnO"/>
-                            <constraint firstAttribute="trailing" secondItem="7N9-3n-m3V" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ah9-Ee-lf9"/>
-                            <constraint firstItem="7N9-3n-m3V" firstAttribute="top" secondItem="mYm-af-p44" secondAttribute="top" constant="43" id="DQ1-wr-RLe"/>
-                            <constraint firstAttribute="trailing" secondItem="k33-gW-gd5" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dCm-BP-Cuz"/>
-                            <constraint firstItem="k33-gW-gd5" firstAttribute="top" secondItem="7N9-3n-m3V" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dTo-Hu-bol"/>
+                            <constraint firstItem="7bo-Na-lJW" firstAttribute="top" secondItem="mYm-af-p44" secondAttribute="top" constant="119" type="user" id="6Pu-5S-n5l"/>
+                            <constraint firstItem="7bo-Na-lJW" firstAttribute="leading" secondItem="mYm-af-p44" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ae0-Fr-v9z"/>
+                            <constraint firstItem="7N9-3n-m3V" firstAttribute="top" secondItem="mYm-af-p44" secondAttribute="top" constant="20" symbolic="YES" type="default" id="AfM-XR-YGZ"/>
+                            <constraint firstAttribute="trailing" secondItem="7bo-Na-lJW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IBA-tG-coj"/>
+                            <constraint firstItem="7N9-3n-m3V" firstAttribute="leading" secondItem="mYm-af-p44" secondAttribute="leading" constant="26" id="x1m-bH-9iJ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cVa-71-9ZV"/>
                     <connections>
-                        <outlet property="content" destination="k33-gW-gd5" id="xw9-Fh-8cd"/>
+                        <outlet property="content" destination="7bo-Na-lJW" id="fnj-6D-XTk"/>
                         <outlet property="newsTitle" destination="7N9-3n-m3V" id="DhL-fr-sqz"/>
                     </connections>
                 </viewController>
@@ -880,7 +880,7 @@
         <scene sceneID="fRZ-4Y-Whk">
             <objects>
                 <navigationController id="LlW-83-wJg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" id="Kjj-m3-Nlf"/>
+                    <tabBarItem key="tabBarItem" title="News" image="NewsPaper.png" id="Kjj-m3-Nlf"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7yB-7b-rmc">
@@ -1047,6 +1047,7 @@
         <image name="FacebookImage.png" width="70" height="70"/>
         <image name="HMFFButtonImage.png" width="140" height="65"/>
         <image name="HMFFlogo.png" width="137" height="42"/>
+        <image name="NewsPaper.png" width="16" height="16"/>
         <image name="NoteIcon.png" width="90" height="90"/>
         <image name="TwitterBird.png" width="30" height="30"/>
         <image name="TwitterButton.png" width="518" height="104"/>
@@ -1088,7 +1089,7 @@
         <class className="HMNewsFeedDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedDetailViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="content" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="content" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="newsTitle" candidateClass="UILabel"/>
             </relationships>
         </class>

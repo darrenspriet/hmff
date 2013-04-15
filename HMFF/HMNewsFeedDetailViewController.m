@@ -35,9 +35,11 @@
 {
     if (self.detailItem) {
         NSDictionary *newsFeed = self.detailItem;
+//        NSString *title=[self decodeHtmlUnicodeCharactersToString:[newsFeed objectForKey:@"title"]];
         NSString *title=[newsFeed objectForKey:@"title"];
-
-          NSString  *content =[newsFeed objectForKey:@"content"];
+        
+//        NSString  *content = [self decodeHtmlUnicodeCharactersToString:[newsFeed objectForKey:@"content"]];
+        NSString  *content = [newsFeed objectForKey:@"content"];
         
         [self.newsTitle setText: title];
         [self.content setText: content];
@@ -51,6 +53,44 @@
     // Dispose of any resources that can be recreated.
 }
 
-
+- (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)str
+{
+    NSMutableString* string = [[NSMutableString alloc] initWithString:str];
+    NSString* uniCodeString = nil;
+    NSString* replaceString = nil;
+    int counter = -1;
+    
+    for(int i = 0; i < [string length]; ++i)
+    {
+        unichar character1 = [string characterAtIndex:i];
+        for (int k = i + 1; k < [string length] - 1; ++k)
+        {
+            unichar character2 = [string characterAtIndex:k];
+            //Add a 3rd character that looks for ands and dismisses it all together?????????
+            if (character1 == '&'  && character2 == '#')
+            {
+                ++counter;
+                uniCodeString = [string substringWithRange:NSMakeRange(i + 3 , 2)];
+                replaceString = [string substringWithRange:NSMakeRange (i, 8)];
+                [string replaceCharactersInRange: [string rangeOfString:replaceString] withString:[NSString stringWithFormat:@"%c",[uniCodeString intValue]]];
+                break;
+            }
+//            else if (character1 == '&')
+//            {
+//                ++counter;
+//                uniCodeString = [string substringWithRange:NSMakeRange(i + 5 , 2)];
+//                // read integer value i.e, 39
+//                replaceString= [string substringWithRange:NSMakeRange (i, 5)];
+//                [string replaceCharactersInRange: [string rangeOfString:replaceString] withString:[NSString stringWithFormat:@"%c",[uniCodeString intValue]]];
+//                break;
+//            }
+        }
+        
+    }
+    if (counter > 1)
+        return  [self decodeHtmlUnicodeCharactersToString:string];
+    else
+        return string;
+}
 
 @end
