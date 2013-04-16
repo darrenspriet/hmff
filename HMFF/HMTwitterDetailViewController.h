@@ -12,7 +12,7 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *profileImage;
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak)  IBOutlet UILabel *tweetLabel;
 @property (nonatomic)NSDictionary *detailItem;
+@property (weak, nonatomic) IBOutlet UITextView *tweetLabel;
 
 @end

@@ -146,7 +146,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bo-Na-lJW">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="feed Goes Here" translatesAutoresizingMaskIntoConstraints="NO" id="7bo-Na-lJW">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="336" type="user" id="XNx-uj-onq"/>
@@ -154,13 +154,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uok-Hd-vsG">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="7bo-Na-lJW" firstAttribute="top" secondItem="mYm-af-p44" secondAttribute="top" constant="119" type="user" id="6Pu-5S-n5l"/>
                             <constraint firstItem="7bo-Na-lJW" firstAttribute="leading" secondItem="mYm-af-p44" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Ae0-Fr-v9z"/>
-                            <constraint firstItem="7N9-3n-m3V" firstAttribute="top" secondItem="mYm-af-p44" secondAttribute="top" constant="20" symbolic="YES" type="default" id="AfM-XR-YGZ"/>
-                            <constraint firstAttribute="trailing" secondItem="7bo-Na-lJW" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="IBA-tG-coj"/>
+                            <constraint firstItem="7N9-3n-m3V" firstAttribute="top" secondItem="mYm-af-p44" secondAttribute="top" constant="10" id="CL0-HO-Vug"/>
+                            <constraint firstItem="Uok-Hd-vsG" firstAttribute="centerX" secondItem="7bo-Na-lJW" secondAttribute="centerX" type="default" id="EfQ-mh-W4Z"/>
+                            <constraint firstItem="Uok-Hd-vsG" firstAttribute="top" secondItem="mYm-af-p44" secondAttribute="top" constant="91" id="L2z-jW-uSk"/>
+                            <constraint firstItem="Uok-Hd-vsG" firstAttribute="bottom" secondItem="7N9-3n-m3V" secondAttribute="bottom" type="default" id="ZOy-fB-vNQ"/>
+                            <constraint firstItem="Uok-Hd-vsG" firstAttribute="leading" secondItem="mYm-af-p44" secondAttribute="leading" constant="10" id="qC3-vK-cQF"/>
+                            <constraint firstItem="Uok-Hd-vsG" firstAttribute="centerX" secondItem="mYm-af-p44" secondAttribute="centerX" type="default" id="uUI-0s-669"/>
                             <constraint firstItem="7N9-3n-m3V" firstAttribute="leading" secondItem="mYm-af-p44" secondAttribute="leading" constant="26" id="x1m-bH-9iJ"/>
                         </constraints>
                     </view>
@@ -344,43 +351,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bx-Yo-9qc"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIN-we-ipY">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" type="user" id="Mu4-Su-KNG"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Bx-Yo-9qc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="bsO-ca-GIO"/>
+                                    <constraint firstAttribute="width" constant="48" id="hZG-ky-Owp"/>
+                                </constraints>
+                            </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Name goes here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="149" translatesAutoresizingMaskIntoConstraints="NO" id="GW5-ww-nOw">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="149" id="Fpk-EY-ZDQ"/>
-                                    <constraint firstAttribute="height" constant="47" id="h9M-ks-Bxv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tweet Goes here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" preferredMaxLayoutWidth="240" translatesAutoresizingMaskIntoConstraints="NO" id="rHC-nU-LrG">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="tweet goes here" translatesAutoresizingMaskIntoConstraints="NO" id="tGi-o4-3em">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="Q2A-Gq-ZDT"/>
-                                    <constraint firstAttribute="height" constant="150" id="Q4G-GP-IDN"/>
+                                    <constraint firstAttribute="height" constant="281" id="W8r-6E-2aP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GW5-ww-nOw" firstAttribute="bottom" secondItem="0Bx-Yo-9qc" secondAttribute="bottom" type="default" id="Hlj-bB-JRb"/>
-                            <constraint firstItem="GW5-ww-nOw" firstAttribute="leading" secondItem="v04-hY-qpr" secondAttribute="leading" constant="103" id="NQb-wJ-msK"/>
-                            <constraint firstItem="0Bx-Yo-9qc" firstAttribute="top" secondItem="v04-hY-qpr" secondAttribute="top" constant="51" id="UOn-lK-p2n"/>
-                            <constraint firstItem="0Bx-Yo-9qc" firstAttribute="leading" secondItem="rHC-nU-LrG" secondAttribute="leading" type="default" id="be9-hs-gga"/>
-                            <constraint firstAttribute="bottom" secondItem="rHC-nU-LrG" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="cWF-mU-6Mj"/>
-                            <constraint firstItem="GW5-ww-nOw" firstAttribute="leading" secondItem="0Bx-Yo-9qc" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="nNG-qt-86Z"/>
-                            <constraint firstItem="rHC-nU-LrG" firstAttribute="leading" secondItem="v04-hY-qpr" secondAttribute="leading" constant="47" id="oWF-mL-IZh"/>
-                            <constraint firstItem="GW5-ww-nOw" firstAttribute="centerY" secondItem="0Bx-Yo-9qc" secondAttribute="centerY" type="default" id="pWB-mM-ST1"/>
+                            <constraint firstItem="tGi-o4-3em" firstAttribute="top" secondItem="v04-hY-qpr" secondAttribute="top" constant="122" type="user" id="5am-Hb-zJe"/>
+                            <constraint firstItem="0Bx-Yo-9qc" firstAttribute="top" secondItem="v04-hY-qpr" secondAttribute="top" constant="31" id="BQb-oE-dcy"/>
+                            <constraint firstItem="wIN-we-ipY" firstAttribute="top" secondItem="v04-hY-qpr" secondAttribute="top" constant="91" type="user" id="JKe-dD-oAf"/>
+                            <constraint firstItem="GW5-ww-nOw" firstAttribute="top" secondItem="0Bx-Yo-9qc" secondAttribute="top" type="default" id="XOM-bw-qs4"/>
+                            <constraint firstItem="GW5-ww-nOw" firstAttribute="leading" secondItem="v04-hY-qpr" secondAttribute="leading" constant="103" id="bW8-MZ-obc"/>
+                            <constraint firstItem="GW5-ww-nOw" firstAttribute="bottom" secondItem="0Bx-Yo-9qc" secondAttribute="bottom" type="default" id="cI4-Gw-IXj"/>
+                            <constraint firstAttribute="trailing" secondItem="tGi-o4-3em" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="dxz-Zw-dFG"/>
+                            <constraint firstItem="tGi-o4-3em" firstAttribute="leading" secondItem="v04-hY-qpr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="h9i-pR-ZTL"/>
+                            <constraint firstItem="wIN-we-ipY" firstAttribute="centerX" secondItem="tGi-o4-3em" secondAttribute="centerX" type="default" id="kuY-hW-lXe"/>
+                            <constraint firstItem="0Bx-Yo-9qc" firstAttribute="leading" secondItem="v04-hY-qpr" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sFf-wt-Goa"/>
+                            <constraint firstItem="wIN-we-ipY" firstAttribute="leading" secondItem="v04-hY-qpr" secondAttribute="leading" constant="10" id="wZc-8c-CR1"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qUJ-Og-dvG"/>
                     <connections>
                         <outlet property="nameLabel" destination="GW5-ww-nOw" id="sIF-3N-vqS"/>
                         <outlet property="profileImage" destination="0Bx-Yo-9qc" id="Ccj-8L-pSA"/>
-                        <outlet property="tweetLabel" destination="rHC-nU-LrG" id="rW0-iV-lgK"/>
+                        <outlet property="tweetLabel" destination="tGi-o4-3em" id="xUz-nQ-wRp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rok-67-xCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1134,7 +1153,7 @@
             <relationships>
                 <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tweetLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="tweetLabel" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="HMTwitterTableViewController" superclassName="UITableViewController">
