@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "HMFirstTableViewController.h"
+
 
 @interface HMAppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -18,5 +21,8 @@
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
+@property (nonatomic, strong)NSMutableArray *parse;
+
 
 @end

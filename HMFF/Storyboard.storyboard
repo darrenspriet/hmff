@@ -899,7 +899,7 @@
         <scene sceneID="fRZ-4Y-Whk">
             <objects>
                 <navigationController id="LlW-83-wJg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="News" image="NewsPaper.png" id="Kjj-m3-Nlf"/>
+                    <tabBarItem key="tabBarItem" title="News" id="Kjj-m3-Nlf"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7yB-7b-rmc">
@@ -1066,7 +1066,6 @@
         <image name="FacebookImage.png" width="70" height="70"/>
         <image name="HMFFButtonImage.png" width="140" height="65"/>
         <image name="HMFFlogo.png" width="137" height="42"/>
-        <image name="NewsPaper.png" width="16" height="16"/>
         <image name="NoteIcon.png" width="90" height="90"/>
         <image name="TwitterBird.png" width="30" height="30"/>
         <image name="TwitterButton.png" width="518" height="104"/>

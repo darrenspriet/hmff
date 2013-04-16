@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMAppDelegate.h"
 
 @interface HMFirstTableViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tableOne;
 
 @property (nonatomic, strong) NSArray *tableOneArray;
+@property (nonatomic, strong)NSMutableArray *parse;
+
 
 @end

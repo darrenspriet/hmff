@@ -7,6 +7,8 @@
 //
 
 #import "HMAppDelegate.h"
+#define APP_ID @"BKjoCRi6vlE1bMuIY100LN8zsIrlWprOUUZyuaAg"
+#define CLIENT_KEY @"xxSG9DGIVpodQBawjcSWKhgqkH3tdL1kaWM6e7bW"
 
 @implementation HMAppDelegate
 
@@ -20,8 +22,27 @@
 //    // Override point for customization after application launch.
 //    self.window.backgroundColor = [UIColor whiteColor];
 //    [self.window makeKeyAndVisible];
+//    self.parse = [[NSMutableArray alloc]init];
+
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
+//    PFQuery *query = [PFQuery queryWithClassName:@"Player"];
+//    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {//4
+//        if (!error) {
+//            NSLog(@"Successfully retrieved: %@", objects);
+//            //            [self.parse addObject:objects];
+//            [self.parse addObject:objects];
+//            
+//        } else {
+//            NSString *errorString = [[error userInfo] objectForKey:@"error"];
+//            NSLog(@"Error: %@", errorString);
+//        }
+//    }
+//     ];
+//    HMFirstTableViewController *table = [[HMFirstTableViewController alloc]init];
+//    table.parse=self.parse;
     
     return YES;
 }
