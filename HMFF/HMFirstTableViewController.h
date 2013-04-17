@@ -14,6 +14,8 @@
 
 @property (nonatomic, strong) NSArray *tableOneArray;
 @property (nonatomic, strong)NSMutableArray *parse;
+@property (nonatomic, strong) PFObject *parseObjects;
 
+//https://www.parse.com/docs/ios_guide#objects-retrieving/iOS
 
 @end

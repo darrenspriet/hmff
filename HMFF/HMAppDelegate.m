@@ -27,22 +27,8 @@
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
-//    PFQuery *query = [PFQuery queryWithClassName:@"Player"];
-//    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {//4
-//        if (!error) {
-//            NSLog(@"Successfully retrieved: %@", objects);
-//            //            [self.parse addObject:objects];
-//            [self.parse addObject:objects];
-//            
-//        } else {
-//            NSString *errorString = [[error userInfo] objectForKey:@"error"];
-//            NSLog(@"Error: %@", errorString);
-//        }
-//    }
-//     ];
-//    HMFirstTableViewController *table = [[HMFirstTableViewController alloc]init];
-//    table.parse=self.parse;
+
+
     
     return YES;
 }

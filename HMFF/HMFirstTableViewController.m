@@ -27,7 +27,13 @@
 {
     [super viewDidLoad];
     self.parse = [[NSMutableArray alloc]init];
-
+  
+    PFQuery *query = [PFQuery queryWithClassName:@"Player"];
+//    [query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
+//    NSArray* scoreArray = [query findObjects];
+      self.parseObjects = [query getFirstObject];
+//    [self.parse addObject:objects];
+//    NSLog(@"%@", self.parse);
     [self dataForTables];
 	// Do any additional setup after loading the view.
 }
@@ -68,7 +74,6 @@
     
     
 
-    NSMutableArray *array =[[NSMutableArray alloc]initWithArray:self.parse];
     
         static NSString *cellIdentifier1 = @"cellIdentifier1";
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier1];
@@ -78,8 +83,8 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             
         }
-//    NSLog(@"%@", [self.tableOneArray objectAtIndex:indexPath.row]);
-        cell.textLabel.text = array[1];
+    NSLog(@"%@", [self.tableOneArray objectAtIndex:indexPath.row]);
+    [cell.textLabel setText:[self.parseObjects objectForKey:@"Name"]];
         return cell;
        
     
