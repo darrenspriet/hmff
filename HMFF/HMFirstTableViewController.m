@@ -26,23 +26,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.parse = [[NSMutableArray alloc]init];
+   self.Dictionary = [[NSDictionary alloc]init];
+    self.allObjects = [[NSMutableArray alloc]init];
+
   
     PFQuery *query = [PFQuery queryWithClassName:@"Player"];
 //    [query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
-//    NSArray* scoreArray = [query findObjects];
-      self.parseObjects = [query getFirstObject];
-//    [self.parse addObject:objects];
-//    NSLog(@"%@", self.parse);
-    [self dataForTables];
-	// Do any additional setup after loading the view.
+    self.allObjects= [query findObjects];
+
 }
 
-- (void)dataForTables {
-    
-    self.tableOneArray = [[NSArray alloc] initWithObjects:@"BAND1", @"BAND2", @"BAND3", @"BAND4", @"BAND5", @"BAND6", @"BAND7",@"BAND8",@"BAND9",@"BAND10",nil];
-
-   }
 
 - (void)didReceiveMemoryWarning
 {
@@ -59,7 +52,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-        return 2;
+        return [self.allObjects count];
    
 }
 
@@ -72,7 +65,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    self.Dictionary=self.allObjects[indexPath.row];
 
     
         static NSString *cellIdentifier1 = @"cellIdentifier1";
@@ -83,8 +76,9 @@
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             
         }
-    NSLog(@"%@", [self.tableOneArray objectAtIndex:indexPath.row]);
-    [cell.textLabel setText:[self.parseObjects objectForKey:@"Name"]];
+        [cell.textLabel setText:[self.Dictionary objectForKey:@"Name"]];
+    
+
         return cell;
        
     
