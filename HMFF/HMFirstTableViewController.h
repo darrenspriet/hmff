@@ -15,7 +15,7 @@
 @property (nonatomic, strong) PFObject *parseObjects;
 @property (nonatomic, strong) NSArray *allObjects;
 @property (nonatomic, strong) NSDictionary *Dictionary;
-
+@property (nonatomic, strong) NSMutableArray *date;
 
 //https://www.parse.com/docs/ios_guide#objects-retrieving/iOS
 

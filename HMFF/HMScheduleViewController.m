@@ -25,7 +25,10 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self.dateForEvent setText:@"September 14, 2013"];
+     [self setDate:[(HMAppDelegate *)[[UIApplication sharedApplication] delegate] date]];
+  
+    
+    [self.dateForEvent setText:[self.date objectAtIndex:0]];
     UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:nil];
@@ -41,7 +44,6 @@
     //When the View is loaded it this container sets the delegats
     if ([segue.identifier isEqualToString:@"container"]){
         [(HMScheduleScrollViewController*)segue.destinationViewController setDelegate:self];
-        
         //Sets itself as the delegate of the TableView Controller
     }
 }

@@ -18,15 +18,30 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    // Override point for customization after application launch.
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
-//    self.parse = [[NSMutableArray alloc]init];
+
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
 
+    self.Dictionary = [[NSDictionary alloc]init];
+    self.allObjects = [[NSMutableArray alloc]init];
+    NSMutableArray *tempArray = [[NSMutableArray alloc]init];
+    self.date = [[NSMutableArray alloc]init];
+    
+    //Actual query
+    PFQuery *query = [PFQuery queryWithClassName:@"HMFFDates"];
+    //Puts all of the querys into an object
+    self.allObjects= [query findObjects];
+    
+    //Pulls out all of the dates from the objects
+    for (NSDictionary *diction in self.allObjects){
+        [tempArray addObject:[diction objectForKey:@"date"]];
+    }
+    //Used to find the Unique Dates
+    NSSet *uniqueDates = [NSSet setWithArray:tempArray];
+    
+    ////Put the Set back into the array so I can use it
+    self.date= [NSMutableArray arrayWithArray:[uniqueDates allObjects]];
 
     
     return YES;

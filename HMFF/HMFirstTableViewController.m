@@ -26,14 +26,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   self.Dictionary = [[NSDictionary alloc]init];
+    self.Dictionary = [[NSDictionary alloc]init];
     self.allObjects = [[NSMutableArray alloc]init];
-
-  
-    PFQuery *query = [PFQuery queryWithClassName:@"Player"];
-//    [query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
+    
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"HMFFDates"];
+    //    [query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
+    
     self.allObjects= [query findObjects];
-
+    self.date = [[NSMutableArray alloc]init];
+    
+    for (NSDictionary *diction in self.allObjects){
+        [self.date addObject:[diction objectForKey:@"date"]];
+    }
 }
 
 
@@ -52,36 +57,35 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-        return [self.allObjects count];
-   
+    return [self.allObjects count];
+    
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-   
-        return 44.0f;
+    
+    return 44.0f;
     
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    self.Dictionary=self.allObjects[indexPath.row];
-
+    //    self.Dictionary=self.allObjects[indexPath.row];
     
-        static NSString *cellIdentifier1 = @"cellIdentifier1";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier1];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier1];
-            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-            
-        }
-        [cell.textLabel setText:[self.Dictionary objectForKey:@"Name"]];
     
-
-        return cell;
-       
+    static NSString *cellIdentifier1 = @"cellIdentifier1";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier1];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier1];
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
+    }
+    [cell.textLabel setText:[self.date objectAtIndex:indexPath.row]];
+    
+    
+    return cell;
+    
     
 }
-
 @end

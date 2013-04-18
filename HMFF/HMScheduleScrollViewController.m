@@ -25,13 +25,14 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self.scrollView setContentSize:CGSizeMake(640, self.scrollView.frame.size.height)];
+    [self.scrollView setContentSize:CGSizeMake([self.date count]*320, self.scrollView.frame.size.height)];
     [self.scrollView setPagingEnabled:YES];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setDate:[(HMAppDelegate *)[[UIApplication sharedApplication] delegate] date]];
 	// Do any additional setup after loading the view.
 }
 
@@ -49,11 +50,11 @@
     float x = scrollView.contentOffset.x;
 
     if (x > 0 && x < 160) {
-        [self.delegate changeDate:@"September 14, 2013"];
+        [self.delegate changeDate:[self.date objectAtIndex:0]];
 
     }
     else if (x > 160 && x < 320) {
-        [self.delegate changeDate:@"September 15, 2013"];
+        [self.delegate changeDate:[self.date objectAtIndex:1]];
     }
 }
 

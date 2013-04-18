@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMAppDelegate.h"
 @protocol HMScheduleScrollViewControllerDelegate <NSObject>
 
 - (void)changeDate:(NSString*)date;
@@ -16,6 +17,9 @@
 @interface HMScheduleScrollViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong)id<HMScheduleScrollViewControllerDelegate>delegate;
+
+@property (nonatomic, strong) NSMutableArray *date;
+
 
 
 
