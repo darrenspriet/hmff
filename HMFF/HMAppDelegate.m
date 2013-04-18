@@ -23,7 +23,6 @@
 //    self.window.backgroundColor = [UIColor whiteColor];
 //    [self.window makeKeyAndVisible];
 //    self.parse = [[NSMutableArray alloc]init];
-
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
