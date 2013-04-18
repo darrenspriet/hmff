@@ -37,7 +37,7 @@
     self.date = [[NSMutableArray alloc]init];
     
     for (NSDictionary *diction in self.allObjects){
-        [self.date addObject:[diction objectForKey:@"date"]];
+        [self.date addObject:[diction objectForKey:@"band"]];
     }
 }
 

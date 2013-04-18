@@ -22,10 +22,15 @@
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
-
+    [self getParseObjects];
+        
+    
+    return YES;
+}
+-(void)getParseObjects{
     self.Dictionary = [[NSDictionary alloc]init];
     self.allObjects = [[NSMutableArray alloc]init];
-    NSMutableArray *tempArray = [[NSMutableArray alloc]init];
+   
     self.date = [[NSMutableArray alloc]init];
     
     //Actual query
@@ -34,6 +39,7 @@
     self.allObjects= [query findObjects];
     
     //Pulls out all of the dates from the objects
+    NSMutableArray *tempArray = [[NSMutableArray alloc]init];
     for (NSDictionary *diction in self.allObjects){
         [tempArray addObject:[diction objectForKey:@"date"]];
     }
@@ -42,9 +48,11 @@
     
     ////Put the Set back into the array so I can use it
     self.date= [NSMutableArray arrayWithArray:[uniqueDates allObjects]];
-
     
-    return YES;
+    //Adds a query for the band that is with each date
+//    query whereKey:@"date" containsString:<#(NSString *)#>
+    
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

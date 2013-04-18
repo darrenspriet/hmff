@@ -25,6 +25,7 @@
 @property (nonatomic, strong) NSArray *allObjects;
 @property (nonatomic, strong) NSDictionary *Dictionary;
 @property (nonatomic, strong) NSMutableArray *date;
+@property (nonatomic, strong) NSMutableArray *bands;
 
 
 @end
