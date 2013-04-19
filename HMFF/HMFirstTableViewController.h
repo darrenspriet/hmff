@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "HMAppDelegate.h"
+#import "HMVenueCell.h"
+
 
 @interface HMFirstTableViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITableView *tableOne;
+//@property (weak, nonatomic) IBOutlet UITableView *tableOne;
 
-@property (nonatomic, strong) PFObject *parseObjects;
-@property (nonatomic, strong) NSArray *allObjects;
-@property (nonatomic, strong) NSDictionary *Dictionary;
-@property (nonatomic, strong) NSMutableArray *date;
+//@property (nonatomic, strong) PFObject *parseObjects;
+//@property (nonatomic, strong) NSArray *allObjects;
+//@property (nonatomic, strong) NSDictionary *Dictionary;
+@property (nonatomic, strong) NSMutableArray *bands;
 
 //https://www.parse.com/docs/ios_guide#objects-retrieving/iOS
 

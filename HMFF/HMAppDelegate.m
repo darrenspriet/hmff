@@ -18,28 +18,38 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-
+    
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
     [self getParseObjects];
-        
+    
     
     return YES;
 }
+
+
+
+
+
+
+
 -(void)getParseObjects{
+    
+    //Try to keep the Parse calls to a minimum...there are 3 right now.
+    
     self.Dictionary = [[NSDictionary alloc]init];
     self.allObjects = [[NSMutableArray alloc]init];
-   
     self.date = [[NSMutableArray alloc]init];
-    
-    //Actual query
+    self.bands= [[NSMutableArray alloc]init];
+    NSMutableArray *tempArray = [[NSMutableArray alloc]init];
+
+    //Initial query
     PFQuery *query = [PFQuery queryWithClassName:@"HMFFDates"];
     //Puts all of the querys into an object
     self.allObjects= [query findObjects];
     
     //Pulls out all of the dates from the objects
-    NSMutableArray *tempArray = [[NSMutableArray alloc]init];
     for (NSDictionary *diction in self.allObjects){
         [tempArray addObject:[diction objectForKey:@"date"]];
     }
@@ -49,10 +59,20 @@
     ////Put the Set back into the array so I can use it
     self.date= [NSMutableArray arrayWithArray:[uniqueDates allObjects]];
     
-    //Adds a query for the band that is with each date
-//    query whereKey:@"date" containsString:<#(NSString *)#>
+    NSArray *newobject = [[NSArray alloc]init];
     
-
+    //Adds a query for the band that is with each date
+    for (int i= 0; i <[self.date count]; i++) {
+        NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
+        //query to get the dates that are equal to the unique dates
+        [query whereKey:@"date" equalTo:[self.date objectAtIndex:i]];
+        newobject = [query findObjects];
+        for (NSDictionary *diction in newobject){
+            [tempArray1 addObject:[diction objectForKey:@"band"]];
+        }
+        
+        [self.bands addObject:tempArray1];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -63,7 +83,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 
@@ -89,11 +109,11 @@
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
         if ([managedObjectContext hasChanges] && ![managedObjectContext save:&error]) {
-             // Replace this implementation with code to handle the error appropriately.
-             // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+            // Replace this implementation with code to handle the error appropriately.
+            // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
             NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
             abort();
-        } 
+        }
     }
 }
 
@@ -143,7 +163,7 @@
         /*
          Replace this implementation with code to handle the error appropriately.
          
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
          
          Typical reasons for an error here include:
          * The persistent store is not accessible;
@@ -165,7 +185,7 @@
          */
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
         abort();
-    }    
+    }
     
     return _persistentStoreCoordinator;
 }

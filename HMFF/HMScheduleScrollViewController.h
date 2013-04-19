@@ -11,6 +11,7 @@
 @protocol HMScheduleScrollViewControllerDelegate <NSObject>
 
 - (void)changeDate:(NSString*)date;
+-(void)imagesForButton:(NSString*)backImage andFrontImage:(NSString*)frontImage;
 @end
 
 

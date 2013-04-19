@@ -51,4 +51,19 @@
     [self.dateForEvent setText:date];
 
 }
+-(void)imagesForButton:(NSString*)backImage andFrontImage:(NSString*)frontImage{
+    if (backImage!=nil) {
+        [self.backButtonImage setImage:[UIImage imageNamed:backImage] forState:UIControlStateNormal];
+    }
+    if (frontImage!=nil) {
+    [self.forwardButtonImage setImage:[UIImage imageNamed:frontImage] forState:UIControlStateNormal];
+    }
+
+}
+
+
+- (IBAction)forwardButton:(UIButton *)sender {
+}
+- (IBAction)backButton:(UIButton *)sender {
+}
 @end

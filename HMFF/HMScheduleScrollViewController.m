@@ -51,10 +51,12 @@
 
     if (x > 0 && x < 160) {
         [self.delegate changeDate:[self.date objectAtIndex:0]];
+        [self.delegate imagesForButton:nil andFrontImage:@"forwardButton.png"];
 
     }
     else if (x > 160 && x < 320) {
         [self.delegate changeDate:[self.date objectAtIndex:1]];
+        [self.delegate imagesForButton:@"backButton.png" andFrontImage:@"forwardButton.png"];
     }
 }
 

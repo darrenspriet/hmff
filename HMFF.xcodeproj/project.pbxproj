@@ -38,6 +38,8 @@
 		E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03C069916FBE6A4002AC531 /* Storyboard.storyboard */; };
 		E04B1109171604A6006A52EF /* TwitterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1107171604A6006A52EF /* TwitterImage.png */; };
 		E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1108171604A6006A52EF /* TwitterImage@2x.png */; };
+		E0537DA51720C896000D4AB8 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0537DA31720C896000D4AB8 /* forwardButton.png */; };
+		E0537DA61720C896000D4AB8 /* forwardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0537DA41720C896000D4AB8 /* forwardButton@2x.png */; };
 		E09FCFCB171851CF00DFD7C9 /* HMFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFCA171851CF00DFD7C9 /* HMFirstTableViewController.m */; };
 		E09FCFCE171851DC00DFD7C9 /* HMSecondTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFCD171851DC00DFD7C9 /* HMSecondTableViewController.m */; };
 		E09FCFD2171896A500DFD7C9 /* Schedule.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E09FCFD1171896A500DFD7C9 /* Schedule.storyboard */; };
@@ -65,6 +67,7 @@
 		E0CCA17516FBEB56007BC613 /* HMSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17416FBEB56007BC613 /* HMSocialViewController.m */; };
 		E0CCA17816FBEB63007BC613 /* HMMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */; };
 		E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */; };
+		E0D8D8D51720DB5200752A29 /* HMVenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D8D8D41720DB5200752A29 /* HMVenueCell.m */; };
 		E0EB5EB2171447E900C444CE /* HMNewsFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */; };
 		E0EB5EB51714598500C444CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB31714596A00C444CE /* MessageUI.framework */; };
 		E0EB5EBA17145A7000C444CE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB617145A5C00C444CE /* Social.framework */; };
@@ -149,6 +152,8 @@
 		E03C069916FBE6A4002AC531 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		E04B1107171604A6006A52EF /* TwitterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterImage.png; sourceTree = "<group>"; };
 		E04B1108171604A6006A52EF /* TwitterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterImage@2x.png"; sourceTree = "<group>"; };
+		E0537DA31720C896000D4AB8 /* forwardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardButton.png; sourceTree = "<group>"; };
+		E0537DA41720C896000D4AB8 /* forwardButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forwardButton@2x.png"; sourceTree = "<group>"; };
 		E09FCFC9171851CF00DFD7C9 /* HMFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFirstTableViewController.h; sourceTree = "<group>"; };
 		E09FCFCA171851CF00DFD7C9 /* HMFirstTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMFirstTableViewController.m; sourceTree = "<group>"; };
 		E09FCFCC171851DC00DFD7C9 /* HMSecondTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSecondTableViewController.h; sourceTree = "<group>"; };
@@ -186,6 +191,8 @@
 		E0CCA17716FBEB63007BC613 /* HMMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreViewController.m; sourceTree = "<group>"; };
 		E0D4E7C9170086A9002AC1E4 /* HMCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCoreDataHelper.h; sourceTree = "<group>"; };
 		E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCoreDataHelper.m; sourceTree = "<group>"; };
+		E0D8D8D31720DB5200752A29 /* HMVenueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMVenueCell.h; sourceTree = "<group>"; };
+		E0D8D8D41720DB5200752A29 /* HMVenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMVenueCell.m; sourceTree = "<group>"; };
 		E0EB5EB0171447E900C444CE /* HMNewsFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedCell.h; sourceTree = "<group>"; };
 		E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedCell.m; sourceTree = "<group>"; };
 		E0EB5EB31714596A00C444CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -389,6 +396,8 @@
 				E09FCFCD171851DC00DFD7C9 /* HMSecondTableViewController.m */,
 				E09FCFD31718979900DFD7C9 /* HMScheduleNavigationViewController.h */,
 				E09FCFD41718979900DFD7C9 /* HMScheduleNavigationViewController.m */,
+				E0D8D8D31720DB5200752A29 /* HMVenueCell.h */,
+				E0D8D8D41720DB5200752A29 /* HMVenueCell.m */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -536,6 +545,8 @@
 				E0BC622F17036D7200EFB287 /* EmailButton.png */,
 				E0BC62321703723F00EFB287 /* EmailButtonSelected.png */,
 				E0BC62331703723F00EFB287 /* EmailButtonSelected@2x.png */,
+				E0537DA31720C896000D4AB8 /* forwardButton.png */,
+				E0537DA41720C896000D4AB8 /* forwardButton@2x.png */,
 				E0EDD7F217133323004BBB54 /* backButton.png */,
 				E0EDD7F4171333F9004BBB54 /* backButton@2x.png */,
 			);
@@ -654,6 +665,8 @@
 				E0BDB740171F7CC500B11A19 /* ScheduleMegaphone@2x.png in Resources */,
 				E0BDB748171F80AB00B11A19 /* HMFFButtonImage.png in Resources */,
 				E0BDB749171F80AB00B11A19 /* HMFFButtonImage@2x.png in Resources */,
+				E0537DA51720C896000D4AB8 /* forwardButton.png in Resources */,
+				E0537DA61720C896000D4AB8 /* forwardButton@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -712,6 +725,7 @@
 				E09FCFD51718979900DFD7C9 /* HMScheduleNavigationViewController.m in Sources */,
 				E09FCFD81718F17400DFD7C9 /* HMScheduleViewController.m in Sources */,
 				E09FCFDB1718F1F800DFD7C9 /* HMScheduleScrollViewController.m in Sources */,
+				E0D8D8D51720DB5200752A29 /* HMVenueCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

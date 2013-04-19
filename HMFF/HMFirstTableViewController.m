@@ -7,6 +7,10 @@
 //
 
 #import "HMFirstTableViewController.h"
+#define VENUE_CELL @"VenueCell"
+#define BAND_CELL @"BandCell"
+
+
 
 @interface HMFirstTableViewController ()
 
@@ -26,19 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.Dictionary = [[NSDictionary alloc]init];
-    self.allObjects = [[NSMutableArray alloc]init];
-    
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"HMFFDates"];
-    //    [query whereKey:@"playerName" equalTo:@"Dan Stemkoski"];
-    
-    self.allObjects= [query findObjects];
-    self.date = [[NSMutableArray alloc]init];
-    
-    for (NSDictionary *diction in self.allObjects){
-        [self.date addObject:[diction objectForKey:@"band"]];
-    }
+    NSMutableArray *tempArray = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate] bands];
+    [self setBands: [tempArray objectAtIndex:0]];
 }
 
 
@@ -57,35 +50,30 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.allObjects count];
+    return [self.bands count];
     
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 44.0f;
+    return 55.0f;
     
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-    //    self.Dictionary=self.allObjects[indexPath.row];
-    
-    
-    static NSString *cellIdentifier1 = @"cellIdentifier1";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier1];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier1];
-        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        
+
+    if (indexPath.row==0) {
+        HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
+        [cell.venueLabel setText:[self.bands objectAtIndex:indexPath.row]];
+        return cell;
+
     }
-    [cell.textLabel setText:[self.date objectAtIndex:indexPath.row]];
-    
-    
-    return cell;
-    
-    
+    else{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
+        [cell.textLabel setText:[self.bands objectAtIndex:indexPath.row]];
+        return  cell;
+        
+    }  
 }
 @end

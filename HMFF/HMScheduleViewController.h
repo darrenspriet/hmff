@@ -19,6 +19,10 @@
 @property (nonatomic, strong) NSDictionary *Dictionary;
 @property (nonatomic, strong) NSMutableArray *date;
 
+- (IBAction)forwardButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *forwardButtonImage;
+- (IBAction)backButton:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *backButtonImage;
 
 
 @end

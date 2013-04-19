@@ -27,15 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self dataForTables];
-	// Do any additional setup after loading the view.
+    NSMutableArray *tempArray = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate] bands];
+    [self setBands: [tempArray objectAtIndex:1]];
+    	// Do any additional setup after loading the view.
 }
 
-- (void)dataForTables {
-    
-    
-    self.tableTwoArray = [[NSArray alloc] initWithObjects:@"VIDEO 1", @"VIDEO 2", @"VIDEO 3", @"VIDEO 4",@"VIDEO 5",@"VIDEO 6",@"VIDEO 7",@"VIDEO 8", nil];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -51,7 +47,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
 
-        return self.tableTwoArray.count;
+        return [self.bands count];
     
 }
 
@@ -72,7 +68,7 @@
             cell.selectionStyle = UITableViewCellSelectionStyleBlue;
             cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         }
-        cell.textLabel.text = [self.tableTwoArray objectAtIndex:indexPath.row];        
+        cell.textLabel.text = [self.bands objectAtIndex:indexPath.row];
         return cell;
    
     
