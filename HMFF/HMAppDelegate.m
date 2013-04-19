@@ -41,13 +41,19 @@
     self.Dictionary = [[NSDictionary alloc]init];
     self.allObjects = [[NSMutableArray alloc]init];
     self.date = [[NSMutableArray alloc]init];
-    self.bands= [[NSMutableArray alloc]init];
+    self.venue= [[NSMutableArray alloc]init];
+    self.band= [[NSMutableArray alloc]init];
+
     NSMutableArray *tempArray = [[NSMutableArray alloc]init];
 
     //Initial query
     PFQuery *query = [PFQuery queryWithClassName:@"HMFFDates"];
     //Puts all of the querys into an object
     self.allObjects= [query findObjects];
+    
+    
+    
+    
     
     //Pulls out all of the dates from the objects
     for (NSDictionary *diction in self.allObjects){
@@ -59,20 +65,50 @@
     ////Put the Set back into the array so I can use it
     self.date= [NSMutableArray arrayWithArray:[uniqueDates allObjects]];
     
-    NSArray *newobject = [[NSArray alloc]init];
     
-    //Adds a query for the band that is with each date
+    NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
+
+    for (NSDictionary *diction in self.allObjects){
+        [tempArray1 addObject:[diction objectForKey:@"venue"]];
+    }
+    //Used to find the Unique Dates
+    NSSet *uniqueVenues = [NSSet setWithArray:tempArray1];
+    
+    ////Put the Set back into the array so I can use it
+    self.venue= [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
+
+    
+    //Finds venue for unique dates
     for (int i= 0; i <[self.date count]; i++) {
-        NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
-        //query to get the dates that are equal to the unique dates
-        [query whereKey:@"date" equalTo:[self.date objectAtIndex:i]];
-        newobject = [query findObjects];
-        for (NSDictionary *diction in newobject){
-            [tempArray1 addObject:[diction objectForKey:@"band"]];
+        NSMutableArray *array = [[NSMutableArray alloc]init];
+        for (NSDictionary *diction in self.allObjects){
+            if ([[diction objectForKey:@"date"] isEqualToString:[self.date objectAtIndex:i]]) {
+                [array addObject:[diction objectForKey:@"venue"]];
+
+            }
         }
         
-        [self.bands addObject:tempArray1];
+        [self.venue addObject:array];
     }
+    
+    //Finds band for unique dates and venue
+    for (int i= 0; i <[self.date count]; i++) {
+        NSMutableArray *array = [[NSMutableArray alloc]init];
+        for (NSDictionary *diction in self.allObjects){
+            if ([[diction objectForKey:@"date"] isEqualToString:[self.date objectAtIndex:i]]) {
+                  if ([[diction objectForKey:@"venue"] isEqualToString:[self.venue objectAtIndex:i]]) {
+                [array addObject:[diction objectForKey:@"band"]];
+                
+            }
+        }
+        }
+        
+        [self.band addObject:array];
+        NSLog(@"band %@", self.band);
+    }
+    
+    
+
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

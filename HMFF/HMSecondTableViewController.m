@@ -27,7 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSMutableArray *tempArray = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate] bands];
+    NSMutableArray *tempArray = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate] band];
     [self setBands: [tempArray objectAtIndex:1]];
     	// Do any additional setup after loading the view.
 }
