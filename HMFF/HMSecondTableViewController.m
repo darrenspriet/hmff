@@ -7,6 +7,8 @@
 //
 
 #import "HMSecondTableViewController.h"
+#define VENUE_CELL @"VenueCell"
+#define BAND_CELL @"BandCell"
 
 @interface HMSecondTableViewController ()
 
@@ -29,6 +31,9 @@
     [super viewDidLoad];
     NSMutableArray *tempArray = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate] band];
     [self setBands: [tempArray objectAtIndex:1]];
+    
+    [self setVenue:[(HMAppDelegate *) [[UIApplication sharedApplication]delegate]venue]];
+
     	// Do any additional setup after loading the view.
 }
 
@@ -47,32 +52,37 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
 
-        return [self.bands count];
+    return [self.bands count]+ 1;
     
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
    
-        return 60.0f;
-    
+    if (indexPath.row==0) {
+        return 30.0f;
+    }
+    else{
+        return 55.0f;
+        
+    }
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     
-            static NSString *cellIdentifier2 = @"cellIdentifier2";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier2];
-        if (cell == nil) {
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier2];
-            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
-            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        }
-        cell.textLabel.text = [self.bands objectAtIndex:indexPath.row];
+    if (indexPath.row==0) {
+        HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
+        [cell.venueLabel setText:[self.venue objectAtIndex:indexPath.row]];
         return cell;
-   
-    
-    
+        
+    }
+    else{
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
+        [cell.textLabel setText:[self.bands objectAtIndex:indexPath.row-1]];
+        return  cell;
+        
+    }  
 }
 
 

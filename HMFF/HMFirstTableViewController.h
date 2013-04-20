@@ -18,6 +18,8 @@
 //@property (nonatomic, strong) NSArray *allObjects;
 //@property (nonatomic, strong) NSDictionary *Dictionary;
 @property (nonatomic, strong) NSMutableArray *bands;
+@property (nonatomic, strong) NSMutableArray *venue;
+
 
 //https://www.parse.com/docs/ios_guide#objects-retrieving/iOS
 

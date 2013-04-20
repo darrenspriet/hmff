@@ -29,6 +29,8 @@
   
     
     [self.dateForEvent setText:[self.date objectAtIndex:0]];
+    [self imagesForButton:@"" andFrontImage:@"forwardButton.png"];
+
     UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:nil];
@@ -44,7 +46,8 @@
     //When the View is loaded it this container sets the delegats
     if ([segue.identifier isEqualToString:@"container"]){
         [(HMScheduleScrollViewController*)segue.destinationViewController setDelegate:self];
-        //Sets itself as the delegate of the TableView Controller
+
+    [self setDelegate:(id<HMScheduleViewControllerDelegate>)segue.destinationViewController];
     }
 }
 -(void)changeDate:(NSString *)date{
@@ -63,7 +66,11 @@
 
 
 - (IBAction)forwardButton:(UIButton *)sender {
+    [self.delegate scrollForward];
+    
 }
 - (IBAction)backButton:(UIButton *)sender {
+    [self.delegate scrollBack];
+
 }
 @end

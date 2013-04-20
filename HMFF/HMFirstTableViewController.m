@@ -32,6 +32,8 @@
     [super viewDidLoad];
     NSMutableArray *tempArray = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate] band];
     [self setBands: [tempArray objectAtIndex:0]];
+    
+    [self setVenue:[(HMAppDelegate *) [[UIApplication sharedApplication]delegate]venue]];
 }
 
 
@@ -50,13 +52,19 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [self.bands count];
+    return [self.bands count]+ 1;
     
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 55.0f;
+    if (indexPath.row==0) {
+        return 30.0f;
+    }
+    else{
+        return 55.0f;
+
+    }
     
 }
 
@@ -65,13 +73,13 @@
 
     if (indexPath.row==0) {
         HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
-        [cell.venueLabel setText:[self.bands objectAtIndex:indexPath.row]];
+        [cell.venueLabel setText:[self.venue objectAtIndex:indexPath.row]];
         return cell;
 
     }
     else{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
-        [cell.textLabel setText:[self.bands objectAtIndex:indexPath.row]];
+        [cell.textLabel setText:[self.bands objectAtIndex:indexPath.row-1]];
         return  cell;
         
     }  

@@ -6,16 +6,21 @@
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "HMAppDelegate.h"
 @protocol HMScheduleScrollViewControllerDelegate <NSObject>
-
 - (void)changeDate:(NSString*)date;
 -(void)imagesForButton:(NSString*)backImage andFrontImage:(NSString*)frontImage;
 @end
 
 
-@interface HMScheduleScrollViewController : UIViewController
+#import <UIKit/UIKit.h>
+#import "HMAppDelegate.h"
+#import "HMScheduleViewController.h"
+@class HMScheduleViewController;
+
+
+@interface HMScheduleScrollViewController : UIViewController <HMScheduleViewControllerDelegate>
+
+
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (nonatomic, strong)id<HMScheduleScrollViewControllerDelegate>delegate;
 

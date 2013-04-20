@@ -66,6 +66,12 @@
     self.date= [NSMutableArray arrayWithArray:[uniqueDates allObjects]];
     
     
+    [self.date sortUsingSelector:@selector(compare:)];
+    
+    
+    
+    
+    NSLog(@"dates %@", self.date);
     NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
 
     for (NSDictionary *diction in self.allObjects){
@@ -77,33 +83,35 @@
     ////Put the Set back into the array so I can use it
     self.venue= [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
 
-    
+    NSMutableArray *arrayVenue = [[NSMutableArray alloc]init];
     //Finds venue for unique dates
     for (int i= 0; i <[self.date count]; i++) {
-        NSMutableArray *array = [[NSMutableArray alloc]init];
         for (NSDictionary *diction in self.allObjects){
             if ([[diction objectForKey:@"date"] isEqualToString:[self.date objectAtIndex:i]]) {
-                [array addObject:[diction objectForKey:@"venue"]];
-
+                [arrayVenue addObject:[diction objectForKey:@"venue"]];
             }
         }
-        
-        [self.venue addObject:array];
+
     }
+    uniqueVenues = [NSSet setWithArray:arrayVenue];
+    NSLog(@"unique venues %@", uniqueVenues);
     
+    self.venue = [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
+    NSLog(@"venues %@", self.venue);
+
     //Finds band for unique dates and venue
     for (int i= 0; i <[self.date count]; i++) {
-        NSMutableArray *array = [[NSMutableArray alloc]init];
+        NSMutableArray *arrayBand = [[NSMutableArray alloc]init];
         for (NSDictionary *diction in self.allObjects){
             if ([[diction objectForKey:@"date"] isEqualToString:[self.date objectAtIndex:i]]) {
                   if ([[diction objectForKey:@"venue"] isEqualToString:[self.venue objectAtIndex:i]]) {
-                [array addObject:[diction objectForKey:@"band"]];
+                [arrayBand addObject:[diction objectForKey:@"band"]];
                 
             }
         }
         }
         
-        [self.band addObject:array];
+        [self.band addObject:arrayBand];
         NSLog(@"band %@", self.band);
     }
     

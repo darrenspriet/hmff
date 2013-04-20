@@ -6,12 +6,20 @@
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
+@protocol HMScheduleViewControllerDelegate <NSObject>
+-(void)scrollBack;
+-(void)scrollForward;
+@end
+
 #import <UIKit/UIKit.h>
 #import "HMScheduleScrollViewController.h"
 #import "HMAppDelegate.h"
 
+@class HMScheduleScrollViewController;
 
 @interface HMScheduleViewController : UIViewController<HMScheduleScrollViewControllerDelegate>
+
+@property (nonatomic, weak) id <HMScheduleViewControllerDelegate> delegate;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateForEvent;
 

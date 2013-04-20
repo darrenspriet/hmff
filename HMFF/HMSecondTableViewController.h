@@ -15,6 +15,8 @@
 //@property (nonatomic, strong) NSArray *tableTwoArray;
 
 @property (nonatomic, strong) NSMutableArray *bands;
+@property (nonatomic, strong) NSMutableArray *venue;
+
 
 
 @end
