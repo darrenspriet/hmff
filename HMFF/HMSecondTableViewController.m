@@ -30,11 +30,8 @@
 {
     [super viewDidLoad];
     NSMutableArray *tempArray = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate] band];
-    [self setBands: [tempArray objectAtIndex:1]];
-    
-    [self setVenue:[(HMAppDelegate *) [[UIApplication sharedApplication]delegate]venue]];
+    [self setBand: [tempArray objectAtIndex:1]];
 
-    	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,6 +39,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     
@@ -52,7 +51,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
 
-    return [self.bands count]+ 1;
+    return [self.band count]+ 1;
     
 }
 
@@ -70,20 +69,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    
+    NSDictionary * diction = [[NSDictionary alloc]init];
     if (indexPath.row==0) {
+        diction = [self.band objectAtIndex:indexPath.row];
         HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
-        [cell.venueLabel setText:[self.venue objectAtIndex:indexPath.row]];
+        [cell.venueLabel setText:[diction objectForKey:@"venue"]];
         return cell;
         
     }
     else{
+        diction = [self.band objectAtIndex:indexPath.row-1];
         UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
-        [cell.textLabel setText:[self.bands objectAtIndex:indexPath.row-1]];
+        [cell.textLabel setText:[diction objectForKey:@"band"]];
         return  cell;
         
-    }  
+    }
 }
 
+#pragma mark - Prepare for Segue
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if ([segue.identifier isEqualToString:@"DetailView"]) {
+        
+        NSInteger row = [[self tableView].indexPathForSelectedRow row]-1;
+        NSDictionary * passedURL = [[NSDictionary alloc]init];
+        passedURL = [self.band objectAtIndex:row];
+        NSLog(@"url is: %@", [passedURL objectForKey:@"link"]);
+        HMBandWebBrowserViewController *webBrowser = segue.destinationViewController;
+        webBrowser.passedURL=[passedURL objectForKey:@"link"];
+        
+    }
+    
+    
+}
 
 @end

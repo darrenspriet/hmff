@@ -50,6 +50,8 @@
     [self fetchTweets];
 }
 
+#pragma mark - Table view data source
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return self.tweets.count;
@@ -98,16 +100,6 @@
 
     
     return cell;
-    
-    //This is used for a Search if needed
-//    NSArray *tweet = [tweets objectForKey:@"results"];
-//    //    NSString *text = [tweet objectForKey:@"text"];
-//    NSDictionary *othertweet =[tweet objectAtIndex:indexPath.row];
-//    NSString *text = [othertweet objectForKey:@"text" ];
-//    NSString *name = [othertweet objectForKey: @"from_user_name"];
-//    cell.textLabel.text = text;
-//    cell.detailTextLabel.text = [NSString stringWithFormat:@"by %@", name];
-//    return cell;
 }
 
 // Override to support conditional editing of the table view.

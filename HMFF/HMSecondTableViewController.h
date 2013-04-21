@@ -9,13 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "HMAppDelegate.h"
 
-@interface HMSecondTableViewController : UIViewController
+@interface HMSecondTableViewController : UITableViewController
 
-//@property (weak, nonatomic) IBOutlet UITableView *tableTwo;
-//@property (nonatomic, strong) NSArray *tableTwoArray;
-
-@property (nonatomic, strong) NSMutableArray *bands;
-@property (nonatomic, strong) NSMutableArray *venue;
+@property (nonatomic, strong) NSMutableArray *band;
 
 
 
