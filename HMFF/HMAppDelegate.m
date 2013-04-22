@@ -18,13 +18,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
+    [self fetchNewsFeed];
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
     [self getParseObjects];
     [self fetchTweets];
-    [self fetchNewsFeed];
     
     return YES;
 }
@@ -46,12 +45,14 @@
                                                         error:&error];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"finished twitter dispatch");
+
         });
     });
 }
 
 - (void)fetchNewsFeed{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
         NSData* data = [NSData dataWithContentsOfURL:
                         //This is used for a Search if needed
                         //     [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
@@ -65,9 +66,12 @@
                                                       error:&error];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"finished news dispatch");
+
         });
     });
 }
+
 
 -(void)getParseObjects{
     

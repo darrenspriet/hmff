@@ -44,8 +44,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of rows in the section.
-    NSLog(@"news count %d" ,[self.news count]);
-    return [self.news count];
+    NSLog(@"news count %d" ,  [self.titleArray count]);
+
+    return [self.titleArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
