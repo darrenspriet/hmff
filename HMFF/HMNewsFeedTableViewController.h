@@ -9,17 +9,18 @@
 #import <UIKit/UIKit.h>
 #import "HMNewsFeedDetailViewController.h"
 #import "HMNewsFeedCell.h"
+#import "HMAppDelegate.h"
 
 
-@interface HMNewsFeedTableViewController : UITableViewController<NSURLConnectionDelegate>
+@interface HMNewsFeedTableViewController : UITableViewController
 
-@property(nonatomic, strong) NSMutableData *newsFeedData;
-@property(nonatomic, strong) NSURLConnection *connection;
+
 @property(nonatomic, strong) NSMutableArray *titleArray;
 @property(nonatomic, strong) NSMutableArray *contentArray;
 @property(nonatomic, strong) NSMutableArray *dateArray;
 
-@property (nonatomic, strong)NSArray *news;
+
+@property (nonatomic, strong)NSDictionary *news;
 
 //Add the date and also add a detail page when selected bringing up the details of all of the next feeds.
 

@@ -62,8 +62,11 @@
 
 -(void)scrollBack{
     NSLog(@"Scroll Back");
+    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:YES];
 }
 -(void)scrollForward{
+    [self.scrollView setContentOffset:CGPointMake(320, 0) animated:YES];
+
     NSLog(@"Scroll Forward");
 
 }

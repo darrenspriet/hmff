@@ -26,8 +26,14 @@
 @property (nonatomic, strong) NSMutableArray *date;
 @property (nonatomic, strong) NSMutableArray *venue;
 @property (nonatomic, strong) NSMutableArray *band;
-@property (nonatomic, strong)NSArray *tweets;
+@property (nonatomic, strong) NSArray *tweets;
 
+@property (nonatomic, strong)NSDictionary *news;
+
+
+@property(nonatomic, strong) NSMutableArray *titleArray;
+@property(nonatomic, strong) NSMutableArray *contentArray;
+@property(nonatomic, strong) NSMutableArray *dateArray;
 
 
 @end

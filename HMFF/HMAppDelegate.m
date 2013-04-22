@@ -24,6 +24,7 @@
     [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
     [self getParseObjects];
     [self fetchTweets];
+    [self fetchNewsFeed];
     
     return YES;
 }
@@ -43,6 +44,25 @@
         self.tweets = [NSJSONSerialization JSONObjectWithData:data
                                                       options:kNilOptions
                                                         error:&error];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+        });
+    });
+}
+
+- (void)fetchNewsFeed{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData* data = [NSData dataWithContentsOfURL:
+                        //This is used for a Search if needed
+                        //     [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
+                        
+                        [NSURL URLWithString: @"http://www.hmff.com/?json=get_recent_posts&count=1000"]];
+        
+        NSError* error;
+        
+        self.news = [NSJSONSerialization JSONObjectWithData:data
+                                                    options:kNilOptions
+                                                      error:&error];
         
         dispatch_async(dispatch_get_main_queue(), ^{
         });

@@ -21,22 +21,12 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
+    
+    self.news = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate]news];
+    [self loadNewsFeedData];
 
-    self.titleArray = [[NSMutableArray alloc]init];
-    self.contentArray = [[NSMutableArray alloc]init];
-    self.dateArray =[[NSMutableArray alloc]init];
-    
-    
-    //This was in the Action in the Previous project
-    NSURL *url =[NSURL URLWithString:@"http://www.hmff.com/?json=get_recent_posts&count=1000"];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    self.connection = [NSURLConnection connectionWithRequest:request delegate:self];
-    if(self.connection){
-        self.newsFeedData = [[NSMutableData alloc]init];
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,56 +44,41 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of rows in the section.
-    return [self.titleArray count];
+    NSLog(@"news count %d" ,[self.news count]);
+    return [self.news count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *CellIdentifier = @"newsCell";
     HMNewsFeedCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-
-    NSString *date =  [self.dateArray objectAtIndex:indexPath.row];
-    NSArray *array = [date componentsSeparatedByString:@"-"];
-    NSString *month = [self getMonth:array];
-    
-    NSString *dateString = [NSString stringWithFormat:@"%@%@%@%@%@",month, @" ", [array objectAtIndex:1],@" ", [array  objectAtIndex:0]];
     
     if(!cell){
         cell = [[HMNewsFeedCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
     
+    NSString *date =  [self.dateArray objectAtIndex:indexPath.row];
+    NSArray *array = [date componentsSeparatedByString:@"-"];
+    NSString *month = [self getMonth:array];
+    NSString *dateString = [NSString stringWithFormat:@"%@%@%@%@%@",month, @" ", [array objectAtIndex:1],@" ", [array  objectAtIndex:0]];
     NSString *title =[self decodeHtmlUnicodeCharactersToString:[self.titleArray objectAtIndex:indexPath.row]];
-    
     [cell.title setText:title];
     [cell.date setText:dateString];
     return cell;
 }
 
-#pragma mark - NSURL Connections
-
--(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response{
-    [self.newsFeedData setLength:0];
-//    NSLog(@"Did Recieve a Response");
-}
-
--(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data{
-    [self.newsFeedData appendData:data];
-//    NSLog(@"Did Recieve Data");
-}
-
--(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
-//    NSLog(@"Failed with error %@", error);
-}
-
--(void)connectionDidFinishLoading:(NSURLConnection *)connection
-{
-    NSDictionary *dataDictionary= [NSJSONSerialization JSONObjectWithData:self.newsFeedData options:0 error:nil];
-    NSArray *title = [dataDictionary objectForKey:@"posts"];
-    NSArray *content =[dataDictionary objectForKey:@"posts"];
-    NSArray *date =[dataDictionary objectForKey:@"posts"];
+-(void)loadNewsFeedData{
+    self.titleArray = [[NSMutableArray alloc]init];
+    self.contentArray = [[NSMutableArray alloc]init];
+    self.dateArray =[[NSMutableArray alloc]init];
+    
+    NSArray *title = [self.news objectForKey:@"posts"];
+    NSArray *content =[self.news objectForKey:@"posts"];
+    NSArray *date =[self.news objectForKey:@"posts"];
+    
     
     for(NSDictionary *diction in title){
-        NSString  *title =[diction objectForKey:@"title"];
-//        NSLog(@"this is the title %@", title);
+        NSString *title =[diction objectForKey:@"title"];
+//        NSLog(@"title %@", title);
         [self.titleArray addObject:title];
     }
     for(NSDictionary *diction in date){
@@ -116,10 +91,8 @@
 //        NSLog(@"this is the content %@", content);
         [self.contentArray addObject:content];
     }
-
-    
-    [[self tableView] reloadData];
 }
+        
 
 
 #pragma mark - Prepare for Segue
@@ -171,9 +144,8 @@
         return @"DEC";
     }   
 }
-- (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)str
-{
-    NSMutableString* string = [[NSMutableString alloc] initWithString:str];
+- (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)passedString{
+    NSMutableString* string = [[NSMutableString alloc] initWithString:passedString];
     NSString* uniCodeString = nil;
     NSString* replaceString = nil;
     int counter = -1;
