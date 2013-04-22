@@ -22,32 +22,34 @@
     }
     return self;
 }
-- (void)fetchTweets
-{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData* data = [NSData dataWithContentsOfURL:
-                        
-//This is used for a Search if needed                 
-//     [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
-                        
-        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
-
-        NSError* error;
-        
-        self.tweets = [NSJSONSerialization JSONObjectWithData:data
-                                                 options:kNilOptions
-                                                   error:&error];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.tableView reloadData];
-        });
-    });
-}
+//- (void)fetchTweets
+//{
+//    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+//        NSData* data = [NSData dataWithContentsOfURL:
+//                        
+////This is used for a Search if needed                 
+////     [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
+//                        
+//        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
+//
+//        NSError* error;
+//        
+//        self.tweets = [NSJSONSerialization JSONObjectWithData:data
+//                                                 options:kNilOptions
+//                                                   error:&error];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self.tableView reloadData];
+//        });
+//    });
+//}
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
-    [self fetchTweets];
+        self.tweets = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate]tweets];
+//    [self fetchTweets];
 }
 
 #pragma mark - Table view data source

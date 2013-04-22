@@ -11,6 +11,7 @@
 #import <Accounts/Accounts.h>
 #import "HMTwitterDetailViewController.h"
 #import "HMTweetCell.h"
+#import "HMAppDelegate.h"
 
 
 
@@ -18,7 +19,7 @@
 
 @property (nonatomic, strong)NSArray *tweets;
 
-- (void)fetchTweets;
+//- (void)fetchTweets;
 
 //This is used for a Search if needed
 //@property (nonatomic, strong)NSDictionary *tweets;
