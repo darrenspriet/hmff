@@ -16,8 +16,7 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     [self fetchNewsFeed];
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
@@ -28,8 +27,7 @@
     return YES;
 }
 
-- (void)fetchTweets
-{
+- (void)fetchTweets{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSData* data = [NSData dataWithContentsOfURL:
                         
@@ -52,7 +50,7 @@
 }
 
 - (void)fetchNewsFeed{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         NSData* data = [NSData dataWithContentsOfURL:
                         //This is used for a Search if needed
                         //     [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
@@ -74,7 +72,6 @@
 
 
 -(void)getParseObjects{
-    
     //Try to keep the Parse calls to a minimum...there are 3 right now.
     
     self.allObjects = [[NSMutableArray alloc]init];
