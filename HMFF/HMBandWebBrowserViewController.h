@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMCheckInternetAccess.h"
 
 
 @interface HMBandWebBrowserViewController : UIViewController
@@ -18,6 +17,7 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* forward;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* refresh;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* stop;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 
 @property (nonatomic, strong) NSString *passedURL;

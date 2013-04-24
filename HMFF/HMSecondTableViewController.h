@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMAppDelegate.h"
 
 @interface HMSecondTableViewController : UITableViewController
 

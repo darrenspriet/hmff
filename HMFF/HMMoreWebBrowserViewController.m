@@ -25,39 +25,17 @@
 
 - (void)viewDidLoad
 {
-        [super viewDidLoad];
+    [super viewDidLoad];
+    
+    
+    self.webView.scalesPageToFit = YES;
+    NSURL *url =[NSURL URLWithString:self.passedURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
+    [self updateButtons];
 
-        
-        self.webView.scalesPageToFit = YES;
-        NSURL *url =[NSURL URLWithString:self.passedURL];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        [self.webView loadRequest:request];
-        [self updateButtons];
-    
-    
-    
 	// Do any additional setup after loading the view.
 }
-
--(void)setTitle:(NSString *)title
-{
-    [super setTitle:title];
-    UILabel *titleView = (UILabel *)self.navigationItem.titleView;
-    if (!titleView) {
-        titleView = [[UILabel alloc] initWithFrame:CGRectZero];
-        titleView.backgroundColor = [UIColor clearColor];
-        titleView.font = [UIFont boldSystemFontOfSize:20.0];
-        titleView.shadowColor = [UIColor colorWithWhite:0.0 alpha:0.0];
-        
-        titleView.textColor = [UIColor blackColor]; // Change to desired color
-        
-        self.navigationItem.titleView = titleView;
-
-    }
-    titleView.text = title;
-    [titleView sizeToFit];
-}
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -69,32 +47,91 @@
     NSLog(@"Share button Pressed");
 }
 
+
 #pragma WEB VIEW DELEGATE
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
-{
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     return YES;
 }
 
-- (void)webViewDidStartLoad:(UIWebView *)webView
-{
+- (void)webViewDidStartLoad:(UIWebView *)webView{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    
+    self.title=@"Loading...";
+    
+    //activity Indicator in Navigation Bar
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [self.activityIndicator setColor:[UIColor blackColor]];
+    UIBarButtonItem * barButton =
+    [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicator];
+    
+    // Set to Left or Right
+    [[self navigationItem] setRightBarButtonItem:barButton];
+    [self.activityIndicator startAnimating];
     [self updateButtons];
 }
-- (void)webViewDidFinishLoad:(UIWebView *)webView
-{
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self.activityIndicator stopAnimating];
+    [self updateTitle:webView];
     [self updateButtons];
 }
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
-{
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
 }
 
-- (void)updateButtons
-{
-    self.forward.enabled = self.webView.canGoForward;
-    self.back.enabled = self.webView.canGoBack;
-    self.stop.enabled = self.webView.loading;
+- (void)updateButtons{
+    
+    [self.forward setEnabled:self.webView.canGoForward];
+    [self.back setEnabled:self.webView.canGoBack];
+    [self.stop setEnabled: self.webView.loading];
 }
+
+
+
+#pragma  mark -  Custom Label and Setter for the title
+- (void)updateTitle:(UIWebView*)aWebView{
+    [NSThread sleepForTimeInterval:0.3];
+    // Clever variable font size trick
+    CGFloat systemFontSize = [UIFont labelFontSize];
+    CGFloat headFontSize = systemFontSize * 1;
+    CGFloat smallFontSize = systemFontSize * .8;
+    CGFloat widthOfTitleSpace = 280.0;
+    
+    
+    NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    
+    [self setTitle:pageTitle];
+    CGRect frame = CGRectMake(62, 0, [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20.0]].width, 44);
+    UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setTextColor:[UIColor blackColor]];
+    [label setFont:[UIFont boldSystemFontOfSize:17.0]];
+    [self.navigationItem setTitleView:label];
+    
+    //label.text = self.title;
+    if ([self.title sizeWithFont:[UIFont boldSystemFontOfSize:headFontSize]].width > widthOfTitleSpace){
+        [label setNumberOfLines:2];
+        [label setFont:[UIFont boldSystemFontOfSize:smallFontSize]];}
+    else
+        [label setFont:[UIFont boldSystemFontOfSize:headFontSize]];
+    
+    label.text =self.title;
+}
+
+//Over ride the setter for the title by adding a label over top
+-(void)setTitle:(NSString *)title{
+    [super setTitle:title];
+    UILabel *titleLabel = (UILabel *)self.navigationItem.titleView;
+    if (!titleLabel) {
+        titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        [titleLabel setBackgroundColor:[UIColor clearColor]];
+        [titleLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
+        [titleLabel setTextColor:[UIColor blackColor]];
+        [self.navigationItem setTitleView:titleLabel];
+    }
+    [titleLabel setText:title];
+    [titleLabel sizeToFit];
+}
+
 @end

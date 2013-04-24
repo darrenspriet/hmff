@@ -102,29 +102,28 @@
 
 
 
-//Must comment all of this code
+#pragma  mark -  Custom Label and Setter for the title
 - (void)updateTitle:(UIWebView*)aWebView{
     [NSThread sleepForTimeInterval:0.3];
     // Clever variable font size trick
     CGFloat systemFontSize = [UIFont labelFontSize];
     CGFloat headFontSize = systemFontSize * 1;
     CGFloat smallFontSize = systemFontSize * .8;
-    CGFloat widthOfCell = 280.0;
+    CGFloat widthOfTitleSpace = 280.0;
     
     
     NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
     
-    self.title = pageTitle;
+    [self setTitle:pageTitle];
     CGRect frame = CGRectMake(62, 0, [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20.0]].width, 44);
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
-    label.backgroundColor = [UIColor clearColor];
-    label.textColor = [UIColor blackColor];
-    label.font = [UIFont boldSystemFontOfSize:17.0];
-    label.textAlignment = kCTCenterTextAlignment;
-    self.navigationItem.titleView = label;
-    //label.text = self.title;
+    [label setBackgroundColor:[UIColor clearColor]];
+    [label setTextColor:[UIColor blackColor]];
+    [label setFont:[UIFont boldSystemFontOfSize:17.0]];
+    [self.navigationItem setTitleView:label];
     
-    if ([self.title sizeWithFont:[UIFont boldSystemFontOfSize:headFontSize]].width > widthOfCell){
+    //label.text = self.title;
+    if ([self.title sizeWithFont:[UIFont boldSystemFontOfSize:headFontSize]].width > widthOfTitleSpace){
         [label setNumberOfLines:2];
         [label setFont:[UIFont boldSystemFontOfSize:smallFontSize]];}
     else
@@ -133,6 +132,7 @@
     label.text =self.title;
 }
 
+//Over ride the setter for the title by adding a label over top
 -(void)setTitle:(NSString *)title{
     [super setTitle:title];
     UILabel *titleLabel = (UILabel *)self.navigationItem.titleView;
@@ -142,7 +142,6 @@
         [titleLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
         [titleLabel setTextColor:[UIColor blackColor]];
         [self.navigationItem setTitleView:titleLabel];
-        
     }
     [titleLabel setText:title];
     [titleLabel sizeToFit];

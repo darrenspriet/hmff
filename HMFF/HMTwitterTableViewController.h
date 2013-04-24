@@ -11,7 +11,6 @@
 #import <Accounts/Accounts.h>
 #import "HMTwitterDetailViewController.h"
 #import "HMTweetCell.h"
-#import "HMAppDelegate.h"
 
 
 

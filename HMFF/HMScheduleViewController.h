@@ -13,7 +13,6 @@
 
 #import <UIKit/UIKit.h>
 #import "HMScheduleScrollViewController.h"
-#import "HMAppDelegate.h"
 
 @class HMScheduleScrollViewController;
 

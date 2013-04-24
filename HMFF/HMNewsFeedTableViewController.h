@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "HMNewsFeedDetailViewController.h"
 #import "HMNewsFeedCell.h"
-#import "HMAppDelegate.h"
 
 
 @interface HMNewsFeedTableViewController : UITableViewController
