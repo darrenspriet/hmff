@@ -1,21 +1,21 @@
 //
-//  HMBandWebBrowserViewController.m
+//  HMBuyTicketsViewController.m
 //  HMFF
 //
-//  Created by Darren Spriet on 2013-04-20.
+//  Created by Darren Spriet on 2013-04-24.
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
-#import "HMBandWebBrowserViewController.h"
+#import "HMBuyTicketsViewController.h"
 
-@interface HMBandWebBrowserViewController ()
+@interface HMBuyTicketsViewController ()
 
 @end
 
-@implementation HMBandWebBrowserViewController
+@implementation HMBuyTicketsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -27,20 +27,19 @@
     [super viewWillAppear:animated];
     
     //this checks whether the internet is accessible and if it isn't, it will display a message
-//    HMCheckInternetAccess *internetAccess = [[HMCheckInternetAccess alloc]init];
-//    if ([internetAccess isInternetReachable]) {
-//        NSLog(@"Internet is Working!");
-//    }
-//    else{
-//        NSLog(@"Something wrong with the internet");
-//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This page requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
-//        [alert show];
-//    }
+    HMCheckInternetAccess *internetAccess = [[HMCheckInternetAccess alloc]init];
+    if ([internetAccess isInternetReachable]) {
+        NSLog(@"Internet is Working!");
+    }
+    else{
+        NSLog(@"Something wrong with the internet");
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This page requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
+        [alert show];
+    }
     
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     self.webView.scalesPageToFit = YES;
     NSURL *url =[NSURL URLWithString:self.passedURL];
@@ -48,10 +47,22 @@
     [self.webView loadRequest:request];
     [self updateButtons];
     
-    
-    
-	// Do any additional setup after loading the view.
 }
+-(id)init{
+    self=[super init];
+    if (self) {
+        self.webView.scalesPageToFit = YES;
+        NSURL *url =[NSURL URLWithString:self.passedURL];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        [self.webView loadRequest:request];
+        [self updateButtons];
+        
+    }
+    
+    return self;
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -148,5 +159,6 @@
     [titleLabel setText:title];
     [titleLabel sizeToFit];
 }
+
 
 @end

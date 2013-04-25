@@ -14,6 +14,8 @@
 #import <UIKit/UIKit.h>
 #import "HMScheduleScrollViewController.h"
 
+
+
 @class HMScheduleScrollViewController;
 
 @interface HMScheduleViewController : UIViewController<HMScheduleScrollViewControllerDelegate>

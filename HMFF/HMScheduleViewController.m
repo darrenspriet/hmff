@@ -33,23 +33,50 @@
 
     UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
-    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:nil];
+    UIImage *barImage = [UIImage imageNamed:@"ticketButton.png"];
+    UIImage *barImageSelected = [UIImage imageNamed:@"ticketButtonSelected.png"];
+
+    CGRect frameImage = CGRectMake(0, 0, barImage.size.width, barImage.size.height);
+    UIButton *rightBarButtton = [[UIButton alloc] initWithFrame:frameImage];
+    [rightBarButtton setBackgroundImage:barImage forState:UIControlStateNormal];
+    [rightBarButtton setBackgroundImage:barImageSelected forState:UIControlStateHighlighted];
+    
+    
+    [rightBarButtton addTarget:self action:@selector(buyTicketPressed:) forControlEvents:UIControlEventTouchUpInside];
+ 
+    UIBarButtonItem *barButton =[[UIBarButtonItem alloc] initWithCustomView:rightBarButtton];
+    [[self navigationItem] setRightBarButtonItem:barButton];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+-(void)buyTicketPressed:(id)sender{
     
+    [self performSegueWithIdentifier:@"BuyTickets" sender:sender];
+
+
+    
+}
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSLog(@"this was called");
     //When the View is loaded it this container sets the delegats
     if ([segue.identifier isEqualToString:@"container"]){
         [(HMScheduleScrollViewController*)segue.destinationViewController setDelegate:self];
 
     [self setDelegate:(id<HMScheduleViewControllerDelegate>)segue.destinationViewController];
     }
+    else if([segue.identifier isEqualToString:@"BuyTickets"]){
+            HMBuyTicketsViewController *buyTickets = segue.destinationViewController;
+            [buyTickets setPassedURL:@"http://www.hmff.com/?page_id=161"];
+        
+    }
 }
+
 -(void)changeDate:(NSString *)date{
     [self.dateForEvent setText:date];
 
