@@ -13,15 +13,7 @@
 
 @interface HMNewsFeedTableViewController : UITableViewController
 
-
-@property(nonatomic, strong) NSMutableArray *titleArray;
-@property(nonatomic, strong) NSMutableArray *contentArray;
-@property(nonatomic, strong) NSMutableArray *dateArray;
-
-
+//The property that holds the news feed that is sent from App Delegate
 @property (nonatomic, strong)NSDictionary *news;
 
-//Add the date and also add a detail page when selected bringing up the details of all of the next feeds.
-
-//Work on the cells making it custom and something more interesting.
 @end

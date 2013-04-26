@@ -16,12 +16,8 @@
 
 @interface HMTwitterTableViewController : UITableViewController
 
+//Holds the tweets that are passed from the App Delegate
 @property (nonatomic, strong)NSArray *tweets;
-
-//- (void)fetchTweets;
-
-//This is used for a Search if needed
-//@property (nonatomic, strong)NSDictionary *tweets;
 
 @end
 

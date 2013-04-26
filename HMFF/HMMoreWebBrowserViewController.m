@@ -9,38 +9,51 @@
 #import "HMMoreWebBrowserViewController.h"
 
 @interface HMMoreWebBrowserViewController ()
+//Activitiy indicatior used in the Navigaition bar
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
 @implementation HMMoreWebBrowserViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //this checks whether the internet is accessible and if it isn't, it will display a message
+    HMCheckInternetAccess *internetAccess = [[HMCheckInternetAccess alloc]init];
+    if ([internetAccess isInternetReachable]) {
+        NSLog(@"Internet is Working!");
+    }
+    else{
+        NSLog(@"Something wrong with the internet");
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This page requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
+        [alert show];
+    }
+    
+}
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     
-    
+    //Sets up the Web page and loads it 
     self.webView.scalesPageToFit = YES;
     NSURL *url =[NSURL URLWithString:self.passedURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
+    
+    //Sets the proper buttons to enabled or not
     [self updateButtons];
-
-	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender{
@@ -54,6 +67,7 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     self.title=@"Loading...";

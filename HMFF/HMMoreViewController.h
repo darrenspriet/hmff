@@ -12,5 +12,8 @@
 
 @interface HMMoreViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
+//Button to send an email
 - (IBAction)SendAnEmail:(UIButton *)sender;
+
+
 @end

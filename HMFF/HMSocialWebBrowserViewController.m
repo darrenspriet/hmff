@@ -10,6 +10,9 @@
 
 @interface HMSocialWebBrowserViewController ()
 
+//Activitiy indicatior used in the Navigaition bar
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 @end
 
 @implementation HMSocialWebBrowserViewController
@@ -40,26 +43,25 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    //Sets up the Web page and loads it
     self.webView.scalesPageToFit = YES;
     NSURL *url =[NSURL URLWithString:self.passedURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
-    [self updateButtons];
     
+    //Sets the proper buttons to enabled or not
+    [self updateButtons];
 }
 
-
-
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender{
     NSLog(@"Share button Pressed");
 }
+
 
 #pragma WEB VIEW DELEGATE
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
@@ -67,6 +69,7 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     self.title=@"Loading...";

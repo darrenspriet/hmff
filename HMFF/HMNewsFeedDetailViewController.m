@@ -14,8 +14,7 @@
 
 @implementation HMNewsFeedDetailViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
@@ -23,8 +22,7 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     [self configureView];
 
@@ -36,10 +34,8 @@
     if (self.detailItem) {
         NSDictionary *newsFeed = self.detailItem;
         NSString *title=[self decodeHtmlUnicodeCharactersToString:[newsFeed objectForKey:@"title"]];
-//        NSString *title=[newsFeed objectForKey:@"title"];
         
         NSString  *content = [self decodeHtmlUnicodeCharactersToString:[newsFeed objectForKey:@"content"]];
-//        NSString  *content = [newsFeed objectForKey:@"content"];
         
         [self.newsTitle setText: title];
         [self.content setText: content];

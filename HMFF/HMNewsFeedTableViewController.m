@@ -8,7 +8,11 @@
 
 #import "HMNewsFeedTableViewController.h"
 
-@interface HMNewsFeedTableViewController ()@end
+@interface HMNewsFeedTableViewController ()
+@property(nonatomic, strong) NSMutableArray *titleArray;
+@property(nonatomic, strong) NSMutableArray *contentArray;
+@property(nonatomic, strong) NSMutableArray *dateArray;
+@end
 
 @implementation HMNewsFeedTableViewController
 
@@ -23,16 +27,15 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    
+    //Getting the data that holds the news feed that is sent from App Delegate
     self.news = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate]news];
+    
+    //Takes the nes
     [self loadNewsFeedData];
-
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -43,27 +46,37 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    // Return the number of rows in the section.
-    NSLog(@"news count %d" ,  [self.titleArray count]);
-
     return [self.titleArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    //Sets the Cell to the News Feed Cell
     static NSString *CellIdentifier = @"newsCell";
     HMNewsFeedCell *cell  = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     if(!cell){
         cell = [[HMNewsFeedCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
-    
+    //Gets the date for the Cell
     NSString *date =  [self.dateArray objectAtIndex:indexPath.row];
-    NSArray *array = [date componentsSeparatedByString:@"-"];
-    NSString *month = [self getMonth:array];
-    NSString *dateString = [NSString stringWithFormat:@"%@%@%@%@%@",month, @" ", [array objectAtIndex:1],@" ", [array  objectAtIndex:0]];
+    
+    //Converts the date to an Array
+    NSArray *dateArray= [date componentsSeparatedByString:@"-"];
+    
+    //Gets teh month by calling the method below get Month
+    NSString *month = [self getMonth:dateArray];
+    
+    //Formats the dates into a string
+    NSString *dateString = [NSString stringWithFormat:@"%@%@%@%@%@",month, @" ", [dateArray objectAtIndex:1],@" ", [dateArray  objectAtIndex:0]];
+    
+    //Decods the Title so it removes the wierd Unicode characters
     NSString *title =[self decodeHtmlUnicodeCharactersToString:[self.titleArray objectAtIndex:indexPath.row]];
+    //Sets the title to the cell
     [cell.title setText:title];
+    //Sets the date to the Cell
     [cell.date setText:dateString];
+    
     return cell;
 }
 
@@ -72,41 +85,47 @@
     self.contentArray = [[NSMutableArray alloc]init];
     self.dateArray =[[NSMutableArray alloc]init];
     
+    //Creates new Arrays of the news feeds one object in at "posts"
     NSArray *title = [self.news objectForKey:@"posts"];
     NSArray *content =[self.news objectForKey:@"posts"];
     NSArray *date =[self.news objectForKey:@"posts"];
     
-    
+    //Gets all of the titles out of the Title Array
     for(NSDictionary *diction in title){
         NSString *title =[diction objectForKey:@"title"];
-//        NSLog(@"title %@", title);
         [self.titleArray addObject:title];
     }
+    //Gets all of the dates out of the dates Array
     for(NSDictionary *diction in date){
         NSString  *date =[diction objectForKey:@"date"];
-//        NSLog(@"this is the date %@", date);
         [self.dateArray addObject:date];
     }
+    //Gets all of the content out of the content Array
     for(NSDictionary *diction in content){
         NSString  *content =[diction objectForKey:@"excerpt"];
-//        NSLog(@"this is the content %@", content);
         [self.contentArray addObject:content];
     }
 }
-        
+
 
 
 #pragma mark - Prepare for Segue
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    //Goes the segue to show the detail view for the news details
     if ([segue.identifier isEqualToString:@"showNewsDetail"]) {
-        
         NSInteger row = [[self tableView].indexPathForSelectedRow row];
+        
+        //Puts all of the information for the news feed with keys into a dictionary
         NSDictionary *newsFeed =[[NSDictionary alloc]initWithObjectsAndKeys:[self.titleArray objectAtIndex:row],@"title", [self.contentArray objectAtIndex:row], @"content", nil];
+        
         HMNewsFeedDetailViewController *newsFeedDetailViewController = segue.destinationViewController;
+        //Passes the news feed to the the next view controller detail item
         newsFeedDetailViewController.detailItem = newsFeed;
     }
 }
+
+//Goes through and takes an array and returns a string based on the if statement below
 -(NSString*)getMonth:(NSArray*)array{
     if ([array[1] isEqualToString:@"01"]) {
         return @"JAN";
@@ -143,7 +162,7 @@
     }
     else  {
         return @"DEC";
-    }   
+    }
 }
 - (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)passedString{
     NSMutableString* string = [[NSMutableString alloc] initWithString:passedString];
@@ -162,7 +181,7 @@
             {
                 ++counter;
                 uniCodeString = [string substringWithRange:NSMakeRange(i + 3 , 2)];
-                replaceString = [string substringWithRange:NSMakeRange (i, 8)];    
+                replaceString = [string substringWithRange:NSMakeRange (i, 8)];
                 [string replaceCharactersInRange: [string rangeOfString:replaceString] withString:[NSString stringWithFormat:@"%c",[uniCodeString intValue]]];
                 break;
             }

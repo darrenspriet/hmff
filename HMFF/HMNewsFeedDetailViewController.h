@@ -15,4 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *content;
 
 
+//Left off at the Feed Detail view controller and must do all the the schedule controllers
+//and the app delegates as well as anything else below
+
 @end
