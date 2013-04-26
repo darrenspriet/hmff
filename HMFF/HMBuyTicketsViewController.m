@@ -9,6 +9,8 @@
 #import "HMBuyTicketsViewController.h"
 
 @interface HMBuyTicketsViewController ()
+//Activitiy indicatior used in the Navigaition bar
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -41,37 +43,29 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    //Sets up the Web page and loads it
     self.webView.scalesPageToFit = YES;
     NSURL *url =[NSURL URLWithString:self.passedURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
+    
+    //Sets the proper buttons to enabled or not
     [self updateButtons];
-    
-}
--(id)init{
-    self=[super init];
-    if (self) {
-        self.webView.scalesPageToFit = YES;
-        NSURL *url =[NSURL URLWithString:self.passedURL];
-        NSURLRequest *request = [NSURLRequest requestWithURL:url];
-        [self.webView loadRequest:request];
-        [self updateButtons];
-        
-    }
-    
-    return self;
 }
 
-
-
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Buttons
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender{
     NSLog(@"Share button Pressed");
+}
+
+- (IBAction)backButtonPressed:(UIBarButtonItem *)sender {
+    [self dismissViewControllerAnimated:YES completion:^{}];
+    NSLog(@"Back button Pressed");
 }
 
 #pragma WEB VIEW DELEGATE
@@ -80,6 +74,7 @@
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView{
+    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
     
     self.title=@"Loading...";
@@ -107,7 +102,6 @@
 }
 
 - (void)updateButtons{
-    
     [self.forward setEnabled:self.webView.canGoForward];
     [self.back setEnabled:self.webView.canGoBack];
     [self.stop setEnabled: self.webView.loading];
@@ -135,7 +129,6 @@
     [label setFont:[UIFont boldSystemFontOfSize:17.0]];
     [self.navigationItem setTitleView:label];
     
-    //label.text = self.title;
     if ([self.title sizeWithFont:[UIFont boldSystemFontOfSize:headFontSize]].width > widthOfTitleSpace){
         [label setNumberOfLines:2];
         [label setFont:[UIFont boldSystemFontOfSize:smallFontSize]];}

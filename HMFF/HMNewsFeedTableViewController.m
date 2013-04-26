@@ -164,6 +164,9 @@
         return @"DEC";
     }
 }
+
+//Found on stack over flow at the below link:
+//http://stackoverflow.com/questions/1105169/html-character-decoding-in-objective-c-cocoa-touch
 - (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)passedString{
     NSMutableString* string = [[NSMutableString alloc] initWithString:passedString];
     NSString* uniCodeString = nil;

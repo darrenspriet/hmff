@@ -17,44 +17,31 @@
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    //Fetches all of the News Feeds From HMFF
     [self fetchNewsFeed];
+    
+    //Sets all of the Bar Button Items in the entire app to black
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+    
+    //Set the status bar style to blackopaque
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    
+    //This is the Client key and app ID for the parse online
     [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
     [self getParseObjects];
+    
+    //Fetches all of the Tweets for HMFFEST from twitter
     [self fetchTweets];
     
     return YES;
 }
 
-- (void)fetchTweets{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData* data = [NSData dataWithContentsOfURL:
-                        
-                        //This is used for a Search if needed
-                        //     [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
-                        
-                        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
-        
-        NSError* error;
-        
-        self.tweets = [NSJSONSerialization JSONObjectWithData:data
-                                                      options:kNilOptions
-                                                        error:&error];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"finished twitter dispatch");
-
-        });
-    });
-}
-
+//Goes through the news feed and grabs the data from a JSON object on the MAIN thread
+//This needs to be looked at because if there is NO internet it may crash
 - (void)fetchNewsFeed{
+    //Must change this Cause it is on the mainQue
     dispatch_async(dispatch_get_main_queue(), ^{
         NSData* data = [NSData dataWithContentsOfURL:
-                        //This is used for a Search if needed
-                        //     [NSURL URLWithString:@"https://search.twitter.com/search.json?q=%23hmffest"]];
-                        
                         [NSURL URLWithString: @"http://www.hmff.com/?json=get_recent_posts&count=1000"]];
         
         NSError* error;
@@ -64,30 +51,53 @@
                                                       error:&error];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"finished news dispatch");
-
+            NSLog(@"News Feed Dispatch Finished");
+            
         });
     });
 }
 
 
+//Goes through the twitter feed and grabs the data from a JSON object on a Global thread
+//This needs to be looked at because if there is NO internet it may crash
+- (void)fetchTweets{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData* data = [NSData dataWithContentsOfURL:
+                        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
+        
+        NSError* error;
+        
+        self.tweets = [NSJSONSerialization JSONObjectWithData:data
+                                                      options:kNilOptions
+                                                        error:&error];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"finished twitter dispatch");
+            
+        });
+    });
+}
+
+
+
 -(void)getParseObjects{
     //Try to keep the Parse calls to a minimum...there are 3 right now.
     
-    self.allObjects = [[NSMutableArray alloc]init];
+    NSArray *allObjects = [[NSMutableArray alloc]init];
+    NSMutableArray *venue= [[NSMutableArray alloc]init];
+    NSMutableArray *tempArray = [[NSMutableArray alloc]init];
+    NSMutableArray *arrayVenue = [[NSMutableArray alloc]init];
+    
     self.date = [[NSMutableArray alloc]init];
-    self.venue= [[NSMutableArray alloc]init];
     self.band= [[NSMutableArray alloc]init];
     
-    NSMutableArray *tempArray = [[NSMutableArray alloc]init];
     
     //Initial query
     PFQuery *query = [PFQuery queryWithClassName:@"HMFFDates"];
     //Puts all of the querys into an object
-    self.allObjects= [query findObjects];
-
+    allObjects= [query findObjects];
+    
     //Pulls out all of the dates from the objects
-    for (NSDictionary *diction in self.allObjects){
+    for (NSDictionary *diction in allObjects){
         [tempArray addObject:[diction objectForKey:@"date"]];
     }
     //Used to find the Unique Dates
@@ -98,23 +108,22 @@
     
     //Sorts the dates
     [self.date sortUsingSelector:@selector(compare:)];
-
+    
     NSLog(@"dates %@", self.date);
     NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
     
-    for (NSDictionary *diction in self.allObjects){
+    for (NSDictionary *diction in allObjects){
         [tempArray1 addObject:[diction objectForKey:@"venue"]];
     }
     //Used to find the Unique Dates
     NSSet *uniqueVenues = [NSSet setWithArray:tempArray1];
     
     ////Put the Set back into the array so I can use it
-    self.venue= [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
+    venue= [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
     
-    NSMutableArray *arrayVenue = [[NSMutableArray alloc]init];
     //Finds venue for unique dates
     for (int i= 0; i <[self.date count]; i++) {
-        for (NSDictionary *diction in self.allObjects){
+        for (NSDictionary *diction in allObjects){
             if ([[diction objectForKey:@"date"] isEqualToString:[self.date objectAtIndex:i]]) {
                 [arrayVenue addObject:[diction objectForKey:@"venue"]];
             }
@@ -125,15 +134,15 @@
     uniqueVenues = [NSSet setWithArray:arrayVenue];
     NSLog(@"unique venues %@", uniqueVenues);
     
-    self.venue = [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
-    NSLog(@"venues %@", self.venue);
+    venue = [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
+    NSLog(@"venues %@", venue);
     
     //Finds band for unique dates and venue
     for (int i= 0; i <[self.date count]; i++) {
         NSMutableArray *arrayBand = [[NSMutableArray alloc]init];
-        for (NSDictionary *diction in self.allObjects){
+        for (NSDictionary *diction in allObjects){
             if ([[diction objectForKey:@"date"] isEqualToString:[self.date objectAtIndex:i]]) {
-                if ([[diction objectForKey:@"venue"] isEqualToString:[self.venue objectAtIndex:i]]) {
+                if ([[diction objectForKey:@"venue"] isEqualToString:[venue objectAtIndex:i]]) {
                     //Adds the dictionary to the array
                     [arrayBand addObject:diction];
                 }

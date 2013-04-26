@@ -74,7 +74,7 @@
                         <outlet property="backButtonImage" destination="CAA-DA-cbP" id="lKS-ik-jez"/>
                         <outlet property="dateForEvent" destination="fWU-ph-6eU" id="6N5-yM-rxC"/>
                         <outlet property="forwardButtonImage" destination="jh8-CL-3xl" id="map-JN-p8X"/>
-                        <segue destination="DAS-Pd-RA4" kind="push" identifier="BuyTickets" id="a7R-GO-aX4"/>
+                        <segue destination="Gmb-vH-HOO" kind="modal" identifier="BuyTickets" modalTransitionStyle="flipHorizontal" id="a7R-GO-aX4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdq-98-QMq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,7 +193,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Iv-qC-HLl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2352" y="-1908"/>
+            <point key="canvasLocation" x="2878" y="-1908"/>
         </scene>
         <!--First Table View Controller-->
         <scene sceneID="BP5-8N-EYa">
@@ -262,7 +262,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zt7-8O-oYe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2352" y="-2550"/>
+            <point key="canvasLocation" x="2878" y="-2550"/>
         </scene>
         <!--Band Web Browser View Controller-->
         <scene sceneID="9AV-Qv-Ymu">
@@ -331,7 +331,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6c-3J-oC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2887" y="-2559"/>
+            <point key="canvasLocation" x="3413" y="-2559"/>
         </scene>
         <!--Band Web Browser View Controller-->
         <scene sceneID="mXR-PZ-xju">
@@ -411,7 +411,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" id="YEi-nP-Lqw">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="453"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="372"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -420,6 +420,7 @@
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="HnG-hx-ygS">
                                 <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem image="backButton.png" id="j8u-LB-Tnn">
                                         <connections>
@@ -456,7 +457,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1Jk-CE-0GU"/>
+                    <navigationItem key="navigationItem" id="1Jk-CE-0GU">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="eIJ-Qo-m7e">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="DAS-Pd-RA4" id="hE1-Zx-3LQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="back" destination="j8u-LB-Tnn" id="car-ca-hkl"/>
@@ -468,6 +475,25 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zyk-np-ucu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2183" y="-2347"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ta4-fK-qaa">
+            <objects>
+                <navigationController id="Gmb-vH-HOO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yxt-S2-k8L">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DAS-Pd-RA4" kind="relationship" relationship="rootViewController" id="EJc-kK-xSh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8oe-dI-MDG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1657" y="-2347"/>
         </scene>

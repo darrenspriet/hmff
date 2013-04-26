@@ -24,33 +24,36 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    //Configures the entire View
     [self configureView];
-
-	// Do any additional setup after loading the view.
 }
 
-- (void)configureView
-{
+- (void)configureView{
     if (self.detailItem) {
-        NSDictionary *newsFeed = self.detailItem;
-        NSString *title=[self decodeHtmlUnicodeCharactersToString:[newsFeed objectForKey:@"title"]];
         
-        NSString  *content = [self decodeHtmlUnicodeCharactersToString:[newsFeed objectForKey:@"content"]];
+        //Sets title for the News feed to a String called Title
+        NSString *title=[self decodeHtmlUnicodeCharactersToString:[self.detailItem objectForKey:@"title"]];
         
+        //Sets content for the News feed to a String called content
+        NSString  *content = [self decodeHtmlUnicodeCharactersToString:[self.detailItem objectForKey:@"content"]];
+        
+        //Sets the Lable for the title and content to the above Strings
         [self.newsTitle setText: title];
         [self.content setText: content];
 
     }
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)str{
-    NSMutableString* string = [[NSMutableString alloc] initWithString:str];
+
+//Found on stack over flow at the below link:
+//http://stackoverflow.com/questions/1105169/html-character-decoding-in-objective-c-cocoa-touch
+- (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)passedString{
+    NSMutableString* string = [[NSMutableString alloc] initWithString:passedString];
     NSString* uniCodeString = nil;
     NSString* replaceString = nil;
     int counter = -1;
@@ -61,17 +64,16 @@
         for (int k = i + 1; k < [string length] - 1; ++k)
         {
             unichar character2 = [string characterAtIndex:k];
-
-            //Add a 3rd character that looks for ands and dismisses it all together?????????
+            
             if (character1 == '&'  && character2 == '#')
             {
                 ++counter;
                 uniCodeString = [string substringWithRange:NSMakeRange(i + 3 , 2)];
                 replaceString = [string substringWithRange:NSMakeRange (i, 8)];
                 [string replaceCharactersInRange: [string rangeOfString:replaceString] withString:[NSString stringWithFormat:@"%c",[uniCodeString intValue]]];
+                break;
             }
         }
-        
     }
     if (counter > 1)
         return  [self decodeHtmlUnicodeCharactersToString:string];

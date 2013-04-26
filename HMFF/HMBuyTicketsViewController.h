@@ -10,17 +10,23 @@
 
 @interface HMBuyTicketsViewController : UIViewController
 
+
+
+//All properties for web browser
 @property (nonatomic, retain) IBOutlet UIWebView* webView;
 @property (nonatomic, retain) IBOutlet UIToolbar* toolbar;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* back;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* forward;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* refresh;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* stop;
-@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
+//Property used to pass the URL to the the web page
 @property (nonatomic, strong) NSString *passedURL;
--(IBAction)shareButtonPressed:(UIBarButtonItem*)sender;
-- (void)updateButtons;
 
+//Share button
+-(IBAction)shareButtonPressed:(UIBarButtonItem*)sender;
+
+//Done button for the flip page
+- (IBAction)backButtonPressed:(UIBarButtonItem *)sender;
 
 @end

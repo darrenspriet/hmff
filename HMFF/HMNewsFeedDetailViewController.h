@@ -10,12 +10,12 @@
 
 @interface HMNewsFeedDetailViewController : UIViewController
 
+//This is to hold the details item from the previous screen
 @property (nonatomic)NSDictionary *detailItem;
+//Holds the News title 
 @property (weak, nonatomic) IBOutlet UILabel *newsTitle;
+//Holds the News Label
 @property (weak, nonatomic) IBOutlet UITextView *content;
 
-
-//Left off at the Feed Detail view controller and must do all the the schedule controllers
-//and the app delegates as well as anything else below
 
 @end

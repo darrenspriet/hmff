@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
+//This is a Delegate method so we can access the scroll method from the buttons created at the top
 @protocol HMScheduleViewControllerDelegate <NSObject>
 -(void)scrollBack;
 -(void)scrollForward;
@@ -24,8 +25,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *dateForEvent;
 
-@property (nonatomic, strong) NSArray *allObjects;
-@property (nonatomic, strong) NSDictionary *Dictionary;
 @property (nonatomic, strong) NSMutableArray *date;
 
 - (IBAction)forwardButton:(UIButton *)sender;

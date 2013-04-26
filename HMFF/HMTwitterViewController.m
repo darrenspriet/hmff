@@ -27,7 +27,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     //Image for the Navigation Bar
-    UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
+    UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     //Image for the Normal bar button
     UIImage *barImage = [UIImage imageNamed:@"ticketButton.png"];

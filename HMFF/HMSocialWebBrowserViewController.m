@@ -125,7 +125,6 @@
     [label setFont:[UIFont boldSystemFontOfSize:17.0]];
     [self.navigationItem setTitleView:label];
     
-    //label.text = self.title;
     if ([self.title sizeWithFont:[UIFont boldSystemFontOfSize:headFontSize]].width > widthOfTitleSpace){
         [label setNumberOfLines:2];
         [label setFont:[UIFont boldSystemFontOfSize:smallFontSize]];}

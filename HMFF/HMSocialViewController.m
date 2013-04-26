@@ -27,7 +27,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     //Image for the Navigation Bar
-    UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
+    UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     //Image for the Normal bar button
     UIImage *barImage = [UIImage imageNamed:@"ticketButton.png"];
@@ -70,27 +70,22 @@
     //Sends the Facebook http
     if ([segue.identifier isEqualToString:@"facebookSegue"]){
         webBrowser.passedURL=@"http://www.facebook.com/pages/Hmff/85087895652";
-        [webBrowser setTitle:@"facebook.com/HMFF"];
     }
     //Sends the YouTube http
     else if ([segue.identifier isEqualToString:@"youTubeSegue"]){
         webBrowser.passedURL=@"http://www.youtube.com/user/HMFFESTIVAL?feature=watch";
-        [webBrowser setTitle:@"youTube.com/HMFF"];
     }
     //Sends the TWITTER http
     else if ([segue.identifier isEqualToString:@"twitterSegue"]){
         webBrowser.passedURL=@"http://twitter.com/HMFFEST";
-        [webBrowser setTitle:@"twitter.com/HMFFEST"];
     }
     //Sends the Vimeo http
     else if ([segue.identifier isEqualToString:@"vimeoSegue"]){
         webBrowser.passedURL=@"http://vimeo.com/search?q=hmff";
-        [webBrowser setTitle:@"vimeo.com/HMFF"];
     }
     //Sends the HMFF http
     else if ([segue.identifier isEqualToString:@"HMFFSegue"]){
         webBrowser.passedURL=@"http://www.hmff.com";
-        [webBrowser setTitle:@"HMFF.com"];
     }
     //Segue for the Buying tickets
     else if ([segue.identifier isEqualToString:@"BuyTickets"]){

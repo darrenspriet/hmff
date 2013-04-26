@@ -22,18 +22,19 @@
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 
-@property (nonatomic, strong) NSArray *allObjects;
+//Holds the Dates that will be sent to Schedule View Controller(Parse)
 @property (nonatomic, strong) NSMutableArray *date;
-@property (nonatomic, strong) NSMutableArray *venue;
+
+//Holds the Bands that will be sent to Schedule View Controller(Parse)
 @property (nonatomic, strong) NSMutableArray *band;
+
+//Holds the Tweets that will be sent to Twitter View Controller(Twitter)
 @property (nonatomic, strong) NSArray *tweets;
 
+//Holds the News Feeds that will be sent to News View Controller(News)
 @property (nonatomic, strong)NSDictionary *news;
 
 
-@property(nonatomic, strong) NSMutableArray *titleArray;
-@property(nonatomic, strong) NSMutableArray *contentArray;
-@property(nonatomic, strong) NSMutableArray *dateArray;
 
 
 @end

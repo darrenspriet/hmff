@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     //Image for the Navigation Bar
-    UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
+    UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     //Image for the Normal bar button
     UIImage *barImage = [UIImage imageNamed:@"ticketButton.png"];
@@ -84,12 +84,14 @@
     [messageComposer setSubject:emailTitle];
     [messageComposer setMessageBody:messageBody isHTML:NO];
     [messageComposer setToRecipients:toRecipents];
+    [messageComposer.navigationItem.leftBarButtonItem setTintColor:[UIColor blueColor]];
     
     // Present mail view controller on screen
     [self presentViewController:messageComposer animated:YES completion:NULL];
 }
-- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
+
+#pragma mark - MailComposer Delegate
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error{
     switch (result)
     {
         case MFMailComposeResultCancelled:
