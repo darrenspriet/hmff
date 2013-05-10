@@ -9,6 +9,8 @@
 #import "HMAppDelegate.h"
 #define APP_ID @"BKjoCRi6vlE1bMuIY100LN8zsIrlWprOUUZyuaAg"
 #define CLIENT_KEY @"xxSG9DGIVpodQBawjcSWKhgqkH3tdL1kaWM6e7bW"
+#define FLICKR_API_KEY @"4c1d5555b40faa9f3c5b7721bb118482"
+
 
 @implementation HMAppDelegate
 
@@ -33,7 +35,68 @@
     //Fetches all of the Tweets for HMFFEST from twitter
     [self fetchTweets];
     
+    
+    [self fetchFlickerFeed];
+    
+    
+    
     return YES;
+}
+-(void)fetchFlickerFeed{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSData* data = [NSData dataWithContentsOfURL:
+                        [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=%@&user_id=95406796@N08&per_page=20&format=json&nojsoncallback=1", FLICKR_API_KEY]]];
+        NSError* error;
+        self.photos = [NSJSONSerialization JSONObjectWithData:data
+                                                      options:kNilOptions
+                                                        error:&error];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"Flicker Feed Dispatch Finished");
+            [self loadPhotoArrays];
+        });
+    });
+    
+}
+-(void)loadPhotoArrays{
+    // Build an array from the dictionary for easy access to each entry
+    NSArray *photos = [[self.photos objectForKey:@"photos"] objectForKey:@"photo"];
+    NSMutableArray  *photoTitles =[[NSMutableArray alloc]init];
+    self.smallPhotos =[[NSMutableArray alloc]init];
+    self.largePhotos =[[NSMutableArray alloc]init];
+
+    // Loop through each entry in the dictionary...
+    for (NSDictionary *photo in photos)
+    {
+        // Get title of the image
+        NSString *title = [photo objectForKey:@"title"];
+        
+        // Save the title to the photo titles array
+        [photoTitles addObject:(title.length > 0 ? title : @"Untitled")];
+        
+        // Build the URL to where the image is stored (see the Flickr API)
+        // In the format http://farmX.static.flickr.com/server/id/secret
+        // Notice the "_s" which requests a "small" image 75 x 75 pixels
+        NSString *photoURLString = [NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@_t.jpg", [photo objectForKey:@"farm"], [photo objectForKey:@"server"], [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
+        
+        
+        // The performance (scrolling) of the table will be much better if we
+        // build an array of the image data here, and then add this data as
+        // the cell.image value (see cellForRowAtIndexPath:)
+        [self.smallPhotos addObject:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
+        NSLog(@"small photos %@", self.smallPhotos);
+        
+        
+        // Build and save the URL to the large image so we can zoom
+        // in on the image if requested
+        photoURLString = [NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@_m.jpg", [photo objectForKey:@"farm"], [photo objectForKey:@"server"], [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
+        [self.largePhotos addObject:[NSURL URLWithString:photoURLString]];
+                       NSLog(@"large photos %@", self.largePhotos);
+        
+    }
+    
+    // Update the table with data
+    NSLog(@"Finished loading the Arrays");
+    
 }
 
 //Goes through the news feed and grabs the data from a JSON object on the MAIN thread
@@ -76,9 +139,6 @@
         });
     });
 }
-
-
-
 -(void)getParseObjects{
     //Try to keep the Parse calls to a minimum...there are 3 right now.
     

@@ -40,23 +40,41 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of rows in the section.
-    return 3;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     // Configure the cell...
-    if (indexPath.row==0) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"submitABand"];
-        return cell;
+    switch (indexPath.row) {
+        case 0:{
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"submitABand"];
+            return cell;
+            break;
+        }
+        case 1:{
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"submitAVideo"];
+            return cell;
+            break;
+        }
+        case 2:{
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"goToTheWebsite"];
+            return cell;
+            break;
+        }
+        case 3:{
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"goToPhotos"];
+            return cell;
+            break;
+        }
+            
+        default:{
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"goToVideos"];
+            return cell;
+            break;
+            
+        }
     }
-    else if(indexPath.row==1) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"submitAVideo"];
-        return cell;
-    }
-    else{
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"goToTheWebsite"];
-        return cell;
-    }
+    
 }
 
 #pragma Prepare for Segue
@@ -73,6 +91,14 @@
         [webBrowser setTitle:@"Submit A Video"];
     }
     //Calls the website
+    else if([segue.identifier isEqualToString:@"goToTheWebsite"]){
+        webBrowser.passedURL=@"http://www.hmff.com";
+        [webBrowser setTitle:@"HMFF.com"];
+    }
+    else if([segue.identifier isEqualToString:@"goToTheWebsite"]){
+        webBrowser.passedURL=@"http://www.hmff.com";
+        [webBrowser setTitle:@"HMFF.com"];
+    }
     else if([segue.identifier isEqualToString:@"goToTheWebsite"]){
         webBrowser.passedURL=@"http://www.hmff.com";
         [webBrowser setTitle:@"HMFF.com"];

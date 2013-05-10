@@ -23,6 +23,9 @@
 		E0257D9A1728C2E1005D7D52 /* ticketButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0257D991728C2E1005D7D52 /* ticketButton@2x.png */; };
 		E0257DA31728C951005D7D52 /* ticketButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E0257DA11728C951005D7D52 /* ticketButtonSelected.png */; };
 		E0257DA41728C951005D7D52 /* ticketButtonSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0257DA21728C951005D7D52 /* ticketButtonSelected@2x.png */; };
+		E02CC3BD173C611F008C10FF /* HMPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02CC3BC173C611F008C10FF /* HMPhotoCollectionViewController.m */; };
+		E02CC3C0173C61A2008C10FF /* HMPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E02CC3BF173C61A2008C10FF /* HMPhotoCollectionCell.m */; };
+		E02CC3C3173C84E8008C10FF /* HMLargePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02CC3C2173C84E8008C10FF /* HMLargePhotoViewController.m */; };
 		E036B730171CA2600036B8C1 /* LISENCE_HMFF_ICONS.txt in Resources */ = {isa = PBXBuildFile; fileRef = E036B72F171CA2600036B8C1 /* LISENCE_HMFF_ICONS.txt */; };
 		E03C065F16FBE667002AC531 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C065E16FBE667002AC531 /* UIKit.framework */; };
 		E03C066116FBE667002AC531 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03C066016FBE667002AC531 /* Foundation.framework */; };
@@ -142,6 +145,12 @@
 		E0257D991728C2E1005D7D52 /* ticketButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticketButton@2x.png"; sourceTree = "<group>"; };
 		E0257DA11728C951005D7D52 /* ticketButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticketButtonSelected.png; sourceTree = "<group>"; };
 		E0257DA21728C951005D7D52 /* ticketButtonSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticketButtonSelected@2x.png"; sourceTree = "<group>"; };
+		E02CC3BB173C611F008C10FF /* HMPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoCollectionViewController.h; sourceTree = "<group>"; };
+		E02CC3BC173C611F008C10FF /* HMPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoCollectionViewController.m; sourceTree = "<group>"; };
+		E02CC3BE173C61A2008C10FF /* HMPhotoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoCollectionCell.h; sourceTree = "<group>"; };
+		E02CC3BF173C61A2008C10FF /* HMPhotoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoCollectionCell.m; sourceTree = "<group>"; };
+		E02CC3C1173C84E8008C10FF /* HMLargePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMLargePhotoViewController.h; sourceTree = "<group>"; };
+		E02CC3C2173C84E8008C10FF /* HMLargePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLargePhotoViewController.m; sourceTree = "<group>"; };
 		E036B72F171CA2600036B8C1 /* LISENCE_HMFF_ICONS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LISENCE_HMFF_ICONS.txt; sourceTree = "<group>"; };
 		E03C065B16FBE667002AC531 /* HMFF.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HMFF.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E03C065E16FBE667002AC531 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -493,6 +502,12 @@
 				E0FADB3D170DFB310006C833 /* HMMoreTableViewController.m */,
 				E00E0A08170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.h */,
 				E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */,
+				E02CC3BB173C611F008C10FF /* HMPhotoCollectionViewController.h */,
+				E02CC3BC173C611F008C10FF /* HMPhotoCollectionViewController.m */,
+				E02CC3BE173C61A2008C10FF /* HMPhotoCollectionCell.h */,
+				E02CC3BF173C61A2008C10FF /* HMPhotoCollectionCell.m */,
+				E02CC3C1173C84E8008C10FF /* HMLargePhotoViewController.h */,
+				E02CC3C2173C84E8008C10FF /* HMLargePhotoViewController.m */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -778,6 +793,9 @@
 				E0D8D8D51720DB5200752A29 /* HMVenueCell.m in Sources */,
 				E04144011723770700DB5B4E /* HMBandWebBrowserViewController.m in Sources */,
 				E0257D921728AA0B005D7D52 /* HMBuyTicketsViewController.m in Sources */,
+				E02CC3BD173C611F008C10FF /* HMPhotoCollectionViewController.m in Sources */,
+				E02CC3C0173C61A2008C10FF /* HMPhotoCollectionCell.m in Sources */,
+				E02CC3C3173C84E8008C10FF /* HMLargePhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

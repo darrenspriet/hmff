@@ -89,7 +89,8 @@
     }
     //Segue for the Buying tickets
     else if ([segue.identifier isEqualToString:@"BuyTickets"]){
-        HMBuyTicketsViewController *buyTickets = segue.destinationViewController;
+        UINavigationController * navController =segue.destinationViewController;
+        HMBuyTicketsViewController *buyTickets = (HMBuyTicketsViewController *)navController.topViewController;
         [buyTickets setPassedURL:@"http://www.hmff.com/?page_id=161"];
     }
 }

@@ -34,6 +34,14 @@
 //Holds the News Feeds that will be sent to News View Controller(News)
 @property (nonatomic, strong)NSDictionary *news;
 
+//Holds the Photos that will be sent to More View Controller(More)
+@property (nonatomic, strong) NSDictionary *photos;
+
+//Holds the Small Photos that will be sent to More View Controller(More)
+@property (nonatomic, strong) NSMutableArray *smallPhotos;
+
+//Holds the Large Photos that will be sent to More View Controller(More)
+@property (nonatomic, strong) NSMutableArray *largePhotos;
 
 
 
