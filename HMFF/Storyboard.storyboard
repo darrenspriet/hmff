@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="Uaw-Oy-Tfo" customClass="HMNewsFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsl-uA-LT4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9a-rG-K0L">
@@ -64,7 +64,7 @@
             <objects>
                 <tableViewController id="jtw-ey-lVs" customClass="HMNewsFeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="RIC-Ih-gGK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -124,7 +124,7 @@
             <objects>
                 <viewController id="dlc-h9-Onv" customClass="HMNewsFeedDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mYm-af-p44">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title Goes Here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-3n-m3V">
@@ -176,7 +176,7 @@
             <objects>
                 <viewController id="2Qd-db-GVQ" customClass="HMTwitterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="faU-aG-uOm">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-J4-h9V">
@@ -247,7 +247,7 @@
             <objects>
                 <tableViewController id="wx8-zC-B03" customClass="HMTwitterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="109" sectionHeaderHeight="22" sectionFooterHeight="22" id="hVz-uy-I5K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -328,7 +328,7 @@
             <objects>
                 <viewController id="EAI-lg-KOF" customClass="HMTwitterDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v04-hY-qpr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIN-we-ipY">
@@ -391,7 +391,7 @@
             <objects>
                 <viewController id="YPs-GN-PfW" customClass="HMSocialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVo-e5-d7X">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUf-jx-w4c">
@@ -531,7 +531,7 @@
             <objects>
                 <viewController id="uqj-Bg-yve" customClass="HMMoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OOP-8e-LEa">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iE9-Mn-8al">
@@ -608,7 +608,7 @@
             <objects>
                 <tableViewController id="esX-NZ-Wfk" customClass="HMMoreTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XW1-D7-uTH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -708,6 +708,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="KlN-ic-TwX" kind="push" id="RN5-w3-X2f"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -725,7 +728,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="EWF-zL-Z4W" customClass="HMMoreWebBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8A-sJ-me8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPH-Vj-ZLl">
@@ -801,7 +804,7 @@
             <objects>
                 <viewController id="u6h-EW-53g" customClass="HMLargePhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KeX-kc-B1Q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H9w-fg-RXt"/>
@@ -821,14 +824,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JiO-tD-W74" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2950" y="1991"/>
+            <point key="canvasLocation" x="2934" y="1731"/>
         </scene>
         <!--Photo Collection View Controller-->
         <scene sceneID="Pqg-Cg-xxu">
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="N8U-te-xKz" customClass="HMPhotoCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="XiV-n2-cGq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EIy-Hj-1Y0">
                             <size key="itemSize" width="100" height="100"/>
@@ -869,7 +872,80 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6R-xG-oRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2340" y="1897"/>
+            <point key="canvasLocation" x="2488" y="1745"/>
+        </scene>
+        <!--Videos Table View Controller-->
+        <scene sceneID="I0Y-Qm-t8V">
+            <objects>
+                <tableViewController id="KlN-ic-TwX" customClass="HMVideosTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="205" sectionHeaderHeight="22" sectionFooterHeight="22" id="90K-pk-VZS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" reuseIdentifier="VideoCell" rowHeight="205" id="2mv-Wa-t75" customClass="HMVideoCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="205"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="204"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MFe-Wb-coz">
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="d6S-dn-Vrc">
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="45" id="uPT-QQ-opw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                                <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cw3-ii-C8a">
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="144" id="Yb3-ie-1n2"/>
+                                                    </constraints>
+                                                </webView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="top" secondItem="MFe-Wb-coz" secondAttribute="top" constant="60" id="66w-lP-YaE"/>
+                                                <constraint firstItem="d6S-dn-Vrc" firstAttribute="trailing" secondItem="MFe-Wb-coz" secondAttribute="trailing" type="default" id="GRf-Jg-5go"/>
+                                                <constraint firstItem="d6S-dn-Vrc" firstAttribute="leading" secondItem="MFe-Wb-coz" secondAttribute="leading" type="default" id="N0d-Ha-jiM"/>
+                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="leading" secondItem="MFe-Wb-coz" secondAttribute="leading" type="default" id="gws-QG-qCc"/>
+                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="trailing" secondItem="MFe-Wb-coz" secondAttribute="trailing" type="default" id="ttQ-Re-UfE"/>
+                                                <constraint firstItem="d6S-dn-Vrc" firstAttribute="top" secondItem="MFe-Wb-coz" secondAttribute="top" constant="15" id="zyF-42-Bk6"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <constraints>
+                                    <constraint firstItem="MFe-Wb-coz" firstAttribute="trailing" secondItem="2mv-Wa-t75" secondAttribute="trailing" type="default" id="Kgc-8x-hCZ"/>
+                                    <constraint firstItem="MFe-Wb-coz" firstAttribute="leading" secondItem="2mv-Wa-t75" secondAttribute="leading" type="default" id="fgV-Pw-ryH"/>
+                                    <constraint firstItem="MFe-Wb-coz" firstAttribute="top" secondItem="2mv-Wa-t75" secondAttribute="top" type="user" id="lTT-Ci-Ygw"/>
+                                    <constraint firstItem="MFe-Wb-coz" firstAttribute="bottom" secondItem="2mv-Wa-t75" secondAttribute="bottom" type="default" id="tjM-KR-BoO"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="videoTitle" destination="d6S-dn-Vrc" id="n8u-DC-rmi"/>
+                                    <outlet property="videoWebView" destination="Cw3-ii-C8a" id="s47-ej-nAv"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="KlN-ic-TwX" id="dUU-B9-uMx"/>
+                            <outlet property="delegate" destination="KlN-ic-TwX" id="TrN-nC-yet"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="ruB-bT-NJ5"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OcV-gZ-XAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2482" y="2129"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="2GC-w8-A2E">
@@ -1053,7 +1129,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="zQw-le-wFB" customClass="HMSocialWebBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2MT-fh-vrR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fp6-3M-tiA">
@@ -1128,7 +1204,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="JWv-oD-gMU" customClass="HMBuyTicketsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XP2-iD-jdy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eb5-ec-MRa">
@@ -1244,10 +1320,156 @@
         <image name="backButton.png" width="13" height="14"/>
         <image name="ticketButton.png" width="60" height="33"/>
     </resources>
+    <classes>
+        <class className="HMBuyTicketsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMBuyTicketsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMLargePhotoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMLargePhotoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HMMoreTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreTableViewController.h"/>
+        </class>
+        <class className="HMMoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="SendAnEmail:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="HMMoreWebBrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreWebBrowserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="content" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="newsTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedTableViewController.h"/>
+        </class>
+        <class className="HMNewsFeedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedViewController.h"/>
+        </class>
+        <class className="HMPhotoCollectionCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPhotoCollectionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HMPhotoCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPhotoCollectionViewController.h"/>
+        </class>
+        <class className="HMScheduleNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMScheduleNavigationViewController.h"/>
+        </class>
+        <class className="HMSocialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialViewController.h"/>
+        </class>
+        <class className="HMSocialWebBrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialWebBrowserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTabBarViewController.h"/>
+        </class>
+        <class className="HMTweetCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTweetCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tweet" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMTwitterDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tweetLabel" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="HMTwitterTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterTableViewController.h"/>
+        </class>
+        <class className="HMTwitterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="postTweet:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="HMVideoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMVideoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="videoTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMVideosTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMVideosTableViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="mjR-NM-uON"/>

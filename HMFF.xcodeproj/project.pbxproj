@@ -23,6 +23,9 @@
 		E0257D9A1728C2E1005D7D52 /* ticketButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0257D991728C2E1005D7D52 /* ticketButton@2x.png */; };
 		E0257DA31728C951005D7D52 /* ticketButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E0257DA11728C951005D7D52 /* ticketButtonSelected.png */; };
 		E0257DA41728C951005D7D52 /* ticketButtonSelected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0257DA21728C951005D7D52 /* ticketButtonSelected@2x.png */; };
+		E02620EF173DCB4900F88B71 /* HMVideosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02620EE173DCB4900F88B71 /* HMVideosTableViewController.m */; };
+		E02620F2173DCB6400F88B71 /* HMVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E02620F1173DCB6400F88B71 /* HMVideoCell.m */; };
+		E02620F4173DCDFB00F88B71 /* Video.plist in Resources */ = {isa = PBXBuildFile; fileRef = E02620F3173DCDFB00F88B71 /* Video.plist */; };
 		E02CC3BD173C611F008C10FF /* HMPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02CC3BC173C611F008C10FF /* HMPhotoCollectionViewController.m */; };
 		E02CC3C0173C61A2008C10FF /* HMPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E02CC3BF173C61A2008C10FF /* HMPhotoCollectionCell.m */; };
 		E02CC3C3173C84E8008C10FF /* HMLargePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02CC3C2173C84E8008C10FF /* HMLargePhotoViewController.m */; };
@@ -145,6 +148,11 @@
 		E0257D991728C2E1005D7D52 /* ticketButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticketButton@2x.png"; sourceTree = "<group>"; };
 		E0257DA11728C951005D7D52 /* ticketButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticketButtonSelected.png; sourceTree = "<group>"; };
 		E0257DA21728C951005D7D52 /* ticketButtonSelected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ticketButtonSelected@2x.png"; sourceTree = "<group>"; };
+		E02620ED173DCB4900F88B71 /* HMVideosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMVideosTableViewController.h; sourceTree = "<group>"; };
+		E02620EE173DCB4900F88B71 /* HMVideosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMVideosTableViewController.m; sourceTree = "<group>"; };
+		E02620F0173DCB6400F88B71 /* HMVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMVideoCell.h; sourceTree = "<group>"; };
+		E02620F1173DCB6400F88B71 /* HMVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMVideoCell.m; sourceTree = "<group>"; };
+		E02620F3173DCDFB00F88B71 /* Video.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Video.plist; sourceTree = "<group>"; };
 		E02CC3BB173C611F008C10FF /* HMPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoCollectionViewController.h; sourceTree = "<group>"; };
 		E02CC3BC173C611F008C10FF /* HMPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPhotoCollectionViewController.m; sourceTree = "<group>"; };
 		E02CC3BE173C61A2008C10FF /* HMPhotoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPhotoCollectionCell.h; sourceTree = "<group>"; };
@@ -508,6 +516,11 @@
 				E02CC3BF173C61A2008C10FF /* HMPhotoCollectionCell.m */,
 				E02CC3C1173C84E8008C10FF /* HMLargePhotoViewController.h */,
 				E02CC3C2173C84E8008C10FF /* HMLargePhotoViewController.m */,
+				E02620ED173DCB4900F88B71 /* HMVideosTableViewController.h */,
+				E02620EE173DCB4900F88B71 /* HMVideosTableViewController.m */,
+				E02620F0173DCB6400F88B71 /* HMVideoCell.h */,
+				E02620F1173DCB6400F88B71 /* HMVideoCell.m */,
+				E02620F3173DCDFB00F88B71 /* Video.plist */,
 			);
 			name = More;
 			sourceTree = "<group>";
@@ -732,6 +745,7 @@
 				E0257DA31728C951005D7D52 /* ticketButtonSelected.png in Resources */,
 				E0257DA41728C951005D7D52 /* ticketButtonSelected@2x.png in Resources */,
 				E09643FB172B073C0037288E /* HMFFlogo3.png in Resources */,
+				E02620F4173DCDFB00F88B71 /* Video.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,6 +810,8 @@
 				E02CC3BD173C611F008C10FF /* HMPhotoCollectionViewController.m in Sources */,
 				E02CC3C0173C61A2008C10FF /* HMPhotoCollectionCell.m in Sources */,
 				E02CC3C3173C84E8008C10FF /* HMLargePhotoViewController.m in Sources */,
+				E02620EF173DCB4900F88B71 /* HMVideosTableViewController.m in Sources */,
+				E02620F2173DCB6400F88B71 /* HMVideoCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
