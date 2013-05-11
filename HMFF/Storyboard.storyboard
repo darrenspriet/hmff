@@ -50,6 +50,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="HWY-xZ-KXb">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="News" id="QqO-2o-6dE"/>
                     </navigationItem>
                     <connections>
                         <segue destination="jWH-U8-Cqf" kind="modal" identifier="BuyTickets" modalTransitionStyle="flipHorizontal" id="h6M-be-XsA"/>
@@ -233,6 +234,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="usC-Ja-itH">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="Twitter" id="4c0-JY-BXm"/>
                     </navigationItem>
                     <connections>
                         <segue destination="jWH-U8-Cqf" kind="modal" identifier="BuyTickets" modalTransitionStyle="flipHorizontal" id="gFT-7k-txH"/>
@@ -517,7 +519,9 @@
                             <constraint firstItem="Idt-eU-5IX" firstAttribute="top" secondItem="ZVo-e5-d7X" secondAttribute="top" constant="195" id="ynu-W6-x1P"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HHb-Xy-CqW"/>
+                    <navigationItem key="navigationItem" id="HHb-Xy-CqW">
+                        <barButtonItem key="backBarButtonItem" title="Social" id="9b7-dR-drw"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="jWH-U8-Cqf" kind="modal" identifier="BuyTickets" modalTransitionStyle="flipHorizontal" id="OpY-qo-QPq"/>
                     </connections>
@@ -594,6 +598,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="3fg-ig-UpU">
                         <nil key="title"/>
+                        <barButtonItem key="backBarButtonItem" title="More" id="oIW-Df-B2d"/>
                     </navigationItem>
                     <connections>
                         <segue destination="jWH-U8-Cqf" kind="modal" identifier="BuyTickets" modalTransitionStyle="flipHorizontal" id="lay-CP-fKj"/>
@@ -868,7 +873,9 @@
                             <outlet property="delegate" destination="N8U-te-xKz" id="1rZ-hh-beG"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="N5e-2K-gBg"/>
+                    <navigationItem key="navigationItem" id="N5e-2K-gBg">
+                        <barButtonItem key="backBarButtonItem" title="Back " id="LiP-Kr-82i"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6R-xG-oRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -941,7 +948,9 @@
                             <outlet property="delegate" destination="KlN-ic-TwX" id="TrN-nC-yet"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ruB-bT-NJ5"/>
+                    <navigationItem key="navigationItem" id="ruB-bT-NJ5">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Ynq-Z2-GXf"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OcV-gZ-XAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1326,8 +1335,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="h6M-be-XsA"/>
         <segue reference="mjR-NM-uON"/>
-        <segue reference="lay-CP-fKj"/>
         <segue reference="eJZ-SU-oGA"/>
     </inferredMetricsTieBreakers>
 </document>
