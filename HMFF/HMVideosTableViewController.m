@@ -26,12 +26,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     //reads from the Youtbe.plist file and sets the array in the plist to the youtubeVideos array
     NSString *file = @"Video";
     NSString *filePath = [[NSBundle mainBundle]pathForResource:file ofType:@"plist"];
     
     [self setVideos:[NSArray arrayWithContentsOfFile:filePath]];
+}
+-(void)setTitle:(NSString *)title{
+    [super setTitle:title];
+    UILabel *titleLabel = (UILabel *)self.navigationItem.titleView;
+    if (!titleLabel) {
+        titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        [titleLabel setBackgroundColor:[UIColor clearColor]];
+        [titleLabel setFont:[UIFont boldSystemFontOfSize:19.0f]];
+        [titleLabel setTextColor:[UIColor blackColor]];
+        [self.navigationItem setTitleView:titleLabel];
+    }
+    [titleLabel setText:title];
+    [titleLabel sizeToFit];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,7 +76,7 @@
     //creates a custom cell and calls the embedYoutube method which loads the video
     HMVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoCell"];
     
-    NSString *embeddedHTML = [[NSString alloc]initWithFormat: @"<html><head><title>.</title><style>body,html,iframe{margin:0;padding:0;}</style></head><body><iframe width=\"320\" height=\"145\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe></body></html>", [self.VideoContent objectForKey:@"url"]];
+    NSString *embeddedHTML = [[NSString alloc]initWithFormat: @"<html><head><title>.</title><style>body,html,iframe{margin:0; margin-top:-10;padding:0;}</style></head><body><iframe width=\"321\" height=\"194\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe></body></html>", [self.VideoContent objectForKey:@"url"]];
         [cell.videoWebView loadHTMLString:embeddedHTML baseURL:nil];
     
         [cell.videoWebView.scrollView setScrollEnabled:NO];

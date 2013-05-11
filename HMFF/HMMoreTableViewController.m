@@ -83,26 +83,24 @@
     //Calls the submit a band segue
     if ([segue.identifier isEqualToString:@"submitABand"]){
         webBrowser.passedURL=@"http://www.hmff.com/?page_id=403";
-        [webBrowser setTitle:@"Submit A Band"];
     }
     //Calls the submit a video segue
     else if([segue.identifier isEqualToString:@"submitAVideo"]){
         webBrowser.passedURL=@"http://www.hmff.com/?page_id=407";
-        [webBrowser setTitle:@"Submit A Video"];
     }
     //Calls the website
     else if([segue.identifier isEqualToString:@"goToTheWebsite"]){
         webBrowser.passedURL=@"http://www.hmff.com";
-        [webBrowser setTitle:@"HMFF.com"];
     }
-    else if([segue.identifier isEqualToString:@"goToTheWebsite"]){
-        webBrowser.passedURL=@"http://www.hmff.com";
-        [webBrowser setTitle:@"HMFF.com"];
+    else if([segue.identifier isEqualToString:@"videos"]){
+        HMVideosTableViewController *videoController = segue.destinationViewController;
+        [videoController setTitle:@"HMFF YouTube Videos"];
     }
-    else if([segue.identifier isEqualToString:@"goToTheWebsite"]){
-        webBrowser.passedURL=@"http://www.hmff.com";
-        [webBrowser setTitle:@"HMFF.com"];
+    else if([segue.identifier isEqualToString:@"photosCollection"]){
+        HMPhotoCollectionViewController *photoController = segue.destinationViewController;
+        [photoController setTitle:@"HMFF Flickr Photos"];
     }
+    
 }
 
 

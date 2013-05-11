@@ -26,10 +26,22 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-
     self.smallPhotos = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate]smallPhotos];
     self.largePhotos = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate]largePhotos];
+}
 
+-(void)setTitle:(NSString *)title{
+    [super setTitle:title];
+    UILabel *titleLabel = (UILabel *)self.navigationItem.titleView;
+    if (!titleLabel) {
+        titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+        [titleLabel setBackgroundColor:[UIColor clearColor]];
+        [titleLabel setFont:[UIFont boldSystemFontOfSize:19.0f]];
+        [titleLabel setTextColor:[UIColor blackColor]];
+        [self.navigationItem setTitleView:titleLabel];
+    }
+    [titleLabel setText:title];
+    [titleLabel sizeToFit];
 }
 
 - (void)didReceiveMemoryWarning

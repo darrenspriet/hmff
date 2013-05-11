@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "HMMoreWebBrowserViewController.h"
+#import "HMVideosTableViewController.h"
+#import "HMPhotoCollectionViewController.h"
+
+
 
 
 @interface HMMoreTableViewController : UITableViewController
