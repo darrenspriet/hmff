@@ -27,7 +27,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     //Sets the Tweet array from the App Delegate
-        self.tweets = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate]tweets];
+        self.tweets = [[HMDataFeedManager sharedDataFeedManager] tweets];
 }
 
 #pragma mark - Table view data source

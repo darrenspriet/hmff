@@ -32,7 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self setDate:[(HMAppDelegate *)[[UIApplication sharedApplication] delegate] date]];
+    [self setDate:[[HMDataFeedManager sharedDataFeedManager] date]];
 	// Do any additional setup after loading the view.
 }
 

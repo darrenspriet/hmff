@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSMutableArray *tempArray = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate] band];
+    NSMutableArray *tempArray = [[HMDataFeedManager sharedDataFeedManager] band];
     [self setBand: [tempArray objectAtIndex:1]];
 
 }

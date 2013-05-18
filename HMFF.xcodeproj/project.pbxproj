@@ -62,6 +62,8 @@
 		E09FCFDB1718F1F800DFD7C9 /* HMScheduleScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFDA1718F1F800DFD7C9 /* HMScheduleScrollViewController.m */; };
 		E0A89A581703DCF70070F731 /* NoteIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E0A89A571703DCF70070F731 /* NoteIcon.png */; };
 		E0A89A5B170521D60070F731 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A89A591705219D0070F731 /* Twitter.framework */; };
+		E0B3A234174721FD00DDBF91 /* HMSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B3A233174721FD00DDBF91 /* HMSplashViewController.m */; };
+		E0B3A23C174727F000DDBF91 /* HMDataFeedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B3A23B174727F000DDBF91 /* HMDataFeedManager.m */; };
 		E0BC623017036D7200EFB287 /* EmailButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC622E17036D7200EFB287 /* EmailButton@2x.png */; };
 		E0BC623117036D7200EFB287 /* EmailButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC622F17036D7200EFB287 /* EmailButton.png */; };
 		E0BC62341703723F00EFB287 /* EmailButtonSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BC62321703723F00EFB287 /* EmailButtonSelected.png */; };
@@ -202,6 +204,10 @@
 		E09FCFDA1718F1F800DFD7C9 /* HMScheduleScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScheduleScrollViewController.m; sourceTree = "<group>"; };
 		E0A89A571703DCF70070F731 /* NoteIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoteIcon.png; sourceTree = "<group>"; };
 		E0A89A591705219D0070F731 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		E0B3A232174721FD00DDBF91 /* HMSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSplashViewController.h; sourceTree = "<group>"; };
+		E0B3A233174721FD00DDBF91 /* HMSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSplashViewController.m; sourceTree = "<group>"; };
+		E0B3A23A174727F000DDBF91 /* HMDataFeedManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDataFeedManager.h; sourceTree = "<group>"; };
+		E0B3A23B174727F000DDBF91 /* HMDataFeedManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDataFeedManager.m; sourceTree = "<group>"; };
 		E0BC622E17036D7200EFB287 /* EmailButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmailButton@2x.png"; sourceTree = "<group>"; };
 		E0BC622F17036D7200EFB287 /* EmailButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButton.png; sourceTree = "<group>"; };
 		E0BC62321703723F00EFB287 /* EmailButtonSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EmailButtonSelected.png; sourceTree = "<group>"; };
@@ -327,6 +333,8 @@
 				E0F89C6A171748B500BD5755 /* HMCheckInternetAccess.m */,
 				E0257D901728AA0B005D7D52 /* HMBuyTicketsViewController.h */,
 				E0257D911728AA0B005D7D52 /* HMBuyTicketsViewController.m */,
+				E0B3A23A174727F000DDBF91 /* HMDataFeedManager.h */,
+				E0B3A23B174727F000DDBF91 /* HMDataFeedManager.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -386,6 +394,7 @@
 		E03C066616FBE667002AC531 /* HMFF */ = {
 			isa = PBXGroup;
 			children = (
+				E0B3A231174721E400DDBF91 /* Splash */,
 				E03C069B16FBE901002AC531 /* Schedule */,
 				E03C069C16FBE926002AC531 /* News Feed */,
 				E03C069D16FBE92A002AC531 /* Twitter */,
@@ -553,6 +562,15 @@
 				E0BDB72A171F76F300B11A19 /* Tab Bar Icons */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		E0B3A231174721E400DDBF91 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				E0B3A232174721FD00DDBF91 /* HMSplashViewController.h */,
+				E0B3A233174721FD00DDBF91 /* HMSplashViewController.m */,
+			);
+			name = Splash;
 			sourceTree = "<group>";
 		};
 		E0BDB72A171F76F300B11A19 /* Tab Bar Icons */ = {
@@ -812,6 +830,8 @@
 				E02CC3C3173C84E8008C10FF /* HMLargePhotoViewController.m in Sources */,
 				E02620EF173DCB4900F88B71 /* HMVideosTableViewController.m in Sources */,
 				E02620F2173DCB6400F88B71 /* HMVideoCell.m in Sources */,
+				E0B3A234174721FD00DDBF91 /* HMSplashViewController.m in Sources */,
+				E0B3A23C174727F000DDBF91 /* HMDataFeedManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

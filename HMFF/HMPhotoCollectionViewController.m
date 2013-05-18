@@ -26,8 +26,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    self.smallPhotos = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate]smallPhotos];
-    self.largePhotos = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate]largePhotos];
+    self.smallPhotos = [[HMDataFeedManager sharedDataFeedManager] smallPhotos];
+    self.largePhotos = [[HMDataFeedManager sharedDataFeedManager] largePhotos];
 }
 
 -(void)setTitle:(NSString *)title{

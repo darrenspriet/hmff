@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HMVenueCell.h"
+#import "HMBandWebBrowserViewController.h"
+
 
 @interface HMSecondTableViewController : UITableViewController
 

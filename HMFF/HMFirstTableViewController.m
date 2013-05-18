@@ -26,11 +26,16 @@
     }
     return self;
 }
+-(void)viewDidAppear:(BOOL)animated{
+    [[HMDataFeedManager sharedDataFeedManager] getParseObjects];
+    NSLog(@"PINGS EVERYTIME THIS IS RELOADED");
+
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSMutableArray *tempArray = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate] band];
+    NSMutableArray *tempArray = [[HMDataFeedManager sharedDataFeedManager] band];
     [self setBand: [tempArray objectAtIndex:0]];    
 }
 

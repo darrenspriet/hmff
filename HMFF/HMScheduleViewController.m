@@ -25,9 +25,7 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-     [self setDate:[(HMAppDelegate *)[[UIApplication sharedApplication] delegate] date]];
-  
-    
+    [self setDate:[[HMDataFeedManager sharedDataFeedManager] date]];     
     [self.dateForEvent setText:[self.date objectAtIndex:0]];
     [self imagesForButton:@"" andFrontImage:@"forwardButton.png"];
 

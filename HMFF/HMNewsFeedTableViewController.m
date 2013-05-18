@@ -28,7 +28,7 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     //Getting the data that holds the news feed that is sent from App Delegate
-    self.news = [(HMAppDelegate *)[[UIApplication sharedApplication] delegate]news];
+    self.news = [[HMDataFeedManager sharedDataFeedManager] news];
     
     //Takes the nes
     [self loadNewsFeedData];
