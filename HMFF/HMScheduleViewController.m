@@ -61,7 +61,6 @@
     
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"this was called");
     //When the View is loaded it this container sets the delegats
     if ([segue.identifier isEqualToString:@"container"]){
         [(HMScheduleScrollViewController*)segue.destinationViewController setDelegate:self];

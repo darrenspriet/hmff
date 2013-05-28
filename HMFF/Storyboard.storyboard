@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="Uaw-Oy-Tfo" customClass="HMNewsFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsl-uA-LT4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9a-rG-K0L">
@@ -65,7 +65,7 @@
             <objects>
                 <tableViewController id="jtw-ey-lVs" customClass="HMNewsFeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="RIC-Ih-gGK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -125,7 +125,7 @@
             <objects>
                 <viewController id="dlc-h9-Onv" customClass="HMNewsFeedDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mYm-af-p44">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title Goes Here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-3n-m3V">
@@ -177,7 +177,7 @@
             <objects>
                 <viewController id="2Qd-db-GVQ" customClass="HMTwitterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="faU-aG-uOm">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-J4-h9V">
@@ -249,7 +249,7 @@
             <objects>
                 <tableViewController id="wx8-zC-B03" customClass="HMTwitterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="109" sectionHeaderHeight="22" sectionFooterHeight="22" id="hVz-uy-I5K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -330,7 +330,7 @@
             <objects>
                 <viewController id="EAI-lg-KOF" customClass="HMTwitterDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v04-hY-qpr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIN-we-ipY">
@@ -393,7 +393,7 @@
             <objects>
                 <viewController id="YPs-GN-PfW" customClass="HMSocialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVo-e5-d7X">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUf-jx-w4c">
@@ -535,7 +535,7 @@
             <objects>
                 <viewController id="uqj-Bg-yve" customClass="HMMoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OOP-8e-LEa">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iE9-Mn-8al">
@@ -613,7 +613,7 @@
             <objects>
                 <tableViewController id="esX-NZ-Wfk" customClass="HMMoreTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XW1-D7-uTH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -733,7 +733,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="EWF-zL-Z4W" customClass="HMMoreWebBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8A-sJ-me8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPH-Vj-ZLl">
@@ -809,7 +809,7 @@
             <objects>
                 <viewController id="u6h-EW-53g" customClass="HMLargePhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KeX-kc-B1Q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H9w-fg-RXt"/>
@@ -836,7 +836,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="N8U-te-xKz" customClass="HMPhotoCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="XiV-n2-cGq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EIy-Hj-1Y0">
                             <size key="itemSize" width="100" height="100"/>
@@ -886,7 +886,7 @@
             <objects>
                 <tableViewController id="KlN-ic-TwX" customClass="HMVideosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="205" sectionHeaderHeight="22" sectionFooterHeight="22" id="90K-pk-VZS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -961,33 +961,27 @@
             <objects>
                 <viewController id="QTH-IL-sWj" customClass="HMSplashViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yyJ-xl-CLe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGr-Mu-G1y">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Start the App">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="w40-RZ-D02" kind="modal" modalTransitionStyle="flipHorizontal" id="XeE-CE-xIm"/>
-                                </connections>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Default-568h@2x.png" translatesAutoresizingMaskIntoConstraints="NO" id="rZJ-Gb-yFn"/>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LGr-Mu-G1y" firstAttribute="top" secondItem="yyJ-xl-CLe" secondAttribute="top" constant="226" id="IRt-le-bJH"/>
-                            <constraint firstItem="LGr-Mu-G1y" firstAttribute="centerX" secondItem="yyJ-xl-CLe" secondAttribute="centerX" type="default" id="aM8-rw-gsv"/>
+                            <constraint firstItem="rZJ-Gb-yFn" firstAttribute="top" secondItem="yyJ-xl-CLe" secondAttribute="top" type="default" id="4Dw-Oo-wUv"/>
+                            <constraint firstItem="rZJ-Gb-yFn" firstAttribute="trailing" secondItem="yyJ-xl-CLe" secondAttribute="trailing" type="default" id="8Sh-eC-T4r"/>
+                            <constraint firstItem="rZJ-Gb-yFn" firstAttribute="bottom" secondItem="yyJ-xl-CLe" secondAttribute="bottom" type="default" id="M3Z-ng-J9B"/>
+                            <constraint firstItem="rZJ-Gb-yFn" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" type="default" id="k0T-g1-9G9"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="splashImage" destination="rZJ-Gb-yFn" id="QPo-dW-my3"/>
+                        <segue destination="w40-RZ-D02" kind="modal" identifier="splashSegue" modalTransitionStyle="flipHorizontal" id="zn0-fT-BLM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4X8-Mg-7wQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-725" y="668"/>
+            <point key="canvasLocation" x="-693" y="651"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="2GC-w8-A2E">
@@ -1171,7 +1165,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="zQw-le-wFB" customClass="HMSocialWebBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2MT-fh-vrR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fp6-3M-tiA">
@@ -1246,7 +1240,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="JWv-oD-gMU" customClass="HMBuyTicketsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XP2-iD-jdy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eb5-ec-MRa">
@@ -1346,6 +1340,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Default-568h@2x.png" width="640" height="1136"/>
         <image name="EmailButton.png" width="250" height="40"/>
         <image name="EmailButtonSelected.png" width="249" height="40"/>
         <image name="FacebookImage.png" width="70" height="70"/>
@@ -1362,10 +1357,162 @@
         <image name="backButton.png" width="13" height="14"/>
         <image name="ticketButton.png" width="60" height="33"/>
     </resources>
+    <classes>
+        <class className="HMBuyTicketsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMBuyTicketsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMLargePhotoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMLargePhotoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HMMoreTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreTableViewController.h"/>
+        </class>
+        <class className="HMMoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="SendAnEmail:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="HMMoreWebBrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreWebBrowserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="content" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="newsTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedTableViewController.h"/>
+        </class>
+        <class className="HMNewsFeedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedViewController.h"/>
+        </class>
+        <class className="HMPhotoCollectionCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPhotoCollectionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HMPhotoCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPhotoCollectionViewController.h"/>
+        </class>
+        <class className="HMScheduleNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMScheduleNavigationViewController.h"/>
+        </class>
+        <class className="HMSocialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialViewController.h"/>
+        </class>
+        <class className="HMSocialWebBrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialWebBrowserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMSplashViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSplashViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="splashImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HMTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTabBarViewController.h"/>
+        </class>
+        <class className="HMTweetCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTweetCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tweet" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMTwitterDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tweetLabel" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="HMTwitterTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterTableViewController.h"/>
+        </class>
+        <class className="HMTwitterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="postTweet:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="HMVideoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMVideoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="videoTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMVideosTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMVideosTableViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="h6M-be-XsA"/>
