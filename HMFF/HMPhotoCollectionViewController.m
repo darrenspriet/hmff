@@ -23,11 +23,18 @@
     }
     return self;
 }
+-(void)viewDidAppear:(BOOL)animated{
+    // this will hide the Tabbar
+    [self.tabBarController.tabBar setHidden:NO];
+    [self.navigationController.navigationBar setHidden:NO];
+
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];
     self.smallPhotos = [[HMDataFeedManager sharedDataFeedManager] smallPhotos];
     self.largePhotos = [[HMDataFeedManager sharedDataFeedManager] largePhotos];
+
 }
 
 -(void)setTitle:(NSString *)title{
@@ -75,7 +82,9 @@
     
     NSData *imageData = [self.smallPhotos objectAtIndex:indexPath.row];
     UIImage *image = [UIImage imageWithData:imageData];
-    
+    //CGSize size =CGSizeMake(67.0f, 67.0f);
+    NSLog(@"what is image size: %f, %f", image.size.height, image.size.width);
+    //This returns the size of the image that is going to the screen...ideally maybe this should be a square?
     return image.size;
 }
 #pragma mark -

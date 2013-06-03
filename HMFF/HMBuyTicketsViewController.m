@@ -24,6 +24,15 @@
     }
     return self;
 }
+-(void)viewDidDisappear:(BOOL)animated{
+//    NSLog(@"view did disappear");
+    if([self.webView isLoading])
+    {
+//        NSLog(@"webview was loading");
+        [self.webView stopLoading];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }
+}
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -42,13 +51,18 @@
 }
 
 - (void)viewDidLoad{
-    [super viewDidLoad];
+
+     NSURL *baseURLString = [NSURL URLWithString:self.passedURL];
+        [self.webView loadHTMLString:self.HTMLString baseURL:baseURLString];
+
+
+    
     
     //Sets up the Web page and loads it
     self.webView.scalesPageToFit = YES;
-    NSURL *url =[NSURL URLWithString:self.passedURL];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    [self.webView loadRequest:request];
+//    NSURL *url =[NSURL URLWithString:self.passedURL];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    [self.webView loadRequest:request];
     
     //Sets the proper buttons to enabled or not
     [self updateButtons];

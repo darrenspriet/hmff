@@ -13,4 +13,5 @@
 @property (strong, nonatomic) NSURL *largePhotos;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+- (IBAction)imageTapped:(UITapGestureRecognizer *)sender;
 @end

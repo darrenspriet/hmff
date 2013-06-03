@@ -22,6 +22,7 @@
 
 //Property used to pass the URL to the the web page
 @property (nonatomic, strong) NSString *passedURL;
+@property (nonatomic, strong) NSString *HTMLString;
 
 //Share button
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender;

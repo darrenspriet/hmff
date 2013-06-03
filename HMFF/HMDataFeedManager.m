@@ -43,13 +43,20 @@
 //Fetches all of the FlickerFeeds
 -(void)fetchFlickerFeed{
     dispatch_async(dispatch_get_main_queue(), ^{
+//This could be used just for the main stream
+//        NSData* data = [NSData dataWithContentsOfURL:
+//                        [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=%@&user_id=%@@N08&per_page=20&format=json&nojsoncallback=1", FLICKR_API_KEY, USER_ID]]];
+        
+//This is for  a specific Set with a ID number
         NSData* data = [NSData dataWithContentsOfURL:
-                        [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?&method=flickr.people.getPublicPhotos&api_key=%@&user_id=95406796@N08&per_page=20&format=json&nojsoncallback=1", FLICKR_API_KEY]]];
+                        [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&photoset_id=%@&api_key=%@&user_id=%@&per_page=20&format=json&nojsoncallback=1", SET_NUMBER,FLICKR_API_KEY, USER_ID]]];
+       
         NSError* error;
         self.photos = [NSJSONSerialization JSONObjectWithData:data
                                                       options:kNilOptions
                                                         error:&error];
         dispatch_async(dispatch_get_main_queue(), ^{
+//            NSLog(@"photos is: %@", self.photos);
             NSLog(@"Flicker Feed Dispatch Finished");
             [self loadPhotoArrays];
         });
@@ -59,7 +66,9 @@
 -(void)loadPhotoArrays{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // Build an array from the dictionary for easy access to each entry
-        NSArray *photos = [[self.photos objectForKey:@"photos"] objectForKey:@"photo"];
+        //If trying to get the Stream the first object is "photo", other wise if it is a set
+        //its a "photoset"
+        NSArray *photos = [[self.photos objectForKey:@"photoset"] objectForKey:@"photo"];
         NSMutableArray  *photoTitles =[[NSMutableArray alloc]init];
         self.smallPhotos =[[NSMutableArray alloc]init];
         self.largePhotos =[[NSMutableArray alloc]init];

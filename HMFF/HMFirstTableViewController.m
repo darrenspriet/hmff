@@ -68,6 +68,16 @@
         [self.lineUp addObject:array];
         NSLog(@"lineup %@", self.lineUp);
     }
+//    NSDictionary *dict = // however you obtain the dictionary
+//    NSMutableArray *sortedKeys = [NSMutableArray array];
+//    
+//    NSArray *objs = [dict allValues];
+//    NSArray *sortedObjs = [objs sortedArrayUsingSelector:@selector(compare:)];
+//    for (NSString *s in sortedObjs)
+//        [sortedKeys addObjectsFromArray:[dict allKeysForObject:s]];
+//    NSSortDescriptor *aSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"venue" ascending:YES];
+//    [self.lineUp sortUsingDescriptors:[NSArray arrayWithObject:aSortDescriptor]];
+//    sortedArray = [self.lineUp sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
     NSLog(@"line up count %d", [[self.lineUp objectAtIndex:0]count] +1);
     

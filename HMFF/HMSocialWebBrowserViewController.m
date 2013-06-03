@@ -24,6 +24,15 @@
     }
     return self;
 }
+-(void)viewDidDisappear:(BOOL)animated{
+//    NSLog(@"view did disappear");
+    if([self.webView isLoading])
+    {
+//        NSLog(@"webview was loading");
+        [self.webView stopLoading];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }
+}
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

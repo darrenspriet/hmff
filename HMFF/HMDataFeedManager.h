@@ -11,6 +11,8 @@
 #define APP_ID @"BKjoCRi6vlE1bMuIY100LN8zsIrlWprOUUZyuaAg"
 #define CLIENT_KEY @"xxSG9DGIVpodQBawjcSWKhgqkH3tdL1kaWM6e7bW"
 #define FLICKR_API_KEY @"628288db7c4e7d09c884009576b5eed9"
+#define USER_ID @"95406796"
+#define SET_NUMBER @"72157633844444754"
 
 @interface HMDataFeedManager : NSObject
 
@@ -49,4 +51,5 @@
 
 //Holds the Large Photos that will be sent to More View Controller(More)
 @property (nonatomic, strong) NSMutableArray *largePhotos;
+
 @end
