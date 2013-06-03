@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 - (IBAction)imageTapped:(UITapGestureRecognizer *)sender;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @end

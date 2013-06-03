@@ -25,13 +25,14 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     // this will hide the Tabbar
-    [self.tabBarController.tabBar setHidden:NO];
     [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 
 }
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+
     self.smallPhotos = [[HMDataFeedManager sharedDataFeedManager] smallPhotos];
     self.largePhotos = [[HMDataFeedManager sharedDataFeedManager] largePhotos];
 

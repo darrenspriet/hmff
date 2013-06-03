@@ -502,63 +502,6 @@
     <resources>
         <image name="backButton.png" width="13" height="14"/>
     </resources>
-    <classes>
-        <class className="HMBandWebBrowserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMBandWebBrowserViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="HMBuyTicketsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMBuyTicketsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="HMFirstTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMFirstTableViewController.h"/>
-        </class>
-        <class className="HMScheduleScrollViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMScheduleScrollViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="HMScheduleViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMScheduleViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButton:" candidateClass="UIButton"/>
-                <relationship kind="action" name="forwardButton:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="backButtonImage" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="dateForEvent" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="forwardButtonImage" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="HMSecondTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSecondTableViewController.h"/>
-        </class>
-        <class className="HMVenueCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMVenueCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="venueLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

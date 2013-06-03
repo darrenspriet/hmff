@@ -30,6 +30,7 @@
 - (void)viewDidLoad{
     NSLog(@"VIEW DID LOAD");
     [super viewDidLoad];
+    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     NSData *imageData = [NSData dataWithContentsOfURL:self.largePhotos];
     UIImage *largeImage= [UIImage imageWithData:imageData];
     self.imageView.image = largeImage;
@@ -58,7 +59,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5];
     [self.navigationController.navigationBar setAlpha:0.0f];
-    [self.tabBarController.tabBar setAlpha:0.0f];
+[self.toolBar setAlpha:0.0f];
     [UIView commitAnimations];
 }
 
@@ -66,7 +67,7 @@
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.5];
     [self.navigationController.navigationBar setAlpha:1.0f];
-    [self.tabBarController.tabBar setAlpha:1.0f];
+    [self.toolBar setAlpha:1.0f];
     [UIView commitAnimations];
 }
 @end
