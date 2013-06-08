@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "HMVenueCell.h"
+#import "HMBandCell.h"
 #import "HMBandWebBrowserViewController.h"
+
 
 
 

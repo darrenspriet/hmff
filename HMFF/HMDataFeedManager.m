@@ -206,10 +206,10 @@
         }
         //Sorts the Venues, and into unique Venues
         uniqueVenues = [NSSet setWithArray:arrayVenue];
-        NSLog(@"unique venues %@", uniqueVenues);
+        //NSLog(@"unique venues %@", uniqueVenues);
         
         venue = [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
-        NSLog(@"venues %@", venue);
+        //NSLog(@"venues %@", venue);
         
         //Finds band for unique dates and venue
         for (int i= 0; i <[self.date count]; i++) {
@@ -220,7 +220,7 @@
                         if ([[diction objectForKey:@"venue"] isEqualToString:[venue objectAtIndex:j]]) {
                             //Adds the dictionary to the array
                             [arrayBand addObject:diction];
-                            NSLog(@"venues %@", diction);
+                            //NSLog(@"venues %@", diction);
                             
                         }
                     }

@@ -49,6 +49,7 @@
 		E03C069016FBE667002AC531 /* HMFFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E03C068F16FBE667002AC531 /* HMFFTests.m */; };
 		E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03C069916FBE6A4002AC531 /* Storyboard.storyboard */; };
 		E04144011723770700DB5B4E /* HMBandWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04144001723770700DB5B4E /* HMBandWebBrowserViewController.m */; };
+		E048DF4B1762EA7D00D7232E /* HMBandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E048DF4A1762EA7D00D7232E /* HMBandCell.m */; };
 		E04B1109171604A6006A52EF /* TwitterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1107171604A6006A52EF /* TwitterImage.png */; };
 		E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1108171604A6006A52EF /* TwitterImage@2x.png */; };
 		E0537DA51720C896000D4AB8 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0537DA31720C896000D4AB8 /* forwardButton.png */; };
@@ -186,6 +187,8 @@
 		E03C069916FBE6A4002AC531 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		E04143FF1723770600DB5B4E /* HMBandWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBandWebBrowserViewController.h; sourceTree = "<group>"; };
 		E04144001723770700DB5B4E /* HMBandWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBandWebBrowserViewController.m; sourceTree = "<group>"; };
+		E048DF491762EA7D00D7232E /* HMBandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBandCell.h; sourceTree = "<group>"; };
+		E048DF4A1762EA7D00D7232E /* HMBandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBandCell.m; sourceTree = "<group>"; };
 		E04B1107171604A6006A52EF /* TwitterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterImage.png; sourceTree = "<group>"; };
 		E04B1108171604A6006A52EF /* TwitterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterImage@2x.png"; sourceTree = "<group>"; };
 		E0537DA31720C896000D4AB8 /* forwardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardButton.png; sourceTree = "<group>"; };
@@ -465,6 +468,8 @@
 				E04144001723770700DB5B4E /* HMBandWebBrowserViewController.m */,
 				E0D8D8D31720DB5200752A29 /* HMVenueCell.h */,
 				E0D8D8D41720DB5200752A29 /* HMVenueCell.m */,
+				E048DF491762EA7D00D7232E /* HMBandCell.h */,
+				E048DF4A1762EA7D00D7232E /* HMBandCell.m */,
 			);
 			name = Schedule;
 			sourceTree = "<group>";
@@ -832,6 +837,7 @@
 				E02620F2173DCB6400F88B71 /* HMVideoCell.m in Sources */,
 				E0B3A234174721FD00DDBF91 /* HMSplashViewController.m in Sources */,
 				E0B3A23C174727F000DDBF91 /* HMDataFeedManager.m in Sources */,
+				E048DF4B1762EA7D00D7232E /* HMBandCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

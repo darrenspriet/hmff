@@ -35,22 +35,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
     self.lineUp = [[NSMutableArray alloc]init];
     self.arrayOfSections= [[NSMutableArray alloc]init];
     
     NSMutableArray *tempArray = [[HMDataFeedManager sharedDataFeedManager] band];
+    
     [self setBand: [tempArray objectAtIndex:0]];
+    [self.band sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"venue_order" ascending:YES], nil]];
     NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
-    NSLog(@"self.band is: %@", self.band);
+    NSLog(@"self.band is1: %@", self.band);
+    
+    
     for (NSDictionary *diction in self.band){
         [tempArray1 addObject:[diction objectForKey:@"venue"]];
     }
+    NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:tempArray1];
     //Used to find the Unique Dates
-    NSSet *uniqueVenues = [NSSet setWithArray:tempArray1];
+    NSSet *uniqueVenues = [orderedSet set];
     
     ////Put the Set back into the array so I can use it
     [self setVenue :[NSMutableArray arrayWithArray:[uniqueVenues allObjects]]];
-    
+    NSLog(@"what is venuse:%@", self.venue);
     //Finds band for unique dates and venue
     for (int i= 0; i <[self.venue count]; i++) {
         NSMutableArray *array = [[NSMutableArray alloc]init];
@@ -59,25 +65,24 @@
                 //Adds the dictionary to the array
                 [array addObject:diction];
                 NSLog(@"venues %@", diction);
-                
             }
-            
         }
-        
         //Adds the Array with dictionarys in it to the array
+        [array sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"band_order" ascending:YES], nil]];
         [self.lineUp addObject:array];
+        
         NSLog(@"lineup %@", self.lineUp);
     }
-//    NSDictionary *dict = // however you obtain the dictionary
-//    NSMutableArray *sortedKeys = [NSMutableArray array];
-//    
-//    NSArray *objs = [dict allValues];
-//    NSArray *sortedObjs = [objs sortedArrayUsingSelector:@selector(compare:)];
-//    for (NSString *s in sortedObjs)
-//        [sortedKeys addObjectsFromArray:[dict allKeysForObject:s]];
-//    NSSortDescriptor *aSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"venue" ascending:YES];
-//    [self.lineUp sortUsingDescriptors:[NSArray arrayWithObject:aSortDescriptor]];
-//    sortedArray = [self.lineUp sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
+    //    NSDictionary *dict = // however you obtain the dictionary
+    //    NSMutableArray *sortedKeys = [NSMutableArray array];
+    //
+    //    NSArray *objs = [dict allValues];
+    //    NSArray *sortedObjs = [objs sortedArrayUsingSelector:@selector(compare:)];
+    //    for (NSString *s in sortedObjs)
+    //        [sortedKeys addObjectsFromArray:[dict allKeysForObject:s]];
+    //    NSSortDescriptor *aSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"venue" ascending:YES];
+    //    [self.lineUp sortUsingDescriptors:[NSArray arrayWithObject:aSortDescriptor]];
+    //    sortedArray = [self.lineUp sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
     
     NSLog(@"line up count %d", [[self.lineUp objectAtIndex:0]count] +1);
     
@@ -158,8 +163,9 @@
             }
             else{
                 diction = [array objectAtIndex:indexPath.row-1];
-                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
-                [cell.textLabel setText:[diction objectForKey:@"band"]];
+                HMBandCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
+                [cell.bandName setText:[diction objectForKey:@"band"]];
+                [cell.time setText:[diction objectForKey:@"time"]];
                 return  cell;
             }
             break;
@@ -176,8 +182,9 @@
             }
             else{
                 diction = [array objectAtIndex:indexPath.row-1];
-                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
-                [cell.textLabel setText:[diction objectForKey:@"band"]];
+                HMBandCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
+                [cell.bandName setText:[diction objectForKey:@"band"]];
+                [cell.time setText:[diction objectForKey:@"time"]];
                 return  cell;
             }
             
@@ -195,8 +202,9 @@
             }
             else{
                 diction = [array objectAtIndex:indexPath.row-1];
-                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
-                [cell.textLabel setText:[diction objectForKey:@"band"]];
+                HMBandCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
+                [cell.bandName setText:[diction objectForKey:@"band"]];
+                [cell.time setText:[diction objectForKey:@"time"]];
                 return  cell;
             }
             break;
@@ -213,8 +221,9 @@
             }
             else{
                 diction = [array objectAtIndex:indexPath.row-1];
-                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
-                [cell.textLabel setText:[diction objectForKey:@"band"]];
+                HMBandCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
+                [cell.bandName setText:[diction objectForKey:@"band"]];
+                [cell.time setText:[diction objectForKey:@"time"]];
                 return  cell;
             }
             
@@ -232,8 +241,9 @@
             }
             else{
                 diction = [array objectAtIndex:indexPath.row-1];
-                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
-                [cell.textLabel setText:[diction objectForKey:@"band"]];
+                HMBandCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
+                [cell.bandName setText:[diction objectForKey:@"band"]];
+                [cell.time setText:[diction objectForKey:@"time"]];
                 return  cell;
             }
             
@@ -254,8 +264,10 @@
             }
             else{
                 diction = [array objectAtIndex:indexPath.row-1];
-                UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
-                [cell.textLabel setText:[diction objectForKey:@"band"]];
+                HMBandCell *cell = [tableView dequeueReusableCellWithIdentifier:BAND_CELL];
+                [cell.bandName setText:[diction objectForKey:@"band"]];
+                [cell.time setText:[diction objectForKey:@"time"]];
+                
                 return  cell;
             }
             break;
