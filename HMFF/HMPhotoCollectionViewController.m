@@ -72,22 +72,25 @@
                                     dequeueReusableCellWithReuseIdentifier:@"collectionCell"
                                     forIndexPath:indexPath];
 
-    NSData *imageData = [self.smallPhotos objectAtIndex:indexPath.row];    
-    myCell.imageView.image = [UIImage imageWithData:imageData];
+    NSData *imageData = [self.smallPhotos objectAtIndex:indexPath.row];
+    UIImage *image = [UIImage imageWithData:imageData];
+    
+    myCell.imageView.image = image;
     return myCell;
 }
 #pragma mark -
 #pragma mark UICollectionViewFlowLayoutDelegate
 
--(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
-    
-    NSData *imageData = [self.smallPhotos objectAtIndex:indexPath.row];
-    UIImage *image = [UIImage imageWithData:imageData];
-    //CGSize size =CGSizeMake(67.0f, 67.0f);
-    NSLog(@"what is image size: %f, %f", image.size.height, image.size.width);
-    //This returns the size of the image that is going to the screen...ideally maybe this should be a square?
-    return image.size;
-}
+//-(CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
+//    
+//    NSData *imageData = [self.smallPhotos objectAtIndex:indexPath.row];
+//    UIImage *image = [UIImage imageWithData:imageData];
+//    CGSize size =CGSizeMake(67.0f, 67.0f, );
+//    NSLog(@"what is image size: %f, %f", image.size.height, image.size.width);
+//    //This returns the size of the image that is going to the screen...ideally maybe this should be a square?
+//
+//    return image.size;
+//}
 #pragma mark -
 #pragma mark UICollectionViewDelegate
 
