@@ -36,7 +36,7 @@
             
             
             //Delays while the app gets the data it needs 
-            [NSTimer scheduledTimerWithTimeInterval:0.5
+            [NSTimer scheduledTimerWithTimeInterval:1.5
                                              target:self
                                            selector:@selector(callingPerpareForSegue)
                                            userInfo:nil

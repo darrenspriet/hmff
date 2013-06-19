@@ -25,6 +25,8 @@
 }
 //The init Method
 -(id)init{
+    //Fetches all of the Tweets for HMFFEST from twitter
+    [self fetchTweets];
     //Fetches all of the News Feeds
     [self fetchNewsFeed];
     
@@ -32,8 +34,7 @@
     [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
     [self getParseObjects];
     
-    //Fetches all of the Tweets for HMFFEST from twitter
-    [self fetchTweets];
+
     
     //Fetches the FlickerFeed
     [self fetchFlickerFeed];
@@ -137,16 +138,36 @@
 //Goes through the twitter feed and grabs the data from a JSON object on a Global thread
 //This needs to be looked at because if there is NO internet it may crash
 - (void)fetchTweets{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData* data = [NSData dataWithContentsOfURL:
-                        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        STTwitterAPIWrapper *twitter = [STTwitterAPIWrapper twitterAPIApplicationOnlyWithConsumerKey:@"9ilb37Moot86TKEm34vH4Q"
+                                                                                      consumerSecret:@"h3fdMc5DLFvrdwgm8ZftciRtNDIzGguvQCS0ovtI"];
         
-        NSError* error;
-        
-        self.tweets = [NSJSONSerialization JSONObjectWithData:data
-                                                      options:kNilOptions
-                                                        error:&error];
-        dispatch_async(dispatch_get_main_queue(), ^{
+        [twitter verifyCredentialsWithSuccessBlock:^(NSString *bearerToken) {
+            
+            NSLog(@"Access granted with %@", bearerToken);
+            [twitter getUserTimelineWithScreenName:@"HMFFEST" count:20 successBlock:^(NSArray *statuses) {
+                NSLog(@"-- statuses: %@", statuses);
+                
+                self.tweets=statuses;
+                NSLog(@"-- self.tweets: %@", self.tweets);
+
+            } errorBlock:^(NSError *error) {
+                NSLog(@"-- error: %@", error);
+            }];
+            
+        } errorBlock:^(NSError *error) {
+            NSLog(@"-- error %@", error);
+        }];
+
+//        NSData* data = [NSData dataWithContentsOfURL:
+//                        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/user_timeline.json?screen_name=HMFFEST&include_rts=1&count=100"]];
+//        
+//        NSError* error;
+//        
+//        self.tweets = [NSJSONSerialization JSONObjectWithData:data
+//                                                      options:kNilOptions
+//                                                        error:&error];
+       dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"finished twitter dispatch");
             
         });
