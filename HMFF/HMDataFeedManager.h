@@ -17,6 +17,8 @@
 #define TWITTER_CONSUMER_KEY @"9ilb37Moot86TKEm34vH4Q"
 #define TWITTER_CONSUMER_SECRET @"h3fdMc5DLFvrdwgm8ZftciRtNDIzGguvQCS0ovtI"
 
+typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
+
 @interface HMDataFeedManager : NSObject
 
 //As singleton Object that is called at the beginning of the Application
@@ -54,5 +56,7 @@
 
 //Holds the Large Photos that will be sent to More View Controller(More)
 @property (nonatomic, strong) NSMutableArray *largePhotos;
+
+@property(nonatomic, copy)HMDataFeedManagerCompletionBlock completionBlock;
 
 @end

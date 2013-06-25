@@ -22,6 +22,7 @@
     }
     return self;
 }
+
 -(void)viewWillAppear:(BOOL)animated{
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
@@ -34,11 +35,11 @@
     } else {
         /*Do iPad stuff here.*/
     }
-
+    
 }
 
 -(void)showLabels{
-
+    
     [self.cityLabel setAlpha:0.0f];
     [self.dateLabel setAlpha:0.0f];
     [self.cityLabel setText:@"Hamilton, Ontario"];
@@ -55,28 +56,19 @@
 {
     [super viewDidLoad];
     [self showLabels];
+    [HMDataFeedManager sharedDataFeedManager];
     
-
-    
-   // [self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
-    //Builds the data manage at the beginning
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [HMDataFeedManager sharedDataFeedManager];
-        dispatch_async(dispatch_get_main_queue(), ^{
+    [HMDataFeedManager sharedDataFeedManager].completionBlock = ^(BOOL success){
+        if (success)
+        {
             NSLog(@"Finished loading data");
-            
-            
-            //Delays while the app gets the data it needs 
-            [NSTimer scheduledTimerWithTimeInterval:1.5
-                                             target:self
-                                           selector:@selector(callingPerpareForSegue)
-                                           userInfo:nil
-                                            repeats:NO];
-            
-
-        });
-    });
-   
+            [self performSegueWithIdentifier:@"splashSegue" sender:self];
+        }
+        else{
+            NSLog(@"app did not load successfully");
+        }
+    };
+    
 	// Do any additional setup after loading the view.
 }
 
@@ -85,16 +77,11 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)callingPerpareForSegue{
-    NSLog(@"Loading App Data done?");
-    [self performSegueWithIdentifier:@"splashSegue" sender:self];
-}
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     //When the View is loaded it this container sets the delegats
     if ([segue.identifier isEqualToString:@"splashSegue"]){
-
-    }        
+        
+    }
 }
 
 @end

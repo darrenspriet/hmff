@@ -38,7 +38,6 @@
     
     //Fetches the FlickerFeed
     [self fetchFlickerFeed];
-    
     return self;
 }
 //Fetches all of the FlickerFeeds
@@ -106,6 +105,10 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"Finished loading the Arrays");
+            if (self.completionBlock!=nil) {
+                self.completionBlock(YES);
+            }
+            
             
         });
     });
@@ -181,7 +184,8 @@
         NSMutableArray *venue= [[NSMutableArray alloc]init];
         NSMutableArray *tempArray = [[NSMutableArray alloc]init];
         NSMutableArray *tempArray2 = [[NSMutableArray alloc]init];
-        NSMutableArray *tempArray3 = [[NSMutableArray alloc]init];
+        NSMutableArray *tempArray4 = [[NSMutableArray alloc]init];
+
 
 
         NSMutableArray *arrayVenue = [[NSMutableArray alloc]init];
@@ -195,30 +199,37 @@
         //Puts all of the querys into an object
         allObjects= [query findObjects];
         NSMutableArray *allObjectsSorted = [NSMutableArray arrayWithArray:allObjects];
-            [allObjectsSorted sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"date_order" ascending:YES], nil]];
+            [allObjectsSorted sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES], nil]];
         
-        for (NSDictionary *diction in allObjectsSorted){
-            [tempArray2 addObject:[diction objectForKey:@"date_order"]];
-        }
-        //Used to find the Unique Dates
-        NSSet *uniqueDates1 = [NSSet setWithArray:tempArray2];
-        
-        ////Put the Set back into the array so I can use it
-        tempArray3= [NSMutableArray arrayWithArray:[uniqueDates1 allObjects]];
-        NSLog(@"temparray 3%@", tempArray3);
-        
+         NSLog(@"allobjectssorted 3%@", allObjectsSorted);
         //Pulls out all of the dates from the objects
-        for (NSDictionary *diction in allObjects){
+        for (NSDictionary *diction in allObjectsSorted){
+            
             [tempArray addObject:[diction objectForKey:@"date"]];
         }
+        NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
+        [dateFormatter1 setDateFormat:@"MMM dd YYYY"];
+        for (NSDate *date in tempArray)
+        {
+            NSString *newDate =[dateFormatter1 stringFromDate:date];
+            [tempArray4 addObject:newDate];
+        }
+       
+        NSLog(@"temparray ordered?%@", tempArray4);
+
+        
         //Used to find the Unique Dates
-        NSSet *uniqueDates = [NSSet setWithArray:tempArray];
+        NSOrderedSet *orderedSet = [NSOrderedSet orderedSetWithArray:tempArray4];
+        //Used to find the Unique Dates
+        NSSet *uniqueDates = [orderedSet set];
+
         
         ////Put the Set back into the array so I can use it
-        self.date= [NSMutableArray arrayWithArray:[uniqueDates allObjects]];
+        tempArray2= [NSMutableArray arrayWithArray:[uniqueDates allObjects]];
+        NSLog(@"temparray 3%@", tempArray2);
+
         
-        //Sorts the dates
-        [self.date sortUsingSelector:@selector(compare:)];
+        self.date= [NSMutableArray arrayWithArray:tempArray2];
         
         NSLog(@"dates %@", self.date);
         NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
@@ -234,7 +245,10 @@
         //Finds venue for unique dates
         for (int i= 0; i <[self.date count]; i++) {
             for (NSDictionary *diction in allObjects){
-                if ([[diction objectForKey:@"date"] isEqualToString:[self.date objectAtIndex:i]]) {
+                NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
+                [dateFormatter1 setDateFormat:@"MMM dd YYYY"];
+                NSString *compareString =[dateFormatter1 stringFromDate:[diction objectForKey:@"date"]];
+                if ([compareString isEqualToString:[self.date objectAtIndex:i]]) {
                     [arrayVenue addObject:[diction objectForKey:@"venue"]];
                     
                 }
@@ -246,13 +260,18 @@
         //NSLog(@"unique venues %@", uniqueVenues);
         
         venue = [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
-        //NSLog(@"venues %@", venue);
+        NSLog(@"venues %@", venue);
         
         //Finds band for unique dates and venue
         for (int i= 0; i <[self.date count]; i++) {
             NSMutableArray *arrayBand = [[NSMutableArray alloc]init];
             for (NSDictionary *diction in allObjects){
-                if ([[diction objectForKey:@"date"] isEqualToString:[self.date objectAtIndex:i]]) {
+                NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
+                [dateFormatter1 setDateFormat:@"MMM dd YYYY"];
+                NSString *compareString =[dateFormatter1 stringFromDate:[diction objectForKey:@"date"]];
+                NSLog(@"compare date %@", compareString);
+                NSLog(@"otherdate at i %@", [self.date objectAtIndex:i]);
+                if ([compareString isEqualToString:[self.date objectAtIndex:i]]) {
                     for (int j=0; j<[venue count]; j++) {
                         if ([[diction objectForKey:@"venue"] isEqualToString:[venue objectAtIndex:j]]) {
                             //Adds the dictionary to the array
