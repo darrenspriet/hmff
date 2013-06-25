@@ -111,6 +111,7 @@
         
         HMLargePhotoViewController *largePhotoView = segue.destinationViewController;
         largePhotoView.largePhotos =URL;
+       
     }
 }
 //- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

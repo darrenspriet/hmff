@@ -11,5 +11,7 @@
 
 @interface HMSocialViewController : UIViewController
 
+@property(strong, nonatomic)NSString*HTMLString;
+
 
 @end

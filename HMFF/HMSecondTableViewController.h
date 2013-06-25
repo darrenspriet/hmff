@@ -8,13 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "HMVenueCell.h"
+#import "HMBandCell.h"
 #import "HMBandWebBrowserViewController.h"
-
 
 @interface HMSecondTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *band;
-
+@property (nonatomic, strong) NSMutableArray *venue;
+@property (nonatomic, strong) NSMutableArray *lineUp;
 
 
 @end

@@ -26,12 +26,12 @@
 //The init Method
 -(id)init{
     //Fetches all of the Tweets for HMFFEST from twitter
-    [self fetchTweets];
+   // [self fetchTweets];
     //Fetches all of the News Feeds
     [self fetchNewsFeed];
     
     //This is the Client key and app ID for the parse online
-    [Parse setApplicationId:APP_ID clientKey:CLIENT_KEY];
+    [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_CLIENT_KEY];
     [self getParseObjects];
     
 
@@ -50,7 +50,7 @@
         
 //This is for  a specific Set with a ID number
         NSData* data = [NSData dataWithContentsOfURL:
-                        [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&photoset_id=%@&api_key=%@&user_id=%@&per_page=20&format=json&nojsoncallback=1", SET_NUMBER,FLICKR_API_KEY, USER_ID]]];
+                        [NSURL URLWithString:[NSString stringWithFormat:@"http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&photoset_id=%@&api_key=%@&user_id=%@&per_page=20&format=json&nojsoncallback=1",FLICKER_SET_NUMBER ,FLICKR_API_KEY, FLICKER_USER_ID ]]];
        
         NSError* error;
         self.photos = [NSJSONSerialization JSONObjectWithData:data
@@ -139,8 +139,8 @@
 //This needs to be looked at because if there is NO internet it may crash
 - (void)fetchTweets{
     dispatch_async(dispatch_get_main_queue(), ^{
-        STTwitterAPIWrapper *twitter = [STTwitterAPIWrapper twitterAPIApplicationOnlyWithConsumerKey:@"9ilb37Moot86TKEm34vH4Q"
-                                                                                      consumerSecret:@"h3fdMc5DLFvrdwgm8ZftciRtNDIzGguvQCS0ovtI"];
+        STTwitterAPIWrapper *twitter = [STTwitterAPIWrapper twitterAPIApplicationOnlyWithConsumerKey:TWITTER_CONSUMER_KEY
+                                      consumerSecret:TWITTER_CONSUMER_SECRET];
         
         [twitter verifyCredentialsWithSuccessBlock:^(NSString *bearerToken) {
             
@@ -180,6 +180,10 @@
         NSArray *allObjects = [[NSMutableArray alloc]init];
         NSMutableArray *venue= [[NSMutableArray alloc]init];
         NSMutableArray *tempArray = [[NSMutableArray alloc]init];
+        NSMutableArray *tempArray2 = [[NSMutableArray alloc]init];
+        NSMutableArray *tempArray3 = [[NSMutableArray alloc]init];
+
+
         NSMutableArray *arrayVenue = [[NSMutableArray alloc]init];
         
         self.date = [[NSMutableArray alloc]init];
@@ -190,6 +194,18 @@
         PFQuery *query = [PFQuery queryWithClassName:@"HMFFDates"];
         //Puts all of the querys into an object
         allObjects= [query findObjects];
+        NSMutableArray *allObjectsSorted = [NSMutableArray arrayWithArray:allObjects];
+            [allObjectsSorted sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"date_order" ascending:YES], nil]];
+        
+        for (NSDictionary *diction in allObjectsSorted){
+            [tempArray2 addObject:[diction objectForKey:@"date_order"]];
+        }
+        //Used to find the Unique Dates
+        NSSet *uniqueDates1 = [NSSet setWithArray:tempArray2];
+        
+        ////Put the Set back into the array so I can use it
+        tempArray3= [NSMutableArray arrayWithArray:[uniqueDates1 allObjects]];
+        NSLog(@"temparray 3%@", tempArray3);
         
         //Pulls out all of the dates from the objects
         for (NSDictionary *diction in allObjects){

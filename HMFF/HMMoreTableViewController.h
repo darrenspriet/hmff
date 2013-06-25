@@ -12,8 +12,6 @@
 #import "HMPhotoCollectionViewController.h"
 
 
-
-
 @interface HMMoreTableViewController : UITableViewController
 
 @end

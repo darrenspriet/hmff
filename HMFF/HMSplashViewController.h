@@ -11,5 +11,7 @@
 @interface HMSplashViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *splashImage;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *cityLabel;
 
 @end

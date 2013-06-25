@@ -76,6 +76,12 @@
     }
     
 }
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    UIView *view = [[UIView alloc] init];
+    
+    return view;
+}
 
 #pragma Prepare for Segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

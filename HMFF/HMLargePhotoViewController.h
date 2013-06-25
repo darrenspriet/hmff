@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMLargePhotoViewController : UIViewController
+@interface HMLargePhotoViewController : UIViewController <UIActionSheetDelegate>
 
 @property (strong, nonatomic) NSURL *largePhotos;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
+- (IBAction)shareButton:(UIBarButtonItem *)sender;
 - (IBAction)imageTapped:(UITapGestureRecognizer *)sender;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @end

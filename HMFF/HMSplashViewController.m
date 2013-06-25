@@ -22,12 +22,43 @@
     }
     return self;
 }
+-(void)viewWillAppear:(BOOL)animated{
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if (screenSize.height > 480.0f) {
+            [self.splashImage setImage:[UIImage imageNamed:@"Default-568h@2x.png"]];
+        } else {
+            [self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
+        }
+    } else {
+        /*Do iPad stuff here.*/
+    }
+
+}
+
+-(void)showLabels{
+
+    [self.cityLabel setAlpha:0.0f];
+    [self.dateLabel setAlpha:0.0f];
+    [self.cityLabel setText:@"Hamilton, Ontario"];
+    [self.dateLabel setText:@"Sept 17-18  2013"];
+    [UIView animateWithDuration:2 animations:^{
+        [self.dateLabel setAlpha:1.0f];
+        [self.cityLabel setAlpha:1.0f];
+    }];
+    
+    
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self showLabels];
     
-    [self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
+
+    
+   // [self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
     //Builds the data manage at the beginning
     dispatch_async(dispatch_get_main_queue(), ^{
         [HMDataFeedManager sharedDataFeedManager];

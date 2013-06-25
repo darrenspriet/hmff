@@ -28,7 +28,6 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     //    [[HMDataFeedManager sharedDataFeedManager] getParseObjects];
-    NSLog(@"PINGS EVERYTIME THIS IS RELOADED");
     
 }
 
@@ -37,14 +36,13 @@
     [super viewDidLoad];
     
     self.lineUp = [[NSMutableArray alloc]init];
-    self.arrayOfSections= [[NSMutableArray alloc]init];
     
     NSMutableArray *tempArray = [[HMDataFeedManager sharedDataFeedManager] band];
     
     [self setBand: [tempArray objectAtIndex:0]];
     [self.band sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"venue_order" ascending:YES], nil]];
     NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
-    NSLog(@"self.band is1: %@", self.band);
+    //NSLog(@"self.band is1: %@", self.band);
     
     
     for (NSDictionary *diction in self.band){
@@ -56,7 +54,7 @@
     
     ////Put the Set back into the array so I can use it
     [self setVenue :[NSMutableArray arrayWithArray:[uniqueVenues allObjects]]];
-    NSLog(@"what is venuse:%@", self.venue);
+  //  NSLog(@"what is venuse:%@", self.venue);
     //Finds band for unique dates and venue
     for (int i= 0; i <[self.venue count]; i++) {
         NSMutableArray *array = [[NSMutableArray alloc]init];
@@ -64,28 +62,14 @@
             if ([[diction objectForKey:@"venue"] isEqualToString:[self.venue objectAtIndex:i]]) {
                 //Adds the dictionary to the array
                 [array addObject:diction];
-                NSLog(@"venues %@", diction);
+             //   NSLog(@"venues %@", diction);
             }
         }
         //Adds the Array with dictionarys in it to the array
         [array sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"band_order" ascending:YES], nil]];
         [self.lineUp addObject:array];
-        
-        NSLog(@"lineup %@", self.lineUp);
+      //  NSLog(@"lineup %@", self.lineUp);
     }
-    //    NSDictionary *dict = // however you obtain the dictionary
-    //    NSMutableArray *sortedKeys = [NSMutableArray array];
-    //
-    //    NSArray *objs = [dict allValues];
-    //    NSArray *sortedObjs = [objs sortedArrayUsingSelector:@selector(compare:)];
-    //    for (NSString *s in sortedObjs)
-    //        [sortedKeys addObjectsFromArray:[dict allKeysForObject:s]];
-    //    NSSortDescriptor *aSortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"venue" ascending:YES];
-    //    [self.lineUp sortUsingDescriptors:[NSArray arrayWithObject:aSortDescriptor]];
-    //    sortedArray = [self.lineUp sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    
-    NSLog(@"line up count %d", [[self.lineUp objectAtIndex:0]count] +1);
-    
 }
 
 
@@ -144,7 +128,7 @@
     }
     
 }
-
+  
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary * diction = [[NSDictionary alloc]init];
@@ -155,7 +139,7 @@
             array=[self.lineUp objectAtIndex:1];
             if (indexPath.row==0) {
                 diction =[array objectAtIndex:indexPath.row];
-                NSLog(@"what is diction %@", diction);
+          //      NSLog(@"what is diction %@", diction);
                 HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
                 [cell.venueLabel setText:[diction objectForKey:@"venue"]];
                 // NSLog(@"what is venue %@", [diction objectForKey:@"venue"]);
@@ -174,7 +158,7 @@
             array=[self.lineUp objectAtIndex:2];
             if (indexPath.row==0) {
                 diction =[array objectAtIndex:indexPath.row];
-                NSLog(@"what is diction %@", diction);
+             //   NSLog(@"what is diction %@", diction);
                 HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
                 [cell.venueLabel setText:[diction objectForKey:@"venue"]];
                 // NSLog(@"what is venue %@", [diction objectForKey:@"venue"]);
@@ -194,7 +178,7 @@
             array=[self.lineUp objectAtIndex:3];
             if (indexPath.row==0) {
                 diction =[array objectAtIndex:indexPath.row];
-                NSLog(@"what is diction %@", diction);
+            //    NSLog(@"what is diction %@", diction);
                 HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
                 [cell.venueLabel setText:[diction objectForKey:@"venue"]];
                 // NSLog(@"what is venue %@", [diction objectForKey:@"venue"]);
@@ -213,7 +197,7 @@
             array=[self.lineUp objectAtIndex:4];
             if (indexPath.row==0) {
                 diction =[array objectAtIndex:indexPath.row];
-                NSLog(@"what is diction %@", diction);
+            //    NSLog(@"what is diction %@", diction);
                 HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
                 [cell.venueLabel setText:[diction objectForKey:@"venue"]];
                 // NSLog(@"what is venue %@", [diction objectForKey:@"venue"]);
@@ -233,7 +217,7 @@
             array=[self.lineUp objectAtIndex:5];
             if (indexPath.row==0) {
                 diction =[array objectAtIndex:indexPath.row];
-                NSLog(@"what is diction %@", diction);
+           //     NSLog(@"what is diction %@", diction);
                 HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
                 [cell.venueLabel setText:[diction objectForKey:@"venue"]];
                 // NSLog(@"what is venue %@", [diction objectForKey:@"venue"]);
@@ -255,7 +239,7 @@
             
             if (indexPath.row==0) {
                 diction =[array objectAtIndex:indexPath.row];
-                NSLog(@"what is diction %@", diction);
+            //    NSLog(@"what is diction %@", diction);
                 HMVenueCell *cell = [tableView dequeueReusableCellWithIdentifier:VENUE_CELL];
                 [cell.venueLabel setText:[diction objectForKey:@"venue"]];
                 // NSLog(@"what is venue %@", [diction objectForKey:@"venue"]);

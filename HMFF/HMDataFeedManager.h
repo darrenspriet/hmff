@@ -9,11 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "STTwitterAPIWrapper.h"
-#define APP_ID @"BKjoCRi6vlE1bMuIY100LN8zsIrlWprOUUZyuaAg"
-#define CLIENT_KEY @"xxSG9DGIVpodQBawjcSWKhgqkH3tdL1kaWM6e7bW"
+#define PARSE_APP_ID @"BKjoCRi6vlE1bMuIY100LN8zsIrlWprOUUZyuaAg"
+#define PARSE_CLIENT_KEY @"xxSG9DGIVpodQBawjcSWKhgqkH3tdL1kaWM6e7bW"
 #define FLICKR_API_KEY @"628288db7c4e7d09c884009576b5eed9"
-#define USER_ID @"95406796"
-#define SET_NUMBER @"72157633844444754"
+#define FLICKER_USER_ID @"95406796"
+#define FLICKER_SET_NUMBER @"72157633844444754"
+#define TWITTER_CONSUMER_KEY @"9ilb37Moot86TKEm34vH4Q"
+#define TWITTER_CONSUMER_SECRET @"h3fdMc5DLFvrdwgm8ZftciRtNDIzGguvQCS0ovtI"
 
 @interface HMDataFeedManager : NSObject
 

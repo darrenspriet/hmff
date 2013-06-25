@@ -53,13 +53,13 @@
 - (void)viewDidLoad{
 
      NSURL *baseURLString = [NSURL URLWithString:self.passedURL];
-        [self.webView loadHTMLString:self.HTMLString baseURL:baseURLString];
+    [self.webView loadHTMLString:self.HTMLString baseURL:baseURLString];
+    self.webView.scalesPageToFit = YES;
 
 
     
     
     //Sets up the Web page and loads it
-    self.webView.scalesPageToFit = YES;
 //    NSURL *url =[NSURL URLWithString:self.passedURL];
 //    NSURLRequest *request = [NSURLRequest requestWithURL:url];
 //    [self.webView loadRequest:request];

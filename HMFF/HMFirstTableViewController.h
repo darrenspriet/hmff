@@ -11,22 +11,11 @@
 #import "HMBandCell.h"
 #import "HMBandWebBrowserViewController.h"
 
-
-
-
-
-
-
-
 @interface HMFirstTableViewController : UITableViewController
 
 @property (nonatomic, strong) NSMutableArray *band;
 @property (nonatomic, strong) NSMutableArray *venue;
 @property (nonatomic, strong) NSMutableArray *lineUp;
-@property (nonatomic, strong) NSMutableArray *arrayOfSections;
 
-
-
-//https://www.parse.com/docs/ios_guide#objects-retrieving/iOS
 
 @end
