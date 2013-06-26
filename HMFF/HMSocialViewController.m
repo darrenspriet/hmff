@@ -26,6 +26,29 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
+    [self setLinks:[[HMDataFeedManager sharedDataFeedManager] linksArray]];
+
+    for (NSDictionary *diction in self.links){
+        NSString * string=[diction objectForKey:@"name"];
+        if ([string isEqualToString:@"facebook"]) {
+            self.facebook =[diction objectForKey:@"link"];
+        }
+        else if ([string isEqualToString:@"youtube"]) {
+            self.youtube =[diction objectForKey:@"link"];
+        }
+        if ([string isEqualToString:@"twitter"]) {
+            self.twitter =[diction objectForKey:@"link"];
+        }
+        if ([string isEqualToString:@"vimeo"]) {
+            self.vimeo =[diction objectForKey:@"link"];
+        }
+        if ([string isEqualToString:@"hmff"]) {
+            self.hmffWebsite =[diction objectForKey:@"link"];
+        }
+    }
+
     //Image for the Navigation Bar
     UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
@@ -69,29 +92,36 @@
     //When the View is loaded it this container sets the delegats
     //Sends the Facebook http
     if ([segue.identifier isEqualToString:@"facebookSegue"]){
-        webBrowser.passedURL=@"http://www.facebook.com/pages/Hmff/85087895652";
+        [webBrowser setPassedURL:self.facebook];
     }
     //Sends the YouTube http
     else if ([segue.identifier isEqualToString:@"youTubeSegue"]){
-        webBrowser.passedURL=@"http://www.youtube.com/user/HMFFESTIVAL?feature=watch";
+        [webBrowser setPassedURL:self.youtube];
+
     }
     //Sends the TWITTER http
     else if ([segue.identifier isEqualToString:@"twitterSegue"]){
-        webBrowser.passedURL=@"http://twitter.com/HMFFEST";
+        [webBrowser setPassedURL:self.twitter];
+
     }
     //Sends the Vimeo http
     else if ([segue.identifier isEqualToString:@"vimeoSegue"]){
-        webBrowser.passedURL=@"http://vimeo.com/search?q=hmff";
+        [webBrowser setPassedURL:self.vimeo];
+
     }
     //Sends the HMFF http
     else if ([segue.identifier isEqualToString:@"HMFFSegue"]){
         webBrowser.passedURL=@"http://www.hmff.com";
+        [webBrowser setHTMLString:self.hmffWebsite];
+
     }
     //Segue for the Buying tickets
     else if ([segue.identifier isEqualToString:@"BuyTickets"]){
         UINavigationController * navController =segue.destinationViewController;
         HMBuyTicketsViewController *buyTickets = (HMBuyTicketsViewController *)navController.topViewController;
         [buyTickets setPassedURL:@"http://www.hmff.com/?page_id=161"];
+        [buyTickets setHTMLString: self.HTMLString];
+
     }
 }
 

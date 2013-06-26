@@ -171,7 +171,7 @@
         
         NSError *jsonError = nil;
         id json = [NSJSONSerialization JSONObjectWithData:r.responseData options:NSJSONReadingMutableLeaves error:&jsonError];
-        NSLog(@"-- jsonError: %@", [jsonError localizedDescription]);
+      //  NSLog(@"-- jsonError: %@", [jsonError localizedDescription]);
         
         if(json == nil) {
             errorBlock(jsonError);

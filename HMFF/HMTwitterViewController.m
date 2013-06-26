@@ -26,6 +26,9 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    
+    [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
+
     //Image for the Navigation Bar
     UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
@@ -69,6 +72,8 @@
         UINavigationController * navController =segue.destinationViewController;
         HMBuyTicketsViewController *buyTickets = (HMBuyTicketsViewController *)navController.topViewController;
         [buyTickets setPassedURL:@"http://www.hmff.com/?page_id=161"];
+        [buyTickets setHTMLString: self.HTMLString];
+
     }
 }
 

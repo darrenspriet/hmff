@@ -11,7 +11,25 @@
 
 @interface HMSocialViewController : UIViewController
 
-@property(strong, nonatomic)NSString*HTMLString;
+@property(strong, nonatomic)NSString *HTMLString;
+
+@property(strong, nonatomic)NSMutableArray *links;
+
+@property(strong, nonatomic)NSString *facebook;
+
+@property(strong, nonatomic)NSString *twitter;
+
+@property(strong, nonatomic)NSString *youtube;
+
+@property(strong, nonatomic)NSString *hmffWebsite;
+
+@property(strong, nonatomic)NSString *vimeo;
+
+
+
+
+
+
 
 
 @end

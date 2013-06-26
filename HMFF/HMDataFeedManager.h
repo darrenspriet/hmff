@@ -9,13 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "STTwitterAPIWrapper.h"
-#define PARSE_APP_ID @"BKjoCRi6vlE1bMuIY100LN8zsIrlWprOUUZyuaAg"
-#define PARSE_CLIENT_KEY @"xxSG9DGIVpodQBawjcSWKhgqkH3tdL1kaWM6e7bW"
+#define PARSE_APP_ID @"klHQu3ms3Mb6gzVHglLvFwfjdYoyuY0UIKDijxZC"
+#define PARSE_CLIENT_KEY @"tioUMseVIJyFgr85vRqCWAiVBF36SMNE65WbqSD7"
 #define FLICKR_API_KEY @"628288db7c4e7d09c884009576b5eed9"
 #define FLICKER_USER_ID @"95406796"
 #define FLICKER_SET_NUMBER @"72157633844444754"
 #define TWITTER_CONSUMER_KEY @"9ilb37Moot86TKEm34vH4Q"
 #define TWITTER_CONSUMER_SECRET @"h3fdMc5DLFvrdwgm8ZftciRtNDIzGguvQCS0ovtI"
+#define NEWS_URL @"http://www.hmff.com/?json=get_recent_posts&count=1000"
+#define FLICKER_URL @"http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&photoset_id=%@&api_key=%@&user_id=%@&per_page=20&format=json&nojsoncallback=1"
+#define SMALL_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_t.jpg"
+#define LARGE_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_m.jpg"
 
 typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 
@@ -58,5 +62,11 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 @property (nonatomic, strong) NSMutableArray *largePhotos;
 
 @property(nonatomic, copy)HMDataFeedManagerCompletionBlock completionBlock;
+
+@property(strong, nonatomic)NSString *HTMLString;
+
+@property(strong, nonatomic)NSMutableArray *linksArray;
+
+
 
 @end

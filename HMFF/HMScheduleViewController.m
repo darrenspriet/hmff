@@ -25,7 +25,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self setDate:[[HMDataFeedManager sharedDataFeedManager] date]];     
+    [self setDate:[[HMDataFeedManager sharedDataFeedManager] date]];
+    [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
     [self.dateForEvent setText:[self.date objectAtIndex:0]];
     [self imagesForButton:@"" andFrontImage:@"forwardButton.png"];
 
@@ -44,18 +45,6 @@
  
     UIBarButtonItem *barButton =[[UIBarButtonItem alloc] initWithCustomView:rightBarButtton];
     [[self navigationItem] setRightBarButtonItem:barButton];
-    NSData *urlData;
-    NSString * baseString = @"http://www.hmff.com/?page_id=161";
-    NSString *urlString = [baseString stringByAppendingPathComponent:@"myfile"];
-    
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval: 10.0];
-    
-    
-    NSError *error = nil;
-    NSURLResponse* response = nil;
-    urlData  = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    
-    self.HTMLString = [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
     
 }
 

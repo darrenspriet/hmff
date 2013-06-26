@@ -15,5 +15,8 @@
 //Button to send an email
 - (IBAction)SendAnEmail:(UIButton *)sender;
 
+@property(strong, nonatomic)NSString*HTMLString;
+
+
 
 @end

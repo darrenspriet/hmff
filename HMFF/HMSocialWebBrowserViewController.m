@@ -54,11 +54,19 @@
     [super viewDidLoad];
     
     //Sets up the Web page and loads it
+    if(self.HTMLString!=NULL){
+        NSURL *baseURLString = [NSURL URLWithString:self.passedURL];
+        [self.webView loadHTMLString:self.HTMLString baseURL:baseURLString];
+        self.webView.scalesPageToFit = YES;
+    }
+    else{
     self.webView.scalesPageToFit = YES;
     NSURL *url =[NSURL URLWithString:self.passedURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
+    }
     
+        
     //Sets the proper buttons to enabled or not
     [self updateButtons];
 }

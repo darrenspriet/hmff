@@ -15,6 +15,9 @@
 //This is used to post a tweet and make the tweet controller appear
 - (IBAction)postTweet:(UIButton *)sender;
 
+@property(strong, nonatomic)NSString*HTMLString;
+
+
 
 @end
 

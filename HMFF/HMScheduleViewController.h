@@ -31,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *forwardButtonImage;
 - (IBAction)backButton:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *backButtonImage;
+
 @property(strong, nonatomic)NSString*HTMLString;
 
 

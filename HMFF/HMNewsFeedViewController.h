@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HMNewsFeedViewController : UIViewController 
+@interface HMNewsFeedViewController : UIViewController
+
+@property(strong, nonatomic)NSString*HTMLString;
+
 
 
 @end
