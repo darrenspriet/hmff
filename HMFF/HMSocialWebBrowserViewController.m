@@ -25,13 +25,22 @@
     return self;
 }
 -(void)viewDidDisappear:(BOOL)animated{
-//    NSLog(@"view did disappear");
+    //    NSLog(@"view did disappear");
     if([self.webView isLoading])
     {
-//        NSLog(@"webview was loading");
+        //        NSLog(@"webview was loading");
         [self.webView stopLoading];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     }
+    [self saveCookies];
+}
+
+- (void)saveCookies
+{
+    NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject: [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject: cookiesData forKey: @"cookies"];
+    [defaults synchronize];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
@@ -49,10 +58,21 @@
     }
     
 }
+- (void)loadCookies
+{
+    NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData: [[NSUserDefaults standardUserDefaults] objectForKey: @"cookies"]];
+    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in cookies)
+    {
+        [cookieStorage setCookie: cookie];
+    }
+}
 
 - (void)viewDidLoad{
+    
     [super viewDidLoad];
     
+    [self loadCookies];
     //Sets up the Web page and loads it
     if(self.HTMLString!=NULL){
         NSURL *baseURLString = [NSURL URLWithString:self.passedURL];
