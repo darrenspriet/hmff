@@ -21,6 +21,8 @@
     
     //Set the status bar style to blackopaque
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
+    
+     [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_CLIENT_KEY];
 
     return YES;
 }

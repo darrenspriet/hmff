@@ -93,20 +93,28 @@
     //Sends the Facebook http
     if ([segue.identifier isEqualToString:@"facebookSegue"]){
         [webBrowser setPassedURL:self.facebook];
+        [webBrowser setHTMLString:NULL];
+
     }
     //Sends the YouTube http
     else if ([segue.identifier isEqualToString:@"youTubeSegue"]){
         [webBrowser setPassedURL:self.youtube];
+        [webBrowser setHTMLString:NULL];
+
 
     }
     //Sends the TWITTER http
     else if ([segue.identifier isEqualToString:@"twitterSegue"]){
         [webBrowser setPassedURL:self.twitter];
+        [webBrowser setHTMLString:NULL];
+
 
     }
     //Sends the Vimeo http
     else if ([segue.identifier isEqualToString:@"vimeoSegue"]){
         [webBrowser setPassedURL:self.vimeo];
+        [webBrowser setHTMLString:NULL];
+
 
     }
     //Sends the HMFF http

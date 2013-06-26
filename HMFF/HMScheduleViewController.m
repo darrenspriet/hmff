@@ -54,7 +54,8 @@
 }
 
 -(void)buyTicketPressed:(id)sender{
-    
+    [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
+
     [self performSegueWithIdentifier:@"BuyTickets" sender:sender];
 
 

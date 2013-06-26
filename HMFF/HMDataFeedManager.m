@@ -27,18 +27,22 @@
 //The init Method
 -(id)init{
     
+    [self getLinksParseObjects];
+    //Fetches all of the News Feeds
+    [self fetchNewsFeed];
+    
     //Fetches all of the Tweets for HMFFEST from twitter
     [self fetchTweets];
     
     //Fetches the FlickerFeed
     [self fetchFlickerFeed];
     
-    //This is the Client key and app ID for the parse online
-    [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_CLIENT_KEY];
-    [self getParseObjects];
     
-    //Fetches all of the News Feeds
-    [self fetchNewsFeed];
+
+   
+    [self getScheduleParseObjects];
+    
+
 
     return self;
 }
@@ -118,7 +122,7 @@
 //This needs to be looked at because if there is NO internet it may crash
 - (void)fetchNewsFeed{
     //Must change this Cause it is on the mainQue
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"News Feed dispach started");
 
         NSData* data = [NSData dataWithContentsOfURL:
@@ -175,23 +179,37 @@
         });
     });
 }
--(void)getParseObjects{
+-(void)getLinksParseObjects{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSLog(@"get parse objects dispach started");
+        NSLog(@"links dispach started");
+        
+        NSArray *linkObjects = [[NSMutableArray alloc]init];
+        PFQuery *linkQuery = [PFQuery queryWithClassName:@"links"];
+        linkObjects= [linkQuery findObjects];
+        NSLog(@"links done");
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"links dispach finished");
+            [self parseTicketLink:linkObjects];
+            [self parseSocialLinks:linkObjects];
+            
+        });
+    });
+    
+}
+-(void)getScheduleParseObjects{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"schedule dispach started");
 
         
         NSArray *scheduleObjects = [[NSMutableArray alloc]init];
         PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"schedule"];
         //Puts all of the querys into an object
         scheduleObjects= [scheduleQuery findObjects];
-        
-        NSArray *linkObjects = [[NSMutableArray alloc]init];
-        PFQuery *linkQuery = [PFQuery queryWithClassName:@"links"];
-        linkObjects= [linkQuery findObjects];
-
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"get parse objects dispatch finished");
-            [self parseLinks:linkObjects];
+        NSLog(@"Schedule done");
+             dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"schedule dispatch finished");
             [self parseSchedule:scheduleObjects];
             ;
             
@@ -199,9 +217,9 @@
     });
     
 }
--(void)parseLinks:(NSArray*)array{
+-(void)parseSocialLinks:(NSArray*)array{
     
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSLog(@"parseLinks dispach started");
 
         
@@ -213,8 +231,9 @@
         for (NSDictionary *diction in array){
             NSString * string=[diction objectForKey:@"name"];
             if ([string isEqualToString:@"ticket"]) {
-                links =[diction objectForKey:@"link"];
-                self.HTMLString= [self buildLinkData:links];
+               // links =[diction objectForKey:@"link"];
+               // self.HTMLString= [self buildLinkData:links];
+              //  NSLog(@"we have the ticket page");
             }
             else if ([string isEqualToString:@"hmff"]) {
                 links =[diction objectForKey:@"link"];
@@ -228,7 +247,7 @@
                 
             }  
         }
-      //  NSLog(@"the links are %@", self.linksArray);
+        NSLog(@"the links are %@", self.linksArray);
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"parseLinks dispach finished");
             ;
@@ -236,6 +255,30 @@
         });
     });
 }
+-(void)parseTicketLink:(NSArray*)array{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"single link");        
+        NSString *links = [[NSString alloc]init];
+        self.HTMLString= [[NSString alloc]init];
+        
+        for (NSDictionary *diction in array){
+            NSString * string=[diction objectForKey:@"name"];
+            if ([string isEqualToString:@"ticket"]) {
+                links =[diction objectForKey:@"link"];
+                self.HTMLString= [self buildLinkData:links];
+                NSLog(@"we have the ticket page");
+            }
+                   }
+        //  NSLog(@"the links are %@", self.linksArray);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"single link finished");
+            ;
+            
+        });
+    });
+}
+
 
 -(void)parseSchedule:(NSArray*)array{
     //Try to keep the Parse calls to a minimum...there are 3 right now.

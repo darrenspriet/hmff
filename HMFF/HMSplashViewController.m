@@ -40,10 +40,7 @@
 
 -(void)showLabels{
     
-    [self.cityLabel setAlpha:0.0f];
-    [self.dateLabel setAlpha:0.0f];
-    [self.cityLabel setText:@"Hamilton, Ontario"];
-    [self.dateLabel setText:@"Sept 17-18  2013"];
+    
     [UIView animateWithDuration:2 animations:^{
         [self.dateLabel setAlpha:1.0f];
         [self.cityLabel setAlpha:1.0f];
@@ -55,7 +52,28 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self showLabels];
+    [self.cityLabel setAlpha:0.0f];
+    [self.dateLabel setAlpha:0.0f];
+    
+    
+    NSLog(@"get parse dates started");
+    
+    
+    NSArray *scheduleObjects = [[NSMutableArray alloc]init];
+    PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
+    //Puts all of the querys into an object
+    scheduleObjects= [scheduleQuery findObjects];
+    
+    NSLog(@"get parse dates finished");
+    for(NSDictionary *diction in scheduleObjects){
+        [self.dateLabel setText:[diction objectForKey:@"dates"]];
+        [self.cityLabel setText:[diction objectForKey:@"location"]];
+        [self showLabels];
+    }
+    
+    
+    
+    
     [HMDataFeedManager sharedDataFeedManager];
     
     [HMDataFeedManager sharedDataFeedManager].completionBlock = ^(BOOL success){
