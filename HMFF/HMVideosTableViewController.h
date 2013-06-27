@@ -10,10 +10,11 @@
 #import "HMVideoCell.h"
 
 
-@interface HMVideosTableViewController : UITableViewController
+@interface HMVideosTableViewController : UITableViewController <UIActionSheetDelegate>
 
 
 //An array of dictionaries which stores the content(title and url) of the youtube videos
-@property (strong, nonatomic) NSArray *Videos;
 @property (strong, nonatomic) NSDictionary *VideoContent;
+@property(strong, nonatomic)NSMutableArray *youTubeArray;
+
 @end

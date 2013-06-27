@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HMSocialWebBrowserViewController : UIViewController
+@interface HMSocialWebBrowserViewController : UIViewController<UIActionSheetDelegate>
 
 //All properties for web browser
 @property (nonatomic, retain) IBOutlet UIWebView* webView;

@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HMBandWebBrowserViewController : UIViewController
+@interface HMBandWebBrowserViewController : UIViewController<UIActionSheetDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWebView* webView;
 @property (nonatomic, retain) IBOutlet UIToolbar* toolbar;

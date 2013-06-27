@@ -34,16 +34,16 @@
     }
     [self saveCookies];
 }
-
-- (void)saveCookies
-{
-    NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject: [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject: cookiesData forKey: @"cookies"];
-    [defaults synchronize];
+-(void)viewDidAppear:(BOOL)animated{
+    NSLog(@"VIEW DID APPEAR");
+    
+    // [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];    
+    
 }
 
 -(void) viewWillAppear:(BOOL)animated {
+    [self loadCookies];
     [super viewWillAppear:animated];
     
     //this checks whether the internet is accessible and if it isn't, it will display a message
@@ -58,21 +58,12 @@
     }
     
 }
-- (void)loadCookies
-{
-    NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData: [[NSUserDefaults standardUserDefaults] objectForKey: @"cookies"]];
-    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (NSHTTPCookie *cookie in cookies)
-    {
-        [cookieStorage setCookie: cookie];
-    }
-}
+
 
 - (void)viewDidLoad{
     
     [super viewDidLoad];
     
-    [self loadCookies];
     //Sets up the Web page and loads it
     if(self.HTMLString!=NULL){
         NSURL *baseURLString = [NSURL URLWithString:self.passedURL];
@@ -91,12 +82,107 @@
     [self updateButtons];
 }
 
+
+- (void)saveCookies
+{
+    NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject: [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject: cookiesData forKey: @"cookies"];
+    [defaults synchronize];
+}
+
+- (void)loadCookies
+{
+    NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData: [[NSUserDefaults standardUserDefaults] objectForKey: @"cookies"]];
+    NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (NSHTTPCookie *cookie in cookies)
+    {
+        [cookieStorage setCookie: cookie];
+    }
+}
+
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
 }
 
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender{
     NSLog(@"Share button Pressed");
+    if(NSClassFromString(@"UIActivityViewController")!=nil){
+        [self showActivityViewController];
+    }else {
+        [self showActionSheet];
+    }
+
+}
+
+-(void)showActivityViewController
+{
+    //-- set up the data objects
+    NSString *textObject = @"Check this out!";
+       NSURL *url = [NSURL URLWithString:self.passedURL];
+    UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
+    NSArray *activityItems = [NSArray arrayWithObjects:textObject, url, image, nil];
+    
+    //-- initialising the activity view controller
+    UIActivityViewController *avc = [[UIActivityViewController alloc]
+                                     initWithActivityItems:activityItems
+                                     applicationActivities:nil];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:34.0/255.0 green:97.0/255.0 blue:221.0/255.0 alpha:1]];
+    
+    //-- define the activity view completion handler
+    avc.completionHandler = ^(NSString *activityType, BOOL completed){
+        NSLog(@"Activity Type selected: %@", activityType);
+        if (completed) {
+            
+            NSLog(@"Selected activity was performed.");
+            [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+            
+        } else {
+            if (activityType == NULL) {
+                NSLog(@"User dismissed the view controller without making a selection.");
+                [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+                
+            } else {
+                NSLog(@"Activity was not performed.");
+                [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+                
+            }
+        }
+    };
+    
+    //-- define activity to be excluded (if any)
+    avc.excludedActivityTypes = [NSArray arrayWithObjects:UIActivityTypeAssignToContact,UIActivityTypePostToWeibo,UIActivityTypePrint, UIActivityTypeCopyToPasteboard, nil];
+    
+    //-- show the activity view controller
+    [self presentViewController:avc animated:YES completion:^{
+        
+    }];
+    
+}
+//This is for pre ios 6
+-(void)showActionSheet
+{
+    UIActionSheet *as = [[UIActionSheet alloc]initWithTitle:@"choose"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancels"
+                                     destructiveButtonTitle:nil
+                                          otherButtonTitles:@"Email", nil];
+    [as showInView:self.view];
+}
+
+#pragma mark - UIActionSheet delegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            NSLog(@"Email");
+            break;
+        case 1:
+            NSLog(@"Cancel");
+            break;
+        default:
+            break;
+    }
 }
 
 
@@ -153,7 +239,6 @@
     
     
     NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    
     [self setTitle:pageTitle];
     CGRect frame = CGRectMake(62, 0, [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20.0]].width, 44);
     UILabel *label = [[UILabel alloc] initWithFrame:frame];

@@ -28,8 +28,6 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 //As singleton Object that is called at the beginning of the Application
 + (HMDataFeedManager*) sharedDataFeedManager;
 
-//Gets Parse Objects
--(void)getParseObjects;
 
 //Fetches Flicker Feed
 -(void)fetchFlickerFeed;
@@ -66,6 +64,9 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 @property(strong, nonatomic)NSString *HTMLString;
 
 @property(strong, nonatomic)NSMutableArray *linksArray;
+
+@property(strong, nonatomic)NSMutableArray *youTubeArray;
+
 
 
 

@@ -27,7 +27,9 @@
 //The init Method
 -(id)init{
     
-    [self getLinksParseObjects];
+    //Fetches all of the links parse objects
+    [self fetchLinksParseObjects];
+    
     //Fetches all of the News Feeds
     [self fetchNewsFeed];
     
@@ -36,13 +38,12 @@
     
     //Fetches the FlickerFeed
     [self fetchFlickerFeed];
-    
-    
-
    
-    [self getScheduleParseObjects];
+    //Fetches all of the schedule parse objects
+    [self fetchScheduleParseObjects];
     
-
+    //Fetches all of the youtube parse objects
+    [self fetchYouTubeParseObjects];
 
     return self;
 }
@@ -179,36 +180,21 @@
         });
     });
 }
--(void)getLinksParseObjects{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSLog(@"links dispach started");
-        
-        NSArray *linkObjects = [[NSMutableArray alloc]init];
-        PFQuery *linkQuery = [PFQuery queryWithClassName:@"links"];
-        linkObjects= [linkQuery findObjects];
-        NSLog(@"links done");
-        
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"links dispach finished");
-            [self parseTicketLink:linkObjects];
-            [self parseSocialLinks:linkObjects];
-            
-        });
-    });
-    
-}
--(void)getScheduleParseObjects{
+
+#pragma mark Parse Fetchers
+
+
+-(void)fetchScheduleParseObjects{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSLog(@"schedule dispach started");
-
+        
         
         NSArray *scheduleObjects = [[NSMutableArray alloc]init];
         PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"schedule"];
         //Puts all of the querys into an object
         scheduleObjects= [scheduleQuery findObjects];
         NSLog(@"Schedule done");
-             dispatch_async(dispatch_get_main_queue(), ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"schedule dispatch finished");
             [self parseSchedule:scheduleObjects];
             ;
@@ -217,74 +203,12 @@
     });
     
 }
--(void)parseSocialLinks:(NSArray*)array{
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSLog(@"parseLinks dispach started");
-
-        
-        NSString *links = [[NSString alloc]init];
-        NSString *finalLink = [[NSString alloc]init];
-        self.linksArray = [[NSMutableArray alloc]init];
-        self.HTMLString= [[NSString alloc]init];
-        
-        for (NSDictionary *diction in array){
-            NSString * string=[diction objectForKey:@"name"];
-            if ([string isEqualToString:@"ticket"]) {
-               // links =[diction objectForKey:@"link"];
-               // self.HTMLString= [self buildLinkData:links];
-              //  NSLog(@"we have the ticket page");
-            }
-            else if ([string isEqualToString:@"hmff"]) {
-                links =[diction objectForKey:@"link"];
-                finalLink= [self buildLinkData:links];
-
-                NSDictionary *tempDict=[[NSDictionary alloc]initWithObjectsAndKeys:[diction objectForKey:@"name"], @"name",finalLink,@"link", nil];
-                [self.linksArray addObject:tempDict];
-            }
-            else{
-                [self.linksArray addObject:diction];
-                
-            }  
-        }
-        NSLog(@"the links are %@", self.linksArray);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"parseLinks dispach finished");
-            ;
-            
-        });
-    });
-}
--(void)parseTicketLink:(NSArray*)array{
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-        NSLog(@"single link");        
-        NSString *links = [[NSString alloc]init];
-        self.HTMLString= [[NSString alloc]init];
-        
-        for (NSDictionary *diction in array){
-            NSString * string=[diction objectForKey:@"name"];
-            if ([string isEqualToString:@"ticket"]) {
-                links =[diction objectForKey:@"link"];
-                self.HTMLString= [self buildLinkData:links];
-                NSLog(@"we have the ticket page");
-            }
-                   }
-        //  NSLog(@"the links are %@", self.linksArray);
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"single link finished");
-            ;
-            
-        });
-    });
-}
-
 
 -(void)parseSchedule:(NSArray*)array{
     //Try to keep the Parse calls to a minimum...there are 3 right now.
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"parseSchedule dispach started");
-
+        
         NSMutableArray *venue= [[NSMutableArray alloc]init];
         NSMutableArray *tempArray = [[NSMutableArray alloc]init];
         NSMutableArray *tempArray2 = [[NSMutableArray alloc]init];
@@ -297,7 +221,7 @@
         NSMutableArray *allObjectsSorted = [NSMutableArray arrayWithArray:array];
         [allObjectsSorted sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"date" ascending:YES], nil]];
         
-       // NSLog(@"allobjectssorted 3%@", allObjectsSorted);
+        // NSLog(@"allobjectssorted 3%@", allObjectsSorted);
         //Pulls out all of the dates from the objects
         for (NSDictionary *diction in allObjectsSorted){
             
@@ -311,7 +235,7 @@
             [tempArray4 addObject:newDate];
         }
         
-       // NSLog(@"temparray ordered?%@", tempArray4);
+        // NSLog(@"temparray ordered?%@", tempArray4);
         
         
         //Used to find the Unique Dates
@@ -322,12 +246,12 @@
         
         ////Put the Set back into the array so I can use it
         tempArray2= [NSMutableArray arrayWithArray:[uniqueDates allObjects]];
-       // NSLog(@"temparray 3%@", tempArray2);
+        // NSLog(@"temparray 3%@", tempArray2);
         
         
         self.date= [NSMutableArray arrayWithArray:tempArray2];
         
-     //   NSLog(@"dates %@", self.date);
+        //   NSLog(@"dates %@", self.date);
         NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
         
         for (NSDictionary *diction in allObjectsSorted){
@@ -356,7 +280,7 @@
         //NSLog(@"unique venues %@", uniqueVenues);
         
         venue = [NSMutableArray arrayWithArray:[uniqueVenues allObjects]];
-      //  NSLog(@"venues %@", venue);
+        //  NSLog(@"venues %@", venue);
         
         //Finds band for unique dates and venue
         for (int i= 0; i <[self.date count]; i++) {
@@ -365,8 +289,8 @@
                 NSDateFormatter *dateFormatter1 = [[NSDateFormatter alloc] init];
                 [dateFormatter1 setDateFormat:@"MMM dd YYYY"];
                 NSString *compareString =[dateFormatter1 stringFromDate:[diction objectForKey:@"date"]];
-             //   NSLog(@"compare date %@", compareString);
-              //  NSLog(@"otherdate at i %@", [self.date objectAtIndex:i]);
+                //   NSLog(@"compare date %@", compareString);
+                //  NSLog(@"otherdate at i %@", [self.date objectAtIndex:i]);
                 if ([compareString isEqualToString:[self.date objectAtIndex:i]]) {
                     for (int j=0; j<[venue count]; j++) {
                         if ([[diction objectForKey:@"venue"] isEqualToString:[venue objectAtIndex:j]]) {
@@ -380,7 +304,7 @@
             }
             //Adds the Array with dictionarys in it to the array
             [self.band addObject:arrayBand];
-          //  NSLog(@"band %@", self.band);
+            //  NSLog(@"band %@", self.band);
         }
         dispatch_async(dispatch_get_main_queue(), ^{
             NSLog(@"parseSchedule dispach finished");
@@ -388,6 +312,130 @@
         });
     });
     
+}
+
+#pragma mark PARSE YOUTUBE OBJECTS
+
+-(void)fetchYouTubeParseObjects{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"schedule dispach started");
+        
+        
+        NSArray *youTubeObject = [[NSMutableArray alloc]init];
+        PFQuery *youTubeQuery = [PFQuery queryWithClassName:@"youtube"];
+        //Puts all of the querys into an object
+        youTubeObject= [youTubeQuery findObjects];
+        NSLog(@"Schedule done");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"schedule dispatch finished");
+            [self parseYouTubeLinks:youTubeObject];
+            ;
+            
+        });
+    });
+    
+}
+
+-(void)parseYouTubeLinks:(NSArray*)array{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"parse youtube dispach started");
+
+        self.youTubeArray = [[NSMutableArray alloc]init];
+        for (NSDictionary *diction in array){
+                [self.youTubeArray addObject:diction];
+                
+            }
+         NSLog(@"the youtube are %@", self.youTubeArray);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"parseyoutube dispach finished");
+            ;
+            
+        });
+    });
+}
+
+
+#pragma mark PARSE LINK OBJECSTS
+
+-(void)fetchLinksParseObjects{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"links dispach started");
+        
+        NSArray *linkObjects = [[NSMutableArray alloc]init];
+        PFQuery *linkQuery = [PFQuery queryWithClassName:@"links"];
+        linkObjects= [linkQuery findObjects];
+        NSLog(@"links done");
+        
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"links dispach finished");
+            [self parseTicketLink:linkObjects];
+            [self parseSocialLinks:linkObjects];
+            
+        });
+    });
+    
+}
+
+-(void)parseSocialLinks:(NSArray*)array{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"parseLinks dispach started");
+        
+        
+        NSString *links = [[NSString alloc]init];
+        NSString *finalLink = [[NSString alloc]init];
+        self.linksArray = [[NSMutableArray alloc]init];
+        
+        for (NSDictionary *diction in array){
+            NSString * string=[diction objectForKey:@"name"];
+            if ([string isEqualToString:@"ticket"]) {
+                //Do nothing
+            }
+            else if ([string isEqualToString:@"hmff"]) {
+                links =[diction objectForKey:@"link"];
+                finalLink= [self buildLinkData:links];
+                
+                NSDictionary *tempDict=[[NSDictionary alloc]initWithObjectsAndKeys:[diction objectForKey:@"name"], @"name",finalLink,@"link", nil];
+                [self.linksArray addObject:tempDict];
+            }
+            else{
+                [self.linksArray addObject:diction];
+                
+            }
+        }
+        // NSLog(@"the links are %@", self.linksArray);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"parseLinks dispach finished");
+            ;
+            
+        });
+    });
+}
+
+-(void)parseTicketLink:(NSArray*)array{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSLog(@"single link");
+        NSString *links = [[NSString alloc]init];
+        self.HTMLString= [[NSString alloc]init];
+        
+        for (NSDictionary *diction in array){
+            NSString * string=[diction objectForKey:@"name"];
+            if ([string isEqualToString:@"ticket"]) {
+                links =[diction objectForKey:@"link"];
+                self.HTMLString= [self buildLinkData:links];
+                NSLog(@"we have the ticket page: %@", self.HTMLString);
+            }
+        }
+        //  NSLog(@"the links are %@", self.linksArray);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"single link finished");
+            ;
+            
+        });
+    });
 }
 
 -(NSString*)buildLinkData:(NSString*)stringURL{

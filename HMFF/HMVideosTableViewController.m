@@ -23,14 +23,14 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    //reads from the Youtbe.plist file and sets the array in the plist to the youtubeVideos array
-    NSString *file = @"Video";
-    NSString *filePath = [[NSBundle mainBundle]pathForResource:file ofType:@"plist"];
+
     
-    [self setVideos:[NSArray arrayWithContentsOfFile:filePath]];
+    [self setYouTubeArray:[[HMDataFeedManager sharedDataFeedManager] youTubeArray]];
+
 }
 -(void)setTitle:(NSString *)title{
     [super setTitle:title];
@@ -63,20 +63,20 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.Videos count];
+    return [self.youTubeArray count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     //sets the dictionary which contains the content for youtube video to the array object at indexpath
-    [self setVideoContent:[self.Videos objectAtIndex:[indexPath row]]];
+    [self setVideoContent:[self.youTubeArray objectAtIndex:[indexPath row]]];
     
     //The youtubeVideosContent dictionary contains two keys: title and url which are defined in .h file.
     
     //creates a custom cell and calls the embedYoutube method which loads the video
     HMVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoCell"];
     
-    NSString *embeddedHTML = [[NSString alloc]initWithFormat: @"<html><head><title>.</title><style>body,html,iframe{margin:0; margin-top:-10;padding:0;}</style></head><body><iframe width=\"321\" height=\"194\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe></body></html>", [self.VideoContent objectForKey:@"url"]];
+    NSString *embeddedHTML = [[NSString alloc]initWithFormat: @"<html><head><title>.</title><style>body,html,iframe{margin:0; margin-top:-10;padding:0;}</style></head><body><iframe width=\"321\" height=\"194\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe></body></html>", [self.VideoContent objectForKey:@"link"]];
         [cell.videoWebView loadHTMLString:embeddedHTML baseURL:nil];
     
         [cell.videoWebView.scrollView setScrollEnabled:NO];

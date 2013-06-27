@@ -66,9 +66,9 @@
 -(void)showActivityViewController
 {
     //-- set up the data objects
-    NSString *textObject = @"This is just some text";
-    NSURL *url = [NSURL URLWithString:@"http://www.absoluteripple.com"];
-    UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
+    NSString *textObject = @"Check out this Picture!";
+    NSURL *url = [NSURL URLWithString:@"http://www.hmff.com"];
+    UIImage *image = self.imageView.image;
     NSArray *activityItems = [NSArray arrayWithObjects:textObject, url, image, nil];
     
     //-- initialising the activity view controller
