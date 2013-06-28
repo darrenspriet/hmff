@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="Uaw-Oy-Tfo" customClass="HMNewsFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsl-uA-LT4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9a-rG-K0L">
@@ -65,7 +65,7 @@
             <objects>
                 <tableViewController id="jtw-ey-lVs" customClass="HMNewsFeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="RIC-Ih-gGK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -125,7 +125,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="dlc-h9-Onv" customClass="HMNewsFeedDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mYm-af-p44">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title Goes Here" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="16" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="7N9-3n-m3V">
@@ -177,7 +177,7 @@
             <objects>
                 <viewController id="2Qd-db-GVQ" customClass="HMTwitterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="faU-aG-uOm">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t7O-J4-h9V">
@@ -249,7 +249,7 @@
             <objects>
                 <tableViewController id="wx8-zC-B03" customClass="HMTwitterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="109" sectionHeaderHeight="22" sectionFooterHeight="22" id="hVz-uy-I5K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -330,7 +330,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="EAI-lg-KOF" customClass="HMTwitterDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v04-hY-qpr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wIN-we-ipY">
@@ -393,7 +393,7 @@
             <objects>
                 <viewController id="YPs-GN-PfW" customClass="HMSocialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVo-e5-d7X">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUf-jx-w4c">
@@ -535,7 +535,7 @@
             <objects>
                 <viewController id="uqj-Bg-yve" customClass="HMMoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OOP-8e-LEa">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iE9-Mn-8al">
@@ -619,7 +619,7 @@
             <objects>
                 <tableViewController id="esX-NZ-Wfk" customClass="HMMoreTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XW1-D7-uTH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -814,7 +814,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="EWF-zL-Z4W" customClass="HMMoreWebBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8A-sJ-me8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EPH-Vj-ZLl">
@@ -890,7 +890,7 @@
             <objects>
                 <viewController id="u6h-EW-53g" customClass="HMLargePhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="redraw" id="KeX-kc-B1Q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="H9w-fg-RXt">
@@ -902,7 +902,6 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OT6-gl-QM1">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" type="user" id="Lfq-Tg-VrV"/>
-                                    <constraint firstAttribute="width" constant="320" type="user" id="sA9-PD-c4x"/>
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="9GO-1O-qpn"/>
@@ -919,11 +918,13 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="OT6-gl-QM1" firstAttribute="top" secondItem="H9w-fg-RXt" secondAttribute="bottom" type="default" id="9cN-kR-cOL"/>
+                            <constraint firstItem="H9w-fg-RXt" firstAttribute="bottom" secondItem="KeX-kc-B1Q" secondAttribute="bottom" type="user" id="4BN-NP-iCo"/>
                             <constraint firstItem="OT6-gl-QM1" firstAttribute="leading" secondItem="KeX-kc-B1Q" secondAttribute="leading" type="user" id="D4K-x5-udI"/>
+                            <constraint firstItem="OT6-gl-QM1" firstAttribute="trailing" secondItem="KeX-kc-B1Q" secondAttribute="trailing" type="user" id="ELN-Af-X2A"/>
                             <constraint firstItem="H9w-fg-RXt" firstAttribute="trailing" secondItem="KeX-kc-B1Q" secondAttribute="trailing" type="default" id="Ql9-nU-JGv"/>
                             <constraint firstItem="H9w-fg-RXt" firstAttribute="top" secondItem="KeX-kc-B1Q" secondAttribute="top" type="default" id="cU7-Gt-cHB"/>
                             <constraint firstItem="H9w-fg-RXt" firstAttribute="leading" secondItem="KeX-kc-B1Q" secondAttribute="leading" type="default" id="gHA-Lf-S6K"/>
+                            <constraint firstItem="H9w-fg-RXt" firstAttribute="bottom" secondItem="KeX-kc-B1Q" secondAttribute="bottom" type="user" id="rCU-uD-Jtk"/>
                             <constraint firstItem="OT6-gl-QM1" firstAttribute="bottom" secondItem="KeX-kc-B1Q" secondAttribute="bottom" type="default" id="vKE-ne-IY7"/>
                         </constraints>
                     </view>
@@ -947,7 +948,7 @@
             <objects>
                 <viewController id="OAI-Uc-Wqg" customClass="HMPagedScrollViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="KjA-KV-Mhk">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sl2-eR-lBd">
@@ -988,7 +989,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" id="N8U-te-xKz" customClass="HMPhotoCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="XiV-n2-cGq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EIy-Hj-1Y0">
                             <size key="itemSize" width="100" height="100"/>
@@ -1042,7 +1043,7 @@
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="KlN-ic-TwX" customClass="HMVideosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="205" sectionHeaderHeight="22" sectionFooterHeight="22" id="90K-pk-VZS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="330"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1058,7 +1059,7 @@
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="10" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="d6S-dn-Vrc">
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="45" id="uPT-QQ-opw"/>
+                                                        <constraint firstAttribute="height" constant="45" type="user" id="uPT-QQ-opw"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1068,18 +1069,19 @@
                                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="164" id="jvl-l0-hmc"/>
+                                                        <constraint firstAttribute="height" constant="164" type="user" id="qSS-PF-wvq"/>
                                                     </constraints>
                                                 </webView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstItem="d6S-dn-Vrc" firstAttribute="top" secondItem="MFe-Wb-coz" secondAttribute="top" type="default" id="34c-AT-bKw"/>
+                                                <constraint firstItem="d6S-dn-Vrc" firstAttribute="top" secondItem="MFe-Wb-coz" secondAttribute="top" type="user" id="34c-AT-bKw"/>
                                                 <constraint firstItem="d6S-dn-Vrc" firstAttribute="leading" secondItem="MFe-Wb-coz" secondAttribute="leading" type="default" id="N0d-Ha-jiM"/>
-                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="centerX" secondItem="d6S-dn-Vrc" secondAttribute="centerX" type="default" id="gXf-7v-e4B"/>
-                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="bottom" secondItem="MFe-Wb-coz" secondAttribute="bottom" type="default" id="gsD-Jj-glv"/>
+                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="trailing" secondItem="d6S-dn-Vrc" secondAttribute="trailing" type="default" id="Yzx-WL-5ru"/>
+                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="trailing" secondItem="MFe-Wb-coz" secondAttribute="trailing" type="default" id="aNb-eK-NV4"/>
+                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="top" secondItem="MFe-Wb-coz" secondAttribute="top" constant="41" type="user" id="e6V-1h-WRx"/>
+                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="bottom" secondItem="MFe-Wb-coz" secondAttribute="bottom" type="user" id="gsD-Jj-glv"/>
                                                 <constraint firstItem="Cw3-ii-C8a" firstAttribute="leading" secondItem="MFe-Wb-coz" secondAttribute="leading" type="default" id="gws-QG-qCc"/>
-                                                <constraint firstItem="Cw3-ii-C8a" firstAttribute="centerX" secondItem="MFe-Wb-coz" secondAttribute="centerX" type="default" id="kcg-bA-pwq"/>
                                             </constraints>
                                         </view>
                                     </subviews>
@@ -1091,7 +1093,7 @@
                                     <constraint firstItem="MFe-Wb-coz" firstAttribute="trailing" secondItem="2mv-Wa-t75" secondAttribute="trailing" type="default" id="Kgc-8x-hCZ"/>
                                     <constraint firstItem="MFe-Wb-coz" firstAttribute="leading" secondItem="2mv-Wa-t75" secondAttribute="leading" type="default" id="fgV-Pw-ryH"/>
                                     <constraint firstItem="MFe-Wb-coz" firstAttribute="top" secondItem="2mv-Wa-t75" secondAttribute="top" type="user" id="lTT-Ci-Ygw"/>
-                                    <constraint firstItem="MFe-Wb-coz" firstAttribute="bottom" secondItem="2mv-Wa-t75" secondAttribute="bottom" type="default" id="tjM-KR-BoO"/>
+                                    <constraint firstItem="MFe-Wb-coz" firstAttribute="bottom" secondItem="2mv-Wa-t75" secondAttribute="bottom" type="user" id="tjM-KR-BoO"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="videoTitle" destination="d6S-dn-Vrc" id="n8u-DC-rmi"/>
@@ -1117,7 +1119,7 @@
             <objects>
                 <viewController id="QTH-IL-sWj" customClass="HMSplashViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yyJ-xl-CLe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rZJ-Gb-yFn"/>
@@ -1198,10 +1200,10 @@
             </objects>
             <point key="canvasLocation" x="-229" y="668"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="dhP-jl-vZF">
             <objects>
-                <navigationController id="rWd-Od-lCB" sceneMemberID="viewController">
+                <navigationController id="rWd-Od-lCB" customClass="HMNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" systemItem="more" id="JtT-LE-DkN"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="e2i-su-deo"/>
@@ -1221,10 +1223,10 @@
             </objects>
             <point key="canvasLocation" x="795" y="1642"/>
         </scene>
-        <!--Navigation Controller - Twitter-->
+        <!--Navigation View Controller - Twitter-->
         <scene sceneID="nM2-LC-Az7">
             <objects>
-                <navigationController id="Dqb-hB-lJA" sceneMemberID="viewController">
+                <navigationController id="Dqb-hB-lJA" customClass="HMNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Twitter" image="TwitterBird.png" id="LRS-BU-ik0"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
@@ -1242,10 +1244,10 @@
             </objects>
             <point key="canvasLocation" x="805" y="147"/>
         </scene>
-        <!--Navigation Controller - Social-->
+        <!--Navigation View Controller - Social-->
         <scene sceneID="84s-5P-3Ae">
             <objects>
-                <navigationController id="Ek4-C9-804" sceneMemberID="viewController">
+                <navigationController id="Ek4-C9-804" customClass="HMNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Social" image="SocialThumbsUp.png" id="Wr3-6l-Tbr"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
@@ -1263,10 +1265,10 @@
             </objects>
             <point key="canvasLocation" x="805" y="898"/>
         </scene>
-        <!--Navigation Controller - News-->
+        <!--Navigation View Controller - News-->
         <scene sceneID="fRZ-4Y-Whk">
             <objects>
-                <navigationController id="LlW-83-wJg" sceneMemberID="viewController">
+                <navigationController id="LlW-83-wJg" customClass="HMNavigationViewController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="News" image="News.png" id="Kjj-m3-Nlf"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
@@ -1357,7 +1359,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="zQw-le-wFB" customClass="HMSocialWebBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2MT-fh-vrR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fp6-3M-tiA">
@@ -1432,7 +1434,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="JWv-oD-gMU" customClass="HMBuyTicketsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XP2-iD-jdy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eb5-ec-MRa">
@@ -1593,6 +1595,9 @@
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
+        <class className="HMNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNavigationViewController.h"/>
+        </class>
         <class className="HMNewsFeedCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedCell.h"/>
             <relationships>
@@ -1714,7 +1719,7 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="mjR-NM-uON"/>

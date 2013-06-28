@@ -22,7 +22,15 @@
     }
     return self;
 }
-
+-(BOOL)shouldAutorotate{
+    
+    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
 -(void)viewDidDisappear:(BOOL)animated{
     //    NSLog(@"view did disappear");
     if([self.webView isLoading])

@@ -29,10 +29,15 @@
    
    // [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
        [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
-    [self hideBars];
+   // [self hideBars];
    
     
 }
+//Returns that this controller should always rotate
+-(BOOL)shouldAutorotate{
+    return YES;
+}
+
 -(void)viewWillAppear:(BOOL)animated{
     NSLog(@"VIEW WILL APPEAR");
      
@@ -45,7 +50,7 @@
     NSData *imageData = [NSData dataWithContentsOfURL:self.largePhotos];
     UIImage *largeImage= [UIImage imageWithData:imageData];
     self.imageView.image = largeImage;
-    
+    [self hideBars];
 	// Do any additional setup after loading the view.
 }
 

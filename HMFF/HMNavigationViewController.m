@@ -1,18 +1,18 @@
 //
-//  HMScheduleNavigationViewController.m
+//  HMNavigationViewController.m
 //  HMFF
 //
-//  Created by Darren Spriet on 2013-04-12.
+//  Created by Darren Spriet on 2013-06-27.
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
-#import "HMScheduleNavigationViewController.h"
+#import "HMNavigationViewController.h"
 
-@interface HMScheduleNavigationViewController ()
+@interface HMNavigationViewController ()
 
 @end
 
-@implementation HMScheduleNavigationViewController
+@implementation HMNavigationViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +22,7 @@
     }
     return self;
 }
+
 -(NSUInteger)supportedInterfaceOrientations {
     UIViewController *top = self.topViewController;
     NSLog(@"notworking11");
@@ -34,13 +35,9 @@
     
     return [top shouldAutorotate];
 }
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Schedule" bundle:nil];
-    UIViewController *initialViewController = [storyboard instantiateInitialViewController];
-    [self pushViewController:initialViewController animated:YES];
 	// Do any additional setup after loading the view.
 }
 
@@ -49,7 +46,5 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
 
 @end

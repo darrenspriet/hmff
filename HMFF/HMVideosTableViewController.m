@@ -23,6 +23,28 @@
     return self;
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    //this checks whether the internet is accessible and if it isn't, it will display a message
+    HMCheckInternetAccess *internetAccess = [[HMCheckInternetAccess alloc]init];
+    if ([internetAccess isInternetReachable]) {
+        NSLog(@"Internet is Working!");
+    }
+    else{
+        NSLog(@"Something wrong with the internet");
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This page requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
+        [alert show];
+    }
+    
+}
+//Returns that this controller should always rotate
+-(BOOL)shouldAutorotate{
+    return YES;
+}
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [self.tableView reloadData];
+}
 
 - (void)viewDidLoad
 {
@@ -76,12 +98,13 @@
     //creates a custom cell and calls the embedYoutube method which loads the video
     HMVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoCell"];
     
-    NSString *embeddedHTML = [[NSString alloc]initWithFormat: @"<html><head><title>.</title><style>body,html,iframe{margin:0; margin-top:-10;padding:0;}</style></head><body><iframe width=\"321\" height=\"194\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe></body></html>", [self.VideoContent objectForKey:@"link"]];
-        [cell.videoWebView loadHTMLString:embeddedHTML baseURL:nil];
+
+    [self embedYouTube:[self.VideoContent objectForKey:@"link"] webView:cell.videoWebView view:cell.videoWebView];
     
         [cell.videoWebView.scrollView setScrollEnabled:NO];
     [cell.videoTitle setText:[self.VideoContent objectForKey:@"title"]];
     return cell;
+
 }
 
 /*
@@ -135,5 +158,81 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
 }
+
+
+
+
+
+#pragma mark - UITableViewDelegate
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
+    
+    NSInteger width = applicationFrame.size.width;
+    NSInteger height = applicationFrame.size.height;
+
+    
+    //for iphone's portrait view
+    if (width == 320) {
+        return 205;
+    }
+    
+    //for iphone5's landscape view
+    else if (height == 568) {
+        return 345;
+    }
+    
+    
+    //for iphone4S's landscape view
+    else if (height == 480) {
+        return 281;
+    }
+    
+    //for ipad's portrait view
+    else if (width == 768){
+        return 421;
+    }
+    
+    //for ipad's landscape view
+    else if (height == 1024) {
+        return 573;
+    }
+    
+    //for ipad's landscape view
+    else {
+        return 535;
+    }
+    
+    
+}
+
+
+-(void) embedYouTube: (NSString *)url webView:(UIWebView *)webView view:(UIView *)view{
+    
+    CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
+    
+    NSInteger width = applicationFrame.size.width;
+    NSInteger height = applicationFrame.size.height;
+    //for iphone's portrait view
+    if (width == 320) {
+        NSString *embeddedHTML = [[NSString alloc]initWithFormat: @"<html><head><title>.</title><style>body,html,iframe{margin:0; margin-top:-10;padding:0;}</style></head><body><iframe width=\"321\" height=\"194\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe></body></html>" /*, width, height */, url];
+        [webView loadHTMLString:embeddedHTML baseURL:nil];
+    }
+    
+    //for iphone5's landscape view
+    else if (height == 568) {
+        NSString *embeddedHTML = [[NSString alloc]initWithFormat: @"<html><head><title>.</title><style>body,html,iframe{margin:0; margin-top:-13;padding:0;}</style></head><body><iframe width=\"569\" height=\"345\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe></body></html>" /*, width, height */, url];
+        [webView loadHTMLString:embeddedHTML baseURL:nil];
+    }
+    
+    
+    //for iphone4S's landscape view
+    else if (height == 480) {
+        NSString *embeddedHTML = [[NSString alloc]initWithFormat: @"<html><head><title>.</title><style>body,html,iframeiframe{margin:0; margin-top:-13;padding:0;}</style></head><body><iframe width=\"481\" height=\"270\" src=\"%@\" frameborder=\"0\" allowfullscreen></iframe></body></html>" /*, width, height */, url];
+        [webView loadHTMLString:embeddedHTML baseURL:nil];
+    }
+    
+}
+
 
 @end

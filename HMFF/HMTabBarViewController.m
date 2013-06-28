@@ -24,6 +24,21 @@
 }
 
 
+-(NSUInteger)supportedInterfaceOrientations {
+    UIViewController *top = self.selectedViewController;
+    NSLog(@"notworking1");
+    
+    
+    return top.supportedInterfaceOrientations;
+}
+
+-(BOOL)shouldAutorotate {
+    UIViewController *top = self.selectedViewController;
+    NSLog(@"notworking2");
+    
+    return [top shouldAutorotate];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

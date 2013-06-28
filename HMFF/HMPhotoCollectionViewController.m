@@ -29,6 +29,19 @@
     [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
 
 }
+-(BOOL)shouldAutorotate{
+    
+    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
+        NSLog(@"NO ROTATE");
+        
+        return NO;
+    }
+    else{
+        NSLog(@"ROTATE");
+        //Do transformation if its in landscape right or left
+        return YES;
+    }
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];

@@ -42,6 +42,10 @@
     
 }
 
+-(BOOL)shouldAutorotate{
+        return YES;
+}
+
 -(void) viewWillAppear:(BOOL)animated {
     [self loadCookies];
     [super viewWillAppear:animated];

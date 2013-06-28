@@ -21,6 +21,15 @@
     }
     return self;
 }
+-(BOOL)shouldAutorotate{
+    
+    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];

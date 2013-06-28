@@ -7,6 +7,7 @@
 //
 
 #import "HMSplashViewController.h"
+#import "Reachability.h"
 
 @interface HMSplashViewController ()
 
@@ -23,21 +24,86 @@
     return self;
 }
 
+
 -(void)viewWillAppear:(BOOL)animated{
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    NSLog(@"view will appear");
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
-        if (screenSize.height > 480.0f) {
-            [self.splashImage setImage:[UIImage imageNamed:@"Default-568h@2x.png"]];
-        } else {
-            [self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
-        }
-    } else {
-        /*Do iPad stuff here.*/
-    }
+    internetReachable = [Reachability reachabilityForInternetConnection];
+    [internetReachable startNotifier];
+    
+    // check if a pathway to a random host exists
+    hostReachable = [Reachability reachabilityWithHostName: @"www.apple.com"] ;
+    [hostReachable startNotifier];
     
 }
+-(void)viewDidAppear:(BOOL)animated{
+    NSLog(@"view did appear");
 
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+-(void) checkNetworkStatus:(NSNotification *)notice
+{
+    // called after network status changes
+    NetworkStatus internetStatus = [internetReachable currentReachabilityStatus];
+    switch (internetStatus)
+    {
+        case NotReachable:
+        {
+            NSLog(@"The internet is down.");
+            NSLog(@"Something wrong with the internet");
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This app requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
+            [alert show];
+            
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            NSLog(@"The internet is working via WIFI.");
+            [self loadUpApp];
+            
+            break;
+        }
+        case ReachableViaWWAN:
+        {
+            NSLog(@"The internet is working via WWAN.");
+            [self loadUpApp];
+            
+            break;
+        }
+    }
+    
+    NetworkStatus hostStatus = [hostReachable currentReachabilityStatus];
+    switch (hostStatus)
+    {
+        case NotReachable:
+        {
+            NSLog(@"A gateway to the host server is down.");
+            NSLog(@"Something wrong with the internet");
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This app requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
+            [alert show];
+            break;
+        }
+        case ReachableViaWiFi:
+        {
+            NSLog(@"A gateway to the host server is working via WIFI.");
+            [self loadUpApp];
+            
+            break;
+        }
+        case ReachableViaWWAN:
+        {
+            NSLog(@"A gateway to the host server is working via WWAN.");
+            [self loadUpApp];
+            
+            break;
+        }
+    }
+}
 -(void)showLabels{
     
     
@@ -49,9 +115,35 @@
     
 }
 
+-(BOOL)shouldAutorotate{
+    
+    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
+        if (screenSize.height > 480.0f) {
+            [self.splashImage setImage:[UIImage imageNamed:@"Default-568h@2x.png"]];
+        } else {
+            [self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
+        }
+    } else {
+        /*Do iPad stuff here.*/
+    }
+    NSLog(@"VIEW DID APPEAR");
+    
+    
+	// Do any additional setup after loading the view.
+}
+-(void)loadUpApp{
     [self.cityLabel setAlpha:0.0f];
     [self.dateLabel setAlpha:0.0f];
     
@@ -86,8 +178,6 @@
             NSLog(@"app did not load successfully");
         }
     };
-    
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning{

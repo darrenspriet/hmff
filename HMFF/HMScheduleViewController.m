@@ -22,7 +22,15 @@
     }
     return self;
 }
-
+-(BOOL)shouldAutorotate{
+    
+    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
 
 
 - (void)viewDidLoad{
@@ -80,6 +88,7 @@
         
     }
 }
+
 
 -(void)changeDate:(NSString *)date{
     [self.dateForEvent setText:date];
