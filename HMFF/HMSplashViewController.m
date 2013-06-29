@@ -29,12 +29,12 @@
     NSLog(@"view will appear");
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
-    internetReachable = [Reachability reachabilityForInternetConnection];
-    [internetReachable startNotifier];
+    self.internetReachable = [Reachability reachabilityForInternetConnection];
+    [self.internetReachable startNotifier];
     
     // check if a pathway to a random host exists
-    hostReachable = [Reachability reachabilityWithHostName: @"www.apple.com"] ;
-    [hostReachable startNotifier];
+    self.hostReachable = [Reachability reachabilityWithHostName: @"http://www.apple.com"] ;
+    [self.hostReachable startNotifier];
     
 }
 -(void)viewDidAppear:(BOOL)animated{
@@ -49,13 +49,12 @@
 -(void) checkNetworkStatus:(NSNotification *)notice
 {
     // called after network status changes
-    NetworkStatus internetStatus = [internetReachable currentReachabilityStatus];
+    NetworkStatus internetStatus = [self.internetReachable currentReachabilityStatus];
     switch (internetStatus)
     {
         case NotReachable:
         {
             NSLog(@"The internet is down.");
-            NSLog(@"Something wrong with the internet");
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This app requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
             [alert show];
             
@@ -77,29 +76,22 @@
         }
     }
     
-    NetworkStatus hostStatus = [hostReachable currentReachabilityStatus];
+    NetworkStatus hostStatus = [self.hostReachable currentReachabilityStatus];
     switch (hostStatus)
     {
         case NotReachable:
         {
             NSLog(@"A gateway to the host server is down.");
-            NSLog(@"Something wrong with the internet");
-            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This app requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
-            [alert show];
             break;
         }
         case ReachableViaWiFi:
         {
-            NSLog(@"A gateway to the host server is working via WIFI.");
-            [self loadUpApp];
-            
+            NSLog(@"A gateway to the host server is working via WIFI.");            
             break;
         }
         case ReachableViaWWAN:
         {
-            NSLog(@"A gateway to the host server is working via WWAN.");
-            [self loadUpApp];
-            
+            NSLog(@"A gateway to the host server is working via WWAN.");            
             break;
         }
     }
@@ -107,7 +99,7 @@
 -(void)showLabels{
     
     
-    [UIView animateWithDuration:2 animations:^{
+    [UIView animateWithDuration:.5f animations:^{
         [self.dateLabel setAlpha:1.0f];
         [self.cityLabel setAlpha:1.0f];
     }];
@@ -160,9 +152,9 @@
     for(NSDictionary *diction in scheduleObjects){
         [self.dateLabel setText:[diction objectForKey:@"dates"]];
         [self.cityLabel setText:[diction objectForKey:@"location"]];
-        [self showLabels];
+       
     }
-    
+     [self showLabels];
     
     
     

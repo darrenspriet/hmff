@@ -9,10 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HMSplashViewController : UIViewController{
-    Reachability* internetReachable;
-    Reachability* hostReachable;
-}
+@interface HMSplashViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet UIImageView *splashImage;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
@@ -20,4 +17,6 @@
 
 -(void) checkNetworkStatus:(NSNotification *)notice;
 
+@property (strong, nonatomic) Reachability* internetReachable;
+@property (strong, nonatomic) Reachability* hostReachable;
 @end

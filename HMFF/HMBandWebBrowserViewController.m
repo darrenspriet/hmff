@@ -60,6 +60,9 @@
     }
     else{
         NSLog(@"Something wrong with the internet");
+//        [self.webView stopLoading];
+//         self.title=@"No Connection";
+//        [self.activityIndicator stopAnimating];
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This page requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
         [alert show];
     }
@@ -67,6 +70,7 @@
 }
 - (void)viewDidLoad
 {
+    NSLog(@"view did load");
     [super viewDidLoad];
     self.webView.scalesPageToFit = YES;
     NSURL *url =[NSURL URLWithString:self.passedURL];
