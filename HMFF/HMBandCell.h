@@ -11,5 +11,8 @@
 @interface HMBandCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *bandName;
 @property (weak, nonatomic) IBOutlet UILabel *time;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
+@property (weak, nonatomic) IBOutlet UIImageView *chevron;
+
 
 @end

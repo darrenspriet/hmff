@@ -67,6 +67,8 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
+    [self.webView setBackgroundColor:[UIColor clearColor]];
+    [self.webView setOpaque:NO];
     
     //Sets up the Web page and loads it
     if(self.HTMLString!=NULL){
@@ -209,11 +211,15 @@
     
     // Set to Left or Right
     [[self navigationItem] setRightBarButtonItem:barButton];
+    [self.largeActivityIndicator startAnimating];
     [self.activityIndicator startAnimating];
     [self updateButtons];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [self.webView setBackgroundColor:[UIColor blackColor]];
+    [self.webView setOpaque:YES];
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self.largeActivityIndicator stopAnimating];
     [self.activityIndicator stopAnimating];
     [self updateTitle:webView];
     [self updateButtons];

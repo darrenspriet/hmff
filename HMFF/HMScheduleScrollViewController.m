@@ -48,15 +48,24 @@
 #pragma mark UIScrollViewDelegate
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     float x = scrollView.contentOffset.x;
+    NSString *forwardString =@"forwardButton.png";
+    NSString *backString =@"backButton.png";
+    NSString *noButtonString=@"";
+    NSString *buttonString;
+
 
     if (x > 0 && x < 160) {
+        if ([self.date count]>1) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
         [self.delegate changeDate:[self.date objectAtIndex:0]];
-        [self.delegate imagesForButton:@"" andFrontImage:@"forwardButton.png"];
+        [self.delegate imagesForButton:noButtonString andFrontImage:buttonString];
 
     }
     else if (x > 160 && x < 320) {
+        if ([self.date count]>2) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
         [self.delegate changeDate:[self.date objectAtIndex:1]];
-        [self.delegate imagesForButton:@"backButton.png" andFrontImage:@"forwardButton.png"];
+        [self.delegate imagesForButton:backString andFrontImage:buttonString];
     }
 }
 
@@ -66,7 +75,6 @@
 }
 -(void)scrollForward{
     [self.scrollView setContentOffset:CGPointMake(320, 0) animated:YES];
-
     NSLog(@"Scroll Forward");
 
 }

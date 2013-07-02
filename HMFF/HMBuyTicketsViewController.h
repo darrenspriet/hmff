@@ -30,4 +30,6 @@
 //Done button for the flip page
 - (IBAction)backButtonPressed:(UIBarButtonItem *)sender;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivityIndicator;
+
 @end

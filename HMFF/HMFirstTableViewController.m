@@ -272,10 +272,7 @@
         NSLog(@"url is: %@", [passedURL objectForKey:@"link"]);
         HMBandWebBrowserViewController *webBrowser = segue.destinationViewController;
         webBrowser.passedURL=[passedURL objectForKey:@"link"];
-        
     }
-    
-    
 }
 
 

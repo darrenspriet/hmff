@@ -15,5 +15,7 @@
 
 //Used to set the Date of the News Feed Cell
 @property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UIView *cellView;
+@property (weak, nonatomic) IBOutlet UIImageView *chevron;
 
 @end

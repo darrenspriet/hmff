@@ -9,6 +9,8 @@
 #import "HMVideosTableViewController.h"
 
 @interface HMVideosTableViewController ()
+//Activitiy indicatior used in the Navigaition bar
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -97,6 +99,9 @@
     
     //creates a custom cell and calls the embedYoutube method which loads the video
     HMVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"VideoCell"];
+    [cell.videoWebView setBackgroundColor:[UIColor clearColor]];
+    [cell.videoWebView setOpaque:NO];
+    [cell.largeActivityIndicator startAnimating];
     
 
     [self embedYouTube:[self.VideoContent objectForKey:@"link"] webView:cell.videoWebView view:cell.videoWebView];
@@ -105,6 +110,32 @@
     [cell.videoTitle setText:[self.VideoContent objectForKey:@"title"]];
     return cell;
 
+}
+
+#pragma WEB VIEW DELEGATE
+
+- (void)webViewDidStartLoad:(UIWebView *)webView{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //activity Indicator in Navigation Bar
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    [self.activityIndicator setColor:[UIColor blackColor]];
+    UIBarButtonItem * barButton =
+    [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicator];
+    [[self navigationItem] setRightBarButtonItem:barButton];
+    [self.activityIndicator startAnimating];
+}
+- (void)webViewDidFinishLoad:(UIWebView *)webView{
+    [webView setBackgroundColor:[UIColor blackColor]];
+    [webView setOpaque:YES];
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self.activityIndicator stopAnimating];
+}
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    return YES;
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 /*

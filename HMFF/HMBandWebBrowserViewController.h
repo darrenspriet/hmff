@@ -24,5 +24,6 @@
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender;
 - (void)updateButtons;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivityIndicator;
 
 @end

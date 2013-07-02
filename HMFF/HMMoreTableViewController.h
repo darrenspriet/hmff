@@ -10,7 +10,9 @@
 #import "HMMoreWebBrowserViewController.h"
 #import "HMVideosTableViewController.h"
 #import "HMPhotoCollectionViewController.h"
-
+#import "HMMoreCell.h"
+#import "HMPhotoCell.h"
+#import "HMMoreVideoCell.h"
 
 @interface HMMoreTableViewController : UITableViewController
 

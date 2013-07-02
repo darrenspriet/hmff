@@ -170,13 +170,18 @@
                                     <outlet property="venueLabel" destination="yKN-og-d7Y" id="7XW-o7-1sn"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="BandCell" rowHeight="55" id="ZYh-KO-YbM" customClass="HMBandCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BandCell" rowHeight="55" id="ZYh-KO-YbM" customClass="HMBandCell">
                                 <rect key="frame" x="0.0" y="52" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" id="0Wa-Ua-tY6">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Band Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y8V-QH-uow">
                                             <rect key="frame" x="20" y="8" width="260" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -200,7 +205,10 @@
                                 </view>
                                 <connections>
                                     <outlet property="bandName" destination="y8V-QH-uow" id="fBi-OE-dW7"/>
+                                    <outlet property="cellView" destination="0Wa-Ua-tY6" id="XZY-Zr-Uic"/>
+                                    <outlet property="chevron" destination="4uh-T4-yAf" id="otz-p4-clp"/>
                                     <outlet property="time" destination="7Bl-SZ-Oz7" id="0RT-YA-Z3I"/>
+                                    <segue destination="ru4-Ef-QRJ" kind="push" identifier="DetailView" id="vk3-EG-Icl"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -251,13 +259,18 @@
                                     <outlet property="venueLabel" destination="cFp-Fq-va0" id="j9L-Xh-axU"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="gray" indentationWidth="10" reuseIdentifier="BandCell" rowHeight="55" id="azN-Oc-lH2" customClass="HMBandCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BandCell" rowHeight="55" id="azN-Oc-lH2" customClass="HMBandCell">
                                 <rect key="frame" x="0.0" y="52" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <view contentMode="scaleToFill" id="x6R-qN-sKz">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Band Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2rq-i3-vfO">
                                             <rect key="frame" x="20" y="8" width="260" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -281,6 +294,8 @@
                                 </view>
                                 <connections>
                                     <outlet property="bandName" destination="2rq-i3-vfO" id="7TM-bh-bwf"/>
+                                    <outlet property="cellView" destination="x6R-qN-sKz" id="8Ot-KK-OD0"/>
+                                    <outlet property="chevron" destination="lpG-t8-TGx" id="HKP-ZY-JL2"/>
                                     <outlet property="time" destination="FfN-xg-D3v" id="Foc-Sn-7bo"/>
                                     <segue destination="DBI-iE-9pF" kind="push" identifier="DetailView" id="8Lc-DE-MA3"/>
                                 </connections>
@@ -304,10 +319,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="1Az-eE-99R">
+                                <rect key="frame" x="141" y="180" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <webView contentMode="scaleToFill" id="7GX-Ox-1oe">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="352"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="DBI-iE-9pF" id="Y1c-EC-ukw"/>
                                 </connections>
@@ -348,7 +367,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="whG-x3-b3k"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -370,19 +389,23 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="ru4-Ef-QRJ" customClass="HMBandWebBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TuO-sV-Rw2">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" id="7lJ-QW-mG9">
+                                <rect key="frame" x="141" y="180" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <webView contentMode="scaleToFill" id="PaD-eA-Vki">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="541"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="389"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="ru4-Ef-QRJ" id="S1L-cU-l2z"/>
                                 </connections>
                             </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="JEs-aG-IGa">
-                                <rect key="frame" x="0.0" y="504" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="352" width="320" height="44"/>
                                 <items>
                                     <barButtonItem image="backButton.png" id="FTp-I5-45Z">
                                         <connections>
@@ -417,13 +440,14 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="f9m-3e-Dd6"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="back" destination="FTp-I5-45Z" id="Ctn-cR-eUm"/>
                         <outlet property="forward" destination="a81-Cj-AjW" id="6Fp-ZJ-4lv"/>
+                        <outlet property="largeActivityIndicator" destination="7lJ-QW-mG9" id="brQ-kS-69S"/>
                         <outlet property="refresh" destination="tcp-n0-RD3" id="vR0-no-9D9"/>
                         <outlet property="stop" destination="ODT-gw-WOG" id="eWl-n7-o72"/>
                         <outlet property="toolbar" destination="JEs-aG-IGa" id="0wX-ak-jTn"/>
@@ -442,10 +466,14 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleAspectFit" style="whiteLarge" id="GZT-7u-p76">
+                                <rect key="frame" x="144" y="234" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                             <webView contentMode="scaleToFill" id="YEi-nP-Lqw">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="delegate" destination="DAS-Pd-RA4" id="G9i-Bq-4lZ"/>
                                 </connections>
@@ -487,7 +515,7 @@
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1Jk-CE-0GU">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="eIJ-Qo-m7e">
@@ -500,6 +528,7 @@
                     <connections>
                         <outlet property="back" destination="j8u-LB-Tnn" id="car-ca-hkl"/>
                         <outlet property="forward" destination="nt9-dx-8UN" id="dGo-gx-k1z"/>
+                        <outlet property="largeActivityIndicator" destination="GZT-7u-p76" id="bLe-wF-Q8e"/>
                         <outlet property="refresh" destination="O8b-Ok-zxg" id="9k9-J2-f46"/>
                         <outlet property="stop" destination="hT7-W3-eFc" id="opE-Z9-swb"/>
                         <outlet property="toolbar" destination="HnG-hx-ygS" id="RLU-mN-IPW"/>

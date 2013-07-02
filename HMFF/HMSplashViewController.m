@@ -27,6 +27,7 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     NSLog(@"view will appear");
+    [self.largeActivitiyIndicator startAnimating];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
     self.internetReachable = [Reachability reachabilityForInternetConnection];
@@ -100,6 +101,7 @@
     
     
     [UIView animateWithDuration:.5f animations:^{
+
         [self.dateLabel setAlpha:1.0f];
         [self.cityLabel setAlpha:1.0f];
     }];
@@ -154,6 +156,8 @@
         [self.cityLabel setText:[diction objectForKey:@"location"]];
        
     }
+    [self.largeActivitiyIndicator stopAnimating];
+    [self.largeActivitiyIndicator removeFromSuperview];
      [self showLabels];
     
     

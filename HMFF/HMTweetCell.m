@@ -22,8 +22,25 @@
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated
 {
     [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    
+    NSLog(@"checking selected");
+    [self.cellView setAlpha:0.3f];
+    [self.cellView setBackgroundColor:[UIColor blackColor]];
+    [self.tweet setTextColor:[UIColor whiteColor]];
+    [self.userName setTextColor:[UIColor whiteColor]];
+    [self.date setTextColor:[UIColor whiteColor]];
+    [self.chevron setImage:[UIImage imageNamed:@"chevron.png"]];
+    
+    if (selected)
+    {
+        NSLog(@"Selected");
+        [self.cellView setAlpha:0.5f];
+        [self.cellView setBackgroundColor:[UIColor whiteColor]];
+        [self.tweet setTextColor:[UIColor blackColor]];
+        [self.userName setTextColor:[UIColor blackColor]];        [self.date setTextColor:[UIColor blackColor]];
+        [self.chevron setImage:[UIImage imageNamed:@"chevronblack.png"]];
+        
+    }
 }
 
 @end

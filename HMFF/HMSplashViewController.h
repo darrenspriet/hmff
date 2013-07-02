@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *splashImage;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *cityLabel;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivitiyIndicator;
 
 -(void) checkNetworkStatus:(NSNotification *)notice;
 
