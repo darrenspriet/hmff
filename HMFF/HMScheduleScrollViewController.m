@@ -7,6 +7,9 @@
 //
 
 #import "HMScheduleScrollViewController.h"
+#import "HMThirdTableViewController.h"
+#import "HMSecondTableViewController.h"
+
 
 @interface HMScheduleScrollViewController ()
 
@@ -25,13 +28,14 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    [self.scrollView setContentSize:CGSizeMake([self.date count]*320, self.scrollView.frame.size.height)];
+    [self.scrollView setContentSize:CGSizeMake(([self.date count])*320, self.scrollView.frame.size.height)];
     [self.scrollView setPagingEnabled:YES];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [self setDate:[[HMDataFeedManager sharedDataFeedManager] date]];
 	// Do any additional setup after loading the view.
 }
@@ -63,6 +67,54 @@
     }
     else if (x > 160 && x < 320) {
         if ([self.date count]>2) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
+        [self.delegate changeDate:[self.date objectAtIndex:1]];
+        [self.delegate imagesForButton:backString andFrontImage:buttonString];
+    }
+    else if (x > 320 && x < 480) {
+        if ([self.date count]>3) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
+        [self.delegate changeDate:[self.date objectAtIndex:1]];
+        [self.delegate imagesForButton:backString andFrontImage:buttonString];
+    }
+    else if (x > 480 && x < 640) {
+        if ([self.date count]>4) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
+        [self.delegate changeDate:[self.date objectAtIndex:1]];
+        [self.delegate imagesForButton:backString andFrontImage:buttonString];
+    }
+    else if (x > 640 && x < 800) {
+        if ([self.date count]>5) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
+        [self.delegate changeDate:[self.date objectAtIndex:1]];
+        [self.delegate imagesForButton:backString andFrontImage:buttonString];
+    }
+    else if (x > 800 && x < 960) {
+        if ([self.date count]>6) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
+        [self.delegate changeDate:[self.date objectAtIndex:1]];
+        [self.delegate imagesForButton:backString andFrontImage:buttonString];
+    }
+    else if (x > 960 && x < 1120) {
+        if ([self.date count]>7) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
+        [self.delegate changeDate:[self.date objectAtIndex:1]];
+        [self.delegate imagesForButton:backString andFrontImage:buttonString];
+    }
+    else if (x > 1120 && x < 1280) {
+        if ([self.date count]>8) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
+        [self.delegate changeDate:[self.date objectAtIndex:1]];
+        [self.delegate imagesForButton:backString andFrontImage:buttonString];
+    }
+    else if (x > 1280 && x < 1440) {
+        if ([self.date count]>9) {buttonString=forwardString;}
+        else{buttonString=noButtonString;}
+        [self.delegate changeDate:[self.date objectAtIndex:1]];
+        [self.delegate imagesForButton:backString andFrontImage:buttonString];
+    }
+    else if (x > 1440 && x < 1600) {
+        if ([self.date count]>10) {buttonString=forwardString;}
         else{buttonString=noButtonString;}
         [self.delegate changeDate:[self.date objectAtIndex:1]];
         [self.delegate imagesForButton:backString andFrontImage:buttonString];

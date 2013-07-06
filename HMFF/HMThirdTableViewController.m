@@ -1,20 +1,20 @@
 //
-//  HMSecondTableViewController.m
+//  HMThirdTableViewController.m
 //  HMFF
 //
-//  Created by Darren Spriet on 2013-04-12.
+//  Created by Darren Spriet on 2013-07-03.
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
-#import "HMSecondTableViewController.h"
+#import "HMThirdTableViewController.h"
 #define VENUE_CELL @"VenueCell"
 #define BAND_CELL @"BandCell"
 
-@interface HMSecondTableViewController ()
+@interface HMThirdTableViewController ()
 
 @end
 
-@implementation HMSecondTableViewController
+@implementation HMThirdTableViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,7 +32,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    [self.tableView setDataSource:self];
+    [self.tableView setDelegate:self];
+    [self.tableView setUserInteractionEnabled:YES];
+    [self.tableView setScrollEnabled:YES];
+
+    NSLog(@"third table view did load");
     self.lineUp = [[NSMutableArray alloc]init];
     
     NSMutableArray *tempArray = [[HMDataFeedManager sharedDataFeedManager] band];
@@ -68,6 +73,8 @@
         [self.lineUp addObject:array];
         //  NSLog(@"lineup %@", self.lineUp);
     }
+    [self.tableView reloadData];
+    
 }
 
 
@@ -131,10 +138,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary * diction = [[NSDictionary alloc]init];
     NSMutableArray *array = [[NSMutableArray alloc]init];
-    // cell reuse
-    NSLog(@"cell at path 2nd");
-
     switch (indexPath.section) {
+            NSLog(@"cell at path 3rd");
+
         case 1:{
             array=[self.lineUp objectAtIndex:1];
             if (indexPath.row==0) {

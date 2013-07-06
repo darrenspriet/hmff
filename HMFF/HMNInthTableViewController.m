@@ -1,20 +1,18 @@
 //
-//  HMSecondTableViewController.m
+//  HMNInthTableViewController.m
 //  HMFF
 //
-//  Created by Darren Spriet on 2013-04-12.
+//  Created by Darren Spriet on 2013-07-03.
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
-#import "HMSecondTableViewController.h"
-#define VENUE_CELL @"VenueCell"
-#define BAND_CELL @"BandCell"
+#import "HMNInthTableViewController.h"
 
-@interface HMSecondTableViewController ()
+@interface HMNInthTableViewController ()
 
 @end
 
-@implementation HMSecondTableViewController
+@implementation HMNInthTableViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,7 +35,7 @@
     
     NSMutableArray *tempArray = [[HMDataFeedManager sharedDataFeedManager] band];
     
-    [self setBand: [tempArray objectAtIndex:1]];
+    [self setBand: [tempArray objectAtIndex:8]];
     [self.band sortUsingDescriptors:[NSArray arrayWithObjects:[NSSortDescriptor sortDescriptorWithKey:@"venue_order" ascending:YES], nil]];
     NSMutableArray *tempArray1 = [[NSMutableArray alloc]init];
     //NSLog(@"self.band is1: %@", self.band);
@@ -131,9 +129,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary * diction = [[NSDictionary alloc]init];
     NSMutableArray *array = [[NSMutableArray alloc]init];
-    // cell reuse
-    NSLog(@"cell at path 2nd");
-
+    
     switch (indexPath.section) {
         case 1:{
             array=[self.lineUp objectAtIndex:1];

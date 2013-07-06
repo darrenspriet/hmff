@@ -36,6 +36,7 @@
 }
 -(void)viewDidAppear:(BOOL)animated{
     NSLog(@"VIEW DID APPEAR");
+    [super viewDidAppear:animated];
     
     // [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];    

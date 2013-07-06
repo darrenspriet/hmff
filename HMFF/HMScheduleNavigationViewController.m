@@ -24,20 +24,20 @@
 }
 -(NSUInteger)supportedInterfaceOrientations {
     UIViewController *top = self.topViewController;
-    NSLog(@"notworking11");
     return top.supportedInterfaceOrientations;
 }
 
 -(BOOL)shouldAutorotate {
-    UIViewController *top = self.topViewController;
-    NSLog(@"notworking21");
-    
+    UIViewController *top = self.topViewController;    
     return [top shouldAutorotate];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self setDate:[[HMDataFeedManager sharedDataFeedManager] date]];
+    NSLog(@"the date count is: %d", [self.date count]);
+
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Schedule" bundle:nil];
     UIViewController *initialViewController = [storyboard instantiateInitialViewController];
     [self pushViewController:initialViewController animated:YES];

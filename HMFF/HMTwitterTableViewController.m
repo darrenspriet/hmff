@@ -71,7 +71,7 @@
     }
     //Sets all the properties of the cell
     [cell.tweet setText:title];
-    [cell.userName setText:[NSString stringWithFormat:@"by %@", name]];
+    [cell.userName setText:name];
     [cell.date setText:newDateString];
     
     //Starts a dispatch to get the image and then sets it to the cell

@@ -37,8 +37,19 @@
     [super viewDidLoad];
     
     [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
+    self.tweets = [[HMDataFeedManager sharedDataFeedManager] tweets];
 
-    //Image for the Navigation Bar
+    NSNumber *totalFollowers;
+    for(NSDictionary *diction in self.tweets){
+        if ([[[diction objectForKey:@"user"] objectForKey:@"name"] isEqualToString:@"HMFF"]) {
+            totalFollowers=[[diction objectForKey:@"user"] objectForKey:@"followers_count"];
+            
+        }
+    }
+    NSLog(@"TOTAL FOLLOWERS IS: %@", totalFollowers);
+    [self.totalFollowers setText:[NSString stringWithFormat:@"%@",totalFollowers]];
+    
+       //Image for the Navigation Bar
     UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     //Image for the Normal bar button
@@ -97,5 +108,63 @@
         [tweetSheet setInitialText:@"@HMFFEST"];
         [self presentViewController:tweetSheet animated:YES completion:nil];
     }
+}
+- (IBAction)followTapped:(UIButton *)sender {
+    
+    self.accountStore = [[ACAccountStore alloc] init];
+    self.profileImages = [NSMutableDictionary dictionary];
+    
+    ACAccountType *twitterType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+    
+    [self.accountStore requestAccessToAccountsWithType:twitterType withCompletionHandler:^(BOOL granted, NSError *error) {
+        if (granted)
+        {
+            NSArray *twitterAccounts = [self.accountStore accountsWithAccountType:twitterType];
+            
+            if ([twitterAccounts count])
+            {
+                self.userAccount = [twitterAccounts objectAtIndex:0];
+//                [[NSNotificationCenter defaultCenter] postNotification:[NSNotification notificationWithName:@"TwitterAccountAcquiredNotification" object:nil]];
+            }
+            else
+            {
+                NSLog(@"No Twitter Accounts");
+            }
+        }
+    }];
+    
+    [self.accountStore requestAccessToAccountsWithType:twitterType options:nil completion:^(BOOL granted, NSError *error) {
+        if(granted) {
+            // Get the list of Twitter accounts.
+            NSArray *accountsArray = [self.accountStore accountsWithAccountType:twitterType];
+            
+            // For the sake of brevity, we'll assume there is only one Twitter account present.
+            // You would ideally ask the user which account they want to tweet from, if there is more than one Twitter account present.
+            if ([accountsArray count] > 0) {
+                // Grab the initial Twitter account to tweet from.
+                ACAccount *twitterAccount = [accountsArray objectAtIndex:0];
+                
+                NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
+                [tempDict setValue:@"HMFFEST" forKey:@"screen_name"];
+                [tempDict setValue:@"true" forKey:@"follow"];
+                NSLog(@"*******tempDict %@*******",tempDict);
+                
+                //requestForServiceType
+                
+                SLRequest *postRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:@"http://api.twitter.com/1.1/friendships/create.json"] parameters:tempDict];
+                [postRequest setAccount:twitterAccount];
+                [postRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+                    NSString *output = [NSString stringWithFormat:@"HTTP response status: %i Error %d", [urlResponse statusCode],error.code];
+                    NSLog(@"%@error %@", output,error.description);
+
+
+                    
+                }];
+            }
+            
+        }
+    }];
+    
+    
 }
 @end

@@ -16,7 +16,15 @@
 - (IBAction)postTweet:(UIButton *)sender;
 
 @property(strong, nonatomic)NSString*HTMLString;
+- (IBAction)followTapped:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet UIButton *TwitterButtonOutlet;
 
+@property (strong, nonatomic) ACAccountStore *accountStore;
+@property (strong, nonatomic) NSMutableDictionary *profileImages;
+@property (strong, nonatomic) ACAccount *userAccount;
+@property (weak, nonatomic) IBOutlet UILabel *totalFollowers;
+
+@property (nonatomic, strong)NSArray *tweets;
 
 
 @end

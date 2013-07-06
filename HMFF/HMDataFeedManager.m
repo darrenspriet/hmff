@@ -148,23 +148,22 @@
 - (void)fetchTweets{
     dispatch_async(dispatch_get_main_queue(), ^{
         NSLog(@"twitter dispach started");
-
-        STTwitterAPIWrapper *twitter = [STTwitterAPIWrapper twitterAPIApplicationOnlyWithConsumerKey:TWITTER_CONSUMER_KEY
+        STTwitterAPIWrapper *twitter = [STTwitterAPIWrapper  twitterAPIApplicationOnlyWithConsumerKey:TWITTER_CONSUMER_KEY
                                                                                       consumerSecret:TWITTER_CONSUMER_SECRET];
         
         [twitter verifyCredentialsWithSuccessBlock:^(NSString *bearerToken) {
             
             NSLog(@"Access granted with %@", bearerToken);
             [twitter getUserTimelineWithScreenName:@"HMFFEST" count:20 successBlock:^(NSArray *statuses) {
-                //    NSLog(@"-- statuses: %@", statuses);
-                
+                    NSLog(@"-- statuses: %@", statuses);
+            
                 self.tweets=statuses;
                 NSLog(@"Tweets are loaded");
                 if (self.completionBlock!=nil) {
                     self.completionBlock(YES);
                     
                 }
-
+                
                 
             } errorBlock:^(NSError *error) {
                 // NSLog(@"-- error: %@", error);
@@ -179,6 +178,7 @@
             
         });
     });
+    
 }
 
 #pragma mark Parse Fetchers
