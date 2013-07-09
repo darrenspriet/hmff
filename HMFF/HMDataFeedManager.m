@@ -154,7 +154,7 @@
         [twitter verifyCredentialsWithSuccessBlock:^(NSString *bearerToken) {
             
             NSLog(@"Access granted with %@", bearerToken);
-            [twitter getUserTimelineWithScreenName:@"HMFFEST" count:20 successBlock:^(NSArray *statuses) {
+            [twitter getUserTimelineWithScreenName:@"HMFFEST" count:100 successBlock:^(NSArray *statuses) {
                     NSLog(@"-- statuses: %@", statuses);
             
                 self.tweets=statuses;

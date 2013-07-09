@@ -41,6 +41,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    [self.controllerView setAlpha:0.3f];
+    [self.controllerView setBackgroundColor:[UIColor blackColor]];
     
     [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
     [self setLinks:[[HMDataFeedManager sharedDataFeedManager] linksArray]];

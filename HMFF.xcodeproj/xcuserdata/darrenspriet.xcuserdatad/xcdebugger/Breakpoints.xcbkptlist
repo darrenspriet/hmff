@@ -11,19 +11,6 @@
          timestampString = "394774676.897533"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "165"
-         endingLineNumber = "165"
-         landmarkName = "-fetchTweets"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "HMFF/HMDataFeedManager.m"
-         timestampString = "394774676.897533"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
          startingLineNumber = "178"
          endingLineNumber = "178"
          landmarkName = "-fetchTweets"
@@ -39,19 +26,6 @@
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "176"
          endingLineNumber = "176"
-         landmarkName = "-fetchTweets"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "HMFF/HMDataFeedManager.m"
-         timestampString = "394774676.897533"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "173"
-         endingLineNumber = "173"
          landmarkName = "-fetchTweets"
          landmarkType = "5">
       </FileBreakpoint>

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMMoreWebBrowserViewController : UIViewController
+@interface HMMoreWebBrowserViewController : UIViewController <UIActionSheetDelegate>
 
 //All properties for web browser
 @property (nonatomic, retain) IBOutlet UIWebView* webView;

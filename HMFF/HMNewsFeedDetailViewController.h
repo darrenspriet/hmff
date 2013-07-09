@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *newsTitle;
 //Holds the News Label
 @property (weak, nonatomic) IBOutlet UITextView *content;
+@property (weak, nonatomic) IBOutlet UIView *controllerView;
 
 
 @end

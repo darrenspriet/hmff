@@ -54,7 +54,7 @@
     //Formats the Date Correctly in an array
     NSArray *dateArray = [date componentsSeparatedByString:@" "];
     //Takes that array and keeps what we want in the view
-    NSString *newDateString = [NSString stringWithFormat:@"%@%@%@%@%@%@%@",[dateArray objectAtIndex:0], @" ", [dateArray objectAtIndex:1],@" ", [dateArray objectAtIndex:2],@" ", [dateArray objectAtIndex:5]];
+    NSString *newDateString = [NSString stringWithFormat:@"%@%@%@%@%@", [dateArray objectAtIndex:1],@" ", [dateArray objectAtIndex:2],@" ", [dateArray objectAtIndex:5]];
 
     NSString *name;
     NSString *imageUrl;

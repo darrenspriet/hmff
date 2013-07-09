@@ -25,6 +25,9 @@
 
 @property(strong, nonatomic)NSString *vimeo;
 
+@property (weak, nonatomic) IBOutlet UIView *controllerView;
+
+
 
 
 

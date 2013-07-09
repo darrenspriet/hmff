@@ -50,6 +50,15 @@
     
 }
 
+-(void)viewDidAppear:(BOOL)animated{
+    NSLog(@"VIEW DID APPEAR");
+    [super viewDidAppear:animated];
+    
+    // [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+    
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     [self.webView setBackgroundColor:[UIColor clearColor]];
@@ -88,8 +97,83 @@
 #pragma mark - ShareButton
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender{
     NSLog(@"Share button Pressed");
+    if(NSClassFromString(@"UIActivityViewController")!=nil){
+        [self showActivityViewController];
+    }else {
+        [self showActionSheet];
+    }
+    
 }
 
+-(void)showActivityViewController
+{
+    //-- set up the data objects
+    NSString *textObject = @"Check this out!";
+    NSURL *url = [NSURL URLWithString:self.passedURL];
+    UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
+    NSArray *activityItems = [NSArray arrayWithObjects:textObject, url, image, nil];
+    
+    //-- initialising the activity view controller
+    UIActivityViewController *avc = [[UIActivityViewController alloc]
+                                     initWithActivityItems:activityItems
+                                     applicationActivities:nil];
+    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:34.0/255.0 green:97.0/255.0 blue:221.0/255.0 alpha:1]];
+    
+    //-- define the activity view completion handler
+    avc.completionHandler = ^(NSString *activityType, BOOL completed){
+        NSLog(@"Activity Type selected: %@", activityType);
+        if (completed) {
+            
+            NSLog(@"Selected activity was performed.");
+            [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+            
+        } else {
+            if (activityType == NULL) {
+                NSLog(@"User dismissed the view controller without making a selection.");
+                [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+                
+            } else {
+                NSLog(@"Activity was not performed.");
+                [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+                
+            }
+        }
+    };
+    
+    //-- define activity to be excluded (if any)
+    avc.excludedActivityTypes = [NSArray arrayWithObjects:UIActivityTypeAssignToContact,UIActivityTypePostToWeibo,UIActivityTypePrint, UIActivityTypeCopyToPasteboard, nil];
+    
+    //-- show the activity view controller
+    [self presentViewController:avc animated:YES completion:^{
+        
+    }];
+    
+}
+//This is for pre ios 6
+-(void)showActionSheet
+{
+    UIActionSheet *as = [[UIActionSheet alloc]initWithTitle:@"choose"
+                                                   delegate:self
+                                          cancelButtonTitle:@"Cancels"
+                                     destructiveButtonTitle:nil
+                                          otherButtonTitles:@"Email", nil];
+    [as showInView:self.view];
+}
+
+#pragma mark - UIActionSheet delegate
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            NSLog(@"Email");
+            break;
+        case 1:
+            NSLog(@"Cancel");
+            break;
+        default:
+            break;
+    }
+}
 
 #pragma WEB VIEW DELEGATE
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{

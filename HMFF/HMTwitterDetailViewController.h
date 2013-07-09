@@ -22,5 +22,6 @@
 //the detailItem that is passed with all of the information
 @property (nonatomic)NSDictionary *detailItem;
 
+@property (weak, nonatomic) IBOutlet UIView *controllerView;
 
 @end

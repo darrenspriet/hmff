@@ -33,6 +33,9 @@
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
+    [self.controllerView setAlpha:0.3f];
+    [self.controllerView setBackgroundColor:[UIColor blackColor]];
+
     [self configureView];
 }
 
@@ -64,6 +67,7 @@
         }
         //Sets the above propertys for the cell 
         [self.nameLabel setText:[NSString stringWithFormat:@"by %@", name]];
+        
         self.tweetLabel.text = title;
         
         //Starts a dispatch to get the image and once finished sets it to the cell

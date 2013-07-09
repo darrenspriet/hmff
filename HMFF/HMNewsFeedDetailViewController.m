@@ -33,6 +33,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    [self.controllerView setAlpha:0.3f];
+    [self.controllerView setBackgroundColor:[UIColor blackColor]];
     //Configures the entire View
     [self configureView];
 }
