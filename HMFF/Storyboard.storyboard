@@ -751,8 +751,96 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moreCell" id="8fb-3R-zMl" customClass="HMMoreCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="submitBandCell" id="kfr-CL-EBi" customClass="HMMoreCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7g9-Iu-KaC">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="chevron.png" translatesAutoresizingMaskIntoConstraints="NO" id="aEv-Tl-pa4">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="KpS-Xf-bQ4"/>
+                                                <constraint firstAttribute="height" constant="20" id="o4Y-st-lzb"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLC-Or-6hi">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="L6U-s2-hUu"/>
+                                                <constraint firstAttribute="width" constant="220" id="OaV-ye-M70"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="aEv-Tl-pa4" secondAttribute="trailing" constant="5" id="8JM-Nx-VnN"/>
+                                    <constraint firstItem="GLC-Or-6hi" firstAttribute="top" secondItem="kfr-CL-EBi" secondAttribute="top" type="default" id="QzV-1Z-tJx"/>
+                                    <constraint firstItem="7g9-Iu-KaC" firstAttribute="top" secondItem="kfr-CL-EBi" secondAttribute="top" type="default" id="RD3-Gc-fyC"/>
+                                    <constraint firstItem="aEv-Tl-pa4" firstAttribute="centerY" secondItem="kfr-CL-EBi" secondAttribute="centerY" type="default" id="WAo-le-IGd"/>
+                                    <constraint firstItem="GLC-Or-6hi" firstAttribute="bottom" secondItem="7g9-Iu-KaC" secondAttribute="bottom" type="default" id="eia-9d-ufX"/>
+                                    <constraint firstItem="GLC-Or-6hi" firstAttribute="leading" secondItem="kfr-CL-EBi" secondAttribute="leading" constant="12" id="vaz-36-MyO"/>
+                                    <constraint firstItem="7g9-Iu-KaC" firstAttribute="leading" secondItem="kfr-CL-EBi" secondAttribute="leading" type="default" id="vrR-C1-2Jz"/>
+                                    <constraint firstItem="7g9-Iu-KaC" firstAttribute="trailing" secondItem="kfr-CL-EBi" secondAttribute="trailing" type="default" id="wMr-V2-HG0"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="cellView" destination="7g9-Iu-KaC" id="pTW-MA-Opn"/>
+                                    <outlet property="chevron" destination="aEv-Tl-pa4" id="6Bb-Ji-yHY"/>
+                                    <outlet property="title" destination="GLC-Or-6hi" id="lUj-Ox-4fa"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="submitVideoCell" id="hnv-Gr-gub" customClass="HMMoreCell">
+                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fx0-lg-uKq">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="chevron.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ql9-ao-i9a">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="20" id="VUY-vz-0jo"/>
+                                                <constraint firstAttribute="height" constant="20" id="Y7n-Ie-jBj"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkY-UQ-2QC">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="43" id="QeY-7m-Tnm"/>
+                                                <constraint firstAttribute="width" constant="220" id="ZAF-Zs-arY"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="fx0-lg-uKq" firstAttribute="leading" secondItem="hnv-Gr-gub" secondAttribute="leading" type="default" id="6RQ-vL-Tdk"/>
+                                    <constraint firstItem="fx0-lg-uKq" firstAttribute="top" secondItem="hnv-Gr-gub" secondAttribute="top" type="default" id="Aq8-AW-fQE"/>
+                                    <constraint firstItem="MkY-UQ-2QC" firstAttribute="leading" secondItem="hnv-Gr-gub" secondAttribute="leading" constant="12" id="BGU-2t-wEP"/>
+                                    <constraint firstItem="Ql9-ao-i9a" firstAttribute="centerY" secondItem="hnv-Gr-gub" secondAttribute="centerY" type="default" id="W9d-qu-ewd"/>
+                                    <constraint firstItem="fx0-lg-uKq" firstAttribute="trailing" secondItem="hnv-Gr-gub" secondAttribute="trailing" type="default" id="kJJ-0u-8rC"/>
+                                    <constraint firstItem="MkY-UQ-2QC" firstAttribute="bottom" secondItem="fx0-lg-uKq" secondAttribute="bottom" type="default" id="kr4-Hc-BnE"/>
+                                    <constraint firstItem="MkY-UQ-2QC" firstAttribute="top" secondItem="hnv-Gr-gub" secondAttribute="top" type="default" id="pHr-B2-nke"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ql9-ao-i9a" secondAttribute="trailing" constant="5" id="tmR-Ww-ajN"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="cellView" destination="fx0-lg-uKq" id="o32-H9-25T"/>
+                                    <outlet property="chevron" destination="Ql9-ao-i9a" id="XZp-pn-yiX"/>
+                                    <outlet property="title" destination="MkY-UQ-2QC" id="MCV-SU-MiO"/>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moreCell" id="8fb-3R-zMl" customClass="HMMoreCell">
+                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -796,8 +884,8 @@
                                     <segue destination="EWF-zL-Z4W" kind="push" identifier="moreSegue" id="GJz-eb-BI9"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photoCell" id="dos-17-aiI" customClass="HMPhotoCell">
-                                <rect key="frame" x="0.0" y="66" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="photoCell" id="dos-17-aiI" customClass="HMMoreCell">
+                                <rect key="frame" x="0.0" y="154" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -841,8 +929,8 @@
                                     <segue destination="N8U-te-xKz" kind="push" identifier="photoSegue" id="Yde-WQ-cp2"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moreVideoCell" id="Obi-tU-6pH" customClass="HMMoreVideoCell">
-                                <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="moreVideoCell" id="Obi-tU-6pH" customClass="HMMoreCell">
+                                <rect key="frame" x="0.0" y="198" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -896,6 +984,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DQT-G9-dII" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1814" y="1672"/>
+        </scene>
+        <!--Submit Band View Controller-->
+        <scene sceneID="odm-Cn-cIz">
+            <objects>
+                <viewController id="GBr-d2-Nzm" customClass="HMSubmitBandViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0s7-zX-hH1">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jyi-oJ-HpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2689" y="1261"/>
         </scene>
         <!--More Web Browser View Controller-->
         <scene sceneID="Gs6-MY-dbV">
@@ -975,7 +1077,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARw-Hu-Yag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2657" y="1213"/>
+            <point key="canvasLocation" x="3141" y="1785"/>
         </scene>
         <!--Large Photo View Controller-->
         <scene sceneID="fAp-aO-Poh">
@@ -1033,48 +1135,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2934" y="1731"/>
-        </scene>
-        <!--Paged Scroll View Controller-->
-        <scene sceneID="FGQ-JP-ytE">
-            <objects>
-                <viewController id="OAI-Uc-Wqg" customClass="HMPagedScrollViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KjA-KV-Mhk">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sl2-eR-lBd">
-                                <subviews>
-                                    <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="c2D-1p-N0c"/>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="c2D-1p-N0c" secondAttribute="trailing" constant="141" id="7uc-EX-PDy"/>
-                                    <constraint firstItem="c2D-1p-N0c" firstAttribute="centerX" secondItem="Sl2-eR-lBd" secondAttribute="centerX" type="default" id="Eoq-z7-tBm"/>
-                                    <constraint firstItem="c2D-1p-N0c" firstAttribute="top" secondItem="Sl2-eR-lBd" secondAttribute="top" constant="367" id="FMS-Mf-Ffv"/>
-                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="c2D-1p-N0c" secondAttribute="bottom" constant="37" type="user" id="auZ-ur-nfG"/>
-                                    <constraint firstAttribute="bottom" secondItem="c2D-1p-N0c" secondAttribute="bottom" constant="145" id="hcf-xU-K6P"/>
-                                </constraints>
-                                <connections>
-                                    <outlet property="delegate" destination="OAI-Uc-Wqg" id="ILh-pf-9TZ"/>
-                                </connections>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Sl2-eR-lBd" firstAttribute="leading" secondItem="KjA-KV-Mhk" secondAttribute="leading" type="default" id="EOT-K0-Mpr"/>
-                            <constraint firstItem="Sl2-eR-lBd" firstAttribute="top" secondItem="KjA-KV-Mhk" secondAttribute="top" type="default" id="T5z-8p-Dtd"/>
-                            <constraint firstItem="Sl2-eR-lBd" firstAttribute="trailing" secondItem="KjA-KV-Mhk" secondAttribute="trailing" type="default" id="aha-uq-fux"/>
-                            <constraint firstItem="Sl2-eR-lBd" firstAttribute="bottom" secondItem="KjA-KV-Mhk" secondAttribute="bottom" type="default" id="cRq-Ge-TcE"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="pageControl" destination="c2D-1p-N0c" id="mxs-wc-uQ8"/>
-                        <outlet property="scrollView" destination="Sl2-eR-lBd" id="GEe-CF-xmc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DQh-gp-Z0v" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1726" y="2545"/>
+            <point key="canvasLocation" x="2730" y="2135"/>
         </scene>
         <!--Photo Collection View Controller-->
         <scene sceneID="Pqg-Cg-xxu">
@@ -1128,7 +1189,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6R-xG-oRI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2569" y="1700"/>
+            <point key="canvasLocation" x="2281" y="2104"/>
         </scene>
         <!--Videos Table View Controller-->
         <scene sceneID="I0Y-Qm-t8V">
@@ -1211,7 +1272,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OcV-gZ-XAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2221" y="2062"/>
+            <point key="canvasLocation" x="2269" y="2626"/>
         </scene>
         <!--Splash View Controller-->
         <scene sceneID="DSh-Zm-bC0">
@@ -1667,220 +1728,6 @@
         <image name="chevron.png" width="40" height="40"/>
         <image name="ticketButton.png" width="60" height="33"/>
     </resources>
-    <classes>
-        <class className="HMBuyTicketsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMBuyTicketsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButtonPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="largeActivityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="HMLargePhotoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMLargePhotoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="imageTapped:" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="action" name="shareButton:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="HMMoreCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="chevron" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HMMoreTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreTableViewController.h"/>
-        </class>
-        <class className="HMMoreVideoCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreVideoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="chevron" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HMMoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="SendAnEmail:" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="HMMoreWebBrowserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreWebBrowserViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="largeActivityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="HMNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNavigationViewController.h"/>
-        </class>
-        <class className="HMNewsFeedCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="chevron" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HMNewsFeedDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="content" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="controllerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="newsTitle" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HMNewsFeedTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedTableViewController.h"/>
-        </class>
-        <class className="HMNewsFeedViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedViewController.h"/>
-        </class>
-        <class className="HMPagedScrollViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPagedScrollViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="HMPhotoCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPhotoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="chevron" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HMPhotoCollectionCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPhotoCollectionCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HMPhotoCollectionViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPhotoCollectionViewController.h"/>
-        </class>
-        <class className="HMScheduleNavigationViewController" superclassName="UINavigationController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMScheduleNavigationViewController.h"/>
-        </class>
-        <class className="HMSocialViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="controllerView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="HMSocialWebBrowserViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialWebBrowserViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="largeActivityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="HMSplashViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSplashViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="largeActivitiyIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="splashImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HMTabBarViewController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTabBarViewController.h"/>
-        </class>
-        <class className="HMTweetCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTweetCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="cellView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="chevron" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="image" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tweet" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HMTwitterDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="controllerView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tweetLabel" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="HMTwitterTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterTableViewController.h"/>
-        </class>
-        <class className="HMTwitterViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="followTapped:" candidateClass="UIButton"/>
-                <relationship kind="action" name="postTweet:" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="TwitterButtonOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalFollowers" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="HMVideoCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMVideoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="largeActivityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="videoTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="videoWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="HMVideosTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMVideosTableViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

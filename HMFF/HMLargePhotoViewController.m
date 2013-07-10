@@ -47,9 +47,7 @@
     NSLog(@"VIEW DID LOAD");
     [super viewDidLoad];
     [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
-    NSData *imageData = [NSData dataWithContentsOfURL:self.largePhotos];
-    UIImage *largeImage= [UIImage imageWithData:imageData];
-    self.imageView.image = largeImage;
+    self.imageView.image = self.largePhotos;
     [self hideBars];
 	// Do any additional setup after loading the view.
 }

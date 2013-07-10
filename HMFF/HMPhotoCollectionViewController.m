@@ -120,7 +120,7 @@
     //Goes the the show Tweet detail page sending the detail of the tweet
     if ([segue.identifier isEqualToString:@"showLargePhoto"]) {
         NSArray *indexpaths = [self.collectionView indexPathsForSelectedItems];
-        NSURL *URL = [self.largePhotos objectAtIndex:[[indexpaths objectAtIndex:0] row]];
+        UIImage *URL = [self.largePhotos objectAtIndex:[[indexpaths objectAtIndex:0] row]];
         
         HMLargePhotoViewController *largePhotoView = segue.destinationViewController;
         largePhotoView.largePhotos =URL;

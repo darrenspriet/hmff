@@ -10,7 +10,7 @@
 
 @interface HMLargePhotoViewController : UIViewController <UIActionSheetDelegate>
 
-@property (strong, nonatomic) NSURL *largePhotos;
+@property (strong, nonatomic) UIImage *largePhotos;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 - (IBAction)shareButton:(UIBarButtonItem *)sender;

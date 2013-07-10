@@ -104,7 +104,9 @@
             // Build and save the URL to the large image so we can zoom
             // in on the image if requested
             photoURLString = [NSString stringWithFormat:LARGE_FLICKER_PHOTO, [photo objectForKey:@"farm"], [photo objectForKey:@"server"], [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
-            [self.largePhotos addObject:[NSURL URLWithString:photoURLString]];
+            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]];
+            UIImage *largeImage= [UIImage imageWithData:imageData];
+            [self.largePhotos addObject:largeImage];
           //  NSLog(@"Finished Large");
             
         }
@@ -155,7 +157,7 @@
             
             NSLog(@"Access granted with %@", bearerToken);
             [twitter getUserTimelineWithScreenName:@"HMFFEST" count:100 successBlock:^(NSArray *statuses) {
-                    NSLog(@"-- statuses: %@", statuses);
+                  //  NSLog(@"-- statuses: %@", statuses);
             
                 self.tweets=statuses;
                 NSLog(@"Tweets are loaded");

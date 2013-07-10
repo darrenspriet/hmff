@@ -64,14 +64,14 @@
             break;
         }
         case 3:{
-            HMPhotoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"photoCell"];
+            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"photoCell"];
 
             [cell.title setText:@"Photos"];
             return cell;
             break;
         }
         default:{
-            HMMoreVideoCell *cell = [tableView dequeueReusableCellWithIdentifier:@"moreVideoCell"];
+            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"moreVideoCell"];
 
             [cell.title setText:@"Videos"];
             return cell;
