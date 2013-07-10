@@ -115,6 +115,70 @@
                                             <segue destination="aiz-ue-2Gy" kind="embed" id="dqs-5j-lW0"/>
                                         </connections>
                                     </containerView>
+                                    <containerView contentMode="scaleToFill" id="QUh-it-Z13">
+                                        <rect key="frame" x="640" y="0.0" width="320" height="396"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="xa2-Te-VVY" kind="embed" id="cp2-zf-WbZ"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView contentMode="scaleToFill" id="Roe-57-fzg">
+                                        <rect key="frame" x="960" y="0.0" width="320" height="396"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="RS5-HX-Cnt" kind="embed" id="Qg5-jC-cee"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView contentMode="scaleToFill" id="CY3-gE-ixb">
+                                        <rect key="frame" x="1280" y="0.0" width="320" height="396"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="5aT-8G-qPl" kind="embed" id="d61-n7-GqK"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView contentMode="scaleToFill" id="D09-PX-PQy">
+                                        <rect key="frame" x="1600" y="0.0" width="320" height="396"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="4Vc-bg-3BA" kind="embed" id="SzC-KH-FSM"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView contentMode="scaleToFill" id="Ilb-Up-VNO">
+                                        <rect key="frame" x="1920" y="0.0" width="320" height="396"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="Bbb-7c-SbN" kind="embed" id="Q6z-EV-rmS"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView contentMode="scaleToFill" id="Sr4-1B-qBE">
+                                        <rect key="frame" x="2240" y="0.0" width="320" height="396"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="Ku4-l8-SXp" kind="embed" id="l6V-mp-uuq"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView contentMode="scaleToFill" id="4Yc-5U-Cz0">
+                                        <rect key="frame" x="2560" y="0.0" width="320" height="396"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="fEw-uE-ha0" kind="embed" id="pi3-3p-imv"/>
+                                        </connections>
+                                    </containerView>
+                                    <containerView contentMode="scaleToFill" id="tV4-rE-dcV">
+                                        <rect key="frame" x="2880" y="0.0" width="320" height="396"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="Ifg-sf-pMK" kind="embed" id="jSd-z0-AzM"/>
+                                        </connections>
+                                    </containerView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -489,7 +553,7 @@
             <objects>
                 <tableViewController id="xa2-Te-VVY" customClass="HMThirdTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lya-Pn-lOL">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -578,7 +642,7 @@
             <objects>
                 <tableViewController id="RS5-HX-Cnt" customClass="HMFourthTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="1Vs-ad-yR9">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -667,7 +731,7 @@
             <objects>
                 <tableViewController id="5aT-8G-qPl" customClass="HMFifthTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="hsP-5A-Nd5">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -699,11 +763,11 @@
                                     <outlet property="venueLabel" destination="PTE-xw-8Mr" id="onB-GU-GUK"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BandCell" rowHeight="55" id="nYc-SC-yvn" customClass="HMBandCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BandCell" rowHeight="55" id="nYc-SC-yvn" customClass="HMBandCell">
                                 <rect key="frame" x="0.0" y="52" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" id="gnR-uR-40Y">
@@ -756,7 +820,7 @@
             <objects>
                 <tableViewController id="4Vc-bg-3BA" customClass="HMSixthTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Zgp-kM-HuY">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -845,7 +909,7 @@
             <objects>
                 <tableViewController id="Bbb-7c-SbN" customClass="HMSeventhTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="zHq-EV-Zrc">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -934,7 +998,7 @@
             <objects>
                 <tableViewController id="Ku4-l8-SXp" customClass="HMEightTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XiE-gy-0Z9">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1023,7 +1087,7 @@
             <objects>
                 <tableViewController id="fEw-uE-ha0" customClass="HMNInthTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PGF-33-8Ct">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1112,7 +1176,7 @@
             <objects>
                 <tableViewController id="Ifg-sf-pMK" customClass="HMTenthTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="5hT-Mm-iie">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1144,15 +1208,15 @@
                                     <outlet property="venueLabel" destination="lm3-SC-icV" id="wl3-9L-ARk"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BandCell" rowHeight="55" id="TLZ-zs-MZ1" customClass="HMBandCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BandCell" rowHeight="55" id="TLZ-zs-MZ1" customClass="HMBandCell">
                                 <rect key="frame" x="0.0" y="52" width="320" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" id="fdU-As-4zC">
-                                            <rect key="frame" x="0.0" y="0.0" width="316" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="54"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1208,6 +1272,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="8Lc-DE-MA3"/>
+        <segue reference="Cic-Eg-aO8"/>
     </inferredMetricsTieBreakers>
 </document>

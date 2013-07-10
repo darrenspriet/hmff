@@ -56,7 +56,6 @@
 		E08919E9178449EC006FD6D0 /* HMEightTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08919E8178449EC006FD6D0 /* HMEightTableViewController.m */; };
 		E08919EC17844A1B006FD6D0 /* HMNInthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08919EB17844A1B006FD6D0 /* HMNInthTableViewController.m */; };
 		E08919EF17844A2B006FD6D0 /* HMTenthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08919EE17844A2B006FD6D0 /* HMTenthTableViewController.m */; };
-		E08919F317863851006FD6D0 /* schedule2.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08919F217863851006FD6D0 /* schedule2.storyboard */; };
 		E0945286177D2CAE002ADE94 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E0945285177D2CAE002ADE94 /* Reachability.m */; };
 		E09643FB172B073C0037288E /* HMFFlogo3.png in Resources */ = {isa = PBXBuildFile; fileRef = E09643FA172B073C0037288E /* HMFFlogo3.png */; };
 		E09CB2E1178B79D6000A87F6 /* Tweet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E09CB2DF178B79D6000A87F6 /* Tweet@2x.png */; };
@@ -243,7 +242,6 @@
 		E08919EB17844A1B006FD6D0 /* HMNInthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNInthTableViewController.m; sourceTree = "<group>"; };
 		E08919ED17844A2A006FD6D0 /* HMTenthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTenthTableViewController.h; sourceTree = "<group>"; };
 		E08919EE17844A2B006FD6D0 /* HMTenthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTenthTableViewController.m; sourceTree = "<group>"; };
-		E08919F217863851006FD6D0 /* schedule2.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = schedule2.storyboard; sourceTree = "<group>"; };
 		E0945284177D2CAE002ADE94 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E0945285177D2CAE002ADE94 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		E09643FA172B073C0037288E /* HMFFlogo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HMFFlogo3.png; sourceTree = "<group>"; };
@@ -424,7 +422,6 @@
 			children = (
 				E09FCFD1171896A500DFD7C9 /* Schedule.storyboard */,
 				E03C069916FBE6A4002AC531 /* Storyboard.storyboard */,
-				E08919F217863851006FD6D0 /* schedule2.storyboard */,
 			);
 			name = StoryBoards;
 			sourceTree = "<group>";
@@ -980,7 +977,6 @@
 				E0CFFCEC177F2FCA00D484E1 /* band6@2x.png in Resources */,
 				E0F29F9B17811FC8004D3DEA /* chevronblack.png in Resources */,
 				E0F29F9C17811FC8004D3DEA /* chevronblack@2x.png in Resources */,
-				E08919F317863851006FD6D0 /* schedule2.storyboard in Resources */,
 				E0DCB6C81787D13E00A538FC /* Twitter_Follow_1x.png in Resources */,
 				E0DCB6C91787D13E00A538FC /* Twitter_Follow_1x@2x.png in Resources */,
 				E09CB2E1178B79D6000A87F6 /* Tweet@2x.png in Resources */,
