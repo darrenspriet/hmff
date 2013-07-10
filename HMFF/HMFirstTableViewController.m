@@ -34,6 +34,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    if ([defaults objectForKey:@"followTwitter"]) {
+        NSLog(@"follow twitter found");
+    }
     
     self.lineUp = [[NSMutableArray alloc]init];
     

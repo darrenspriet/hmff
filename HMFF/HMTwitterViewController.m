@@ -35,12 +35,24 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:@"followTwitter"]) {
-        [self.TwitterButtonOutlet setImage:nil forState:UIControlStateNormal];
-        [self.TwitterButtonOutlet setImage:nil forState:UIControlStateSelected];
-        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Tweet.png"] forState:UIControlStateNormal];
+    self.keychain =
+    [[KeychainItemWrapper alloc] initWithIdentifier:@"followTwitter" accessGroup:nil];
+    NSLog(@"what is in here: %@", [self.keychain objectForKey:(__bridge id)(kSecAttrAccount)]);
+    if ([[self.keychain objectForKey:(__bridge id)(kSecAttrAccount)] isEqualToString:@"following"]) {
+        [self.TwitterButtonOutlet setTitle:@"          FOLLOWING" forState:UIControlStateNormal];
+        [self.TwitterButtonOutlet setTitle:@"          FOLLOWING" forState:UIControlStateSelected];
+
+        [self.TwitterButtonOutlet setTitle:@"          FOLLOWING" forState:UIControlStateHighlighted];
+        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Following.png"] forState:UIControlStateNormal];
+        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Following.png"] forState:UIControlStateHighlighted];
+        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Following.png"] forState:UIControlStateSelected];
         NSLog(@"followTwitter works");
+    }
+    else{
+        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Twitter_Follow_1x.png"] forState:UIControlStateNormal];
+        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Twitter_Follow_1x.png"] forState:UIControlStateHighlighted];
+        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Twitter_Follow_1x.png"] forState:UIControlStateSelected];
+        NSLog(@"followTwitter not in the system");
     }
     
     [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
@@ -53,9 +65,9 @@
         }
     }
     NSLog(@"TOTAL FOLLOWERS IS: %@", totalFollowers);
-   // [self.totalFollowers setText:[NSString stringWithFormat:@"%@",totalFollowers]];
+    // [self.totalFollowers setText:[NSString stringWithFormat:@"%@",totalFollowers]];
     
-       //Image for the Navigation Bar
+    //Image for the Navigation Bar
     UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     //Image for the Normal bar button
@@ -99,7 +111,7 @@
         HMBuyTicketsViewController *buyTickets = (HMBuyTicketsViewController *)navController.topViewController;
         [buyTickets setPassedURL:@"http://www.hmff.com/?page_id=161"];
         [buyTickets setHTMLString: self.HTMLString];
-
+        
     }
 }
 
@@ -116,59 +128,67 @@
     }
 }
 - (IBAction)followTapped:(UIButton *)sender {
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    if (![defaults objectForKey:@"followTwitter"]) {
+    
+    if (![[self.keychain objectForKey:(__bridge id)(kSecAttrAccount)] isEqualToString:@"following"]) {
         
-    
-    self.accountStore = [[ACAccountStore alloc] init];
-    self.profileImages = [NSMutableDictionary dictionary];
-    
-    ACAccountType *twitterType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    
-    [self.accountStore requestAccessToAccountsWithType:twitterType options:nil completion:^(BOOL granted, NSError *error) {
         
-        if(granted) {
-            NSArray *twitterAccounts = [self.accountStore accountsWithAccountType:twitterType];
+        self.accountStore = [[ACAccountStore alloc] init];
+        self.profileImages = [NSMutableDictionary dictionary];
+        
+        ACAccountType *twitterType = [self.accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
+        
+        [self.accountStore requestAccessToAccountsWithType:twitterType options:nil completion:^(BOOL granted, NSError *error) {
             
-            if ([twitterAccounts count])
-            {
-                self.userAccount = [twitterAccounts objectAtIndex:0];
+            if(granted) {
+                NSArray *twitterAccounts = [self.accountStore accountsWithAccountType:twitterType];
                 
-                NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
-                [tempDict setValue:@"HMFFEST" forKey:@"screen_name"];
-                [tempDict setValue:@"true" forKey:@"follow"];
-                NSLog(@"*******tempDict %@*******",tempDict);
-                
-
-                
-                SLRequest *postRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:@"http://api.twitter.com/1.1/friendships/create.json"] parameters:tempDict];
-                [postRequest setAccount:self.userAccount];
-                [postRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
-                    NSString *output = [NSString stringWithFormat:@"HTTP response status: %i Error %d", [urlResponse statusCode],error.code];
-                    NSLog(@"%@error %@", output,error.description);
-                    [self.TwitterButtonOutlet setImage:nil forState:UIControlStateNormal];
-                       [self.TwitterButtonOutlet setImage:nil forState:UIControlStateSelected];
-                    [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Tweet.png"] forState:UIControlStateNormal];
+                if ([twitterAccounts count])
+                {
+                    self.userAccount = [twitterAccounts objectAtIndex:0];
                     
-                    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                    [defaults setBool:YES forKey:@"followTwitter"];
-                    [defaults synchronize];
-                    NSLog(@"Data saved");
+                    NSMutableDictionary *tempDict = [[NSMutableDictionary alloc] init];
+                    [tempDict setValue:@"HMFFEST" forKey:@"screen_name"];
+                    [tempDict setValue:@"true" forKey:@"follow"];
+                    NSLog(@"*******tempDict %@*******",tempDict);
+                    
+                    
+                    
+                    SLRequest *postRequest = [SLRequest requestForServiceType:SLServiceTypeTwitter requestMethod:SLRequestMethodPOST URL:[NSURL URLWithString:@"http://api.twitter.com/1.1/friendships/create.json"] parameters:tempDict];
+                    [postRequest setAccount:self.userAccount];
+                    [postRequest performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+                        NSString *output = [NSString stringWithFormat:@"HTTP response status: %i Error %d", [urlResponse statusCode],error.code];
+                        NSLog(@"%@error %@", output,error.description);
+                        [self.TwitterButtonOutlet setTitle:@"          FOLLOWING" forState:UIControlStateNormal];
+                        [self.TwitterButtonOutlet setTitle:@"          FOLLOWING" forState:UIControlStateSelected];
+                        
+                        [self.TwitterButtonOutlet setTitle:@"          FOLLOWING" forState:UIControlStateHighlighted];
+                        
+                        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Following.png"] forState:UIControlStateNormal];
+                        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Following.png"] forState:UIControlStateHighlighted];
+                        [self.TwitterButtonOutlet setBackgroundImage:[UIImage imageNamed:@"Following.png"] forState:UIControlStateSelected];
+                        NSLog(@"followTwitter works");
+                        
+                        
+                        
+                        [self.keychain setObject:@"following" forKey:(__bridge id)(kSecAttrAccount)];
+                        
+                        
 
-                }];
-            }
-            else
-            {
-                NSLog(@"No Twitter Accounts");
-            }
+                        NSLog(@"Data saved");
+                        
+                    }];
+                }
+                else
+                {
+                    NSLog(@"No Twitter Accounts");
+                }
                 
- 
+                
             }
             
+            
+        }];
         
-    }];
-    
     }
     else{
         NSLog(@"We are already following");

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
+#import "KeychainItemWrapper.h"
 
 @interface HMTwitterViewController : UIViewController
 
@@ -25,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalFollowers;
 
 @property (nonatomic, strong)NSArray *tweets;
+@property (nonatomic, strong) KeychainItemWrapper *keychain;
 
 
 @end
