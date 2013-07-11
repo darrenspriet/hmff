@@ -123,6 +123,7 @@
 		E0D8D8D51720DB5200752A29 /* HMVenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D8D8D41720DB5200752A29 /* HMVenueCell.m */; };
 		E0DCB6C81787D13E00A538FC /* Twitter_Follow_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DCB6C31787D13E00A538FC /* Twitter_Follow_1x.png */; };
 		E0DCB6C91787D13E00A538FC /* Twitter_Follow_1x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DCB6C41787D13E00A538FC /* Twitter_Follow_1x@2x.png */; };
+		E0EAC32F178E5F740041B813 /* sonicbidtest.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EAC32E178E5F740041B813 /* sonicbidtest.png */; };
 		E0EB5EB2171447E900C444CE /* HMNewsFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */; };
 		E0EB5EB51714598500C444CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB31714596A00C444CE /* MessageUI.framework */; };
 		E0EB5EBA17145A7000C444CE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB617145A5C00C444CE /* Social.framework */; };
@@ -338,6 +339,7 @@
 		E0D8D8D41720DB5200752A29 /* HMVenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMVenueCell.m; sourceTree = "<group>"; };
 		E0DCB6C31787D13E00A538FC /* Twitter_Follow_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Twitter_Follow_1x.png; path = "twitter buttons/Twitter_Follow_1x.png"; sourceTree = "<group>"; };
 		E0DCB6C41787D13E00A538FC /* Twitter_Follow_1x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Twitter_Follow_1x@2x.png"; path = "twitter buttons/Twitter_Follow_1x@2x.png"; sourceTree = "<group>"; };
+		E0EAC32E178E5F740041B813 /* sonicbidtest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sonicbidtest.png; sourceTree = "<group>"; };
 		E0EB5EB0171447E900C444CE /* HMNewsFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedCell.h; sourceTree = "<group>"; };
 		E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedCell.m; sourceTree = "<group>"; };
 		E0EB5EB31714596A00C444CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -833,6 +835,7 @@
 		E0CFFCD0177F2CCE00D484E1 /* BackGround Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0EAC32E178E5F740041B813 /* sonicbidtest.png */,
 				E0CFFCD1177F2CE100D484E1 /* band1.png */,
 				E0CFFCD2177F2CE100D484E1 /* band1@2x.png */,
 				E0CFFCD3177F2CE100D484E1 /* band2.png */,
@@ -988,6 +991,7 @@
 				E09CB2E2178B79D6000A87F6 /* Tweet.png in Resources */,
 				E0D7B5BA178D095C000C2EC6 /* Following@2x.png in Resources */,
 				E0D7B5BB178D095C000C2EC6 /* Following.png in Resources */,
+				E0EAC32F178E5F740041B813 /* sonicbidtest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

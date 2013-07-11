@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QTH-IL-sWj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ecz-BE-a4D">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -9,7 +9,7 @@
             <objects>
                 <viewController id="Uaw-Oy-Tfo" customClass="HMNewsFeedViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsl-uA-LT4">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="band1.png" translatesAutoresizingMaskIntoConstraints="NO" id="mKB-9d-VHl">
@@ -72,7 +72,7 @@
             <objects>
                 <tableViewController id="jtw-ey-lVs" customClass="HMNewsFeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="RIC-Ih-gGK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -150,7 +150,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="dlc-h9-Onv" customClass="HMNewsFeedDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mYm-af-p44">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="band2.png" translatesAutoresizingMaskIntoConstraints="NO" id="pJN-hr-5HO"/>
@@ -215,7 +215,7 @@
             <objects>
                 <viewController id="2Qd-db-GVQ" customClass="HMTwitterViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="faU-aG-uOm">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="band4.png" translatesAutoresizingMaskIntoConstraints="NO" id="eaF-J5-QnN"/>
@@ -329,7 +329,7 @@
             <objects>
                 <tableViewController id="wx8-zC-B03" customClass="HMTwitterTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="81" sectionHeaderHeight="22" sectionFooterHeight="22" id="hVz-uy-I5K">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -427,7 +427,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="EAI-lg-KOF" customClass="HMTwitterDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v04-hY-qpr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="396"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="band2.png" translatesAutoresizingMaskIntoConstraints="NO" id="DiD-D1-1h8"/>
@@ -504,7 +504,7 @@
             <objects>
                 <viewController id="YPs-GN-PfW" customClass="HMSocialViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZVo-e5-d7X">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="band6.png" translatesAutoresizingMaskIntoConstraints="NO" id="eCk-sK-S3A">
@@ -662,7 +662,7 @@
             <objects>
                 <viewController id="uqj-Bg-yve" customClass="HMMoreViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OOP-8e-LEa">
-                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iE9-Mn-8al">
@@ -747,7 +747,7 @@
             <objects>
                 <tableViewController id="esX-NZ-Wfk" customClass="HMMoreTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="XW1-D7-uTH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -985,26 +985,277 @@
             </objects>
             <point key="canvasLocation" x="1814" y="1672"/>
         </scene>
-        <!--Submit Band View Controller-->
+        <!--Submit Video View Controller - Video Submission-->
         <scene sceneID="odm-Cn-cIz">
             <objects>
-                <viewController id="GBr-d2-Nzm" customClass="HMSubmitBandViewController" sceneMemberID="viewController">
+                <viewController id="GBr-d2-Nzm" customClass="HMSubmitVideoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0s7-zX-hH1">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A2T-wz-ynM">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" type="user" id="UA9-yO-GXL"/>
+                                </constraints>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bic-Zi-JVQ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="111" id="av4-h8-jL5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BA9-AA-LfD" kind="push" id="VxL-vY-4UW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9q-ME-LiE">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="TiJ-G3-HQZ"/>
+                                </constraints>
+                                <string key="text">Submission fee is $10.00
+</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZY-TM-1I7">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="CDX-UE-OIR"/>
+                                    <constraint firstAttribute="height" constant="25" id="a77-EM-djO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="More Details">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hMV-LC-GyK" kind="push" id="EsZ-Lm-PXU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Option 1:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aeu-xO-K7H">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Eny-IP-HTj"/>
+                                    <constraint firstAttribute="width" constant="71" id="vIu-xW-WjH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="7aI-rr-EPZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="78" id="Hts-cc-wps"/>
+                                    <constraint firstAttribute="width" constant="290" id="ltd-jP-xpv"/>
+                                </constraints>
+                                <string key="text">SUBMISSION BY PAYPAL/MAIL Submit your entry fee online with Paypal. Fill out an ENTRY FORM and mail it, along with your video material.</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SUBMISSION BY MAIL ONLY Fill out an ENTRY FORM and mail it, along with a cheque for $10.00 and your video material" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="ctR-IR-ZoF">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="oQq-jf-6Ps"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Option 2:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUX-Qt-Fhh">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="SUk-k5-dbR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Films/videos 15 minutes max" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UkY-Ut-L6I">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="2fP-gO-DJh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Submission deadline August 1, 2013" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="5qC-al-tr1">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="1uf-js-Ry5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EgU-y7-DYK">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="Qbn-1F-xpg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ENTRY FORM">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BA9-AA-LfD" kind="push" id="csI-26-QMs"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VV8-vn-Vdx">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="6jI-U1-rNu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Address">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hMV-LC-GyK" kind="push" id="ygO-CU-jsh"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Aeu-xO-K7H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0s7-zX-hH1" secondAttribute="top" constant="120" type="user" id="00n-i7-flJ"/>
+                            <constraint firstItem="bic-Zi-JVQ" firstAttribute="centerX" secondItem="lZY-TM-1I7" secondAttribute="centerX" type="default" id="2VC-jS-PfS"/>
+                            <constraint firstItem="5qC-al-tr1" firstAttribute="centerX" secondItem="UkY-Ut-L6I" secondAttribute="centerX" type="default" id="30F-7t-9tD"/>
+                            <constraint firstItem="fUX-Qt-Fhh" firstAttribute="trailing" secondItem="Aeu-xO-K7H" secondAttribute="trailing" type="default" id="3bf-ps-nrp"/>
+                            <constraint firstItem="VV8-vn-Vdx" firstAttribute="baseline" secondItem="EgU-y7-DYK" secondAttribute="baseline" type="user" id="3lo-Ly-ov3"/>
+                            <constraint firstItem="fUX-Qt-Fhh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0s7-zX-hH1" secondAttribute="top" constant="215" type="user" id="4O0-Ma-zRJ"/>
+                            <constraint firstAttribute="trailing" secondItem="UkY-Ut-L6I" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5V1-q3-uCb"/>
+                            <constraint firstItem="a9q-ME-LiE" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="9" id="6OW-Z1-nBH"/>
+                            <constraint firstItem="bic-Zi-JVQ" firstAttribute="trailing" secondItem="A2T-wz-ynM" secondAttribute="trailing" type="default" id="6dV-ai-48y"/>
+                            <constraint firstItem="bic-Zi-JVQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0s7-zX-hH1" secondAttribute="top" constant="310" type="user" id="6hv-fw-Zgf"/>
+                            <constraint firstItem="ctR-IR-ZoF" firstAttribute="trailing" secondItem="7aI-rr-EPZ" secondAttribute="trailing" type="default" id="7yt-gv-OVv"/>
+                            <constraint firstItem="ctR-IR-ZoF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0s7-zX-hH1" secondAttribute="top" constant="231" type="user" id="CBJ-JJ-gsF"/>
+                            <constraint firstItem="7aI-rr-EPZ" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="138" id="DQV-cv-kzQ"/>
+                            <constraint firstItem="bic-Zi-JVQ" firstAttribute="bottom" secondItem="A2T-wz-ynM" secondAttribute="bottom" type="default" id="Fme-C4-8Dx"/>
+                            <constraint firstItem="ctR-IR-ZoF" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="231" id="Hgm-xk-zC5"/>
+                            <constraint firstItem="UkY-Ut-L6I" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="30" id="I2J-WA-sv5"/>
+                            <constraint firstItem="A2T-wz-ynM" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="310" type="user" id="L80-EZ-wp4"/>
+                            <constraint firstItem="5qC-al-tr1" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="55" id="SZC-CK-ndV"/>
+                            <constraint firstItem="7aI-rr-EPZ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0s7-zX-hH1" secondAttribute="top" constant="138" type="user" id="SZc-tp-zNZ"/>
+                            <constraint firstItem="VV8-vn-Vdx" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="359" type="user" id="SfA-wk-kKO"/>
+                            <constraint firstItem="lZY-TM-1I7" firstAttribute="top" secondItem="5qC-al-tr1" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="TFn-47-mbR"/>
+                            <constraint firstItem="a9q-ME-LiE" firstAttribute="leading" secondItem="0s7-zX-hH1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="UV0-gr-ZP4"/>
+                            <constraint firstItem="fUX-Qt-Fhh" firstAttribute="leading" secondItem="ctR-IR-ZoF" secondAttribute="leading" type="default" id="X2S-3f-L2S"/>
+                            <constraint firstItem="A2T-wz-ynM" firstAttribute="top" secondItem="bic-Zi-JVQ" secondAttribute="top" type="user" id="YcA-NP-Zlb"/>
+                            <constraint firstAttribute="trailing" secondItem="VV8-vn-Vdx" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Z7W-qK-GxY"/>
+                            <constraint firstItem="UkY-Ut-L6I" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0s7-zX-hH1" secondAttribute="top" constant="30" type="user" id="a9t-ER-tQQ"/>
+                            <constraint firstItem="EgU-y7-DYK" firstAttribute="leading" secondItem="ctR-IR-ZoF" secondAttribute="leading" type="default" id="bhF-e3-T8w"/>
+                            <constraint firstItem="fUX-Qt-Fhh" firstAttribute="leading" secondItem="7aI-rr-EPZ" secondAttribute="leading" type="default" id="bzm-jg-izF"/>
+                            <constraint firstItem="bic-Zi-JVQ" firstAttribute="centerX" secondItem="5qC-al-tr1" secondAttribute="centerX" type="default" id="jVP-8t-ZCW"/>
+                            <constraint firstAttribute="trailing" secondItem="a9q-ME-LiE" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mCR-dT-8Kh"/>
+                            <constraint firstItem="7aI-rr-EPZ" firstAttribute="leading" secondItem="Aeu-xO-K7H" secondAttribute="leading" type="default" id="mrK-xE-yIW"/>
+                            <constraint firstItem="a9q-ME-LiE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0s7-zX-hH1" secondAttribute="top" constant="9" type="user" id="qsb-Se-rF1"/>
+                            <constraint firstItem="UkY-Ut-L6I" firstAttribute="leading" secondItem="0s7-zX-hH1" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="rLC-wG-c9N"/>
+                            <constraint firstItem="EgU-y7-DYK" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="359" type="user" id="sGj-kM-L3S"/>
+                            <constraint firstItem="bic-Zi-JVQ" firstAttribute="leading" secondItem="A2T-wz-ynM" secondAttribute="leading" type="default" id="sHz-S7-gXU"/>
+                            <constraint firstItem="fUX-Qt-Fhh" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="215" id="sxK-7l-znW"/>
+                            <constraint firstItem="Aeu-xO-K7H" firstAttribute="leading" secondItem="0s7-zX-hH1" secondAttribute="leading" constant="22" id="tmq-pa-LGN"/>
+                            <constraint firstItem="bic-Zi-JVQ" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="310" type="user" id="vRX-QN-Qdj"/>
+                            <constraint firstItem="Aeu-xO-K7H" firstAttribute="top" secondItem="0s7-zX-hH1" secondAttribute="top" constant="120" id="xPH-D0-Z15"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Video Submission" id="Z8h-FU-1OM"/>
+                    <connections>
+                        <outlet property="payPalButton" destination="A2T-wz-ynM" id="Qza-28-Gbx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jyi-oJ-HpO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2689" y="1261"/>
+            <point key="canvasLocation" x="3356" y="1180"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="v95-4T-PEb">
+            <objects>
+                <viewController id="hMV-LC-GyK" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zci-G5-cyv">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="kye-Fi-D3e">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Vyy-eE-k6c"/>
+                                </constraints>
+                                <string key="text">
+Submissions should be received as full resolution quicktime format on Data DVD (Authored DVDs accepted, but not preferred.)
+Acceptable submissions include: short films including asbtract/experimental/ animated, music videos, documentaries, trailers
+Submission deadline is August 1, 2013. (Late entries accepted at $20 until August 10, 2013) SUBMISSION BY PAYPAL/MAIL
+</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="87w-P7-Z5n">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="QKx-pk-DUV"/>
+                                    <constraint firstAttribute="height" constant="215" id="TWh-8t-xKH"/>
+                                </constraints>
+                                <string key="text">, to the following address:
+Hallucid Productions
+73 LESLIE ST.
+TORONTO, ON
+M4M 3C3
+OR
+, to the following address:
+Hallucid Productions
+73 LESLIE ST.
+TORONTO, ON
+M4M 3C3</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="kye-Fi-D3e" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="FEq-dp-MIt"/>
+                            <constraint firstItem="kye-Fi-D3e" firstAttribute="top" secondItem="zci-G5-cyv" secondAttribute="top" type="default" id="Faf-0s-1Im"/>
+                            <constraint firstItem="87w-P7-Z5n" firstAttribute="top" secondItem="zci-G5-cyv" secondAttribute="top" constant="202" id="Fg1-H3-xh8"/>
+                            <constraint firstItem="87w-P7-Z5n" firstAttribute="leading" secondItem="zci-G5-cyv" secondAttribute="leading" constant="82" id="OZE-bV-Xe7"/>
+                            <constraint firstItem="kye-Fi-D3e" firstAttribute="leading" secondItem="zci-G5-cyv" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f1n-K2-a1Q"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Rt-Fw-jBc"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxb-LD-0xI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3995" y="818"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fDS-RT-Ga8">
+            <objects>
+                <viewController id="BA9-AA-LfD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ilj-UF-OVM">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nUe-YJ-ZJR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAG-FU-7oL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4521" y="1396"/>
         </scene>
         <!--More Web Browser View Controller-->
         <scene sceneID="Gs6-MY-dbV">
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="EWF-zL-Z4W" customClass="HMMoreWebBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="I8A-sJ-me8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="VyS-27-vlk"/>
@@ -1077,14 +1328,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ARw-Hu-Yag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3141" y="1785"/>
+            <point key="canvasLocation" x="3371" y="2347"/>
         </scene>
         <!--Large Photo View Controller-->
         <scene sceneID="fAp-aO-Poh">
             <objects>
                 <viewController id="u6h-EW-53g" customClass="HMLargePhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="redraw" id="KeX-kc-B1Q">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="H9w-fg-RXt">
@@ -1142,7 +1393,7 @@
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" id="N8U-te-xKz" customClass="HMPhotoCollectionViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="XiV-n2-cGq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EIy-Hj-1Y0">
                             <size key="itemSize" width="100" height="100"/>
@@ -1196,7 +1447,7 @@
             <objects>
                 <tableViewController hidesBottomBarWhenPushed="YES" id="KlN-ic-TwX" customClass="HMVideosTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="205" sectionHeaderHeight="22" sectionFooterHeight="22" id="90K-pk-VZS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -1279,7 +1530,7 @@
             <objects>
                 <viewController id="QTH-IL-sWj" customClass="HMSplashViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yyJ-xl-CLe">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="rZJ-Gb-yFn"/>
@@ -1525,7 +1776,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="zQw-le-wFB" customClass="HMSocialWebBrowserViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2MT-fh-vrR">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wJS-yp-UrK"/>
@@ -1604,7 +1855,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="JWv-oD-gMU" customClass="HMBuyTicketsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XP2-iD-jdy">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="2XL-Ty-Dhg"/>
@@ -1703,6 +1954,199 @@
             </objects>
             <point key="canvasLocation" x="3309" y="177"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P8e-O2-RyT">
+            <objects>
+                <navigationController id="hGb-42-QAr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="FF3-t4-0xO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GBr-d2-Nzm" kind="relationship" relationship="rootViewController" id="fKa-Zh-t6B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uMA-fO-zoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2781" y="1268"/>
+        </scene>
+        <!--Submit Band View Controller - Band Submission-->
+        <scene sceneID="9LO-zb-7vR">
+            <objects>
+                <viewController id="gRC-SR-NCs" customClass="HMSubmitBandViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Im7-iZ-Ucm">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnM-qB-Z2E">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="QKQ-sP-BvP"/>
+                                </constraints>
+                                <string key="text">Submission fee is $10.00
+</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6VC-8i-brP">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="c9d-Nb-x6c"/>
+                                    <constraint firstAttribute="height" constant="25" id="jPh-mN-7fw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="More Details">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Option 1:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63s-9h-sYy">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="71" id="RTN-uK-SaG"/>
+                                    <constraint firstAttribute="height" constant="21" id="aas-2F-1Hw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Submit your information and entry fee via Sonicbids" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="13A-mk-diy">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="iP0-ez-v45"/>
+                                    <constraint firstAttribute="width" constant="290" id="sX3-yp-pNp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="SUBMISSION BY MAIL ONLY Fill out an ENTRY FORM and mail it, along with a cheque for $10.00" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="OmE-1E-oyZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="QfW-m7-nfF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Option 2:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nzn-Bw-agB">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="lOg-N7-9nk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Sets are 30 minutes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T9c-qg-n6u">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="27" id="14T-Fh-Wkf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Submission deadline August 1, 2013" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="aVf-mm-3GJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="Hek-tj-HsN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6KI-bB-S2p">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="106" id="yYP-sR-Utw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="ENTRY FORM">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxC-fE-Q3G">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="117" id="WVU-v5-vwT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Address">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="sonicbidtest.png" translatesAutoresizingMaskIntoConstraints="NO" id="bha-Kg-uM4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="ZZ3-xs-HLL"/>
+                                    <constraint firstAttribute="width" constant="139" id="c2Y-wX-Vl3"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mnM-qB-Z2E" firstAttribute="top" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="9" id="2Vg-eD-K36"/>
+                            <constraint firstItem="aVf-mm-3GJ" firstAttribute="top" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="55" id="3n3-pD-Txd"/>
+                            <constraint firstItem="aVf-mm-3GJ" firstAttribute="centerX" secondItem="T9c-qg-n6u" secondAttribute="centerX" type="default" id="B24-K2-mmI"/>
+                            <constraint firstItem="OmE-1E-oyZ" firstAttribute="top" relation="lessThanOrEqual" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="231" type="user" id="BqQ-YY-79s"/>
+                            <constraint firstItem="T9c-qg-n6u" firstAttribute="top" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="30" id="DmL-Lh-fs7"/>
+                            <constraint firstAttribute="trailing" secondItem="xxC-fE-Q3G" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="EkP-iH-5Dg"/>
+                            <constraint firstItem="bha-Kg-uM4" firstAttribute="centerX" secondItem="6VC-8i-brP" secondAttribute="centerX" type="default" id="FQd-3i-JfG"/>
+                            <constraint firstItem="Nzn-Bw-agB" firstAttribute="top" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="185" id="Ff8-Nd-ehT"/>
+                            <constraint firstItem="Nzn-Bw-agB" firstAttribute="leading" secondItem="OmE-1E-oyZ" secondAttribute="leading" type="default" id="Fsf-Xr-Lbh"/>
+                            <constraint firstAttribute="trailing" secondItem="mnM-qB-Z2E" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="GMJ-eP-sSB"/>
+                            <constraint firstItem="mnM-qB-Z2E" firstAttribute="leading" secondItem="Im7-iZ-Ucm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Jb7-6w-ozq"/>
+                            <constraint firstItem="13A-mk-diy" firstAttribute="top" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="138" id="UhP-Qr-iBC"/>
+                            <constraint firstItem="xxC-fE-Q3G" firstAttribute="top" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="359" type="user" id="Uz2-nz-yOi"/>
+                            <constraint firstItem="6KI-bB-S2p" firstAttribute="leading" secondItem="OmE-1E-oyZ" secondAttribute="leading" type="default" id="Xfq-8B-fWB"/>
+                            <constraint firstItem="bha-Kg-uM4" firstAttribute="top" secondItem="OmE-1E-oyZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Xy8-jW-i7C"/>
+                            <constraint firstAttribute="trailing" secondItem="T9c-qg-n6u" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="ZNx-f5-kj2"/>
+                            <constraint firstItem="63s-9h-sYy" firstAttribute="top" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="120" id="a6d-zG-PNx"/>
+                            <constraint firstItem="xxC-fE-Q3G" firstAttribute="baseline" secondItem="6KI-bB-S2p" secondAttribute="baseline" type="user" id="cWa-OS-Wa3"/>
+                            <constraint firstItem="T9c-qg-n6u" firstAttribute="leading" secondItem="Im7-iZ-Ucm" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="caO-5n-7iu"/>
+                            <constraint firstItem="63s-9h-sYy" firstAttribute="leading" secondItem="Im7-iZ-Ucm" secondAttribute="leading" constant="22" id="div-nj-q04"/>
+                            <constraint firstItem="6KI-bB-S2p" firstAttribute="top" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="359" type="user" id="eQ0-MF-lf0"/>
+                            <constraint firstItem="OmE-1E-oyZ" firstAttribute="trailing" secondItem="13A-mk-diy" secondAttribute="trailing" type="default" id="er1-Md-p3C"/>
+                            <constraint firstItem="Nzn-Bw-agB" firstAttribute="trailing" secondItem="63s-9h-sYy" secondAttribute="trailing" type="default" id="fyy-Ot-oJ2"/>
+                            <constraint firstItem="T9c-qg-n6u" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="30" type="user" id="h27-2d-XkX"/>
+                            <constraint firstItem="6VC-8i-brP" firstAttribute="top" secondItem="aVf-mm-3GJ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lUh-Hb-2bd"/>
+                            <constraint firstItem="aVf-mm-3GJ" firstAttribute="centerX" secondItem="6VC-8i-brP" secondAttribute="centerX" type="default" id="lgm-sJ-nIp"/>
+                            <constraint firstItem="Nzn-Bw-agB" firstAttribute="leading" secondItem="13A-mk-diy" secondAttribute="leading" type="default" id="ny8-ed-Ug8"/>
+                            <constraint firstItem="13A-mk-diy" firstAttribute="leading" secondItem="63s-9h-sYy" secondAttribute="leading" type="default" id="o16-4d-ecG"/>
+                            <constraint firstItem="mnM-qB-Z2E" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="9" type="user" id="rlL-Fl-y5A"/>
+                            <constraint firstItem="13A-mk-diy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="138" type="user" id="vWg-sR-7QS"/>
+                            <constraint firstItem="63s-9h-sYy" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="120" type="user" id="y3R-48-mZN"/>
+                            <constraint firstItem="OmE-1E-oyZ" firstAttribute="top" secondItem="Im7-iZ-Ucm" secondAttribute="top" constant="201" id="zCY-ZF-peK"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Band Submission" id="0gV-Yx-0jd"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6B-Ek-sYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3407" y="1751"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IIc-If-ldn">
+            <objects>
+                <navigationController id="ecz-BE-a4D" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="laP-Lg-F1i">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gRC-SR-NCs" kind="relationship" relationship="rootViewController" id="hF7-vK-27m"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dLW-cT-F70" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3019" y="1762"/>
+        </scene>
     </scenes>
     <resources>
         <image name="EmailButton.png" width="250" height="40"/>
@@ -1726,15 +2170,218 @@
         <image name="band5.png" width="320" height="398"/>
         <image name="band6.png" width="320" height="398"/>
         <image name="chevron.png" width="40" height="40"/>
+        <image name="sonicbidtest.png" width="1537" height="905"/>
         <image name="ticketButton.png" width="60" height="33"/>
     </resources>
+    <classes>
+        <class className="HMBuyTicketsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMBuyTicketsViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="backButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="largeActivityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMLargePhotoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMLargePhotoViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="imageTapped:" candidateClass="UITapGestureRecognizer"/>
+                <relationship kind="action" name="shareButton:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="toolBar" candidateClass="UIToolbar"/>
+            </relationships>
+        </class>
+        <class className="HMMoreCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="chevron" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMMoreTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreTableViewController.h"/>
+        </class>
+        <class className="HMMoreViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="SendAnEmail:" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="HMMoreWebBrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMMoreWebBrowserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="largeActivityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNavigationViewController.h"/>
+        </class>
+        <class className="HMNewsFeedCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="chevron" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="content" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="controllerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="newsTitle" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMNewsFeedTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedTableViewController.h"/>
+        </class>
+        <class className="HMNewsFeedViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMNewsFeedViewController.h"/>
+        </class>
+        <class className="HMPhotoCollectionCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPhotoCollectionCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HMPhotoCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMPhotoCollectionViewController.h"/>
+        </class>
+        <class className="HMScheduleNavigationViewController" superclassName="UINavigationController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMScheduleNavigationViewController.h"/>
+        </class>
+        <class className="HMSocialViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="controllerView" candidateClass="UIView"/>
+            </relationships>
+        </class>
+        <class className="HMSocialWebBrowserViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSocialWebBrowserViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="shareButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="back" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="forward" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="largeActivityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="refresh" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="stop" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMSplashViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSplashViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cityLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="largeActivitiyIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="splashImage" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="HMSubmitBandViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSubmitBandViewController.h"/>
+        </class>
+        <class className="HMSubmitVideoViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMSubmitVideoViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="payPalButton" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMTabBarViewController" superclassName="UITabBarController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTabBarViewController.h"/>
+        </class>
+        <class className="HMTweetCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTweetCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="cellView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="chevron" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="date" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="image" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tweet" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMTwitterDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="controllerView" candidateClass="UIView"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="tweetLabel" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="HMTwitterTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterTableViewController.h"/>
+        </class>
+        <class className="HMTwitterViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMTwitterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="followTapped:" candidateClass="UIButton"/>
+                <relationship kind="action" name="postTweet:" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="TwitterButtonOutlet" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="totalFollowers" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="HMVideoCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMVideoCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="largeActivityIndicator" candidateClass="UIActivityIndicatorView"/>
+                <relationship kind="outlet" name="videoTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="videoWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="HMVideosTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HMVideosTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="gFT-7k-txH"/>
+        <segue reference="EsZ-Lm-PXU"/>
+        <segue reference="csI-26-QMs"/>
         <segue reference="mjR-NM-uON"/>
+        <segue reference="gFT-7k-txH"/>
     </inferredMetricsTieBreakers>
 </document>

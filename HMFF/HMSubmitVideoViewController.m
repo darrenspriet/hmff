@@ -26,6 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSURL *url =[NSURL URLWithString:@"http://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.payPalButton loadRequest:request];
 	// Do any additional setup after loading the view.
 }
 

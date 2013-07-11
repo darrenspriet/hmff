@@ -10,4 +10,6 @@
 
 @interface HMSubmitVideoViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIWebView *payPalButton;
+
 @end
