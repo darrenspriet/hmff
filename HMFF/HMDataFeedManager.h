@@ -67,6 +67,12 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 
 @property(strong, nonatomic)NSMutableArray *youTubeArray;
 
+@property(strong, nonatomic)NSMutableArray *submitArray;
+
+@property (nonatomic, strong) NSData *pdfData;
+
+
+
 
 
 

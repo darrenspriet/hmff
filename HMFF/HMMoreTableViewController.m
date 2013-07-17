@@ -46,14 +46,14 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     switch (indexPath.row) {
         case 0:{
-            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"moreCell"];
+            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"submitBandCell"];
             [cell.title setText:@"Submit a Band"];
             return cell;
             break;
         }
         case 1:{
-            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"moreCell"];
-            [cell.title setText:@"Submit a Video"];
+            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"submitVideoCell"];
+            [cell.title setText:@"Submit a Film"];
             return cell;
             break;
         }
@@ -89,20 +89,15 @@
 
 #pragma Prepare for Segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
+    //NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
 
     HMMoreWebBrowserViewController *webBrowser = segue.destinationViewController;
     //Calls the submit a band segue
-    if ([segue.identifier isEqualToString:@"moreSegue"]){
-        if(indexPath.row==0){
-     webBrowser.passedURL=@"http://www.hmff.com/?page_id=403";
-        }
-        else if(indexPath.row==1){
-            webBrowser.passedURL=@"http://www.hmff.com/?page_id=407";
-        }
-        else{
-            webBrowser.passedURL=@"http://www.hmff.com";
-        }
+    
+
+    if ([segue.identifier isEqualToString:@"website"]){
+                webBrowser.passedURL=@"http://www.hmff.com";
+                webBrowser.isPDF=NO;
     }
     else if([segue.identifier isEqualToString:@"photoSegue"]){
         HMPhotoCollectionViewController *photoController = segue.destinationViewController;

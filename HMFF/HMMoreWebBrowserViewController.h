@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HMMoreWebBrowserViewController : UIViewController <UIActionSheetDelegate>
+
+@interface HMMoreWebBrowserViewController : UIViewController <UIActionSheetDelegate, UIDocumentInteractionControllerDelegate> 
 
 //All properties for web browser
 @property (nonatomic, retain) IBOutlet UIWebView* webView;
@@ -17,6 +18,9 @@
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* forward;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* refresh;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* stop;
+@property (nonatomic, assign) BOOL isPDF;
+
+@property (nonatomic, strong) NSData *pdfData;
 
 
 
@@ -27,4 +31,5 @@
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivityIndicator;
 
+@property (nonatomic, retain) UIDocumentInteractionController *docController;
 @end

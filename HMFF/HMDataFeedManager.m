@@ -44,6 +44,9 @@
     
     //Fetches all of the youtube parse objects
     [self fetchYouTubeParseObjects];
+    
+    //Fetches all of the submit page parse objects
+    [self fetchSubmitParseObjects];
 
     return self;
 }
@@ -138,6 +141,7 @@
                                                       error:&error];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"what is this self.news %@", self.news);
             NSLog(@"News Feed dispatch finished");
             
         });
@@ -336,16 +340,16 @@
 
 -(void)fetchYouTubeParseObjects{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSLog(@"schedule dispach started");
+        NSLog(@"youTube dispach started");
         
         
         NSArray *youTubeObject = [[NSMutableArray alloc]init];
         PFQuery *youTubeQuery = [PFQuery queryWithClassName:@"youtube"];
         //Puts all of the querys into an object
         youTubeObject= [youTubeQuery findObjects];
-        NSLog(@"Schedule done");
+        NSLog(@"youTube done");
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"schedule dispatch finished");
+            NSLog(@"youTube dispatch finished");
             [self parseYouTubeLinks:youTubeObject];
             ;
             
@@ -366,7 +370,7 @@
             }
          NSLog(@"the youtube are %@", self.youTubeArray);
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSLog(@"parseyoutube dispach finished");
+            NSLog(@"parse youtube dispach finished");
             ;
             
         });
@@ -394,6 +398,68 @@
         });
     });
     
+}
+
+-(void)fetchSubmitParseObjects{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"submit dispach started");
+        
+        
+        NSArray *submitObject = [[NSMutableArray alloc]init];
+        PFQuery *submitQuery = [PFQuery queryWithClassName:@"submit"];
+        //Puts all of the querys into an object
+        submitObject= [submitQuery findObjects];
+        NSLog(@"Submit done");
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"submitParseDone dispatch finished");
+            [self submitDetails:submitObject];
+            ;
+            
+        });
+    });
+    
+}
+
+-(void)submitDetails:(NSArray*)array{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"parse submit dispach started");
+        
+        self.submitArray = [[NSMutableArray alloc]init];
+        for (NSDictionary *diction in array){
+            NSString * string=[diction objectForKey:@"name"];
+
+            if ([string isEqualToString:@"entryformlink"]) {
+                [self loadPdfData: [diction objectForKey:@"details"]];
+
+            }
+
+            [self.submitArray addObject:diction];
+            
+            
+        }
+        NSLog(@"the submit array is %@", self.submitArray);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"submitDetails dispach finished");
+            ;
+            
+        });
+    });
+}
+
+-(void)loadPdfData:(NSString*)string{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSLog(@"parse loadPDF started dispach started");
+        
+         self.pdfData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:string]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSLog(@"loadPDF dispach finished");
+            ;
+            
+        });
+    });
+ 
 }
 
 -(void)parseSocialLinks:(NSArray*)array{

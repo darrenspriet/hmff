@@ -44,7 +44,13 @@
 }
 
 -(BOOL)shouldAutorotate{
+    
+    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
+        return NO;
+    }
+    else{
         return YES;
+    }
 }
 
 -(void) viewWillAppear:(BOOL)animated {

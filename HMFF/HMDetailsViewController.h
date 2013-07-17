@@ -10,4 +10,11 @@
 
 @interface HMDetailsViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *blackView;
+
+@property (weak, nonatomic) IBOutlet UITextView *detailsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *addressLabel;
+@property(strong, nonatomic) NSString *detailString;
+@property(strong, nonatomic) NSString *addressString;
+
 @end

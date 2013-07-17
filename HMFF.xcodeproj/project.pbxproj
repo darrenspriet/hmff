@@ -47,6 +47,8 @@
 		E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1108171604A6006A52EF /* TwitterImage@2x.png */; };
 		E0537DA51720C896000D4AB8 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0537DA31720C896000D4AB8 /* forwardButton.png */; };
 		E0537DA61720C896000D4AB8 /* forwardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0537DA41720C896000D4AB8 /* forwardButton@2x.png */; };
+		E0860D6A17975A1700D9C172 /* hmffRedLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0860D6817975A1700D9C172 /* hmffRedLogo@2x.png */; };
+		E0860D6B17975A1700D9C172 /* hmffRedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0860D6917975A1700D9C172 /* hmffRedLogo.png */; };
 		E08919DA1784498F006FD6D0 /* HMThirdTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08919D91784498F006FD6D0 /* HMThirdTableViewController.m */; };
 		E08919DD17844998006FD6D0 /* HMFourthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08919DC17844998006FD6D0 /* HMFourthTableViewController.m */; };
 		E08919E0178449A3006FD6D0 /* HMFifthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08919DF178449A3006FD6D0 /* HMFifthTableViewController.m */; };
@@ -113,6 +115,12 @@
 		E0CFFCE6177F2CE100D484E1 /* band5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CFFCDA177F2CE100D484E1 /* band5@2x.png */; };
 		E0CFFCEB177F2FCA00D484E1 /* band6.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CFFCE9177F2FCA00D484E1 /* band6.png */; };
 		E0CFFCEC177F2FCA00D484E1 /* band6@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0CFFCEA177F2FCA00D484E1 /* band6@2x.png */; };
+		E0D09CB21792498100BA6A11 /* payPal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D09CB01792498100BA6A11 /* payPal@2x.png */; };
+		E0D09CB31792498100BA6A11 /* payPal.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D09CB11792498100BA6A11 /* payPal.png */; };
+		E0D09CB61794B4A000BA6A11 /* sonicBids@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D09CB41794B4A000BA6A11 /* sonicBids@2x.png */; };
+		E0D09CB71794B4A000BA6A11 /* sonicBids.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D09CB51794B4A000BA6A11 /* sonicBids.png */; };
+		E0D09CB9179572BB00BA6A11 /* blackImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D09CB8179572BB00BA6A11 /* blackImage.png */; };
+		E0D09CBC179588EA00BA6A11 /* HMDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D09CBB179588E900BA6A11 /* HMDetailsViewController.m */; };
 		E0D4E7CB170086A9002AC1E4 /* HMCoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */; };
 		E0D7B5BA178D095C000C2EC6 /* Following@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7B5B8178D095C000C2EC6 /* Following@2x.png */; };
 		E0D7B5BB178D095C000C2EC6 /* Following.png in Resources */ = {isa = PBXBuildFile; fileRef = E0D7B5B9178D095C000C2EC6 /* Following.png */; };
@@ -123,7 +131,6 @@
 		E0D8D8D51720DB5200752A29 /* HMVenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D8D8D41720DB5200752A29 /* HMVenueCell.m */; };
 		E0DCB6C81787D13E00A538FC /* Twitter_Follow_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DCB6C31787D13E00A538FC /* Twitter_Follow_1x.png */; };
 		E0DCB6C91787D13E00A538FC /* Twitter_Follow_1x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DCB6C41787D13E00A538FC /* Twitter_Follow_1x@2x.png */; };
-		E0EAC32F178E5F740041B813 /* sonicbidtest.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EAC32E178E5F740041B813 /* sonicbidtest.png */; };
 		E0EB5EB2171447E900C444CE /* HMNewsFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */; };
 		E0EB5EB51714598500C444CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB31714596A00C444CE /* MessageUI.framework */; };
 		E0EB5EBA17145A7000C444CE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB617145A5C00C444CE /* Social.framework */; };
@@ -228,6 +235,8 @@
 		E04B1108171604A6006A52EF /* TwitterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterImage@2x.png"; sourceTree = "<group>"; };
 		E0537DA31720C896000D4AB8 /* forwardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardButton.png; sourceTree = "<group>"; };
 		E0537DA41720C896000D4AB8 /* forwardButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forwardButton@2x.png"; sourceTree = "<group>"; };
+		E0860D6817975A1700D9C172 /* hmffRedLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hmffRedLogo@2x.png"; sourceTree = "<group>"; };
+		E0860D6917975A1700D9C172 /* hmffRedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffRedLogo.png; sourceTree = "<group>"; };
 		E08919D81784498F006FD6D0 /* HMThirdTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMThirdTableViewController.h; sourceTree = "<group>"; };
 		E08919D91784498F006FD6D0 /* HMThirdTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMThirdTableViewController.m; sourceTree = "<group>"; };
 		E08919DB17844998006FD6D0 /* HMFourthTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFourthTableViewController.h; sourceTree = "<group>"; };
@@ -322,6 +331,13 @@
 		E0CFFCDA177F2CE100D484E1 /* band5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "band5@2x.png"; sourceTree = "<group>"; };
 		E0CFFCE9177F2FCA00D484E1 /* band6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = band6.png; sourceTree = "<group>"; };
 		E0CFFCEA177F2FCA00D484E1 /* band6@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "band6@2x.png"; sourceTree = "<group>"; };
+		E0D09CB01792498100BA6A11 /* payPal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "payPal@2x.png"; sourceTree = "<group>"; };
+		E0D09CB11792498100BA6A11 /* payPal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = payPal.png; sourceTree = "<group>"; };
+		E0D09CB41794B4A000BA6A11 /* sonicBids@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sonicBids@2x.png"; sourceTree = "<group>"; };
+		E0D09CB51794B4A000BA6A11 /* sonicBids.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sonicBids.png; sourceTree = "<group>"; };
+		E0D09CB8179572BB00BA6A11 /* blackImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackImage.png; sourceTree = "<group>"; };
+		E0D09CBA179588E900BA6A11 /* HMDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMDetailsViewController.h; sourceTree = "<group>"; };
+		E0D09CBB179588E900BA6A11 /* HMDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailsViewController.m; sourceTree = "<group>"; };
 		E0D4E7C9170086A9002AC1E4 /* HMCoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMCoreDataHelper.h; sourceTree = "<group>"; };
 		E0D4E7CA170086A9002AC1E4 /* HMCoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMCoreDataHelper.m; sourceTree = "<group>"; };
 		E0D7B5B8178D095C000C2EC6 /* Following@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Following@2x.png"; sourceTree = "<group>"; };
@@ -339,7 +355,6 @@
 		E0D8D8D41720DB5200752A29 /* HMVenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMVenueCell.m; sourceTree = "<group>"; };
 		E0DCB6C31787D13E00A538FC /* Twitter_Follow_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Twitter_Follow_1x.png; path = "twitter buttons/Twitter_Follow_1x.png"; sourceTree = "<group>"; };
 		E0DCB6C41787D13E00A538FC /* Twitter_Follow_1x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Twitter_Follow_1x@2x.png"; path = "twitter buttons/Twitter_Follow_1x@2x.png"; sourceTree = "<group>"; };
-		E0EAC32E178E5F740041B813 /* sonicbidtest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sonicbidtest.png; sourceTree = "<group>"; };
 		E0EB5EB0171447E900C444CE /* HMNewsFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedCell.h; sourceTree = "<group>"; };
 		E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedCell.m; sourceTree = "<group>"; };
 		E0EB5EB31714596A00C444CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -637,6 +652,8 @@
 				E0D7B5CA178D1DEB000C2EC6 /* HMSubmitBandViewController.m */,
 				E0D7B5CC178D1DFE000C2EC6 /* HMSubmitVideoViewController.h */,
 				E0D7B5CD178D1DFE000C2EC6 /* HMSubmitVideoViewController.m */,
+				E0D09CBA179588E900BA6A11 /* HMDetailsViewController.h */,
+				E0D09CBB179588E900BA6A11 /* HMDetailsViewController.m */,
 				E00E0A08170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.h */,
 				E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */,
 				E02CC3BB173C611F008C10FF /* HMPhotoCollectionViewController.h */,
@@ -835,7 +852,13 @@
 		E0CFFCD0177F2CCE00D484E1 /* BackGround Images */ = {
 			isa = PBXGroup;
 			children = (
-				E0EAC32E178E5F740041B813 /* sonicbidtest.png */,
+				E0860D6817975A1700D9C172 /* hmffRedLogo@2x.png */,
+				E0860D6917975A1700D9C172 /* hmffRedLogo.png */,
+				E0D09CB8179572BB00BA6A11 /* blackImage.png */,
+				E0D09CB41794B4A000BA6A11 /* sonicBids@2x.png */,
+				E0D09CB51794B4A000BA6A11 /* sonicBids.png */,
+				E0D09CB01792498100BA6A11 /* payPal@2x.png */,
+				E0D09CB11792498100BA6A11 /* payPal.png */,
 				E0CFFCD1177F2CE100D484E1 /* band1.png */,
 				E0CFFCD2177F2CE100D484E1 /* band1@2x.png */,
 				E0CFFCD3177F2CE100D484E1 /* band2.png */,
@@ -991,7 +1014,13 @@
 				E09CB2E2178B79D6000A87F6 /* Tweet.png in Resources */,
 				E0D7B5BA178D095C000C2EC6 /* Following@2x.png in Resources */,
 				E0D7B5BB178D095C000C2EC6 /* Following.png in Resources */,
-				E0EAC32F178E5F740041B813 /* sonicbidtest.png in Resources */,
+				E0D09CB21792498100BA6A11 /* payPal@2x.png in Resources */,
+				E0D09CB31792498100BA6A11 /* payPal.png in Resources */,
+				E0D09CB61794B4A000BA6A11 /* sonicBids@2x.png in Resources */,
+				E0D09CB71794B4A000BA6A11 /* sonicBids.png in Resources */,
+				E0D09CB9179572BB00BA6A11 /* blackImage.png in Resources */,
+				E0860D6A17975A1700D9C172 /* hmffRedLogo@2x.png in Resources */,
+				E0860D6B17975A1700D9C172 /* hmffRedLogo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1083,6 +1112,7 @@
 				E0D7B5C8178D1BEF000C2EC6 /* HMVideoCell.m in Sources */,
 				E0D7B5CB178D1DEB000C2EC6 /* HMSubmitBandViewController.m in Sources */,
 				E0D7B5CE178D1DFF000C2EC6 /* HMSubmitVideoViewController.m in Sources */,
+				E0D09CBC179588EA00BA6A11 /* HMDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,7 +47,15 @@
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This page requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
         [alert show];
     }
+}
+-(BOOL)shouldAutorotate{
     
+    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
 }
 
 -(void)viewDidAppear:(BOOL)animated{
@@ -69,8 +77,14 @@
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     
+    
     //Sets the proper buttons to enabled or not
     [self updateButtons];
+}
+
+
+- (UIViewController *) documentInteractionControllerViewControllerForPreview: (UIDocumentInteractionController *) controller {
+    return self;
 }
 
 - (void)saveCookies
@@ -96,13 +110,27 @@
 
 #pragma mark - ShareButton
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender{
+    if (self.isPDF) {
+        NSLog(@"It is pdf file.");
+        NSString *resourceDocPath = [[NSString alloc] initWithString:[[[[NSBundle mainBundle]  resourcePath] stringByDeletingLastPathComponent] stringByAppendingPathComponent:@"Documents"]];
+        NSString *filePath = [resourceDocPath stringByAppendingPathComponent:@"EntryForm.pdf"];
+        NSLog(@"what is filepath url %@", filePath);
+        [self.pdfData writeToFile:filePath atomically:YES];
+        
+        NSURL *url = [NSURL fileURLWithPath:filePath];
+    self.docController = [UIDocumentInteractionController interactionControllerWithURL:url];
+    
+    [self.docController setDelegate:self];
+    
+    [self.docController presentOpenInMenuFromRect:CGRectZero inView:self.view animated:YES];
+    }else{
     NSLog(@"Share button Pressed");
     if(NSClassFromString(@"UIActivityViewController")!=nil){
         [self showActivityViewController];
     }else {
         [self showActionSheet];
     }
-    
+    }
 }
 
 -(void)showActivityViewController
@@ -206,7 +234,60 @@
     [self.activityIndicator stopAnimating];
     [self updateTitle:webView];
     [self updateButtons];
+    
+
+        
+    
+    
 }
+
+
+//- set up the UIDocumentInteraction controller and set its delegate to self so we can handle the callback events
+- (UIDocumentInteractionController *) setupControllerWithURL:(NSURL *)fileURL
+                                               usingDelegate:(id <UIDocumentInteractionControllerDelegate>)         interactionDelegate {
+    
+    UIDocumentInteractionController *interactionController =
+    [UIDocumentInteractionController interactionControllerWithURL:fileURL];
+    interactionController.delegate = interactionDelegate;
+    NSLog(@"setupcontroller called");
+    return interactionController;
+}
+
+- (void)documentInteractionController:(UIDocumentInteractionController *)controller willBeginSendingToApplication:(NSString *)application{
+    NSLog(@"will begin sending to application %@", application);
+}
+
+- (void)documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application{
+    NSLog(@"did end sending to application %@", application);
+
+    
+}
+
+- (void)documentInteractionControllerDidDismissOpenInMenu:(UIDocumentInteractionController *)controller{
+    NSLog(@"did dismiss ");
+    
+}
+
+
+
+//- the key instance method here is the presentOptionsMenuFromBarBUttonItem
+//- it is assumed here that there is a BarButtonItem called _btnActions
+//- (void)showOptionsMenu
+//{
+//    NSURL *fileURL = [NSURL fileURLWithPath:@"THE_FILE_URL_PATH"];
+//    docController = [self setupControllerWithURL:fileURL
+//                                   usingDelegate:self];
+//    bool didShow = [docController presentOptionsMenuFromBarButtonItem:_btnActions
+//                                                             animated:YES];
+//    if (!didShow) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
+//                                                        message:@"Sorry. The appropriate apps are not found on this device."
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"OK"
+//                                              otherButtonTitles: nil];
+//        [alert show];
+//    }
+//}
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self updateButtons];
