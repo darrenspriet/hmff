@@ -45,7 +45,7 @@
     NSLog(@"VIEW DID APPEAR");
     
     // [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
-    [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+   // [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     
 }
 
@@ -125,7 +125,7 @@
     UIActivityViewController *avc = [[UIActivityViewController alloc]
                                      initWithActivityItems:activityItems
                                      applicationActivities:nil];
-    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:34.0/255.0 green:97.0/255.0 blue:221.0/255.0 alpha:1]];
+  //  [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:34.0/255.0 green:97.0/255.0 blue:221.0/255.0 alpha:1]];
     
     //-- define the activity view completion handler
     avc.completionHandler = ^(NSString *activityType, BOOL completed){
@@ -133,16 +133,16 @@
         if (completed) {
             
             NSLog(@"Selected activity was performed.");
-            [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+           // [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
             
         } else {
             if (activityType == NULL) {
                 NSLog(@"User dismissed the view controller without making a selection.");
-                [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+               // [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
                 
             } else {
                 NSLog(@"Activity was not performed.");
-                [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+               // [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
                 
             }
         }
@@ -195,7 +195,7 @@
     
     //activity Indicator in Navigation Bar
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    [self.activityIndicator setColor:[UIColor blackColor]];
+    [self.activityIndicator setColor:[UIColor whiteColor]];
     UIBarButtonItem * barButton =
     [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicator];
     
@@ -244,7 +244,7 @@
     CGRect frame = CGRectMake(62, 0, [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20.0]].width, 44);
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     [label setBackgroundColor:[UIColor clearColor]];
-    [label setTextColor:[UIColor blackColor]];
+    [label setTextColor:[UIColor whiteColor]];
     [label setFont:[UIFont boldSystemFontOfSize:17.0]];
     [self.navigationItem setTitleView:label];
     
@@ -266,7 +266,7 @@
         titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
         [titleLabel setBackgroundColor:[UIColor clearColor]];
         [titleLabel setFont:[UIFont boldSystemFontOfSize:20.0f]];
-        [titleLabel setTextColor:[UIColor blackColor]];
+        [titleLabel setTextColor:[UIColor whiteColor]];
         [self.navigationItem setTitleView:titleLabel];
     }
     [titleLabel setText:title];

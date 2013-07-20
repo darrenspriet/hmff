@@ -26,8 +26,6 @@
 -(void)viewDidAppear:(BOOL)animated{
     // this will hide the Tabbar
     [self.navigationController.navigationBar setHidden:NO];
-    [self.navigationController.navigationBar setTintColor:[UIColor whiteColor]];
-
 }
 -(BOOL)shouldAutorotate{
     
@@ -51,19 +49,19 @@
 
 }
 
--(void)setTitle:(NSString *)title{
-    [super setTitle:title];
-    UILabel *titleLabel = (UILabel *)self.navigationItem.titleView;
-    if (!titleLabel) {
-        titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        [titleLabel setBackgroundColor:[UIColor clearColor]];
-        [titleLabel setFont:[UIFont boldSystemFontOfSize:19.0f]];
-        [titleLabel setTextColor:[UIColor blackColor]];
-        [self.navigationItem setTitleView:titleLabel];
-    }
-    [titleLabel setText:title];
-    [titleLabel sizeToFit];
-}
+//-(void)setTitle:(NSString *)title{
+//    [super setTitle:title];
+//    UILabel *titleLabel = (UILabel *)self.navigationItem.titleView;
+//    if (!titleLabel) {
+//        titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+//        [titleLabel setBackgroundColor:[UIColor clearColor]];
+//        [titleLabel setFont:[UIFont boldSystemFontOfSize:19.0f]];
+//        [titleLabel setTextColor:[UIColor blackColor]];
+//        [self.navigationItem setTitleView:titleLabel];
+//    }
+//    [titleLabel setText:title];
+//    [titleLabel sizeToFit];
+//}
 
 - (void)didReceiveMemoryWarning
 {
@@ -77,7 +75,7 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 20;
+    return [self.smallPhotos count];
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{

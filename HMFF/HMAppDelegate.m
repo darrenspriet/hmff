@@ -17,7 +17,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
 
     //Sets all of the Bar Button Items in the entire app to black
-    [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+    //[[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
     
     //Set the status bar style to blackopaque
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];

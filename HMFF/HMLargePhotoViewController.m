@@ -28,7 +28,7 @@
     NSLog(@"VIEW DID APPEAR");
    
    // [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
-       [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+     //  [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
    // [self hideBars];
    
     
@@ -46,7 +46,7 @@
 - (void)viewDidLoad{
     NSLog(@"VIEW DID LOAD");
     [super viewDidLoad];
-    [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
+//[self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
     self.imageView.image = self.largePhotos;
     [self hideBars];
 	// Do any additional setup after loading the view.

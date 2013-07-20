@@ -47,33 +47,33 @@
     switch (indexPath.row) {
         case 0:{
             HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"submitBandCell"];
-            [cell.title setText:@"Submit a Band"];
+            [cell.title setText:@"Band Submission"];
             return cell;
             break;
         }
         case 1:{
             HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"submitVideoCell"];
-            [cell.title setText:@"Submit a Film"];
+            [cell.title setText:@"Film Submission"];
             return cell;
             break;
         }
-        case 2:{
-            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"moreCell"];
-            [cell.title setText:@"Go to the Website"];
-            return cell;
-            break;
-        }
-        case 3:{
-            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"photoCell"];
 
+        case 2:{
+            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"photoCell"];
             [cell.title setText:@"Photos"];
             return cell;
             break;
         }
-        default:{
+        case 3:{
             HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"moreVideoCell"];
 
             [cell.title setText:@"Videos"];
+            return cell;
+            break;
+        }
+        default :{
+            HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"moreCell"];
+            [cell.title setText:@"About Us"];
             return cell;
             break;
         }
@@ -89,23 +89,17 @@
 
 #pragma Prepare for Segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    //NSIndexPath *indexPath=[self.tableView indexPathForSelectedRow];
 
-    HMMoreWebBrowserViewController *webBrowser = segue.destinationViewController;
-    //Calls the submit a band segue
-    
-
-    if ([segue.identifier isEqualToString:@"website"]){
-                webBrowser.passedURL=@"http://www.hmff.com";
-                webBrowser.isPDF=NO;
+    if ([segue.identifier isEqualToString:@"moreSegue"]){
+        NSLog(@"More Segue Picked");
     }
     else if([segue.identifier isEqualToString:@"photoSegue"]){
         HMPhotoCollectionViewController *photoController = segue.destinationViewController;
-        [photoController setTitle:@"HMFF Flickr Photos"];
+        //[photoController setTitle:@"HMFF Flickr Photos"];
     }
     else if([segue.identifier isEqualToString:@"moreVideoSegue"]){
         HMVideosTableViewController *videoController = segue.destinationViewController;
-        [videoController setTitle:@"HMFF YouTube Videos"];
+       // [videoController setTitle:@"HMFF YouTube Videos"];
     }
     
 }

@@ -40,15 +40,15 @@
     [self.dateForEvent setText:[self.date objectAtIndex:0]];
     [self imagesForButton:@"" andFrontImage:@"forwardButton.png"];
 
-    UIImage *image = [UIImage imageNamed:@"HMFFlogo.png"];
+    UIImage *image = [UIImage imageNamed:@"hmffLogoIcon4.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
-    UIImage *barImage = [UIImage imageNamed:@"ticketButton.png"];
-    UIImage *barImageSelected = [UIImage imageNamed:@"ticketButtonSelected.png"];
+    UIImage *barImage = [UIImage imageNamed:@"ticketsButton.png"];
+    //UIImage *barImageSelected = [UIImage imageNamed:@"ticketsButton.png"];
 
     CGRect frameImage = CGRectMake(0, 0, barImage.size.width, barImage.size.height);
     UIButton *rightBarButtton = [[UIButton alloc] initWithFrame:frameImage];
     [rightBarButtton setBackgroundImage:barImage forState:UIControlStateNormal];
-    [rightBarButtton setBackgroundImage:barImageSelected forState:UIControlStateHighlighted];
+    //[rightBarButtton setBackgroundImage:barImageSelected forState:UIControlStateHighlighted];
     
     
     [rightBarButtton addTarget:self action:@selector(buyTicketPressed:) forControlEvents:UIControlEventTouchUpInside];

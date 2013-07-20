@@ -20,3 +20,7 @@ White Photo Icon  in More Table
 
 White Video Icon in More Table
 <a href="http://thenounproject.com/noun/video/#icon-No19424" target="_blank">Video</a> designed by <a href="http://thenounproject.com/inpixelitrust" target="_blank">StÈphanie Walter</a> from The Noun Project
+
+White Camera Icon in More Table
+<a href="http://thenounproject.com/noun/video-camera/#icon-No12189" target="_blank">Video Camera</a> designed by <a href="http://thenounproject.com/timboelaars" target="_blank">Tim Boelaars</a> from The Noun Project
+

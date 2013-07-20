@@ -63,14 +63,12 @@
     }
 
     //Image for the Navigation Bar
-    UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
+    UIImage *image = [UIImage imageNamed:@"hmffLogoIcon4.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     //Image for the Normal bar button
-    UIImage *barImage = [UIImage imageNamed:@"ticketButton.png"];
-    //Image for the Selected bar button
-    UIImage *barImageSelected = [UIImage imageNamed:@"ticketButtonSelected.png"];
+    UIImage *barImage = [UIImage imageNamed:@"ticketsButton.png"];
+    //UIImage *barImageSelected = [UIImage imageNamed:@"ticketsButton.png"];
     
-    //Frame size of the image so the button is that size
     CGRect frameImage = CGRectMake(0, 0, barImage.size.width, barImage.size.height);
     
     //Button with the frame size above
@@ -78,7 +76,7 @@
     
     //Setting the Background for the Normal and Selected image
     [rightBarButtton setBackgroundImage:barImage forState:UIControlStateNormal];
-    [rightBarButtton setBackgroundImage:barImageSelected forState:UIControlStateHighlighted];
+    //[rightBarButtton setBackgroundImage:barImageSelected forState:UIControlStateHighlighted];
     
     //Setting the button so if it is tapped to call "buyTicketPressed:
     [rightBarButtton addTarget:self action:@selector(buyTicketPressed:) forControlEvents:UIControlEventTouchUpInside];
