@@ -112,31 +112,9 @@
 
 }
 
-#pragma WEB VIEW DELEGATE
 
-- (void)webViewDidStartLoad:(UIWebView *)webView{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    //activity Indicator in Navigation Bar
-    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
-    [self.activityIndicator setColor:[UIColor whiteColor]];
-    UIBarButtonItem * barButton =
-    [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicator];
-    [[self navigationItem] setRightBarButtonItem:barButton];
-    [self.activityIndicator startAnimating];
-}
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    [webView setBackgroundColor:[UIColor blackColor]];
-    [webView setOpaque:YES];
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [self.activityIndicator stopAnimating];
-}
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    return YES;
-}
 
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
+
 
 /*
 // Override to support conditional editing of the table view.

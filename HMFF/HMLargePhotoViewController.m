@@ -78,7 +78,7 @@
     UIActivityViewController *avc = [[UIActivityViewController alloc]
                                      initWithActivityItems:activityItems
                                      applicationActivities:nil];
-    [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:34.0/255.0 green:97.0/255.0 blue:221.0/255.0 alpha:1]];
+  //  [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:34.0/255.0 green:97.0/255.0 blue:221.0/255.0 alpha:1]];
     
     //-- define the activity view completion handler
     avc.completionHandler = ^(NSString *activityType, BOOL completed){
@@ -86,16 +86,16 @@
         if (completed) {
 
             NSLog(@"Selected activity was performed.");
-            [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+          //  [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
 
         } else {
             if (activityType == NULL) {
                 NSLog(@"User dismissed the view controller without making a selection.");
-                [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+              //  [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
 
             } else {
                 NSLog(@"Activity was not performed.");
-                [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+              //  [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
 
             }
         }

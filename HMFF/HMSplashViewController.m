@@ -27,7 +27,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     NSLog(@"view will appear");
-    [self.largeActivitiyIndicator startAnimating];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
     self.internetReachable = [Reachability reachabilityForInternetConnection];
@@ -121,13 +120,45 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.splashImage setAlpha:0.0f];
+    [self.largeActivitiyIndicator setAlpha:0.0f];
+    [self.largeActivitiyIndicator startAnimating];
+
+    [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
+    self.hmffImage.center = CGPointMake(165, 245);
+
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            [self.splashImage setImage:[UIImage imageNamed:@"Default-568h@2x.png"]];
+            
+            [UIView transitionWithView:self.hmffImage
+                              duration:2.5f
+                               options:UIViewAnimationOptionCurveEaseIn
+                            animations:^(void) {
+                                self.hmffImage.frame = CGRectMake(165.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
+                                [self.largeActivitiyIndicator setAlpha:1.0f];
+
+                            }
+                            completion:^(BOOL finished) {
+                                
+                            }];
+//            [UIView animateWithDuration:2.0f animations:^{
+//                self.hmffImage.frame = CGRectMake(164.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
+//                [self.largeActivitiyIndicator setAlpha:1.0f];
+//                
+//            }];
+            
+            [UIView animateWithDuration:2.0f animations:^{
+                
+                [self.splashImage setAlpha:.3f];
+            }];
+
+           
+
+           // [self.splashImage setImage:[UIImage imageNamed:@"Default-568h@2x.png"]];
         } else {
-            [self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
+            //[self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
         }
     } else {
         /*Do iPad stuff here.*/
@@ -140,6 +171,7 @@
 -(void)loadUpApp{
     [self.cityLabel setAlpha:0.0f];
     [self.dateLabel setAlpha:0.0f];
+
     
     
     NSLog(@"get parse dates started");

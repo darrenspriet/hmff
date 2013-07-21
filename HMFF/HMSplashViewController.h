@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivitiyIndicator;
 
 -(void) checkNetworkStatus:(NSNotification *)notice;
+@property (weak, nonatomic) IBOutlet UIImageView *hmffImage;
 
 @property (strong, nonatomic) Reachability* internetReachable;
 @property (strong, nonatomic) Reachability* hostReachable;

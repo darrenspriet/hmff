@@ -205,6 +205,7 @@
 
 #pragma WEB VIEW DELEGATE
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    
     return YES;
 }
 
@@ -234,13 +235,12 @@
     [self.activityIndicator stopAnimating];
     [self updateTitle:webView];
     [self updateButtons];
-    
-
-        
-    
-    
 }
 
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    [self updateButtons];
+}
 
 //- set up the UIDocumentInteraction controller and set its delegate to self so we can handle the callback events
 - (UIDocumentInteractionController *) setupControllerWithURL:(NSURL *)fileURL
@@ -259,7 +259,7 @@
 
 - (void)documentInteractionController:(UIDocumentInteractionController *)controller didEndSendingToApplication:(NSString *)application{
     NSLog(@"did end sending to application %@", application);
-
+    
     
 }
 
@@ -268,30 +268,6 @@
     
 }
 
-
-
-//- the key instance method here is the presentOptionsMenuFromBarBUttonItem
-//- it is assumed here that there is a BarButtonItem called _btnActions
-//- (void)showOptionsMenu
-//{
-//    NSURL *fileURL = [NSURL fileURLWithPath:@"THE_FILE_URL_PATH"];
-//    docController = [self setupControllerWithURL:fileURL
-//                                   usingDelegate:self];
-//    bool didShow = [docController presentOptionsMenuFromBarButtonItem:_btnActions
-//                                                             animated:YES];
-//    if (!didShow) {
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-//                                                        message:@"Sorry. The appropriate apps are not found on this device."
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"OK"
-//                                              otherButtonTitles: nil];
-//        [alert show];
-//    }
-//}
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    [self updateButtons];
-}
 
 - (void)updateButtons{
     
