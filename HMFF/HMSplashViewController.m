@@ -97,7 +97,7 @@
     }
 }
 -(void)showLabels{
-    
+    NSLog(@"called show labels");
     
     [UIView animateWithDuration:.5f animations:^{
 
@@ -126,6 +126,7 @@
 
     [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
     self.hmffImage.center = CGPointMake(165, 245);
+    
 
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
@@ -136,12 +137,13 @@
                               duration:2.5f
                                options:UIViewAnimationOptionCurveEaseIn
                             animations:^(void) {
+                               
                                 self.hmffImage.frame = CGRectMake(165.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
                                 [self.largeActivitiyIndicator setAlpha:1.0f];
 
                             }
                             completion:^(BOOL finished) {
-                                
+                                NSLog(@"called finish loading");
                             }];
 //            [UIView animateWithDuration:2.0f animations:^{
 //                self.hmffImage.frame = CGRectMake(164.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);

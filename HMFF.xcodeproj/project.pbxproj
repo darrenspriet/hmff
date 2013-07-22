@@ -149,6 +149,8 @@
 		E0F29F9F17826D24004D3DEA /* HMMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F29F9E17826D24004D3DEA /* HMMoreCell.m */; };
 		E0F44B70179B9F1100A14558 /* openingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F44B6F179B9F1100A14558 /* openingImage.png */; };
 		E0F44B7A179BB96E00A14558 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F44B79179BB96E00A14558 /* Default-568h@2x.png */; };
+		E0F44BB5179CA4C100A14558 /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = E0F44BB3179CA4C100A14558 /* dsym_upload.sh */; };
+		E0F44BB6179CA4C100A14558 /* libCrittercism_v4_0_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F44BB4179CA4C100A14558 /* libCrittercism_v4_0_2.a */; };
 		E0F453621715C85A000F97D0 /* HMSocialWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F453611715C85A000F97D0 /* HMSocialWebBrowserViewController.m */; };
 		E0F4538C1715D717000F97D0 /* FacebookImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F453881715D717000F97D0 /* FacebookImage.png */; };
 		E0F4538D1715D717000F97D0 /* VimeoImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F453891715D717000F97D0 /* VimeoImage@2x.png */; };
@@ -382,6 +384,10 @@
 		E0F29F9E17826D24004D3DEA /* HMMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreCell.m; sourceTree = "<group>"; };
 		E0F44B6F179B9F1100A14558 /* openingImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openingImage.png; sourceTree = "<group>"; };
 		E0F44B79179BB96E00A14558 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		E0F44BB1179CA4C100A14558 /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
+		E0F44BB2179CA4C100A14558 /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
+		E0F44BB3179CA4C100A14558 /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
+		E0F44BB4179CA4C100A14558 /* libCrittercism_v4_0_2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_0_2.a; sourceTree = "<group>"; };
 		E0F453601715C85A000F97D0 /* HMSocialWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSocialWebBrowserViewController.h; sourceTree = "<group>"; };
 		E0F453611715C85A000F97D0 /* HMSocialWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSocialWebBrowserViewController.m; sourceTree = "<group>"; };
 		E0F453881715D717000F97D0 /* FacebookImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FacebookImage.png; sourceTree = "<group>"; };
@@ -435,6 +441,7 @@
 				E03C066316FBE667002AC531 /* CoreGraphics.framework in Frameworks */,
 				E03C066516FBE667002AC531 /* CoreData.framework in Frameworks */,
 				E0F8FE75171DE587005B3AC0 /* Parse.framework in Frameworks */,
+				E0F44BB6179CA4C100A14558 /* libCrittercism_v4_0_2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -509,6 +516,7 @@
 		E03C065D16FBE667002AC531 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E0F44BB0179CA4C100A14558 /* CrittercismSDK */,
 				E0BE898517714F68005366A8 /* STTwitter */,
 				E0F8FE81171DE68E005B3AC0 /* libz.1.1.3.dylib */,
 				E0F8FE7F171DE683005B3AC0 /* libsqlite3.dylib */,
@@ -890,6 +898,18 @@
 			name = "BackGround Images";
 			sourceTree = "<group>";
 		};
+		E0F44BB0179CA4C100A14558 /* CrittercismSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E0F44BB1179CA4C100A14558 /* Crittercism.h */,
+				E0F44BB2179CA4C100A14558 /* CrittercismDelegate.h */,
+				E0F44BB3179CA4C100A14558 /* dsym_upload.sh */,
+				E0F44BB4179CA4C100A14558 /* libCrittercism_v4_0_2.a */,
+			);
+			name = CrittercismSDK;
+			path = STTwitter/Vendor/CrittercismSDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1041,6 +1061,7 @@
 				E08891E6179A38140018FFD5 /* contactButton@2x.png in Resources */,
 				E0F44B70179B9F1100A14558 /* openingImage.png in Resources */,
 				E0F44B7A179BB96E00A14558 /* Default-568h@2x.png in Resources */,
+				E0F44BB5179CA4C100A14558 /* dsym_upload.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1243,6 +1264,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HMFF/HMFF-Prefix.pch";
 				INFOPLIST_FILE = "HMFF/HMFF-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/STTwitter/Crittercism_v4_0_2/CrittercismSDK\"",
+					"\"$(SRCROOT)/STTwitter/Vendor/CrittercismSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1258,6 +1284,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HMFF/HMFF-Prefix.pch";
 				INFOPLIST_FILE = "HMFF/HMFF-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/STTwitter/Crittercism_v4_0_2/CrittercismSDK\"",
+					"\"$(SRCROOT)/STTwitter/Vendor/CrittercismSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
