@@ -113,9 +113,9 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            [self.noteIcon setImage:[UIImage imageNamed:@"hmffRedLogo@2x.png"]];
+            [self.noteIcon setImage:[UIImage imageNamed:@"filmSubmit@2x.png"]];
         } else {
-            // [self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
+            [self.noteIcon setImage:nil];
         }
     } else {
         /*Do iPad stuff here.*/

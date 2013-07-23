@@ -33,6 +33,8 @@
 }
 - (void)viewDidLoad{
     [super viewDidLoad];
+     
+    [self.navigationItem setTitle:@"Twitter"];
     [self.controllerView setAlpha:0.3f];
     [self.controllerView setBackgroundColor:[UIColor blackColor]];
 
@@ -80,6 +82,7 @@
             });
         });
     }
+    
 }
 
 @end

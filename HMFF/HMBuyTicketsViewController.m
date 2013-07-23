@@ -42,6 +42,16 @@
     
 }
 
+-(BOOL)shouldAutorotate{
+    
+    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+
 -(void) viewWillAppear:(BOOL)animated {
     [self loadCookies];
     [super viewWillAppear:animated];
@@ -63,6 +73,30 @@
 - (void)viewDidLoad{
     
     [super viewDidLoad];
+    
+    if ([self.pagePushed isEqualToString:@"Schedule"]) {
+        [self.backButton setTitle :@"Schedule" ];
+
+    }
+    else if ([self.pagePushed isEqualToString:@"News"]) {
+        [self.backButton setTitle:@"News"];
+        
+    }
+    else if ([self.pagePushed isEqualToString:@"Twitter"]) {
+       [self.backButton setTitle :@"Twitter" ];
+
+        
+    }
+    else if ([self.pagePushed isEqualToString:@"Social"]) {
+        [self.backButton setTitle :@"Social" ];
+
+        
+    }
+    else if ([self.pagePushed isEqualToString:@"More"]) {
+        [self.backButton setTitle :@"More" ];
+
+        
+    }
     [self.webView setBackgroundColor:[UIColor clearColor]];
     [self.webView setOpaque:NO];
     //Sets up the Web page and loads it

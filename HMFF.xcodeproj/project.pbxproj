@@ -36,6 +36,10 @@
 		E03C069016FBE667002AC531 /* HMFFTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E03C068F16FBE667002AC531 /* HMFFTests.m */; };
 		E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E03C069916FBE6A4002AC531 /* Storyboard.storyboard */; };
 		E04144011723770700DB5B4E /* HMBandWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E04144001723770700DB5B4E /* HMBandWebBrowserViewController.m */; };
+		E0473D06179ECD7900BBE3F5 /* filmSubmit.png in Resources */ = {isa = PBXBuildFile; fileRef = E0473D02179ECD7900BBE3F5 /* filmSubmit.png */; };
+		E0473D07179ECD7900BBE3F5 /* filmSubmit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0473D03179ECD7900BBE3F5 /* filmSubmit@2x.png */; };
+		E0473D08179ECD7900BBE3F5 /* musicSubmit@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0473D04179ECD7900BBE3F5 /* musicSubmit@2x.png */; };
+		E0473D09179ECD7900BBE3F5 /* musicSubmit.png in Resources */ = {isa = PBXBuildFile; fileRef = E0473D05179ECD7900BBE3F5 /* musicSubmit.png */; };
 		E048DF4B1762EA7D00D7232E /* HMBandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E048DF4A1762EA7D00D7232E /* HMBandCell.m */; };
 		E04B1109171604A6006A52EF /* TwitterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1107171604A6006A52EF /* TwitterImage.png */; };
 		E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1108171604A6006A52EF /* TwitterImage@2x.png */; };
@@ -71,7 +75,6 @@
 		E08919EC17844A1B006FD6D0 /* HMNInthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08919EB17844A1B006FD6D0 /* HMNInthTableViewController.m */; };
 		E08919EF17844A2B006FD6D0 /* HMTenthTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E08919EE17844A2B006FD6D0 /* HMTenthTableViewController.m */; };
 		E0945286177D2CAE002ADE94 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = E0945285177D2CAE002ADE94 /* Reachability.m */; };
-		E09E27091777E82500B0E4CB /* HMPagedScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09E27081777E82500B0E4CB /* HMPagedScrollViewController.m */; };
 		E09E2714177913F200B0E4CB /* chevron@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E09E2712177913F200B0E4CB /* chevron@2x.png */; };
 		E09E2715177913F200B0E4CB /* chevron.png in Resources */ = {isa = PBXBuildFile; fileRef = E09E2713177913F200B0E4CB /* chevron.png */; };
 		E09FCFCB171851CF00DFD7C9 /* HMFirstTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFCA171851CF00DFD7C9 /* HMFirstTableViewController.m */; };
@@ -231,6 +234,10 @@
 		E03C069916FBE6A4002AC531 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		E04143FF1723770600DB5B4E /* HMBandWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBandWebBrowserViewController.h; sourceTree = "<group>"; };
 		E04144001723770700DB5B4E /* HMBandWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBandWebBrowserViewController.m; sourceTree = "<group>"; };
+		E0473D02179ECD7900BBE3F5 /* filmSubmit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filmSubmit.png; sourceTree = "<group>"; };
+		E0473D03179ECD7900BBE3F5 /* filmSubmit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filmSubmit@2x.png"; sourceTree = "<group>"; };
+		E0473D04179ECD7900BBE3F5 /* musicSubmit@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "musicSubmit@2x.png"; sourceTree = "<group>"; };
+		E0473D05179ECD7900BBE3F5 /* musicSubmit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = musicSubmit.png; sourceTree = "<group>"; };
 		E048DF491762EA7D00D7232E /* HMBandCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMBandCell.h; sourceTree = "<group>"; };
 		E048DF4A1762EA7D00D7232E /* HMBandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBandCell.m; sourceTree = "<group>"; };
 		E04B1107171604A6006A52EF /* TwitterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterImage.png; sourceTree = "<group>"; };
@@ -277,8 +284,6 @@
 		E08919EE17844A2B006FD6D0 /* HMTenthTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTenthTableViewController.m; sourceTree = "<group>"; };
 		E0945284177D2CAE002ADE94 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		E0945285177D2CAE002ADE94 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		E09E27071777E82500B0E4CB /* HMPagedScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMPagedScrollViewController.h; sourceTree = "<group>"; };
-		E09E27081777E82500B0E4CB /* HMPagedScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMPagedScrollViewController.m; sourceTree = "<group>"; };
 		E09E2712177913F200B0E4CB /* chevron@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chevron@2x.png"; sourceTree = "<group>"; };
 		E09E2713177913F200B0E4CB /* chevron.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chevron.png; sourceTree = "<group>"; };
 		E09FCFC9171851CF00DFD7C9 /* HMFirstTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMFirstTableViewController.h; sourceTree = "<group>"; };
@@ -485,8 +490,6 @@
 				E0257D911728AA0B005D7D52 /* HMBuyTicketsViewController.m */,
 				E0B3A23A174727F000DDBF91 /* HMDataFeedManager.h */,
 				E0B3A23B174727F000DDBF91 /* HMDataFeedManager.m */,
-				E09E27071777E82500B0E4CB /* HMPagedScrollViewController.h */,
-				E09E27081777E82500B0E4CB /* HMPagedScrollViewController.m */,
 				E02E39BC177D019400D1FFD6 /* HMNavigationViewController.h */,
 				E02E39BD177D019400D1FFD6 /* HMNavigationViewController.m */,
 			);
@@ -868,6 +871,10 @@
 		E0CFFCD0177F2CCE00D484E1 /* BackGround Images */ = {
 			isa = PBXGroup;
 			children = (
+				E0473D02179ECD7900BBE3F5 /* filmSubmit.png */,
+				E0473D03179ECD7900BBE3F5 /* filmSubmit@2x.png */,
+				E0473D04179ECD7900BBE3F5 /* musicSubmit@2x.png */,
+				E0473D05179ECD7900BBE3F5 /* musicSubmit.png */,
 				E06D40901798DE07009E46E8 /* aboutUs.png */,
 				E06D40911798DE07009E46E8 /* aboutUs@2x.png */,
 				E06D40881798DADB009E46E8 /* camera.png */,
@@ -1066,6 +1073,10 @@
 				E0F44B70179B9F1100A14558 /* openingImage.png in Resources */,
 				E0F44B7A179BB96E00A14558 /* Default-568h@2x.png in Resources */,
 				E0E640EB179DE67B003C669D /* dsym_upload.sh in Resources */,
+				E0473D06179ECD7900BBE3F5 /* filmSubmit.png in Resources */,
+				E0473D07179ECD7900BBE3F5 /* filmSubmit@2x.png in Resources */,
+				E0473D08179ECD7900BBE3F5 /* musicSubmit@2x.png in Resources */,
+				E0473D09179ECD7900BBE3F5 /* musicSubmit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1141,7 +1152,6 @@
 				E0BE899A17714F68005366A8 /* STTwitterOAuth.m in Sources */,
 				E0BE899B17714F68005366A8 /* STTwitterOAuthOSX.m in Sources */,
 				E0BE899C17714F68005366A8 /* STHTTPRequest.m in Sources */,
-				E09E27091777E82500B0E4CB /* HMPagedScrollViewController.m in Sources */,
 				E02E39BE177D019400D1FFD6 /* HMNavigationViewController.m in Sources */,
 				E0CFFCB9177D2F0F00D484E1 /* Reachability.m in Sources */,
 				E0F29F9F17826D24004D3DEA /* HMMoreCell.m in Sources */,

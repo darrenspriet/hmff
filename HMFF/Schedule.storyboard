@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="njX-8h-doU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="njX-8h-doU">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -517,6 +517,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="back" destination="j8u-LB-Tnn" id="car-ca-hkl"/>
+                        <outlet property="backButton" destination="eIJ-Qo-m7e" id="sip-Xx-fSm"/>
                         <outlet property="forward" destination="nt9-dx-8UN" id="dGo-gx-k1z"/>
                         <outlet property="largeActivityIndicator" destination="GZT-7u-p76" id="bLe-wF-Q8e"/>
                         <outlet property="refresh" destination="O8b-Ok-zxg" id="9k9-J2-f46"/>
@@ -529,10 +530,10 @@
             </objects>
             <point key="canvasLocation" x="1911" y="-2531"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation View Controller-->
         <scene sceneID="ta4-fK-qaa">
             <objects>
-                <navigationController id="Gmb-vH-HOO" sceneMemberID="viewController">
+                <navigationController id="Gmb-vH-HOO" customClass="HMNavigationViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="Yxt-S2-k8L">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

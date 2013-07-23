@@ -140,6 +140,8 @@
         HMBuyTicketsViewController *buyTickets = (HMBuyTicketsViewController *)navController.topViewController;
         [buyTickets setPassedURL:@"http://www.hmff.com/?page_id=161"];
         [buyTickets setHTMLString: self.HTMLString];
+        [buyTickets setPagePushed:@"Social"];
+
 
     }
 }

@@ -69,7 +69,6 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
-    [self.navigationItem setTitle:@"Entry Form"];
 
     [self.navigationController.navigationBar.topItem setTitle :@"Back" ];
 
@@ -237,6 +236,7 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     [self.largeActivityIndicator stopAnimating];
     [self.activityIndicator stopAnimating];
+    //[self.navigationItem setTitle:@"Entry Form"];
     [self updateTitle:webView];
     [self updateButtons];
 }
@@ -292,9 +292,9 @@
     CGFloat widthOfTitleSpace = 280.0;
     
     
-    NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    //NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
     
-    [self setTitle:pageTitle];
+    [self setTitle:@"Entry Form"];
     CGRect frame = CGRectMake(62, 0, [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20.0]].width, 44);
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     [label setBackgroundColor:[UIColor clearColor]];

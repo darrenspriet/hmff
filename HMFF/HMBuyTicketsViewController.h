@@ -24,6 +24,8 @@
 @property (nonatomic, strong) NSString *passedURL;
 @property (nonatomic, strong) NSString *HTMLString;
 
+@property (nonatomic, strong) NSString *pagePushed;
+
 //Share button
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender;
 
@@ -31,5 +33,6 @@
 - (IBAction)backButtonPressed:(UIBarButtonItem *)sender;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivityIndicator;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
 @end
