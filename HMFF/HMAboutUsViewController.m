@@ -1,18 +1,18 @@
 //
-//  HMDetailsViewController.m
+//  HMAboutUsViewController.m
 //  HMFF
 //
-//  Created by Darren Spriet on 2013-07-16.
+//  Created by Darren Spriet on 2013-07-23.
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
-#import "HMDetailsViewController.h"
+#import "HMAboutUsViewController.h"
 
-@interface HMDetailsViewController ()
+@interface HMAboutUsViewController ()
 
 @end
 
-@implementation HMDetailsViewController
+@implementation HMAboutUsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,26 +23,13 @@
     return self;
 }
 
--(BOOL)shouldAutorotate{
-    
-    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
-        return NO;
-    }
-    else{
-        return YES;
-    }
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationItem setTitle:@"Details"];
-    [self.navigationController.navigationBar.topItem setTitle :@"Back" ];
+    [self.navigationItem setTitle:@"About Us"];
 
+    
     [self.blackView setAlpha:.3f];
-
-    [self.detailsLabel setText:self.detailString];
-    [self.addressLabel setText:self.addressString];
 	// Do any additional setup after loading the view.
 }
 

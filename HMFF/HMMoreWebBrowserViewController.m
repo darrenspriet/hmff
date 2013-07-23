@@ -69,6 +69,10 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    [self.navigationItem setTitle:@"Entry Form"];
+
+    [self.navigationController.navigationBar.topItem setTitle :@"Back" ];
+
     [self.webView setBackgroundColor:[UIColor clearColor]];
     [self.webView setOpaque:NO];
     //Sets up the Web page and loads it 

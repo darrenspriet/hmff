@@ -51,6 +51,7 @@
     NSLog(@"view did load");
     [super viewDidLoad];    
     [self.blackView setAlpha:.3f];
+    [self.navigationItem setTitle:@"Video Submission"];
 
     
     [self setSubmit:[[HMDataFeedManager sharedDataFeedManager] submitArray]];
@@ -214,4 +215,6 @@
 
 }
 
+- (IBAction)detailsButton:(UIButton *)sender {
+}
 @end

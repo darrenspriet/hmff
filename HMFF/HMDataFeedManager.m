@@ -100,6 +100,8 @@
             // The performance (scrolling) of the table will be much better if we
             // build an array of the image data here, and then add this data as
             // the cell.image value (see cellForRowAtIndexPath:)
+            
+            //This is what I have to work on getting the data faster
             [self.smallPhotos addObject:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
             //            NSLog(@"small photos %@", self.smallPhotos);
             

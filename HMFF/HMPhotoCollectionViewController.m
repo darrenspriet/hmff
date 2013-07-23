@@ -43,6 +43,8 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+     [self.navigationItem setTitle:@"Photos"];
+
 
     self.smallPhotos = [[HMDataFeedManager sharedDataFeedManager] smallPhotos];
     self.largePhotos = [[HMDataFeedManager sharedDataFeedManager] largePhotos];

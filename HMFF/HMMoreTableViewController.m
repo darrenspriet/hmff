@@ -53,7 +53,7 @@
         }
         case 1:{
             HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:@"submitVideoCell"];
-            [cell.title setText:@"Film Submission"];
+            [cell.title setText:@"Video Submission"];
             return cell;
             break;
         }
@@ -90,17 +90,17 @@
 #pragma Prepare for Segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
 
-    if ([segue.identifier isEqualToString:@"moreSegue"]){
-        NSLog(@"More Segue Picked");
-    }
-    else if([segue.identifier isEqualToString:@"photoSegue"]){
-        HMPhotoCollectionViewController *photoController = segue.destinationViewController;
-        //[photoController setTitle:@"HMFF Flickr Photos"];
-    }
-    else if([segue.identifier isEqualToString:@"moreVideoSegue"]){
-        HMVideosTableViewController *videoController = segue.destinationViewController;
-       // [videoController setTitle:@"HMFF YouTube Videos"];
-    }
+     HMDetailsViewController *controller = segue.destinationViewController;
+
+//    if ([segue.identifier isEqualToString:@"submitBand"]){
+//        [controller setTitle:@"Band Submission"];
+//    }
+//    else if([segue.identifier isEqualToString:@"submitVideo"]){
+//        [controller setTitle:@"Video Submission"];
+//    }
+//    if([segue.identifier isEqualToString:@"aboutUs"]){
+//       [controller setTitle:@"About Us"];
+//    }
     
 }
 //- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath

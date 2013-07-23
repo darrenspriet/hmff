@@ -51,6 +51,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+     [self.navigationItem setTitle:@"Videos"];
+
 
     
     [self setYouTubeArray:[[HMDataFeedManager sharedDataFeedManager] youTubeArray]];

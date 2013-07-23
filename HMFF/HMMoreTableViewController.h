@@ -11,6 +11,7 @@
 #import "HMVideosTableViewController.h"
 #import "HMPhotoCollectionViewController.h"
 #import "HMMoreCell.h"
+#import "HMDetailsViewController.h"
 
 @interface HMMoreTableViewController : UITableViewController
 

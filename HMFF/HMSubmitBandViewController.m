@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
     [self.blackView setAlpha:.3f];
+    [self.navigationItem setTitle:@"Band Submission"];
+
     [self setSubmit:[[HMDataFeedManager sharedDataFeedManager] submitArray]];
     [self setPdfData:[[HMDataFeedManager sharedDataFeedManager] pdfData]];
 
@@ -120,7 +122,7 @@ self.bandDetail=[NSString stringWithFormat:@"\u2022 %@\n\u2022 %@", lateentries,
         webBrowser.passedURL=self.entryFormLink;
         webBrowser.isPDF=YES;
         webBrowser.pdfData=self.pdfData;
-        
+
     }
     else if([segue.identifier isEqualToString:@"moreDetail"]){
         HMDetailsViewController *controller = segue.destinationViewController;
@@ -132,4 +134,6 @@ self.bandDetail=[NSString stringWithFormat:@"\u2022 %@\n\u2022 %@", lateentries,
   
 }
 
+- (IBAction)detailsButton:(UIButton *)sender {
+}
 @end
