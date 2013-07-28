@@ -32,6 +32,10 @@
         return YES;
     }
 }
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationItem setTitle:@"Band Submission"];
+
+}
 
 - (void)viewDidLoad
 {
@@ -92,9 +96,9 @@ self.bandDetail=[NSString stringWithFormat:@"\u2022 %@\n\u2022 %@", lateentries,
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            [self.noteIcon setImage:[UIImage imageNamed:@"musicSubmit@2x.png"]];
+            [self.submitImage setImage:[UIImage imageNamed:@"musicSubmit@2x.png"]];
         } else {
-           // [self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
+            [self.submitImage setImage:nil];
         }
     } else {
         /*Do iPad stuff here.*/

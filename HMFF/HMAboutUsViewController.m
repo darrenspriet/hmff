@@ -29,7 +29,7 @@
     [self.navigationItem setTitle:@"About Us"];
 
     
-    [self.blackView setAlpha:.3f];
+    [self.blackView setAlpha:.4f];
 	// Do any additional setup after loading the view.
 }
 

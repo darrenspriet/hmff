@@ -24,6 +24,8 @@
 
 
 
+
+
 //Property used to pass the URL to the the web page
 @property (nonatomic, strong) NSString *passedURL;
 

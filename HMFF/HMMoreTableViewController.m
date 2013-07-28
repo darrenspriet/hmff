@@ -33,6 +33,17 @@
 
 #pragma mark - Table view data source
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+
+        if (screenSize.height > 480.0f) {
+            return 60.0f;
+        }
+        else {
+            return 47.0f;
+        }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     // Return the number of sections.
     return 1;

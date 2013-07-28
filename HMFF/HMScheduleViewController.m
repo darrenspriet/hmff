@@ -40,7 +40,7 @@
     [self.dateForEvent setText:[self.date objectAtIndex:0]];
     [self imagesForButton:@"" andFrontImage:@"forwardButton.png"];
 
-    UIImage *image = [UIImage imageNamed:@"hmffLogoIcon4.png"];
+    UIImage *image = [UIImage imageNamed:@"hmffLogoIconSplash.png"];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
     UIImage *barImage = [UIImage imageNamed:@"ticketsButton.png"];
     //UIImage *barImageSelected = [UIImage imageNamed:@"ticketsButton.png"];

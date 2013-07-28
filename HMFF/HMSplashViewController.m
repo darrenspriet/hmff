@@ -124,48 +124,35 @@
     [self.largeActivitiyIndicator setAlpha:0.0f];
     [self.largeActivitiyIndicator startAnimating];
 
-    [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
-    self.hmffImage.center = CGPointMake(165, 245);
+    self.hmffImage.center = CGPointMake(164, 236);
     
 
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            
-            [UIView transitionWithView:self.hmffImage
-                              duration:2.5f
-                               options:UIViewAnimationOptionCurveEaseIn
-                            animations:^(void) {
-                               
-                                self.hmffImage.frame = CGRectMake(165.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
-                                [self.largeActivitiyIndicator setAlpha:1.0f];
-
-                            }
-                            completion:^(BOOL finished) {
-                                NSLog(@"called finish loading");
-                            }];
-//            [UIView animateWithDuration:2.0f animations:^{
-//                self.hmffImage.frame = CGRectMake(164.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
-//                [self.largeActivitiyIndicator setAlpha:1.0f];
-//                
-//            }];
-            
-            [UIView animateWithDuration:2.0f animations:^{
-                
-                [self.splashImage setAlpha:.3f];
-            }];
-
-           
-
-           // [self.splashImage setImage:[UIImage imageNamed:@"Default-568h@2x.png"]];
+            [self.splashImage setImage:[UIImage imageNamed:@"openingImage-iph5.png"]];
         } else {
-            //[self.splashImage setImage:[UIImage imageNamed:@"Default.png"]];
+            [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
         }
-    } else {
-        /*Do iPad stuff here.*/
-    }
+    
     NSLog(@"VIEW DID APPEAR");
+    [UIView transitionWithView:self.hmffImage
+                      duration:2.5f
+                       options:UIViewAnimationOptionCurveEaseIn
+                    animations:^(void) {
+                        
+                        self.hmffImage.frame = CGRectMake(165.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
+                        [self.largeActivitiyIndicator setAlpha:1.0f];
+                        
+                    }
+                    completion:^(BOOL finished) {
+                        NSLog(@"called finish loading");
+                    }];
+    
+    [UIView animateWithDuration:2.0f animations:^{
+        
+        [self.splashImage setAlpha:.3f];
+    }];
     
     
 	// Do any additional setup after loading the view.

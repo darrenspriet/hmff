@@ -37,12 +37,13 @@
 {
     [super viewDidLoad];
     [self.navigationItem setTitle:@"Details"];
-    [self.navigationController.navigationBar.topItem setTitle :@"Back" ];
 
-    [self.blackView setAlpha:.3f];
+    [self.blackView setAlpha:.4f];
 
     [self.detailsLabel setText:self.detailString];
     [self.addressLabel setText:self.addressString];
+    [self.navigationController.navigationBar.topItem setTitle :@"Back" ];
+
 	// Do any additional setup after loading the view.
 }
 

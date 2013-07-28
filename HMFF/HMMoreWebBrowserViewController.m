@@ -291,10 +291,15 @@
     CGFloat smallFontSize = systemFontSize * .8;
     CGFloat widthOfTitleSpace = 280.0;
     
-    
-    //NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
-    
-    [self setTitle:@"Entry Form"];
+    NSString* pageTitle;
+    if(self.isPDF){
+        pageTitle = @"Entry Form";
+    }
+    else{
+        pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    }
+    [self setTitle:pageTitle];
+
     CGRect frame = CGRectMake(62, 0, [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20.0]].width, 44);
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     [label setBackgroundColor:[UIColor clearColor]];

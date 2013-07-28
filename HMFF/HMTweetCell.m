@@ -24,7 +24,7 @@
     [super setSelected:selected animated:animated];
     
     NSLog(@"checking selected");
-    [self.cellView setAlpha:0.3f];
+    [self.cellView setAlpha:0.4f];
     [self.cellView setBackgroundColor:[UIColor blackColor]];
     [self.tweet setTextColor:[UIColor whiteColor]];
     [self.userName setTextColor:[UIColor whiteColor]];
@@ -34,7 +34,7 @@
     if (selected)
     {
         NSLog(@"Selected");
-        [self.cellView setAlpha:0.5f];
+        [self.cellView setAlpha:0.6f];
         [self.cellView setBackgroundColor:[UIColor whiteColor]];
         [self.tweet setTextColor:[UIColor blackColor]];
         [self.userName setTextColor:[UIColor blackColor]];        [self.date setTextColor:[UIColor blackColor]];

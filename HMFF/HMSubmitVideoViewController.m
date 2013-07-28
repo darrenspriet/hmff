@@ -41,6 +41,8 @@
     [self.webView setBackgroundColor:[UIColor clearColor]];
     [self.webView setOpaque:NO];
     [self.activityIndicator setHidden:YES];
+    [self.navigationItem setTitle:@"Video Submission"];
+
 
 
 
@@ -113,9 +115,9 @@
     
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone) {
         if (screenSize.height > 480.0f) {
-            [self.noteIcon setImage:[UIImage imageNamed:@"filmSubmit@2x.png"]];
+            [self.submitImage setImage:[UIImage imageNamed:@"filmSubmit@2x.png"]];
         } else {
-            [self.noteIcon setImage:nil];
+            [self.submitImage setImage:nil];
         }
     } else {
         /*Do iPad stuff here.*/
@@ -179,7 +181,7 @@
     [self.activityIndicator setHidden:NO];
 
     [self.activityIndicator startAnimating];
-    self.imageView.image= [UIImage imageNamed:@"blackImage.png"];
+    [self.imageView setImage:[UIImage imageNamed:@"blackPayPalBackground.png"]];
 
     
 

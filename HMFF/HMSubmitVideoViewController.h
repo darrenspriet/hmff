@@ -44,7 +44,7 @@
 
 @property (nonatomic, strong) NSData *pdfData;
 
-@property (weak, nonatomic) IBOutlet UIImageView *noteIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *submitImage;
 
 
 
