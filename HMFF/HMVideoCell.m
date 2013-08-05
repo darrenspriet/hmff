@@ -14,14 +14,13 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-
+        
     }
     return self;
 }
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    NSLog(@"clicked");
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated{
+    //initializes the cells with backgroudn and not opaque
     [self.videoWebView setBackgroundColor:[UIColor clearColor]];
     [self.videoWebView setOpaque:NO];
     [super setSelected:selected animated:animated];
@@ -30,30 +29,29 @@
 }
 
 #pragma WEB VIEW DELEGATE
-
 - (void)webViewDidStartLoad:(UIWebView *)webView{
-    NSLog(@"viewdidstarload");
+    //sets the network activity indicator to yes
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+    //sets the color to white
     [self.largeActivityIndicator setColor:[UIColor whiteColor]];
+    //starts it to animate
     [self.largeActivityIndicator startAnimating];
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
-    NSLog(@"viewdidfinishload");
-    
+    //sets the webview background to black
     [webView setBackgroundColor:[UIColor blackColor]];
+    //sets the webview to opaque
     [webView setOpaque:YES];
+    //sets the activity indicatory to not visible
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //stop the animation
     [self.largeActivityIndicator stopAnimating];
 }
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    NSLog(@"shouldstartloadwithrequest");
-    
     return YES;
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
-    NSLog(@"didfailloadwitherror");
-    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 

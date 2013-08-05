@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface HMVenueCell : UITableViewCell
+//sets up a label for the title of the venue
 @property (weak, nonatomic) IBOutlet UILabel *venueLabel;
-
 @end

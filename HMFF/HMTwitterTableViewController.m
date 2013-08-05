@@ -27,13 +27,12 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     //Sets the Tweet array from the App Delegate
-        self.tweets = [[HMDataFeedManager sharedDataFeedManager] tweets];
+    [self setTweets: [[HMDataFeedManager sharedDataFeedManager] tweets]];
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.tweets.count;
+    return [self.tweets count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -78,21 +77,13 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-        
+    
         dispatch_async(dispatch_get_main_queue(), ^{
             [cell.image setImage:[UIImage imageWithData:data]];
         });
     });
-
-    
     return cell;
 }
-
-//// Override to support conditional editing of the table view.
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return YES;
-//}
-
 
 #pragma mark - Prepare for Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -101,7 +92,7 @@
         NSInteger row = [[self tableView].indexPathForSelectedRow row];
         NSDictionary *tweet = [self.tweets objectAtIndex:row];
         HMTwitterDetailViewController *twitterDetailViewController = segue.destinationViewController;
-        twitterDetailViewController.detailItem = tweet;
+        [twitterDetailViewController setDetailItem : tweet];
     }
 }
 

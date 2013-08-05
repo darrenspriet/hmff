@@ -23,24 +23,18 @@
     return self;
 }
 
-
+//sets the supported InterfaceOrientations to the top controller
 -(NSUInteger)supportedInterfaceOrientations {
     UIViewController *top = self.selectedViewController;
-    NSLog(@"notworking1");
-    
-    
     return top.supportedInterfaceOrientations;
 }
-
+//sets the supported shouldAutoRotate to the top controller
 -(BOOL)shouldAutorotate {
     UIViewController *top = self.selectedViewController;
-    NSLog(@"notworking2");
-    
     return [top shouldAutorotate];
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
     [self setDelegate:self];
 	// Do any additional setup after loading the view.
@@ -56,22 +50,22 @@
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     
     if (viewController == [self.viewControllers objectAtIndex:0]){
-        NSLog(@"Line Up Tab");
+//        NSLog(@"Line Up Tab");
     }
     else if (viewController == [self.viewControllers objectAtIndex:1]){
-        NSLog(@"News Feed Tab");
+//        NSLog(@"News Feed Tab");
 
     }
     else if (viewController == [self.viewControllers objectAtIndex:2]){
-        NSLog(@"Twitter Tab");
+//        NSLog(@"Twitter Tab");
         
     }
     else if (viewController == [self.viewControllers objectAtIndex:3]){
-        NSLog(@"Social Tab");
+//        NSLog(@"Social Tab");
         
     }
     else {
-        NSLog(@"More Tab");
+//        NSLog(@"More Tab");
         
     }
 }

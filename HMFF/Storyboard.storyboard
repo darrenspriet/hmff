@@ -12,11 +12,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="newsBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="mKB-9d-VHl">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="308" id="L9X-dR-Ny2"/>
-                                </constraints>
-                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="newsBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="mKB-9d-VHl"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9a-rG-K0L">
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="News" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhy-bI-TBd">
@@ -46,12 +42,15 @@
                         <constraints>
                             <constraint firstItem="Cvq-Vt-iFe" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="8P6-7W-dm0"/>
                             <constraint firstItem="mKB-9d-VHl" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="9G4-n0-q6q"/>
-                            <constraint firstItem="mKB-9d-VHl" firstAttribute="top" secondItem="Cvq-Vt-iFe" secondAttribute="top" type="default" id="LLj-hR-u1d"/>
+                            <constraint firstItem="mKB-9d-VHl" firstAttribute="top" secondItem="Cvq-Vt-iFe" secondAttribute="top" type="user" id="LLj-hR-u1d"/>
                             <constraint firstItem="g9a-rG-K0L" firstAttribute="trailing" secondItem="vsl-uA-LT4" secondAttribute="trailing" type="default" id="RhA-v8-jTb"/>
-                            <constraint firstItem="mKB-9d-VHl" firstAttribute="centerY" secondItem="Cvq-Vt-iFe" secondAttribute="centerY" type="default" id="SxD-2h-T31"/>
+                            <constraint firstItem="mKB-9d-VHl" firstAttribute="centerY" secondItem="Cvq-Vt-iFe" secondAttribute="centerY" type="user" id="SxD-2h-T31"/>
                             <constraint firstItem="Cvq-Vt-iFe" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="c6h-Tb-Hvm"/>
                             <constraint firstItem="g9a-rG-K0L" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" type="user" id="fBg-1d-0Rg"/>
-                            <constraint firstItem="Cvq-Vt-iFe" firstAttribute="bottom" secondItem="vsl-uA-LT4" secondAttribute="bottom" type="default" id="kQs-gE-upA"/>
+                            <constraint firstItem="Cvq-Vt-iFe" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" constant="59" type="user" id="fU2-tt-SRq"/>
+                            <constraint firstItem="mKB-9d-VHl" firstAttribute="top" secondItem="vsl-uA-LT4" secondAttribute="top" constant="59" type="user" id="jpc-bc-Ral"/>
+                            <constraint firstItem="Cvq-Vt-iFe" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="vsl-uA-LT4" secondAttribute="bottom" type="user" id="kQs-gE-upA"/>
+                            <constraint firstItem="mKB-9d-VHl" firstAttribute="bottom" secondItem="vsl-uA-LT4" secondAttribute="bottom" type="user" id="p6H-HH-HOS"/>
                             <constraint firstItem="g9a-rG-K0L" firstAttribute="leading" secondItem="vsl-uA-LT4" secondAttribute="leading" type="default" id="t1f-1K-Lzw"/>
                         </constraints>
                     </view>
@@ -72,7 +71,7 @@
             <objects>
                 <tableViewController id="jtw-ey-lVs" customClass="HMNewsFeedTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="69" sectionHeaderHeight="22" sectionFooterHeight="22" id="RIC-Ih-gGK">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -153,7 +152,7 @@
             <objects>
                 <viewController hidesBottomBarWhenPushed="YES" id="dlc-h9-Onv" customClass="HMNewsFeedDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mYm-af-p44">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="308"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="newsDetailBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="pJN-hr-5HO"/>
@@ -1883,56 +1882,6 @@ M4M 3C3</string>
                     <nil name="viewControllers"/>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTC-RC-6ip" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wTS-5g-KaO">
-                    <rect key="frame" x="0.0" y="0.0" width="246" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" backgroundImage="HMFFlogo.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <barButtonItem style="plain" id="hPt-p0-HP1">
-                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="mfU-Im-jUH">
-                        <rect key="frame" x="259" y="6" width="56" height="32"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                        <state key="normal" title="Button" image="ticketButton.png">
-                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <state key="highlighted">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
-                </barButtonItem>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hCX-ca-uBH">
-                    <rect key="frame" x="0.0" y="0.0" width="246" height="40"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" backgroundImage="HMFFlogo.png">
-                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <state key="highlighted">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
-                <barButtonItem style="plain" id="4UP-ao-DhY">
-                    <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Srt-nW-50a">
-                        <rect key="frame" x="259" y="6" width="56" height="32"/>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                        <state key="normal" title="Button" image="ticketButton.png">
-                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                        <state key="highlighted">
-                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
-                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="847" y="-1416"/>
         </scene>
@@ -2282,7 +2231,6 @@ M4M 3C3</string>
     <resources>
         <image name="FacebookImage.png" width="70" height="70"/>
         <image name="Guitar.png" width="40" height="40"/>
-        <image name="HMFFlogo.png" width="16" height="16"/>
         <image name="News.png" width="25" height="25"/>
         <image name="ScheduleMegaphone.png" width="32" height="25"/>
         <image name="SocialThumbsUp.png" width="27" height="27"/>
@@ -2310,7 +2258,6 @@ M4M 3C3</string>
         <image name="socialBackground.png" width="320" height="398"/>
         <image name="sonicBids.png" width="137" height="81"/>
         <image name="submitDetailsBackground.png" width="320" height="455"/>
-        <image name="ticketButton.png" width="16" height="16"/>
         <image name="tweetButton.png" width="69" height="35"/>
         <image name="twitterBackground.png" width="320" height="398"/>
         <image name="twitterDetailBackground.png" width="320" height="455"/>
@@ -2515,7 +2462,6 @@ M4M 3C3</string>
                 <relationship kind="action" name="followTapped:" candidateClass="UIButton"/>
                 <relationship kind="action" name="postTweet:" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="TwitterButtonOutlet" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="totalFollowers" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="HMVideoCell" superclassName="UITableViewCell">
@@ -2547,6 +2493,9 @@ M4M 3C3</string>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -2554,9 +2503,9 @@ M4M 3C3</string>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="lay-CP-fKj"/>
-        <segue reference="026-ex-1CB"/>
-        <segue reference="aci-KS-ked"/>
         <segue reference="mjR-NM-uON"/>
+        <segue reference="h6M-be-XsA"/>
+        <segue reference="aci-KS-ked"/>
+        <segue reference="026-ex-1CB"/>
     </inferredMetricsTieBreakers>
 </document>

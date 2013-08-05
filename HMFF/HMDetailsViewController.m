@@ -23,8 +23,8 @@
     return self;
 }
 
+//checks the rotation and returns accurate position
 -(BOOL)shouldAutorotate{
-    
     if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
         return NO;
     }
@@ -33,22 +33,22 @@
     }
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
+    //Sets the title of the screen to "Details
     [self.navigationItem setTitle:@"Details"];
-
+    //Adjusts the alpha so the words are more readable
     [self.blackView setAlpha:.4f];
-
+    //to set the detail label with the detail string
     [self.detailsLabel setText:self.detailString];
+    //to set the address label with the address string
     [self.addressLabel setText:self.addressString];
+    //Sets the leftbar button to "Back"
     [self.navigationController.navigationBar.topItem setTitle :@"Back" ];
 
-	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

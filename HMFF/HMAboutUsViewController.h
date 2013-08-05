@@ -10,6 +10,6 @@
 
 @interface HMAboutUsViewController : UIViewController
 
-
+//the black view for the view so we can set its alpha
 @property (weak, nonatomic) IBOutlet UIView *blackView;
 @end

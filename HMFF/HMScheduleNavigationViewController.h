@@ -10,7 +10,4 @@
 
 @interface HMScheduleNavigationViewController : UINavigationController
 
-@property (nonatomic, strong) NSMutableArray *date;
-
-
 @end

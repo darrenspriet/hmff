@@ -17,33 +17,16 @@
 @implementation HMBuyTicketsViewController
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
--(void)viewDidDisappear:(BOOL)animated{
-    //    NSLog(@"view did disappear");
-    if([self.webView isLoading])
-    {
-        //        NSLog(@"webview was loading");
-        [self.webView stopLoading];
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    }
-    [self saveCookies];
-}
--(void)viewDidAppear:(BOOL)animated{
-    NSLog(@"VIEW DID APPEAR");
-    
-    // [self.navigationController.navigationBar setTintColor:[UIColor blackColor]];
-   // [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
-    
-}
-
+//checks the rotation and returns accurate position
 -(BOOL)shouldAutorotate{
-    
     if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
         return NO;
     }
@@ -51,80 +34,95 @@
         return YES;
     }
 }
+-(void)viewDidDisappear:(BOOL)animated{
+    //if the Webview is loading stop loading and turn off the ActivityIndicator in the status bar
+    if([self.webView isLoading])
+    {   [self.webView stopLoading];
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    }
+    //calls savecookies
+    [self saveCookies];
+}
 
 -(void) viewWillAppear:(BOOL)animated {
-    [self loadCookies];
     [super viewWillAppear:animated];
     
+    //loads the cookies
+    [self loadCookies];
     //this checks whether the internet is accessible and if it isn't, it will display a message
     HMCheckInternetAccess *internetAccess = [[HMCheckInternetAccess alloc]init];
     if ([internetAccess isInternetReachable]) {
-        NSLog(@"Internet is Working!");
+        //        NSLog(@"Internet is Working!");
     }
     else{
-        NSLog(@"Something wrong with the internet");
+        //        NSLog(@"Something wrong with the internet");
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This page requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
         [alert show];
     }
-    
 }
 
-
 - (void)viewDidLoad{
-    
     [super viewDidLoad];
-    
+    //sets the links from Data Feed Manager
+    [self setLinks:[[HMDataFeedManager sharedDataFeedManager] linksArray]];
+    //sets the HTMLString from the Data Feed Manager
+    [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
+    //Grabs the url from the passed URL
+    for (NSDictionary *diction in self.links){
+        NSString * string=[diction objectForKey:@"name"];
+        if ([string isEqualToString:@"ticket"]) {
+            self.passedURL =[diction objectForKey:@"link"];
+        }
+    }
+    //This set of if statements sets the title of the button to one of the pages it was pushed from
     if ([self.pagePushed isEqualToString:@"Schedule"]) {
         [self.backButton setTitle :@"Schedule" ];
-
     }
     else if ([self.pagePushed isEqualToString:@"News"]) {
         [self.backButton setTitle:@"News"];
-        
     }
     else if ([self.pagePushed isEqualToString:@"Twitter"]) {
-       [self.backButton setTitle :@"Twitter" ];
-
-        
+        [self.backButton setTitle :@"Twitter" ];
     }
     else if ([self.pagePushed isEqualToString:@"Social"]) {
         [self.backButton setTitle :@"Social" ];
-
-        
     }
     else if ([self.pagePushed isEqualToString:@"More"]) {
         [self.backButton setTitle :@"More" ];
-
-        
     }
+    //sets the background color to clear
     [self.webView setBackgroundColor:[UIColor clearColor]];
+    //sets the webview to opaque
     [self.webView setOpaque:NO];
-    //Sets up the Web page and loads it
-        NSURL *baseURLString = [NSURL URLWithString:self.passedURL];
-        [self.webView loadHTMLString:self.HTMLString baseURL:baseURLString];
-        self.webView.scalesPageToFit = YES;
-
+    //creates the base url from the passedURL
+    NSURL *baseURLString = [NSURL URLWithString:self.passedURL];
+    //sets the webview witht he HTMLSTring and baseURL
+    [self.webView loadHTMLString:self.HTMLString baseURL:baseURLString];
+    //sets the scale to page to fit
+    [self.webView setScalesPageToFit : YES];
+    
     
     
     //Sets the proper buttons to enabled or not
     [self updateButtons];
 }
 
-
-- (void)saveCookies
-{
+//saves the cookies to NSUserDefaults
+- (void)saveCookies{
+    //adds the cookies to NSUserDefaults
     NSData *cookiesData = [NSKeyedArchiver archivedDataWithRootObject: [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookies]];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    //sets the object for cookies
     [defaults setObject: cookiesData forKey: @"cookies"];
     [defaults synchronize];
 }
-
-- (void)loadCookies
-{
+//loads the cookies from the NSUserDefaults
+- (void)loadCookies{
+    //grabs the cookie from the NSUserDefault
     NSArray *cookies = [NSKeyedUnarchiver unarchiveObjectWithData: [[NSUserDefaults standardUserDefaults] objectForKey: @"cookies"]];
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (NSHTTPCookie *cookie in cookies)
-    {
+    //iterates through the cookies and sets the cookie to the cookies above
+    for (NSHTTPCookie *cookie in cookies){
         [cookieStorage setCookie: cookie];
     }
 }
@@ -133,59 +131,48 @@
     [super didReceiveMemoryWarning];
 }
 
-#pragma mark - Buttons
+//When the share button is pressed, brings up one of the following
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender{
-    NSLog(@"Share button Pressed");
+    //If it is iOS 6 and up this will come up
     if(NSClassFromString(@"UIActivityViewController")!=nil){
         [self showActivityViewController];
+        //Or for pre iOS 6 and it will show the Action sheet
     }else {
         [self showActionSheet];
     }
-    
 }
-
+//when the back button is pressed the view is dismissed
 - (IBAction)backButtonPressed:(UIBarButtonItem *)sender {
     [self dismissViewControllerAnimated:YES completion:^{}];
-    NSLog(@"Back button Pressed");
 }
 
-
-
--(void)showActivityViewController
-{
+-(void)showActivityViewController{
     //-- set up the data objects
-    NSString *textObject = @"Check this out!";
+    NSString *text = @"Check out HMFF!";
     NSURL *url = [NSURL URLWithString:self.passedURL];
-    UIImage *image = [UIImage imageNamed:@"HMFFlogo3.png"];
-    NSArray *activityItems = [NSArray arrayWithObjects:textObject, url, image, nil];
+    UIImage *image = [UIImage imageNamed:@"hmffRedLogo.png"];
+    NSArray *activityItems = [NSArray arrayWithObjects:text, url, image, nil];
     
     //-- initialising the activity view controller
     UIActivityViewController *avc = [[UIActivityViewController alloc]
                                      initWithActivityItems:activityItems
                                      applicationActivities:nil];
-  //  [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:34.0/255.0 green:97.0/255.0 blue:221.0/255.0 alpha:1]];
     
     //-- define the activity view completion handler
     avc.completionHandler = ^(NSString *activityType, BOOL completed){
-        NSLog(@"Activity Type selected: %@", activityType);
+        //        NSLog(@"Activity Type selected: %@", activityType);
         if (completed) {
-            
-            NSLog(@"Selected activity was performed.");
-         //   [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+            //            NSLog(@"Selected activity was performed.");
             
         } else {
             if (activityType == NULL) {
-                NSLog(@"User dismissed the view controller without making a selection.");
-            //    [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
+                //                NSLog(@"User dismissed the view controller without making a selection.");
                 
             } else {
-                NSLog(@"Activity was not performed.");
-             //   [[UIBarButtonItem appearance] setTintColor:[UIColor blackColor]];
-                
+                //                NSLog(@"Activity was not performed.");
             }
         }
     };
-    
     //-- define activity to be excluded (if any)
     avc.excludedActivityTypes = [NSArray arrayWithObjects:UIActivityTypeAssignToContact,UIActivityTypePostToWeibo,UIActivityTypePrint, UIActivityTypeCopyToPasteboard, nil];
     
@@ -195,9 +182,8 @@
     }];
     
 }
-//This is for pre ios 6
--(void)showActionSheet
-{
+//This is for Pre iOS 6
+-(void)showActionSheet{
     UIActionSheet *as = [[UIActionSheet alloc]initWithTitle:@"choose"
                                                    delegate:self
                                           cancelButtonTitle:@"Cancels"
@@ -206,94 +192,101 @@
     [as showInView:self.view];
 }
 
-#pragma mark - UIActionSheet delegate
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    switch (buttonIndex) {
-        case 0:
-            NSLog(@"Email");
-            break;
-        case 1:
-            NSLog(@"Cancel");
-            break;
-        default:
-            break;
-    }
-}
-
-
-#pragma WEB VIEW DELEGATE
+#pragma mark Web View Delegate
+//returns yes when the web shouldStartLoadWithREquest
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
     return YES;
 }
-
+//When the webView starts to load
 - (void)webViewDidStartLoad:(UIWebView *)webView{
-    
+    //turns on the network activity indicator
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
+    //sets the title to Loading
     self.title=@"Loading...";
-    
     //activity Indicator in Navigation Bar
     self.activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+    //set the color for the activity indicator
     [self.activityIndicator setColor:[UIColor whiteColor]];
+    //puts the activitiy indicator in the Navigation bar
     UIBarButtonItem * barButton =
     [[UIBarButtonItem alloc] initWithCustomView:self.activityIndicator];
-    
-    // Set to Left or Right
+    // set the indicator in the right  bar button item
     [[self navigationItem] setRightBarButtonItem:barButton];
+    //starts the animating of the indicators
     [self.largeActivityIndicator startAnimating];
     [self.activityIndicator startAnimating];
+    //updates the buttons
     [self updateButtons];
 }
+//web view finished loading
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
+    
+    //sets eh background color to the webview to black
     [self.webView setBackgroundColor:[UIColor blackColor]];
+    //sets the webview to opaque
     [self.webView setOpaque:YES];
+    //turns on the network activity indicator
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //stops the animating of the indicators
     [self.largeActivityIndicator stopAnimating];
     [self.activityIndicator stopAnimating];
+    //updates the title to the webview
     [self updateTitle:webView];
+    //updates the buttons to the webview
     [self updateButtons];
 }
+//called when there is an error loading the webview
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    //turns on the network activity indicator
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+    //updates the buttons to the webview
     [self updateButtons];
 }
-
+//Enabling the buttons
 - (void)updateButtons{
-    
     [self.forward setEnabled:self.webView.canGoForward];
     [self.back setEnabled:self.webView.canGoBack];
     [self.stop setEnabled: self.webView.loading];
 }
 
-
-
 #pragma  mark -  Custom Label and Setter for the title
 - (void)updateTitle:(UIWebView*)aWebView{
+    //puts the thread to sleep
     [NSThread sleepForTimeInterval:0.3];
     // Clever variable font size trick
     CGFloat systemFontSize = [UIFont labelFontSize];
-    CGFloat headFontSize = systemFontSize * 1;
+    CGFloat normalFontSize = systemFontSize * 1;
     CGFloat smallFontSize = systemFontSize * .8;
     CGFloat widthOfTitleSpace = 280.0;
-    
-    
+    //grabs the page title
     NSString* pageTitle = [aWebView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    //Sets the title to above title
     [self setTitle:pageTitle];
+    //creates a frame at the top for the label
     CGRect frame = CGRectMake(62, 0, [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20.0]].width, 44);
+    //places the label in the frame
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
+    //sets the label background to clear
     [label setBackgroundColor:[UIColor clearColor]];
+    //sets the label text color to white
     [label setTextColor:[UIColor whiteColor]];
+    //sets the font size to 17
     [label setFont:[UIFont boldSystemFontOfSize:17.0]];
+    //sets the label in the navigation bar title view
     [self.navigationItem setTitleView:label];
     
-    if ([self.title sizeWithFont:[UIFont boldSystemFontOfSize:headFontSize]].width > widthOfTitleSpace){
+    //label.text = self.title;
+    if ([self.title sizeWithFont:[UIFont boldSystemFontOfSize:normalFontSize]].width > widthOfTitleSpace){
+        //sets the number of lines for the label
         [label setNumberOfLines:2];
-        [label setFont:[UIFont boldSystemFontOfSize:smallFontSize]];}
+        //set the font to small font size
+        [label setFont:[UIFont boldSystemFontOfSize:smallFontSize]];
+    }
     else
-        [label setFont:[UIFont boldSystemFontOfSize:headFontSize]];
-    
-    label.text =self.title;
+        //sets the font size to the normal font size
+        [label setFont:[UIFont boldSystemFontOfSize:normalFontSize]];
+    //sets the text to the title
+    [label setText: self.title];
 }
 
 //Over ride the setter for the title by adding a label over top
@@ -310,4 +303,5 @@
     [titleLabel setText:title];
     [titleLabel sizeToFit];
 }
+
 @end

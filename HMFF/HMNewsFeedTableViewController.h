@@ -10,10 +10,8 @@
 #import "HMNewsFeedDetailViewController.h"
 #import "HMNewsFeedCell.h"
 
-
 @interface HMNewsFeedTableViewController : UITableViewController
-
-//The property that holds the news feed that is sent from App Delegate
+//holds the news dictionary from the Data Feed Manger
 @property (nonatomic, strong)NSDictionary *news;
 
 @end

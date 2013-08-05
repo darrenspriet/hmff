@@ -15,17 +15,21 @@
 
 //This is used to post a tweet and make the tweet controller appear
 - (IBAction)postTweet:(UIButton *)sender;
-
+//used to set the HTMLString
 @property(strong, nonatomic)NSString*HTMLString;
+//used to set the tweets array
+@property (nonatomic, strong)NSArray *tweets;
+
+
+
+
+
+
+// ALL THE FOLLOWING IS FOR THE FOLLOWING BUTTON!!!!!
 - (IBAction)followTapped:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UIButton *TwitterButtonOutlet;
-
 @property (strong, nonatomic) ACAccountStore *accountStore;
-@property (strong, nonatomic) NSMutableDictionary *profileImages;
 @property (strong, nonatomic) ACAccount *userAccount;
-@property (weak, nonatomic) IBOutlet UILabel *totalFollowers;
-
-@property (nonatomic, strong)NSArray *tweets;
 @property (nonatomic, strong) KeychainItemWrapper *keychain;
 
 

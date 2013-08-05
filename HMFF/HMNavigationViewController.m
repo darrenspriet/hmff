@@ -23,20 +23,17 @@
     return self;
 }
 
+//sets the supported InterfaceOrientations to the top controller
 -(NSUInteger)supportedInterfaceOrientations {
     UIViewController *top = self.topViewController;
-    NSLog(@"notworking11");
     return top.supportedInterfaceOrientations;
 }
-
+//sets the supported shouldAutoRotate to the top controller
 -(BOOL)shouldAutorotate {
     UIViewController *top = self.topViewController;
-    NSLog(@"notworking21");
-    
     return [top shouldAutorotate];
 }
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

@@ -23,18 +23,15 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad{
     [super viewDidLoad];
+    //set the title of the navigation item to "About Us"
     [self.navigationItem setTitle:@"About Us"];
-
-    
+    //set the blackview to .4 alpha
     [self.blackView setAlpha:.4f];
-	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

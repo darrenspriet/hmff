@@ -12,15 +12,16 @@
 
 @implementation HMNewsFeedViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
+//checks the rotation and returns accurate position
 -(BOOL)shouldAutorotate{
-    
     if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
         return NO;
     }
@@ -28,35 +29,39 @@
         return YES;
     }
 }
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad{
     [super viewDidLoad];
-    
-    [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
-
-    
-    //Image for the Navigation Bar
+    //sets up the navigation bar
+    [self setUpNavigationBar];
+    //loads Data into the app
+    [self loadData];
+}
+//sets up the navigation bar
+-(void)setUpNavigationBar{
+    //sets the icon in the Navigation bar
     UIImage *image = [UIImage imageNamed:@"hmffLogoIconSplash.png"];
-    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:image];
-    //Image for the Normal bar button
+    //sets the title to the image above
+    [self.navigationItem setTitleView: [[UIImageView alloc] initWithImage:image]];
+    //the image for the tickets button
     UIImage *barImage = [UIImage imageNamed:@"ticketsButton.png"];
-    //UIImage *barImageSelected = [UIImage imageNamed:@"ticketsButton.png"];
-    
+    //grabbing a frame to put the button image into
     CGRect frameImage = CGRectMake(0, 0, barImage.size.width, barImage.size.height);
-    
-    //Button with the frame size above
+    //sets the right bar button to the frame above
     UIButton *rightBarButtton = [[UIButton alloc] initWithFrame:frameImage];
-    
-    //Setting the Background for the Normal and Selected image
+    //As well sets the button to the image above and its state to normal
     [rightBarButtton setBackgroundImage:barImage forState:UIControlStateNormal];
-    //[rightBarButtton setBackgroundImage:barImageSelected forState:UIControlStateHighlighted];
-
-    //Setting the button so if it is tapped to call "buyTicketPressed:
+    //Adds the action to the button
     [rightBarButtton addTarget:self action:@selector(buyTicketPressed:) forControlEvents:UIControlEventTouchUpInside];
-    
-    //Adds the bar button to the navigation bar
+    //adds the button to the Navigation Controller
     UIBarButtonItem *barButton =[[UIBarButtonItem alloc] initWithCustomView:rightBarButtton];
     [[self navigationItem] setRightBarButtonItem:barButton];
+    
+}
+//loads Data into the app
+-(void)loadData{
+    //sets the HTMLString from the Data Manager
+    [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
 }
 
 - (void)didReceiveMemoryWarning{
@@ -64,26 +69,20 @@
     // Dispose of any resources that can be recreated.
 }
 
-//Method Gets called from the Buy Tickets Bar Button
 -(void)buyTicketPressed:(id)sender{
-    //Calls perform for segue with BuyTickets
+    //calls the performsegueWith Identifier Buy Tickets
     [self performSegueWithIdentifier:@"BuyTickets" sender:sender];
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    //Segue for the Buying tickets
-    if ([segue.identifier isEqualToString:@"BuyTickets"]){
+
+    //if the user clicks buy tickets this segue is called
+    if([segue.identifier isEqualToString:@"BuyTickets"]){
         UINavigationController * navController =segue.destinationViewController;
         HMBuyTicketsViewController *buyTickets = (HMBuyTicketsViewController *)navController.topViewController;
-        [buyTickets setPassedURL:@"http://www.hmff.com/?page_id=161"];
-        [buyTickets setHTMLString: self.HTMLString];
+        //passes the schedule
         [buyTickets setPagePushed:@"News"];
-
-        
-
     }
 }
-
-
 @end
 

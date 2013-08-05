@@ -12,9 +12,9 @@
 
 @interface HMVideosTableViewController : UITableViewController <UIActionSheetDelegate>
 
-
-//An array of dictionaries which stores the content(title and url) of the youtube videos
+//used for the video content from data feed manager
 @property (strong, nonatomic) NSDictionary *VideoContent;
+//used for the youtube array
 @property(strong, nonatomic)NSMutableArray *youTubeArray;
 
 

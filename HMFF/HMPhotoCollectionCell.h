@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HMPhotoCollectionCell : UICollectionViewCell
+//To set the image to the Photo Collection Cell
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end

@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "HMMoreWebBrowserViewController.h"
-#import "HMVideosTableViewController.h"
-#import "HMPhotoCollectionViewController.h"
 #import "HMMoreCell.h"
-#import "HMDetailsViewController.h"
+#define SUBMIT_BAND_CELL @"submitBandCell"
+#define SUBMIT_VIDEO_CELL @"submitVideoCell"
+#define PHOTO_CELL @"photoCell"
+#define YOUTUBE_CELL @"moreVideoCell"
+#define ABOUT_US_CELL @"moreCell"
 
 @interface HMMoreTableViewController : UITableViewController
 

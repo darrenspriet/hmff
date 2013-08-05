@@ -28,9 +28,8 @@
 - (void)viewDidLoad{
     [super viewDidLoad];
     //Getting the data that holds the news feed that is sent from App Delegate
-    self.news = [[HMDataFeedManager sharedDataFeedManager] news];
-    
-    //Takes the nes
+    [self setNews: [[HMDataFeedManager sharedDataFeedManager] news]];
+    //loads all of the arrays from the Data Feed Manager
     [self loadNewsFeedData];
 }
 
@@ -46,6 +45,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    //returns the count of the title Array which is how many rows
     return [self.titleArray count];
 }
 
@@ -64,7 +64,7 @@
     //Converts the date to an Array
     NSArray *dateArray= [date componentsSeparatedByString:@"-"];
     
-    //Gets teh month by calling the method below get Month
+    //Gets the month by calling the method below get Month
     NSString *month = [self getMonth:dateArray];
     
     //Formats the dates into a string
@@ -81,26 +81,27 @@
 }
 
 -(void)loadNewsFeedData{
-    self.titleArray = [[NSMutableArray alloc]init];
-    self.contentArray = [[NSMutableArray alloc]init];
-    self.dateArray =[[NSMutableArray alloc]init];
+    //initializes the arrays
+    [self setTitleArray : [[NSMutableArray alloc]init] ];
+    [self setContentArray : [[NSMutableArray alloc]init] ];
+    [self setDateArray : [[NSMutableArray alloc]init] ];
     
     //Creates new Arrays of the news feeds one object in at "posts"
     NSArray *title = [self.news objectForKey:@"posts"];
     NSArray *content =[self.news objectForKey:@"posts"];
     NSArray *date =[self.news objectForKey:@"posts"];
     
-    //Gets all of the titles out of the Title Array
+    //Gets all of the titles out of the dictionary and adds it to the Title Array
     for(NSDictionary *diction in title){
         NSString *title =[diction objectForKey:@"title"];
         [self.titleArray addObject:title];
     }
-    //Gets all of the dates out of the dates Array
+    //Gets all of the dates out of the dictionary and adds it to the dates Array
     for(NSDictionary *diction in date){
         NSString  *date =[diction objectForKey:@"date"];
         [self.dateArray addObject:date];
     }
-    //Gets all of the content out of the content Array
+    //Gets all of the content out of the dictionary and adds it to the content array
     for(NSDictionary *diction in content){
         NSString  *content =[diction objectForKey:@"excerpt"];
         [self.contentArray addObject:content];
@@ -118,10 +119,9 @@
         
         //Puts all of the information for the news feed with keys into a dictionary
         NSDictionary *newsFeed =[[NSDictionary alloc]initWithObjectsAndKeys:[self.titleArray objectAtIndex:row],@"title", [self.contentArray objectAtIndex:row], @"content", nil];
-        
         HMNewsFeedDetailViewController *newsFeedDetailViewController = segue.destinationViewController;
         //Passes the news feed to the the next view controller detail item
-        newsFeedDetailViewController.detailItem = newsFeed;
+        [newsFeedDetailViewController setDetailItem:newsFeed];
     }
 }
 
@@ -165,35 +165,38 @@
     }
 }
 
-//Found on stack over flow at the below link:
-//http://stackoverflow.com/questions/1105169/html-character-decoding-in-objective-c-cocoa-touch
+//Decodes the strings if there are any characters in the news feed
 - (NSString*) decodeHtmlUnicodeCharactersToString:(NSString*)passedString{
+    //Sets the string to the passed string
     NSMutableString* string = [[NSMutableString alloc] initWithString:passedString];
+    //initializes 2 strings
     NSString* uniCodeString = nil;
     NSString* replaceString = nil;
+    //sets the counter to -1
     int counter = -1;
-    
-    for(int i = 0; i < [string length]; ++i)
-    {
+    //iterates through the letters
+    for(int i = 0; i < [string length]; ++i){
         unichar character1 = [string characterAtIndex:i];
-        for (int k = i + 1; k < [string length] - 1; ++k)
-        {
+        for (int k = i + 1; k < [string length] - 1; ++k){
             unichar character2 = [string characterAtIndex:k];
-            
-            if (character1 == '&'  && character2 == '#')
-            {
+            //if the character is & or # then set the range on
+            if (character1 == '&'  && character2 == '#'){
                 ++counter;
                 uniCodeString = [string substringWithRange:NSMakeRange(i + 3 , 2)];
                 replaceString = [string substringWithRange:NSMakeRange (i, 8)];
+                //set the string to replace the string
                 [string replaceCharactersInRange: [string rangeOfString:replaceString] withString:[NSString stringWithFormat:@"%c",[uniCodeString intValue]]];
                 break;
             }
         }
     }
-    if (counter > 1)
+    //if the counter is greater than 1 then return the string
+    if (counter > 1){
         return  [self decodeHtmlUnicodeCharactersToString:string];
-    else
+    }
+    //else return the string
+    else{
         return string;
+    }
 }
-
 @end

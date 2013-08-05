@@ -7,12 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
 @interface HMNewsFeedViewController : UIViewController
 
+//Holds the HTMLString of the Tickets Page
 @property(strong, nonatomic)NSString*HTMLString;
-
-
-
 @end

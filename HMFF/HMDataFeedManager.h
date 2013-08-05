@@ -28,27 +28,26 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 //As singleton Object that is called at the beginning of the Application
 + (HMDataFeedManager*) sharedDataFeedManager;
 
+//Holds the completion block
+@property(nonatomic, copy)HMDataFeedManagerCompletionBlock completionBlock;
 
-//Fetches Flicker Feed
--(void)fetchFlickerFeed;
+//Holds the HTMLString that is used in all of the View Controllers (All Controllers)
+@property(strong, nonatomic)NSString *HTMLString;
 
-//Fetches News Feed from website
-- (void)fetchNewsFeed;
-
-//Fetches there Tweets
-- (void)fetchTweets;
-
-//Holds the Dates that will be sent to Schedule View Controller(Parse)
+//Holds the Dates that will be sent to Schedule View Controller(Schedule)
 @property (nonatomic, strong) NSMutableArray *date;
 
-//Holds the Bands that will be sent to Schedule View Controller(Parse)
+//Holds the Bands that will be sent to Schedule View Controller(Schedule)
 @property (nonatomic, strong) NSMutableArray *band;
+
+//Holds the News Feeds that will be sent to News View Controller(News)
+@property (nonatomic, strong)NSDictionary *news;
 
 //Holds the Tweets that will be sent to Twitter View Controller(Twitter)
 @property (nonatomic, strong) NSArray *tweets;
 
-//Holds the News Feeds that will be sent to News View Controller(News)
-@property (nonatomic, strong)NSDictionary *news;
+//Holds the Links Array that is used in the Social View Controller(Social)
+@property(strong, nonatomic)NSMutableArray *linksArray;
 
 //Holds the Photos that will be sent to More View Controller(More)
 @property (nonatomic, strong) NSDictionary *photos;
@@ -59,16 +58,13 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 //Holds the Large Photos that will be sent to More View Controller(More)
 @property (nonatomic, strong) NSMutableArray *largePhotos;
 
-@property(nonatomic, copy)HMDataFeedManagerCompletionBlock completionBlock;
-
-@property(strong, nonatomic)NSString *HTMLString;
-
-@property(strong, nonatomic)NSMutableArray *linksArray;
-
+//Holds the YouTube Array that is used in the Video View Controller(More)
 @property(strong, nonatomic)NSMutableArray *youTubeArray;
 
+//Holds the Submit Array that is used in the Submit View Controller(More)
 @property(strong, nonatomic)NSMutableArray *submitArray;
 
+//Holds the pdfdata from the Entry Form pdf in the More View Controller(More)
 @property (nonatomic, strong) NSData *pdfData;
 
 

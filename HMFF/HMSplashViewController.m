@@ -24,11 +24,12 @@
     return self;
 }
 
-
 -(void)viewWillAppear:(BOOL)animated{
-    NSLog(@"view will appear");
+    
+    //Adds a notification for the network status
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
+    //Checks the internet for reachability
     self.internetReachable = [Reachability reachabilityForInternetConnection];
     [self.internetReachable startNotifier];
     
@@ -37,13 +38,9 @@
     [self.hostReachable startNotifier];
     
 }
--(void)viewDidAppear:(BOOL)animated{
-    NSLog(@"view did appear");
-
-}
 
 -(void)viewWillDisappear:(BOOL)animated{
-     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
     
 }
 -(void) checkNetworkStatus:(NSNotification *)notice
@@ -54,7 +51,7 @@
     {
         case NotReachable:
         {
-            NSLog(@"The internet is down.");
+            //NSLog(@"The internet is down.");
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This app requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
             [alert show];
             
@@ -62,14 +59,14 @@
         }
         case ReachableViaWiFi:
         {
-            NSLog(@"The internet is working via WIFI.");
+            //NSLog(@"The internet is working via WIFI.");
             [self loadUpApp];
             
             break;
         }
         case ReachableViaWWAN:
         {
-            NSLog(@"The internet is working via WWAN.");
+            //NSLog(@"The internet is working via WWAN.");
             [self loadUpApp];
             
             break;
@@ -81,35 +78,31 @@
     {
         case NotReachable:
         {
-            NSLog(@"A gateway to the host server is down.");
+            //            NSLog(@"A gateway to the host server is down.");
             break;
         }
         case ReachableViaWiFi:
         {
-            NSLog(@"A gateway to the host server is working via WIFI.");            
+            //            NSLog(@"A gateway to the host server is working via WIFI.");
             break;
         }
         case ReachableViaWWAN:
         {
-            NSLog(@"A gateway to the host server is working via WWAN.");            
+            //            NSLog(@"A gateway to the host server is working via WWAN.");
             break;
         }
     }
 }
+//shows the Labels once the Data Manager is finished
 -(void)showLabels{
-    NSLog(@"called show labels");
-    
     [UIView animateWithDuration:.5f animations:^{
-
+        
         [self.dateLabel setAlpha:1.0f];
         [self.cityLabel setAlpha:1.0f];
     }];
-    
-    
 }
-
+//checks the rotation and returns accurate position
 -(BOOL)shouldAutorotate{
-    
     if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
         return NO;
     }
@@ -117,91 +110,81 @@
         return YES;
     }
 }
-- (void)viewDidLoad
-{
+
+- (void)viewDidLoad{
     [super viewDidLoad];
+    //set the splash page to 0.0
     [self.splashImage setAlpha:0.0f];
     [self.largeActivitiyIndicator setAlpha:0.0f];
+    //start the activity indicator
     [self.largeActivitiyIndicator startAnimating];
-
+    //centers the hmff image
     self.hmffImage.center = CGPointMake(164, 236);
-    
-
+    //Gets the screen size
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    
-        if (screenSize.height > 480.0f) {
-            [self.splashImage setImage:[UIImage imageNamed:@"openingImage-iph5.png"]];
-        } else {
-            [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
-        }
-    
-    NSLog(@"VIEW DID APPEAR");
+    //if screen size is iphone 5 then load the iphone 5 image...else load default one
+    if (screenSize.height > 480.0f) {
+        [self.splashImage setImage:[UIImage imageNamed:@"openingImage-iph5.png"]];
+    } else {
+        [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
+    }
+    //start the move up of the hmff logo
     [UIView transitionWithView:self.hmffImage
                       duration:2.5f
                        options:UIViewAnimationOptionCurveEaseIn
                     animations:^(void) {
-                        
                         self.hmffImage.frame = CGRectMake(165.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
                         [self.largeActivitiyIndicator setAlpha:1.0f];
-                        
                     }
                     completion:^(BOOL finished) {
-                        NSLog(@"called finish loading");
                     }];
-    
+    //fades in the splash image
     [UIView animateWithDuration:2.0f animations:^{
-        
         [self.splashImage setAlpha:.3f];
     }];
     
-    
-	// Do any additional setup after loading the view.
 }
+//load the data into the app
 -(void)loadUpApp{
+    //set the date and city label to 0.0 alpha
     [self.cityLabel setAlpha:0.0f];
     [self.dateLabel setAlpha:0.0f];
-
-    
-    
-    NSLog(@"get parse dates started");
-    
-    
+    //holds the schedule objects
     NSArray *scheduleObjects = [[NSMutableArray alloc]init];
+    //query from parse
     PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
     //Puts all of the querys into an object
     scheduleObjects= [scheduleQuery findObjects];
-    
-    NSLog(@"get parse dates finished");
+    //Goes through and pulls out the date and location
     for(NSDictionary *diction in scheduleObjects){
         [self.dateLabel setText:[diction objectForKey:@"dates"]];
         [self.cityLabel setText:[diction objectForKey:@"location"]];
-       
     }
+    //stops the animating and removes the large activity indicator from the view
     [self.largeActivitiyIndicator stopAnimating];
     [self.largeActivitiyIndicator removeFromSuperview];
-     [self showLabels];
+    //show the labels
+    [self showLabels];
     
-    
-    
+    //starts loading the data for the app
     [HMDataFeedManager sharedDataFeedManager];
     
+    //completion block for the data loading, and will call the segue when it does
     [HMDataFeedManager sharedDataFeedManager].completionBlock = ^(BOOL success){
         if (success)
         {
-            NSLog(@"Finished loading data");
+            //            NSLog(@"Finished loading data");
             [self performSegueWithIdentifier:@"splashSegue" sender:self];
         }
         else{
-            NSLog(@"app did not load successfully");
+            //            NSLog(@"app did not load successfully");
         }
     };
 }
-
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     //When the View is loaded it this container sets the delegats
     if ([segue.identifier isEqualToString:@"splashSegue"]){

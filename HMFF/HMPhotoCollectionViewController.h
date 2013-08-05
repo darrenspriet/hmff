@@ -10,11 +10,10 @@
 #import "HMPhotoCollectionCell.h"
 #import "HMLargePhotoViewController.h"
 
-
-
 @interface HMPhotoCollectionViewController : UICollectionViewController
-
+//array that holds the small photos
 @property (strong, nonatomic) NSMutableArray *smallPhotos;
+//array that holds the large photos
 @property (strong, nonatomic) NSMutableArray *largePhotos;
 
 @end

@@ -10,12 +10,13 @@
 
 @interface HMNewsFeedCell : UITableViewCell
 
-//Used to set the title of the News Feed Cell
+//sets up a label for the title
 @property (weak, nonatomic) IBOutlet UILabel *title;
-
-//Used to set the Date of the News Feed Cell
+//sets up a label for the date
 @property (weak, nonatomic) IBOutlet UILabel *date;
+//sets up a view for the Cell
 @property (weak, nonatomic) IBOutlet UIView *cellView;
+//sets up a UIImage for the chevron
 @property (weak, nonatomic) IBOutlet UIImageView *chevron;
 
 @end

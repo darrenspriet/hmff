@@ -12,11 +12,10 @@
 
 //This is to hold the details item from the previous screen
 @property (nonatomic)NSDictionary *detailItem;
-//Holds the News title 
+//the News title 
 @property (weak, nonatomic) IBOutlet UILabel *newsTitle;
-//Holds the News Label
+// the News Label
 @property (weak, nonatomic) IBOutlet UITextView *content;
+//to set the view to transparent
 @property (weak, nonatomic) IBOutlet UIView *controllerView;
-
-
 @end

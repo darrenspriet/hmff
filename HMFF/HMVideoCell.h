@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface HMVideoCell : UITableViewCell
+//access to the videoTitle
 @property (weak, nonatomic) IBOutlet UILabel *videoTitle;
+//access to the videoWebView
 @property (weak, nonatomic) IBOutlet UIWebView *videoWebView;
+//access to the large activity indicator
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivityIndicator;
 
 

@@ -9,29 +9,30 @@
 #import <UIKit/UIKit.h>
 
 
-@interface HMMoreWebBrowserViewController : UIViewController <UIActionSheetDelegate, UIDocumentInteractionControllerDelegate> 
+@interface HMMoreWebBrowserViewController : UIViewController <UIActionSheetDelegate, UIDocumentInteractionControllerDelegate>
 
-//All properties for web browser
+//the webview on the storyboard
 @property (nonatomic, retain) IBOutlet UIWebView* webView;
+//the toolbar on the storyboard
 @property (nonatomic, retain) IBOutlet UIToolbar* toolbar;
+//the back button on the storyboard
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* back;
+//the forward button on the storyboard
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* forward;
+//the refresh button on the storyboard
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* refresh;
+//the stop button on the storyboard
 @property (nonatomic, retain) IBOutlet UIBarButtonItem* stop;
-@property (nonatomic, assign) BOOL isPDF;
-
-@property (nonatomic, strong) NSData *pdfData;
-
-
-
-
-
-//Property used to pass the URL to the the web page
-@property (nonatomic, strong) NSString *passedURL;
-
-//Share button
--(IBAction)shareButtonPressed:(UIBarButtonItem*)sender;
+//the large Indicator on the storyboard
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivityIndicator;
-
+//the url passed from the Table
+@property (nonatomic, strong) NSString *passedURL;
+//lets the controller know if the page was called with a pdf URL
+@property (nonatomic, assign) BOOL isPDF;
+//used to hold the pdfNSData
+@property (nonatomic, strong) NSData *pdfData;
+//the at the bottom of the page
+-(IBAction)shareButtonPressed:(UIBarButtonItem*)sender;
+//document controller
 @property (nonatomic, retain) UIDocumentInteractionController *docController;
 @end

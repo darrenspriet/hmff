@@ -12,11 +12,9 @@
 
 @interface HMMoreViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
+//holds the HTMLString for the URL's
+@property(strong, nonatomic)NSString*HTMLString;
 //Button to send an email
 - (IBAction)SendAnEmail:(UIButton *)sender;
-
-@property(strong, nonatomic)NSString*HTMLString;
-
-
 
 @end

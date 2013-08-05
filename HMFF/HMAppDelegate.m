@@ -18,7 +18,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
     
-   // [Crittercism enableWithAppID:@"51ec69f9c463c236e8000002"];
+    [Crittercism enableWithAppID:@"51ec69f9c463c236e8000002"];
 
     //Sets all of the Bar Button Items in the entire app to black
       [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:3.0/255.0 green:126.0/255.0 blue:153.0/255.0 alpha:1]];
@@ -26,6 +26,7 @@
     //Set the status bar style to blackopaque
     [application setStatusBarStyle:UIStatusBarStyleBlackOpaque];
     
+    //sets the parse App_Id and parse client key
      [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_CLIENT_KEY];
 
     return YES;

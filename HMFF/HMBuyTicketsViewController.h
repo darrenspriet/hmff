@@ -10,29 +10,33 @@
 
 @interface HMBuyTicketsViewController : UIViewController<UIActionSheetDelegate>
 
-
-
-//All properties for web browser
-@property (nonatomic, retain) IBOutlet UIWebView* webView;
-@property (nonatomic, retain) IBOutlet UIToolbar* toolbar;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem* back;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem* forward;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem* refresh;
-@property (nonatomic, retain) IBOutlet UIBarButtonItem* stop;
-
-//Property used to pass the URL to the the web page
-@property (nonatomic, strong) NSString *passedURL;
+//HTMLString passed to the URL
 @property (nonatomic, strong) NSString *HTMLString;
-
+//the webview on the storyboard
+@property (nonatomic, retain) IBOutlet UIWebView* webView;
+//the toolbar on the storyboard
+@property (nonatomic, retain) IBOutlet UIToolbar* toolbar;
+//the back button on the storyboard
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* back;
+//the forward button on the storyboard
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* forward;
+//the refresh button on the storyboard
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* refresh;
+//the stop button on the storyboard
+@property (nonatomic, retain) IBOutlet UIBarButtonItem* stop;
+//the large Indicator on the storyboard
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivityIndicator;
+//the url passed from the Table
+@property (nonatomic, strong) NSString *passedURL;
+//holds the links that are passed from Data Feed Manager
+@property(strong, nonatomic)NSMutableArray *links;
+//the property of which page pushed to this page
 @property (nonatomic, strong) NSString *pagePushed;
-
-//Share button
+//the outlet for the bar button item
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
+//the at the bottom of the page
 -(IBAction)shareButtonPressed:(UIBarButtonItem*)sender;
-
 //Done button for the flip page
 - (IBAction)backButtonPressed:(UIBarButtonItem *)sender;
-
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *largeActivityIndicator;
-@property (weak, nonatomic) IBOutlet UIBarButtonItem *backButton;
 
 @end
