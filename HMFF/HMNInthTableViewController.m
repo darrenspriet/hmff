@@ -72,6 +72,12 @@
     
     return [self.venue count];
 }
+
+//Creates a invisible footer to get rid of extra cells created
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
 //returns the number of rows in each section based on the lineUp array
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     switch (section) {
@@ -119,8 +125,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //initalizes the dictionary and array that holds the line up
-    NSDictionary * diction = [[NSDictionary alloc]init];
-    NSMutableArray *array = [[NSMutableArray alloc]init];
+    NSDictionary * diction;
+    NSMutableArray *array;
     
     switch (indexPath.section) {
         case 1:{
@@ -310,8 +316,7 @@
     if ([segue.identifier isEqualToString:@"DetailView"]) {
         //Sets the URL for the band and there detail view
         NSInteger row = [[self tableView].indexPathForSelectedRow row]-1;
-        NSDictionary * passedURL = [[NSDictionary alloc]init];
-        passedURL = [self.band objectAtIndex:row];
+        NSDictionary * passedURL = [self.band objectAtIndex:row];
         //        NSLog(@"url is: %@", [passedURL objectForKey:@"link"]);
         HMBandWebBrowserViewController *webBrowser = segue.destinationViewController;
         webBrowser.passedURL=[passedURL objectForKey:@"link"];

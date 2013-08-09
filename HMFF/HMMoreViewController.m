@@ -33,6 +33,11 @@
     }
 }
 
+//returns the accurate rotation position
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     //sets up the navigation bar

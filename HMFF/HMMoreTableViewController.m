@@ -24,6 +24,42 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    [self loadData];
+    
+}
+
+-(void)loadData{
+    [self setSubmitObject:[[HMDataFeedManager sharedDataFeedManager] submitObject]];
+    for (NSDictionary *diction in self.submitObject){
+         NSString * string=[diction objectForKey:@"name"];
+        //if the name is entry form
+         if ([string isEqualToString:@"entryformlink"]) {
+            [self loadPdfData: [diction objectForKey:@"details"]];
+          }
+    }
+}
+
+  
+//takes the string from the url and loads it into nsdata so it can be opened in a document
+-(void)loadPdfData:(NSString*)string{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //        NSLog(@"parse loadPDF started dispach started");
+        NSDate *startTime= [NSDate date];
+        
+        
+        //loads the pdf data into the nsdata property
+        [self setPdfData:  [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:string]]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //            NSLog(@"loadPDF dispach finished");
+            [[HMDataFeedManager sharedDataFeedManager] setPdfData:self.pdfData];
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"load PDF : %f", difference);
+            ;
+        });
+    });
 }
 
 #pragma mark - Table view data source
@@ -38,6 +74,11 @@
             //else returns 47f 
             return 47.0f;
         }
+}
+
+//Creates a invisible footer to get rid of extra cells created
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -106,11 +147,6 @@
         }
     }
     
-}
-//This returns the view and causes the table to not go on after the final cell
-- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
-    UIView *view = [[UIView alloc] init];
-    return view;
 }
 
 - (void)didReceiveMemoryWarning{

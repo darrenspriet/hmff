@@ -34,6 +34,10 @@
 @property (weak, nonatomic) IBOutlet UIButton *backButtonImage;
 //Holds the HTMLString of the Tickets Page
 @property(strong, nonatomic)NSString*HTMLString;
+//Holds the linkObjects
+@property (nonatomic, strong) NSArray *linkObject;
+//Holds the Links Array 
+@property(strong, nonatomic)NSMutableArray *linksArray;
 
 
 @end

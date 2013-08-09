@@ -55,7 +55,7 @@
     //-- set up the data objects
     NSString *text = @"Check out HMFF!";
     NSURL *url = [NSURL URLWithString:@"http://www.hmff.com"];
-    UIImage *image = [UIImage imageNamed:@"hmffRedLogo.png"];
+    UIImage *image = self.largePhotos;
     NSArray *activityItems = [NSArray arrayWithObjects:text, url, image, nil];
     
     //-- initialising the activity view controller

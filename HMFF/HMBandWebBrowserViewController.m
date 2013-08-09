@@ -33,6 +33,11 @@
         return YES;
     }
 }
+//returns the accurate rotation position
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 -(void)viewDidDisappear:(BOOL)animated{
     //if the Webview is loading stop loading and turn off the ActivityIndicator in the status bar
     if([self.webView isLoading])

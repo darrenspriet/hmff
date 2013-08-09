@@ -29,6 +29,10 @@
         return YES;
     }
 }
+//returns the accurate rotation position
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];

@@ -22,6 +22,20 @@
     }
     return self;
 }
+//checks the rotation and returns accurate position
+-(BOOL)shouldAutorotate{
+    if (self.interfaceOrientation==UIInterfaceOrientationPortrait) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+
+//returns the accurate rotation position
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
 
 - (void)viewDidLoad{
     [super viewDidLoad];
@@ -30,6 +44,7 @@
     //set the blackview to .4 alpha
     [self.blackView setAlpha:.4f];
 }
+
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];

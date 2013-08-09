@@ -30,18 +30,23 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkNetworkStatus:) name:kReachabilityChangedNotification object:nil];
     
     //Checks the internet for reachability
-    self.internetReachable = [Reachability reachabilityForInternetConnection];
+    [self setInternetReachable:  [Reachability reachabilityForInternetConnection]];
     [self.internetReachable startNotifier];
     
     // check if a pathway to a random host exists
-    self.hostReachable = [Reachability reachabilityWithHostName: @"http://www.apple.com"] ;
+    [self setHostReachable: [Reachability reachabilityWithHostName: @"http://www.apple.com"] ];
     [self.hostReachable startNotifier];
+    NSLog(@"view will appear");
     
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    NSLog(@"view will dissapear");
     
+}
+-(void)viewDidDisappear:(BOOL)animated{
+    NSLog(@"view did disaper");
 }
 -(void) checkNetworkStatus:(NSNotification *)notice
 {
@@ -54,6 +59,8 @@
             //NSLog(@"The internet is down.");
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This app requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
             [alert show];
+            [self.largeActivitiyIndicator setAlpha:0.0f];
+
             
             break;
         }
@@ -61,6 +68,8 @@
         {
             //NSLog(@"The internet is working via WIFI.");
             [self loadUpApp];
+            [self.largeActivitiyIndicator setAlpha:1.0f];
+
             
             break;
         }
@@ -68,7 +77,8 @@
         {
             //NSLog(@"The internet is working via WWAN.");
             [self loadUpApp];
-            
+            [self.largeActivitiyIndicator setAlpha:1.0f];
+
             break;
         }
     }
@@ -111,6 +121,11 @@
     }
 }
 
+//returns the accurate rotation position
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     //set the splash page to 0.0
@@ -133,7 +148,7 @@
                       duration:2.5f
                        options:UIViewAnimationOptionCurveEaseIn
                     animations:^(void) {
-                        self.hmffImage.frame = CGRectMake(165.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
+                        self.hmffImage.frame = CGRectMake(164.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
                         [self.largeActivitiyIndicator setAlpha:1.0f];
                     }
                     completion:^(BOOL finished) {
@@ -144,17 +159,17 @@
     }];
     
 }
+
 //load the data into the app
 -(void)loadUpApp{
     //set the date and city label to 0.0 alpha
     [self.cityLabel setAlpha:0.0f];
     [self.dateLabel setAlpha:0.0f];
     //holds the schedule objects
-    NSArray *scheduleObjects = [[NSMutableArray alloc]init];
     //query from parse
     PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
     //Puts all of the querys into an object
-    scheduleObjects= [scheduleQuery findObjects];
+    NSArray *scheduleObjects= [scheduleQuery findObjects];
     //Goes through and pulls out the date and location
     for(NSDictionary *diction in scheduleObjects){
         [self.dateLabel setText:[diction objectForKey:@"dates"]];

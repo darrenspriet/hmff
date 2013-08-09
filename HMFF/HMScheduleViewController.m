@@ -31,6 +31,12 @@
         return YES;
     }
 }
+
+//returns the accurate rotation position
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     //sets up the navigation bar
@@ -69,6 +75,12 @@
     [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
     //sets the image for the date to the initial date
     [self.dateForEvent setText:[self.date objectAtIndex:0]];
+    
+    [self setLinkObject:[[HMDataFeedManager sharedDataFeedManager] linkObject]];
+    //parses the TicketLink into a HTMLString
+    [self parseTicketLink:self.linkObject];
+    //parses through the Social links to save to an array
+    [self parseSocialLinks:self.linkObject];
     
 }
 - (void)didReceiveMemoryWarning{
@@ -118,5 +130,106 @@
 - (IBAction)backButton:(UIButton *)sender {
     [self.delegate scrollBack];
 }
+
+
+
+
+//parses through the social links
+-(void)parseSocialLinks:(NSArray*)array{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //        NSLog(@"parseLinks dispach started");
+        NSDate *startTime= [NSDate date];
+        
+        
+        //allocating arrays
+        NSString *finalLink;
+        [self setLinksArray: [[NSMutableArray alloc]init]];
+        
+        //iterates through the array and puts it into the linksArray
+        for (NSDictionary *diction in array){
+            NSString * string=[diction objectForKey:@"name"];
+            
+            //if the name is equal to hmff
+            if ([string isEqualToString:@"hmff"]) {
+                
+                //adds it to the links Array
+                [self.linksArray addObject:diction];
+                
+                //Then builds a HTMLString of the Website
+                finalLink= [self buildLinkData:[diction objectForKey:@"link"]];
+                
+                //builds a temporary NSDictionary with the final Link
+                NSDictionary *tempDict=[[NSDictionary alloc]initWithObjectsAndKeys:@"htmlLink", @"name",finalLink,@"link", nil];
+                
+                //adds the dictionary to the linksArray
+                [self.linksArray addObject:tempDict];
+            }
+            else{
+                //adds the dictionary to the links array
+                [self.linksArray addObject:diction];
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //            NSLog(@"parseLinks dispach finished");
+            [[HMDataFeedManager sharedDataFeedManager] setLinksArray:self.linksArray];
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"parse Links: %f", difference);
+            ;
+            
+        });
+    });
+}
+
+//parses through to get the ticket link
+-(void)parseTicketLink:(NSArray*)array{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //        NSLog(@"single link");
+        NSDate *startTime= [NSDate date];
+        
+        
+        //initializes the strings
+        [self setHTMLString: [[NSString alloc]init]];
+        
+        //iterates through the array to find the ticket
+        for (NSDictionary *diction in array){
+            NSString * string=[diction objectForKey:@"name"];
+            if ([string isEqualToString:@"ticket"]) {
+                
+                //calls the build link data and sets it to the HTMLString
+                [self setHTMLString: [self buildLinkData:[diction objectForKey:@"link"]]];
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //            NSLog(@"single link finished");
+            [[HMDataFeedManager sharedDataFeedManager] setHTMLString:self.HTMLString];
+
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"ticket single link: %f", difference);
+            ;
+        });
+    });
+}
+
+//builds Link Data sending in a string and returning a string
+-(NSString*)buildLinkData:(NSString*)string{
+    //intialize a NSData
+    NSData *urlData;
+    //sets up a request with the string passed in
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:string] cachePolicy:NSURLRequestReturnCacheDataElseLoad timeoutInterval: 10.0];
+    //initializes an NSError, and NSURLResponse
+    NSError *error = nil;
+    NSURLResponse* response = nil;
+    //sets the url data with the request and response and error
+    urlData  = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    //sets up the string with the url data from above
+    NSString *returnString= [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
+    //returnts the return string from above
+    return returnString;
+}
+
 
 @end

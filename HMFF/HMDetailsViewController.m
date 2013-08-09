@@ -33,6 +33,11 @@
     }
 }
 
+//returns the accurate rotation position
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     //Sets the title of the screen to "Details
@@ -47,6 +52,7 @@
     [self.navigationController.navigationBar.topItem setTitle :@"Back" ];
 
 }
+
 
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];

@@ -243,27 +243,6 @@
                                             <action selector="postTweet:" destination="2Qd-db-GVQ" eventType="touchUpInside" id="xNP-Fk-7ez"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XES-95-PX2">
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="62" type="user" id="CMs-C5-sRf"/>
-                                            <constraint firstAttribute="height" constant="20" type="user" id="mXx-0w-zUq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="7"/>
-                                        <state key="normal" backgroundImage="Twitter_Follow_1x.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="disabled" backgroundImage="Twitter_Follow_1x.png"/>
-                                        <state key="selected" backgroundImage="Twitter_Follow_1x.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="highlighted" backgroundImage="Twitter_Follow_1x.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="followTapped:" destination="2Qd-db-GVQ" eventType="touchUpInside" id="LrN-0V-taK"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Twitter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXA-Sh-vyn">
                                         <constraints>
                                             <constraint firstAttribute="width" constant="91" id="0PF-si-K6M"/>
@@ -277,18 +256,14 @@
                                 <constraints>
                                     <constraint firstItem="Gz0-ie-eqd" firstAttribute="top" secondItem="t7O-J4-h9V" secondAttribute="top" constant="15" type="user" id="6Pe-QM-bgw"/>
                                     <constraint firstItem="KXA-Sh-vyn" firstAttribute="top" secondItem="t7O-J4-h9V" secondAttribute="top" constant="20" symbolic="YES" type="user" id="ENf-JY-iyy"/>
-                                    <constraint firstItem="Gz0-ie-eqd" firstAttribute="centerY" secondItem="XES-95-PX2" secondAttribute="centerY" type="user" id="Jpn-Q0-qj0"/>
                                     <constraint firstItem="rUb-Sm-7vL" firstAttribute="top" secondItem="t7O-J4-h9V" secondAttribute="top" constant="60" id="K7I-XQ-Ooz"/>
-                                    <constraint firstItem="XES-95-PX2" firstAttribute="top" secondItem="t7O-J4-h9V" secondAttribute="top" constant="21" type="user" id="TrV-pW-Dyr"/>
                                     <constraint firstItem="rUb-Sm-7vL" firstAttribute="trailing" secondItem="t7O-J4-h9V" secondAttribute="trailing" type="default" id="hT0-FU-Jqp"/>
                                     <constraint firstItem="KXA-Sh-vyn" firstAttribute="top" relation="greaterThanOrEqual" secondItem="t7O-J4-h9V" secondAttribute="top" constant="20" type="user" id="m3P-nS-aBw"/>
                                     <constraint firstItem="KXA-Sh-vyn" firstAttribute="centerX" secondItem="rUb-Sm-7vL" secondAttribute="centerX" type="default" id="oc8-Vf-613"/>
                                     <constraint firstItem="rUb-Sm-7vL" firstAttribute="leading" secondItem="t7O-J4-h9V" secondAttribute="leading" type="default" id="qsT-mP-eQH"/>
-                                    <constraint firstItem="XES-95-PX2" firstAttribute="bottom" secondItem="KXA-Sh-vyn" secondAttribute="bottom" type="user" id="uJd-5Z-tMr"/>
                                     <constraint firstItem="rUb-Sm-7vL" firstAttribute="bottom" secondItem="t7O-J4-h9V" secondAttribute="bottom" type="default" id="vXM-SP-dPt"/>
                                     <constraint firstAttribute="height" constant="60" type="user" id="vgv-Ud-NSU"/>
                                     <constraint firstItem="Gz0-ie-eqd" firstAttribute="leading" secondItem="t7O-J4-h9V" secondAttribute="leading" constant="12" id="wil-7L-eLr"/>
-                                    <constraint firstAttribute="trailing" secondItem="XES-95-PX2" secondAttribute="trailing" constant="14" id="xFx-J3-jQm"/>
                                 </constraints>
                             </view>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EwO-A3-tha">
@@ -318,7 +293,6 @@
                         <barButtonItem key="backBarButtonItem" title="Twitter" id="4c0-JY-BXm"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="TwitterButtonOutlet" destination="XES-95-PX2" id="JYW-fH-mjT"/>
                         <segue destination="jWH-U8-Cqf" kind="modal" identifier="BuyTickets" modalTransitionStyle="flipHorizontal" id="gFT-7k-txH"/>
                     </connections>
                 </viewController>
@@ -1742,9 +1716,9 @@ M4M 3C3</string>
                         <constraints>
                             <constraint firstItem="4iQ-hg-6BD" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" constant="27" id="8dl-7Y-OFe"/>
                             <constraint firstItem="4iQ-hg-6BD" firstAttribute="top" secondItem="yyJ-xl-CLe" secondAttribute="top" constant="201" id="91j-TQ-n1L"/>
+                            <constraint firstItem="FRj-Jk-1zt" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" constant="118" id="FSO-lZ-AX6"/>
                             <constraint firstItem="4iQ-hg-6BD" firstAttribute="centerX" secondItem="yyJ-xl-CLe" secondAttribute="centerX" type="default" id="Fmx-GS-0Mu"/>
                             <constraint firstItem="4iQ-hg-6BD" firstAttribute="centerX" secondItem="rZJ-Gb-yFn" secondAttribute="centerX" type="default" id="Hrq-rM-NYS"/>
-                            <constraint firstItem="FRj-Jk-1zt" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" constant="109" id="SnH-k4-ZxG"/>
                             <constraint firstItem="rZJ-Gb-yFn" firstAttribute="top" secondItem="yyJ-xl-CLe" secondAttribute="top" type="user" id="WQg-0B-Mfy"/>
                             <constraint firstItem="FRj-Jk-1zt" firstAttribute="top" secondItem="yyJ-xl-CLe" secondAttribute="top" constant="98" id="cT7-iV-fZs"/>
                             <constraint firstItem="rZJ-Gb-yFn" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" type="default" id="dcu-zj-daA"/>
@@ -2236,7 +2210,6 @@ M4M 3C3</string>
         <image name="SocialThumbsUp.png" width="27" height="27"/>
         <image name="TwitterBird.png" width="31" height="24"/>
         <image name="TwitterImage.png" width="70" height="70"/>
-        <image name="Twitter_Follow_1x.png" width="62" height="20"/>
         <image name="VimeoImage.png" width="70" height="70"/>
         <image name="YouTubeImage.png" width="70" height="70"/>
         <image name="aboutUs.png" width="40" height="40"/>
@@ -2493,9 +2466,6 @@ M4M 3C3</string>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -2504,8 +2474,8 @@ M4M 3C3</string>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="mjR-NM-uON"/>
-        <segue reference="h6M-be-XsA"/>
         <segue reference="aci-KS-ked"/>
         <segue reference="026-ex-1CB"/>
+        <segue reference="gFT-7k-txH"/>
     </inferredMetricsTieBreakers>
 </document>

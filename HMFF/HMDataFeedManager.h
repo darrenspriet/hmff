@@ -56,7 +56,7 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 @property (nonatomic, strong) NSMutableArray *smallPhotos;
 
 //Holds the Large Photos that will be sent to More View Controller(More)
-@property (nonatomic, strong) NSMutableArray *largePhotos;
+@property (nonatomic, strong) NSMutableArray *largePhotosData;
 
 //Holds the YouTube Array that is used in the Video View Controller(More)
 @property(strong, nonatomic)NSMutableArray *youTubeArray;
@@ -67,9 +67,10 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 //Holds the pdfdata from the Entry Form pdf in the More View Controller(More)
 @property (nonatomic, strong) NSData *pdfData;
 
+//Holds the submitObjects that will be sent to More View Controller(More)
+@property (nonatomic, strong) NSArray *submitObject;
 
-
-
-
+//Holds the linkObjects that will be sent to Social View Controller(Social)
+@property (nonatomic, strong) NSArray *linkObject;
 
 @end

@@ -44,6 +44,11 @@
     return 1;
 }
 
+//Creates a invisible footer to get rid of extra cells created
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     //returns the count of the title Array which is how many rows
     return [self.titleArray count];

@@ -32,6 +32,10 @@
         return YES;
     }
 }
+//returns the accurate rotation position
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
 -(void)viewWillAppear:(BOOL)animated{
     //sets the title when we come back from the web browser or the detail view
     [self.navigationItem setTitle:@"Band Submission"];

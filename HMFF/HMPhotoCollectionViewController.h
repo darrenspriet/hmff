@@ -16,4 +16,7 @@
 //array that holds the large photos
 @property (strong, nonatomic) NSMutableArray *largePhotos;
 
+//Holds the Large Photos that will be sent to More View Controller(More)
+@property (nonatomic, strong) NSMutableArray *largePhotosData;
+
 @end

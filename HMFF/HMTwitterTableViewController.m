@@ -35,6 +35,11 @@
     return [self.tweets count];
 }
 
+//Creates a invisible footer to get rid of extra cells created
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.01f;
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     //Uses the Tweet Cell
     static NSString *CellIdentifier = @"Tweet Cell";

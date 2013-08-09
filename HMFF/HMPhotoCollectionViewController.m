@@ -38,18 +38,38 @@
     }
 }
 
+//returns the accurate rotation position
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     //set the title to "photos"
     [self.navigationItem setTitle:@"Photos"];
     //loads up the data for the page
     [self loadData];
+    [self createLargePhotos];
+    
+}
+
+-(void)createLargePhotos{
+    //initalizes the large photos array
+    [self setLargePhotos : [[NSMutableArray alloc] init] ];
+    //loops through all the data sent from the data feed manager and adds them to the photo array
+    for(NSData *data in self.largePhotosData){
+          UIImage *largeImage= [UIImage imageWithData:data];
+         [self.largePhotos addObject:largeImage];
+
+    }
+    
 }
 -(void)loadData{
     //sets the small photos array
     [self setSmallPhotos:  [[HMDataFeedManager sharedDataFeedManager] smallPhotos]];
+    
     //sets the large photos array
-    [self setLargePhotos:  [[HMDataFeedManager sharedDataFeedManager] largePhotos]];
+    [self setLargePhotosData:  [[HMDataFeedManager sharedDataFeedManager] largePhotosData]];
     
 }
 
