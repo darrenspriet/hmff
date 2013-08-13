@@ -95,11 +95,11 @@
 
 - (IBAction)SendAnEmail:(UIButton *)sender {
     // Email Subject
-    NSString *emailTitle = @"HMFF Support";
+    NSString *emailTitle = @"HMFF";
     // Email Content
     // NSString *messageBody = @"I love HMFF";
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"support@hmff.com"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"kevin@hmff.com"];
     //allocs and sets all of the information for the composer
     MFMailComposeViewController *messageComposer = [[MFMailComposeViewController alloc] init];
     [messageComposer setMailComposeDelegate: self];

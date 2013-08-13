@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QTH-IL-sWj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QTH-IL-sWj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -1684,7 +1684,7 @@ M4M 3C3</string>
                                             <constraint firstAttribute="height" constant="29" type="user" id="ZHA-X1-LXj"/>
                                             <constraint firstAttribute="width" constant="225" id="cmq-df-Jq3"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -1693,7 +1693,7 @@ M4M 3C3</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="29" type="user" id="c4V-RF-pcF"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -2135,7 +2135,19 @@ M4M 3C3</string>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="aboutUsBackground.png" translatesAutoresizingMaskIntoConstraints="NO" id="iho-yH-JMQ"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Va-Mp-9Xd">
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Graphic Designer: Scott Renaud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VI-Yh-7ay">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8VI-Yh-7ay" secondAttribute="bottom" constant="126" id="kME-lA-CpA"/>
+                                    <constraint firstAttribute="trailing" secondItem="8VI-Yh-7ay" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uVm-qK-a02"/>
+                                    <constraint firstItem="8VI-Yh-7ay" firstAttribute="leading" secondItem="8Va-Mp-9Xd" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="wJ6-QV-Kh9"/>
+                                </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="About Us" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAl-QJ-V8s">
                                 <constraints>
@@ -2156,11 +2168,6 @@ M4M 3C3</string>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Graphic Designer: Scott Renaud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VI-Yh-7ay">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Photographer: Brian Berneker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qf3-dS-Xda">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -2176,9 +2183,7 @@ M4M 3C3</string>
                             <constraint firstItem="rlC-Ox-3QV" firstAttribute="top" secondItem="4B4-cM-eWi" secondAttribute="top" constant="110" id="Qfd-Gl-HSj"/>
                             <constraint firstItem="VcP-Pb-pwb" firstAttribute="top" secondItem="4B4-cM-eWi" secondAttribute="top" constant="135" id="V2m-OX-Vub"/>
                             <constraint firstItem="Qf3-dS-Xda" firstAttribute="leading" secondItem="4B4-cM-eWi" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="VVn-AF-NWd"/>
-                            <constraint firstItem="8VI-Yh-7ay" firstAttribute="top" secondItem="4B4-cM-eWi" secondAttribute="top" constant="160" id="Y8t-uL-xuL"/>
                             <constraint firstItem="rlC-Ox-3QV" firstAttribute="leading" secondItem="4B4-cM-eWi" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YAf-VP-ApO"/>
-                            <constraint firstItem="8VI-Yh-7ay" firstAttribute="leading" secondItem="4B4-cM-eWi" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZfU-AM-gFz"/>
                             <constraint firstItem="iho-yH-JMQ" firstAttribute="top" secondItem="4B4-cM-eWi" secondAttribute="top" type="default" id="epo-Mk-Nd4"/>
                             <constraint firstItem="Qf3-dS-Xda" firstAttribute="top" secondItem="4B4-cM-eWi" secondAttribute="top" constant="185" id="gsg-4X-SAv"/>
                             <constraint firstItem="qAl-QJ-V8s" firstAttribute="top" secondItem="4B4-cM-eWi" secondAttribute="top" constant="74" id="jzq-eu-H34"/>
@@ -2186,7 +2191,6 @@ M4M 3C3</string>
                             <constraint firstItem="VcP-Pb-pwb" firstAttribute="leading" secondItem="4B4-cM-eWi" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lbF-73-P8S"/>
                             <constraint firstItem="iho-yH-JMQ" firstAttribute="leading" secondItem="4B4-cM-eWi" secondAttribute="leading" type="default" id="ogn-ML-Tkn"/>
                             <constraint firstAttribute="trailing" secondItem="Qf3-dS-Xda" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qnU-N1-DFv"/>
-                            <constraint firstAttribute="trailing" secondItem="8VI-Yh-7ay" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="qwG-tU-vdN"/>
                             <constraint firstItem="8Va-Mp-9Xd" firstAttribute="bottom" secondItem="4B4-cM-eWi" secondAttribute="bottom" type="default" id="tNM-HI-bo0"/>
                             <constraint firstItem="iho-yH-JMQ" firstAttribute="bottom" secondItem="4B4-cM-eWi" secondAttribute="bottom" type="default" id="ueb-sK-reT"/>
                             <constraint firstAttribute="trailing" secondItem="VcP-Pb-pwb" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="xPA-3k-CWN"/>
