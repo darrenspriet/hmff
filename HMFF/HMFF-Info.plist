@@ -14,8 +14,6 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>HMFFIcon57.png</string>
-				<string>HMFFIcon114.png</string>
 				<string>hmffIcon@2x.png</string>
 				<string>hmffIcon.png</string>
 			</array>
