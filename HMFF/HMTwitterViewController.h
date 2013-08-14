@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
-#import <Accounts/Accounts.h>
-#import "KeychainItemWrapper.h"
 
 @interface HMTwitterViewController : UIViewController
 
@@ -19,19 +17,6 @@
 @property(strong, nonatomic)NSString*HTMLString;
 //used to set the tweets array
 @property (nonatomic, strong)NSArray *tweets;
-
-
-
-
-
-
-// ALL THE FOLLOWING IS FOR THE FOLLOWING BUTTON!!!!!
-- (IBAction)followTapped:(UIButton *)sender;
-@property (weak, nonatomic) IBOutlet UIButton *TwitterButtonOutlet;
-@property (strong, nonatomic) ACAccountStore *accountStore;
-@property (strong, nonatomic) ACAccount *userAccount;
-@property (nonatomic, strong) KeychainItemWrapper *keychain;
-
 
 @end
 

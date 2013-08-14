@@ -36,17 +36,17 @@
     // check if a pathway to a random host exists
     [self setHostReachable: [Reachability reachabilityWithHostName: @"http://www.apple.com"] ];
     [self.hostReachable startNotifier];
-    NSLog(@"view will appear");
+//    NSLog(@"view will appear");
     
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    NSLog(@"view will dissapear");
+//    NSLog(@"view will dissapear");
     
 }
 -(void)viewDidDisappear:(BOOL)animated{
-    NSLog(@"view did disaper");
+//    NSLog(@"view did disaper");
 }
 -(void) checkNetworkStatus:(NSNotification *)notice
 {

@@ -25,7 +25,6 @@
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    NSLog(@"here comes the view");
     //sets the scroll view when the page loads
     [self.scrollView setContentSize:CGSizeMake(([self.date count])*320, self.scrollView.frame.size.height)];
     //sets paging to Enabled

@@ -87,7 +87,6 @@
 		E09FCFD51718979900DFD7C9 /* HMScheduleNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFD41718979900DFD7C9 /* HMScheduleNavigationViewController.m */; };
 		E09FCFD81718F17400DFD7C9 /* HMScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFD71718F17400DFD7C9 /* HMScheduleViewController.m */; };
 		E09FCFDB1718F1F800DFD7C9 /* HMScheduleScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E09FCFDA1718F1F800DFD7C9 /* HMScheduleScrollViewController.m */; };
-		E0A392C617A8B0050052C17E /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = E0A392C517A8B0040052C17E /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E0A89A5B170521D60070F731 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0A89A591705219D0070F731 /* Twitter.framework */; };
 		E0B3A234174721FD00DDBF91 /* HMSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B3A233174721FD00DDBF91 /* HMSplashViewController.m */; };
 		E0B3A23C174727F000DDBF91 /* HMDataFeedManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E0B3A23B174727F000DDBF91 /* HMDataFeedManager.m */; };
@@ -313,7 +312,6 @@
 		E09FCFD71718F17400DFD7C9 /* HMScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScheduleViewController.m; sourceTree = "<group>"; };
 		E09FCFD91718F1F800DFD7C9 /* HMScheduleScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMScheduleScrollViewController.h; sourceTree = "<group>"; };
 		E09FCFDA1718F1F800DFD7C9 /* HMScheduleScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMScheduleScrollViewController.m; sourceTree = "<group>"; };
-		E0A392C517A8B0040052C17E /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		E0A89A591705219D0070F731 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		E0B3A232174721FD00DDBF91 /* HMSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSplashViewController.h; sourceTree = "<group>"; };
 		E0B3A233174721FD00DDBF91 /* HMSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMSplashViewController.m; sourceTree = "<group>"; };
@@ -388,7 +386,6 @@
 		E0D09CBB179588E900BA6A11 /* HMDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMDetailsViewController.m; sourceTree = "<group>"; };
 		E0D7B5B8178D095C000C2EC6 /* Following@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Following@2x.png"; sourceTree = "<group>"; };
 		E0D7B5B9178D095C000C2EC6 /* Following.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Following.png; sourceTree = "<group>"; };
-		E0D7B5BD178D0E39000C2EC6 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		E0D7B5C6178D1BEE000C2EC6 /* HMVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMVideoCell.h; sourceTree = "<group>"; };
 		E0D7B5C7178D1BEE000C2EC6 /* HMVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMVideoCell.m; sourceTree = "<group>"; };
 		E0D7B5C9178D1DEA000C2EC6 /* HMSubmitBandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMSubmitBandViewController.h; sourceTree = "<group>"; };
@@ -503,8 +500,6 @@
 			children = (
 				E0945284177D2CAE002ADE94 /* Reachability.h */,
 				E0945285177D2CAE002ADE94 /* Reachability.m */,
-				E0D7B5BD178D0E39000C2EC6 /* KeychainItemWrapper.h */,
-				E0A392C517A8B0040052C17E /* KeychainItemWrapper.m */,
 				E0F89C69171748B500BD5755 /* HMCheckInternetAccess.h */,
 				E0F89C6A171748B500BD5755 /* HMCheckInternetAccess.m */,
 				E0257D901728AA0B005D7D52 /* HMBuyTicketsViewController.h */,
@@ -1244,7 +1239,6 @@
 				E0D7B5CE178D1DFF000C2EC6 /* HMSubmitVideoViewController.m in Sources */,
 				E0D09CBC179588EA00BA6A11 /* HMDetailsViewController.m in Sources */,
 				E059AEB6179EAD9800CE749B /* HMAboutUsViewController.m in Sources */,
-				E0A392C617A8B0050052C17E /* KeychainItemWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

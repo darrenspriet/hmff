@@ -42,7 +42,7 @@
     //set the title of the navigation item to "About Us"
     [self.navigationItem setTitle:@"About Us"];
     //set the blackview to .4 alpha
-    [self.blackView setAlpha:.4f];
+    [self.blackView setAlpha:.5f];
 }
 
 
