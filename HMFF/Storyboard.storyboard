@@ -33,8 +33,6 @@
                             </view>
                             <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvq-Vt-iFe">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Qh9-3a-9oX">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="jtw-ey-lVs" kind="embed" id="SQg-LS-jNu"/>
                                 </connections>
@@ -1389,7 +1387,6 @@
         <!--Details View Controller-->
         <scene sceneID="v95-4T-PEb">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vxb-LD-0xI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="hMV-LC-GyK" customClass="HMDetailsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zci-G5-cyv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="307"/>
@@ -1456,6 +1453,7 @@ M4M 3C3</string>
                         <outlet property="detailsLabel" destination="Iwa-RB-9aZ" id="Oqk-Ek-S46"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vxb-LD-0xI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3332" y="1219"/>
         </scene>
