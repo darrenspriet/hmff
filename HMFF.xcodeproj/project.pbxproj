@@ -153,8 +153,6 @@
 		E0D8D8D51720DB5200752A29 /* HMVenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0D8D8D41720DB5200752A29 /* HMVenueCell.m */; };
 		E0DCB6C81787D13E00A538FC /* Twitter_Follow_1x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DCB6C31787D13E00A538FC /* Twitter_Follow_1x.png */; };
 		E0DCB6C91787D13E00A538FC /* Twitter_Follow_1x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0DCB6C41787D13E00A538FC /* Twitter_Follow_1x@2x.png */; };
-		E0E640EB179DE67B003C669D /* dsym_upload.sh in Resources */ = {isa = PBXBuildFile; fileRef = E0E640E9179DE67B003C669D /* dsym_upload.sh */; };
-		E0E640EC179DE67B003C669D /* libCrittercism_v4_0_2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E640EA179DE67B003C669D /* libCrittercism_v4_0_2.a */; };
 		E0EB5EB2171447E900C444CE /* HMNewsFeedCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */; };
 		E0EB5EB51714598500C444CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB31714596A00C444CE /* MessageUI.framework */; };
 		E0EB5EBA17145A7000C444CE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB617145A5C00C444CE /* Social.framework */; };
@@ -396,10 +394,6 @@
 		E0D8D8D41720DB5200752A29 /* HMVenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMVenueCell.m; sourceTree = "<group>"; };
 		E0DCB6C31787D13E00A538FC /* Twitter_Follow_1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Twitter_Follow_1x.png; path = "twitter buttons/Twitter_Follow_1x.png"; sourceTree = "<group>"; };
 		E0DCB6C41787D13E00A538FC /* Twitter_Follow_1x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Twitter_Follow_1x@2x.png"; path = "twitter buttons/Twitter_Follow_1x@2x.png"; sourceTree = "<group>"; };
-		E0E640E7179DE67B003C669D /* Crittercism.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crittercism.h; sourceTree = "<group>"; };
-		E0E640E8179DE67B003C669D /* CrittercismDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CrittercismDelegate.h; sourceTree = "<group>"; };
-		E0E640E9179DE67B003C669D /* dsym_upload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = dsym_upload.sh; sourceTree = "<group>"; };
-		E0E640EA179DE67B003C669D /* libCrittercism_v4_0_2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libCrittercism_v4_0_2.a; sourceTree = "<group>"; };
 		E0EB5EB0171447E900C444CE /* HMNewsFeedCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedCell.h; sourceTree = "<group>"; };
 		E0EB5EB1171447E900C444CE /* HMNewsFeedCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedCell.m; sourceTree = "<group>"; };
 		E0EB5EB31714596A00C444CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -468,7 +462,6 @@
 				E03C066316FBE667002AC531 /* CoreGraphics.framework in Frameworks */,
 				E03C066516FBE667002AC531 /* CoreData.framework in Frameworks */,
 				E0F8FE75171DE587005B3AC0 /* Parse.framework in Frameworks */,
-				E0E640EC179DE67B003C669D /* libCrittercism_v4_0_2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -611,7 +604,6 @@
 		E03C065D16FBE667002AC531 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E0E640E6179DE67B003C669D /* CrittercismSDK */,
 				E0BE898517714F68005366A8 /* STTwitter */,
 				E0F8FE81171DE68E005B3AC0 /* libz.1.1.3.dylib */,
 				E0F8FE7F171DE683005B3AC0 /* libsqlite3.dylib */,
@@ -969,17 +961,6 @@
 			name = "BackGround Images";
 			sourceTree = "<group>";
 		};
-		E0E640E6179DE67B003C669D /* CrittercismSDK */ = {
-			isa = PBXGroup;
-			children = (
-				E0E640E7179DE67B003C669D /* Crittercism.h */,
-				E0E640E8179DE67B003C669D /* CrittercismDelegate.h */,
-				E0E640E9179DE67B003C669D /* dsym_upload.sh */,
-				E0E640EA179DE67B003C669D /* libCrittercism_v4_0_2.a */,
-			);
-			path = CrittercismSDK;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1121,7 +1102,6 @@
 				E08891E2179A36D70018FFD5 /* details.png in Resources */,
 				E08891E5179A38140018FFD5 /* contactButton.png in Resources */,
 				E08891E6179A38140018FFD5 /* contactButton@2x.png in Resources */,
-				E0E640EB179DE67B003C669D /* dsym_upload.sh in Resources */,
 				E0473D06179ECD7900BBE3F5 /* filmSubmit.png in Resources */,
 				E0473D07179ECD7900BBE3F5 /* filmSubmit@2x.png in Resources */,
 				E0473D08179ECD7900BBE3F5 /* musicSubmit@2x.png in Resources */,

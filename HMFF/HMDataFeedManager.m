@@ -57,7 +57,6 @@
 -(void)fetchFlickerFeed{
     dispatch_async(dispatch_get_main_queue(), ^{
 //        NSLog(@"fetch flicker dispach started");
-        NSDate *startTime= [NSDate date];
         //This is for  a specific Set with a ID number
         NSData* data = [NSData dataWithContentsOfURL:
                         [NSURL URLWithString:[NSString stringWithFormat:FLICKER_URL,FLICKER_SET_NUMBER ,FLICKR_API_KEY, FLICKER_USER_ID ]]];
@@ -69,9 +68,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //            NSLog(@"photos is: %@", self.photos);
 //            NSLog(@"Flicker Feed Dispatch Finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"Flicker Feed: %f", difference);
             [self loadPhotoArrays];
         });
     });
@@ -81,7 +77,6 @@
 -(void)loadPhotoArrays{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        NSLog(@"photos array dispach started");
-        NSDate *startTime= [NSDate date];
         
         // Build an array from the dictionary for easy access to each entry
         //If trying to get the Stream the first object is "photo", other wise if it is a set
@@ -115,9 +110,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"photos array dispach finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"Photo's Array: %f", difference);
             
         });
     });
@@ -130,7 +122,6 @@
     //Must change this Cause it is on the mainQue
     dispatch_async(dispatch_get_main_queue(), ^{
 //        NSLog(@"News Feed dispach started");
-        NSDate *startTime= [NSDate date];
 
         
         NSData* data = [NSData dataWithContentsOfURL:
@@ -145,9 +136,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"News Feed dispatch finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"News Feed: %f", difference);
         });
     });
 }
@@ -157,8 +145,6 @@
 - (void)fetchTweets{
     dispatch_async(dispatch_get_main_queue(), ^{
 //        NSLog(@"twitter dispach started");
-        NSDate *startTime= [NSDate date];
-
         //sets up the credentials the consumer key and the consumber secret
         STTwitterAPIWrapper *twitter = [STTwitterAPIWrapper  twitterAPIApplicationOnlyWithConsumerKey:TWITTER_CONSUMER_KEY
                                                                                        consumerSecret:TWITTER_CONSUMER_SECRET];
@@ -170,13 +156,10 @@
                 
                 //sets the tweets to the statuses
                 [self setTweets:statuses];
-                NSLog(@"Tweets are loaded");
+//                NSLog(@"Tweets are loaded");
                 
                 //if this executes then the splash screeen will load the schedule page
                 if (self.completionBlock!=nil) {
-                    NSDate *endTime= [NSDate date];
-                    CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-                    NSLog(@"Twitter Fetch: %f", difference);
                     self.completionBlock(YES);
                 }
             } errorBlock:^(NSError *error) {
@@ -199,7 +182,6 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        NSLog(@"schedule dispach started");
-        NSDate *startTime= [NSDate date];
 
         //creates a pfquery for the schedule
         PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"schedule"];
@@ -207,9 +189,6 @@
         NSArray *scheduleObjects= [scheduleQuery findObjects];
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"schedule dispatch finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"fetch Schedule : %f", difference);
             //parse's the schedule objects
             [self parseSchedule:scheduleObjects];
             ;
@@ -222,7 +201,6 @@
 -(void)parseSchedule:(NSArray*)array{
     dispatch_async(dispatch_get_main_queue(), ^{
 //        NSLog(@"parseSchedule dispach started");
-        NSDate *startTime= [NSDate date];
         
         //Allocating all of the Arrays
         [self setDate: [[NSMutableArray alloc]init]];
@@ -332,9 +310,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"parseSchedule dispach finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"parse Schedule : %f", difference);
             
         });
     });
@@ -347,8 +322,6 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        NSLog(@"youTube dispach started");
-        NSDate *startTime= [NSDate date];
-
         
         //creates a query to the youtube table
         PFQuery *youTubeQuery = [PFQuery queryWithClassName:@"youtube"];
@@ -358,9 +331,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"youTube dispatch finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"fetch youtube : %f", difference);
             
             //parses through all of the youtube objects
             [self parseYouTubeLinks:youTubeObject];
@@ -375,8 +345,6 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        NSLog(@"parse youtube dispach started");
-        NSDate *startTime= [NSDate date];
-
         
         [self setYouTubeArray:[[NSMutableArray alloc]init]];
         
@@ -387,9 +355,6 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"parse youtube dispach finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"parse youtube : %f", difference);
             ;
         });
     });
@@ -401,9 +366,7 @@
 -(void)fetchSubmit{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        NSLog(@"submit dispach started");
-        NSDate *startTime= [NSDate date];
 
-        
         self.submitObject = [[NSMutableArray alloc]init];
         
         //Creates a query from parse and the submit class
@@ -414,9 +377,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"submitParseDone dispatch finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"fetch submit : %f", difference);
             //parse through the submit details
             [self parseSubmitDetails:self.submitObject];
             ;
@@ -430,7 +390,6 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        NSLog(@"parse submit dispach started");
-        NSDate *startTime= [NSDate date];
        
         //allocates the memory for the to properties
         [self setPdfData:[[NSData alloc]init]];
@@ -443,9 +402,6 @@
         }
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"submitDetails dispach finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"submit details : %f", difference);
             ;
         });
     });
@@ -457,7 +413,6 @@
 -(void)fetchLinks{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        NSLog(@"links dispach started");
-        NSDate *startTime= [NSDate date];
 
         //initializes the Arrays
         [self setLinkObject :[[NSMutableArray alloc]init]];
@@ -472,10 +427,6 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"links dispach finished");
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"links dispatch : %f", difference);
-            
 
         });
     });

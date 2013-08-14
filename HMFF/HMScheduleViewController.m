@@ -139,9 +139,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //        NSLog(@"parseLinks dispach started");
-        NSDate *startTime= [NSDate date];
-        
-        
+                
         //allocating arrays
         NSString *finalLink;
         [self setLinksArray: [[NSMutableArray alloc]init]];
@@ -173,9 +171,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //            NSLog(@"parseLinks dispach finished");
             [[HMDataFeedManager sharedDataFeedManager] setLinksArray:self.linksArray];
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"parse Links: %f", difference);
             ;
             
         });
@@ -187,9 +182,7 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //        NSLog(@"single link");
-        NSDate *startTime= [NSDate date];
-        
-        
+            
         //initializes the strings
         [self setHTMLString: [[NSString alloc]init]];
         
@@ -205,10 +198,6 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //            NSLog(@"single link finished");
             [[HMDataFeedManager sharedDataFeedManager] setHTMLString:self.HTMLString];
-
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"ticket single link: %f", difference);
             ;
         });
     });

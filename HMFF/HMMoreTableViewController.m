@@ -45,18 +45,13 @@
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //        NSLog(@"parse loadPDF started dispach started");
-        NSDate *startTime= [NSDate date];
-        
-        
+            
         //loads the pdf data into the nsdata property
         [self setPdfData:  [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:string]]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             //            NSLog(@"loadPDF dispach finished");
             [[HMDataFeedManager sharedDataFeedManager] setPdfData:self.pdfData];
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"load PDF : %f", difference);
             ;
         });
     });
