@@ -313,16 +313,65 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     
+    //initalizes the dictionary and array that holds the line up
+    NSDictionary * diction;
+    NSMutableArray *array;
+    NSInteger row;
     if ([segue.identifier isEqualToString:@"DetailView"]) {
-        //Sets the URL for the band and there detail view
-        NSInteger row = [[self tableView].indexPathForSelectedRow row]-1;
-        NSDictionary * passedURL = [self.band objectAtIndex:row];
-
-        //        NSLog(@"url is: %@", [passedURL objectForKey:@"link"]);
         HMBandWebBrowserViewController *webBrowser = segue.destinationViewController;
-        webBrowser.passedURL=[passedURL objectForKey:@"link"];
+        
+        //Sets the URL for the band and there detail view
+        switch ([self tableView ].indexPathForSelectedRow.section) {
+            case 1:{
+                row = [[self tableView].indexPathForSelectedRow row]-1;
+                array=[self.lineUp objectAtIndex:1];
+                diction =[array objectAtIndex:row];
+                NSString *link = [diction  objectForKey:@"link"];
+                //NSLog(@"This is the link:%@", link);
+                webBrowser.passedURL=link;
+                break;
+            }
+            case 2:{
+                row = [[self tableView].indexPathForSelectedRow row]-1;
+                array=[self.lineUp objectAtIndex:2];
+                diction =[array objectAtIndex:row];
+                NSString *link = [diction  objectForKey:@"link"];
+                //NSLog(@"This is the link:%@", link);
+                webBrowser.passedURL=link;
+                break;
+            }
+            case 3:{
+                row = [[self tableView].indexPathForSelectedRow row]-1;
+                array=[self.lineUp objectAtIndex:3];
+                diction =[array objectAtIndex:row];
+                NSString *link = [diction  objectForKey:@"link"];
+                //NSLog(@"This is the link:%@", link);
+                webBrowser.passedURL=link;
+                break;
+            }
+            case 4:{
+                row = [[self tableView].indexPathForSelectedRow row]-1;
+                array=[self.lineUp objectAtIndex:4];
+                diction =[array objectAtIndex:row];
+                NSString *link = [diction  objectForKey:@"link"];
+                //NSLog(@"This is the link:%@", link);
+                webBrowser.passedURL=link;
+                break;
+            }
+            default:{
+                row = [[self tableView].indexPathForSelectedRow row]-1;
+                array=[self.lineUp objectAtIndex:0];
+                diction =[array objectAtIndex:row];
+                NSString *link = [diction  objectForKey:@"link"];
+                //NSLog(@"This is the link:%@", link);
+                webBrowser.passedURL=link;
+                break;
+            }
+        }
+        
     }
 }
+
 
 
 - (void)didReceiveMemoryWarning
