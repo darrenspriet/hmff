@@ -38,6 +38,7 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
+
 - (void)viewDidLoad{
     [super viewDidLoad];
     //sets up the navigation bar

@@ -109,7 +109,8 @@
     //Gets all of the content out of the dictionary and adds it to the content array
     for(NSDictionary *diction in content){
         NSString  *content =[diction objectForKey:@"excerpt"];
-        [self.contentArray addObject:content];
+        
+        [self.contentArray addObject:[self stringByStrippingHTML:content]];
     }
 }
 
@@ -204,4 +205,14 @@
         return string;
     }
 }
+
+//Takes in a string with a tag on it and adjusts it so it doesn't have a tag anymore
+-(NSString *) stringByStrippingHTML:(NSString*)incomingString {
+    NSRange r;
+    NSString *s = incomingString;
+    while ((r = [s rangeOfString:@"<[^>]+>" options:NSRegularExpressionSearch]).location != NSNotFound)
+        s = [s stringByReplacingCharactersInRange:r withString:@""];
+    return s;
+}
+
 @end

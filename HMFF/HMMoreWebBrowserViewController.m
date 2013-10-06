@@ -291,7 +291,7 @@
     
     [self setTitle:pageTitle];
     //creates a frame at the top for the label
-    CGRect frame = CGRectMake(62, 0, [self.title sizeWithFont:[UIFont boldSystemFontOfSize:20.0]].width, 44);
+    CGRect frame = CGRectMake(62, 0, [self.title sizeWithAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20.0f]}].width,44);
     //places the label in the frame
     UILabel *label = [[UILabel alloc] initWithFrame:frame];
     //sets the label background to clear
@@ -304,7 +304,7 @@
     [self.navigationItem setTitleView:label];
     
     //label.text = self.title;
-    if ([self.title sizeWithFont:[UIFont boldSystemFontOfSize:normalFontSize]].width > widthOfTitleSpace){
+    if ([self.title sizeWithAttributes:@{NSFontAttributeName:[UIFont boldSystemFontOfSize:normalFontSize]}].width > widthOfTitleSpace){
         //sets the number of lines for the label
         [label setNumberOfLines:2];
         //set the font to small font size

@@ -136,6 +136,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"News Feed dispatch finished");
+//            NSLog(@"News feed is: %@", self.news);
         });
     });
 }

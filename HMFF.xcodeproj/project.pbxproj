@@ -47,13 +47,15 @@
 		E048DF4B1762EA7D00D7232E /* HMBandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E048DF4A1762EA7D00D7232E /* HMBandCell.m */; };
 		E04B1109171604A6006A52EF /* TwitterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1107171604A6006A52EF /* TwitterImage.png */; };
 		E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1108171604A6006A52EF /* TwitterImage@2x.png */; };
-		E0537DA51720C896000D4AB8 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0537DA31720C896000D4AB8 /* forwardButton.png */; };
-		E0537DA61720C896000D4AB8 /* forwardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0537DA41720C896000D4AB8 /* forwardButton@2x.png */; };
 		E059AEB6179EAD9800CE749B /* HMAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E059AEB5179EAD9800CE749B /* HMAboutUsViewController.m */; };
 		E06D408A1798DADB009E46E8 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E06D40881798DADB009E46E8 /* camera.png */; };
 		E06D408B1798DADB009E46E8 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E06D40891798DADB009E46E8 /* camera@2x.png */; };
 		E06D40921798DE07009E46E8 /* aboutUs.png in Resources */ = {isa = PBXBuildFile; fileRef = E06D40901798DE07009E46E8 /* aboutUs.png */; };
 		E06D40931798DE07009E46E8 /* aboutUs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E06D40911798DE07009E46E8 /* aboutUs@2x.png */; };
+		E07842A817F8F18E00CBECC1 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E07842A617F8F18E00CBECC1 /* backButton.png */; };
+		E07842A917F8F18E00CBECC1 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E07842A717F8F18E00CBECC1 /* backButton@2x.png */; };
+		E07842B017F9067600CBECC1 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E07842AE17F9067600CBECC1 /* forwardButton.png */; };
+		E07842B117F9067600CBECC1 /* forwardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E07842AF17F9067600CBECC1 /* forwardButton@2x.png */; };
 		E0860D6A17975A1700D9C172 /* hmffRedLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0860D6817975A1700D9C172 /* hmffRedLogo@2x.png */; };
 		E0860D6B17975A1700D9C172 /* hmffRedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0860D6917975A1700D9C172 /* hmffRedLogo.png */; };
 		E0889197179A1E8E0018FFD5 /* ticketsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0889195179A1E8E0018FFD5 /* ticketsButton.png */; };
@@ -157,8 +159,6 @@
 		E0EB5EB51714598500C444CE /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB31714596A00C444CE /* MessageUI.framework */; };
 		E0EB5EBA17145A7000C444CE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB617145A5C00C444CE /* Social.framework */; };
 		E0EB5EBB17145A7600C444CE /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0EB5EB817145A6300C444CE /* Accounts.framework */; };
-		E0EDD7F317133323004BBB54 /* backButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD7F217133323004BBB54 /* backButton.png */; };
-		E0EDD7F5171333F9004BBB54 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0EDD7F4171333F9004BBB54 /* backButton@2x.png */; };
 		E0EDD7FE17134DA7004BBB54 /* HMNewsFeedDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */; };
 		E0F1D2A8170C72280045983F /* HMTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0F1D2A7170C72280045983F /* HMTweetCell.m */; };
 		E0F29F9B17811FC8004D3DEA /* chevronblack.png in Resources */ = {isa = PBXBuildFile; fileRef = E0F29F9917811FC8004D3DEA /* chevronblack.png */; };
@@ -255,14 +255,16 @@
 		E048DF4A1762EA7D00D7232E /* HMBandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBandCell.m; sourceTree = "<group>"; };
 		E04B1107171604A6006A52EF /* TwitterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterImage.png; sourceTree = "<group>"; };
 		E04B1108171604A6006A52EF /* TwitterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterImage@2x.png"; sourceTree = "<group>"; };
-		E0537DA31720C896000D4AB8 /* forwardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardButton.png; sourceTree = "<group>"; };
-		E0537DA41720C896000D4AB8 /* forwardButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forwardButton@2x.png"; sourceTree = "<group>"; };
 		E059AEB4179EAD9800CE749B /* HMAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAboutUsViewController.h; sourceTree = "<group>"; };
 		E059AEB5179EAD9800CE749B /* HMAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAboutUsViewController.m; sourceTree = "<group>"; };
 		E06D40881798DADB009E46E8 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
 		E06D40891798DADB009E46E8 /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
 		E06D40901798DE07009E46E8 /* aboutUs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aboutUs.png; sourceTree = "<group>"; };
 		E06D40911798DE07009E46E8 /* aboutUs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aboutUs@2x.png"; sourceTree = "<group>"; };
+		E07842A617F8F18E00CBECC1 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
+		E07842A717F8F18E00CBECC1 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
+		E07842AE17F9067600CBECC1 /* forwardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardButton.png; sourceTree = "<group>"; };
+		E07842AF17F9067600CBECC1 /* forwardButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forwardButton@2x.png"; sourceTree = "<group>"; };
 		E0860D6817975A1700D9C172 /* hmffRedLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hmffRedLogo@2x.png"; sourceTree = "<group>"; };
 		E0860D6917975A1700D9C172 /* hmffRedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffRedLogo.png; sourceTree = "<group>"; };
 		E0889195179A1E8E0018FFD5 /* ticketsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticketsButton.png; sourceTree = "<group>"; };
@@ -399,8 +401,6 @@
 		E0EB5EB31714596A00C444CE /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E0EB5EB617145A5C00C444CE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E0EB5EB817145A6300C444CE /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
-		E0EDD7F217133323004BBB54 /* backButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backButton.png; sourceTree = "<group>"; };
-		E0EDD7F4171333F9004BBB54 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
 		E0EDD7FC17134DA7004BBB54 /* HMNewsFeedDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNewsFeedDetailViewController.h; sourceTree = "<group>"; };
 		E0EDD7FD17134DA7004BBB54 /* HMNewsFeedDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNewsFeedDetailViewController.m; sourceTree = "<group>"; };
 		E0F1D2A6170C72280045983F /* HMTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTweetCell.h; sourceTree = "<group>"; };
@@ -529,10 +529,10 @@
 		E0375D0B17A4749200F92474 /* Web Browser Images */ = {
 			isa = PBXGroup;
 			children = (
-				E0537DA31720C896000D4AB8 /* forwardButton.png */,
-				E0537DA41720C896000D4AB8 /* forwardButton@2x.png */,
-				E0EDD7F217133323004BBB54 /* backButton.png */,
-				E0EDD7F4171333F9004BBB54 /* backButton@2x.png */,
+				E07842AE17F9067600CBECC1 /* forwardButton.png */,
+				E07842AF17F9067600CBECC1 /* forwardButton@2x.png */,
+				E07842A617F8F18E00CBECC1 /* backButton.png */,
+				E07842A717F8F18E00CBECC1 /* backButton@2x.png */,
 			);
 			name = "Web Browser Images";
 			sourceTree = "<group>";
@@ -1009,6 +1009,11 @@
 				CLASSPREFIX = HM;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = HMFF;
+				TargetAttributes = {
+					E03C065A16FBE667002AC531 = {
+						DevelopmentTeam = T9QG2DZS94;
+					};
+				};
 			};
 			buildConfigurationList = E03C065616FBE667002AC531 /* Build configuration list for PBXProject "HMFF" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1035,8 +1040,8 @@
 			files = (
 				E03C066B16FBE667002AC531 /* InfoPlist.strings in Resources */,
 				E03C069A16FBE6A4002AC531 /* Storyboard.storyboard in Resources */,
-				E0EDD7F317133323004BBB54 /* backButton.png in Resources */,
-				E0EDD7F5171333F9004BBB54 /* backButton@2x.png in Resources */,
+				E07842B117F9067600CBECC1 /* forwardButton@2x.png in Resources */,
+				E07842A817F8F18E00CBECC1 /* backButton.png in Resources */,
 				E0F4538C1715D717000F97D0 /* FacebookImage.png in Resources */,
 				E0F4538D1715D717000F97D0 /* VimeoImage@2x.png in Resources */,
 				E0F4538E1715D717000F97D0 /* FacebookImage@2x.png in Resources */,
@@ -1055,8 +1060,6 @@
 				E0BDB738171F78FB00B11A19 /* SocialThumbsUp@2x.png in Resources */,
 				E0BDB73C171F7C4D00B11A19 /* ScheduleMegaphone.png in Resources */,
 				E0BDB740171F7CC500B11A19 /* ScheduleMegaphone@2x.png in Resources */,
-				E0537DA51720C896000D4AB8 /* forwardButton.png in Resources */,
-				E0537DA61720C896000D4AB8 /* forwardButton@2x.png in Resources */,
 				E09E2714177913F200B0E4CB /* chevron@2x.png in Resources */,
 				E09E2715177913F200B0E4CB /* chevron.png in Resources */,
 				E0CFFCDD177F2CE100D484E1 /* newsBackground.png in Resources */,
@@ -1119,12 +1122,14 @@
 				E0BC4D7417A4D93D00DCC43D /* newsDetailBackground.png in Resources */,
 				E0BC4D7517A4D93D00DCC43D /* newsDetailBackground@2x.png in Resources */,
 				E0BC4D7617A4D93D00DCC43D /* submitDetailsBackground.png in Resources */,
+				E07842B017F9067600CBECC1 /* forwardButton.png in Resources */,
 				E0BC4D7717A4D93D00DCC43D /* submitDetailsBackground@2x.png in Resources */,
 				E0BC4D7817A4D93D00DCC43D /* twitterDetailBackground.png in Resources */,
 				E0BC4D7917A4D93D00DCC43D /* twitterDetailBackground@2x.png in Resources */,
 				E0BC4D7A17A4D93D00DCC43D /* videoSubmissionBackground.png in Resources */,
 				E0BC4D7B17A4D93D00DCC43D /* videoSubmissionBackground@2x.png in Resources */,
 				E0BC4D8917A4E18000DCC43D /* Default-568h@2x.png in Resources */,
+				E07842A917F8F18E00CBECC1 /* backButton@2x.png in Resources */,
 				E0BC4D8B17A4E24300DCC43D /* Default@2x.png in Resources */,
 				E0BC4D8D17A4E24700DCC43D /* Default.png in Resources */,
 				E008335217B331E700FEA51C /* hmffIcon.png in Resources */,
@@ -1322,7 +1327,7 @@
 		E03C069416FBE667002AC531 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Kevin Hall (UH69E5MNZ4)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1331,8 +1336,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HMFF/HMFF-Prefix.pch";
 				INFOPLIST_FILE = "HMFF/HMFF-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A7454982-7A96-4E61-A9A9-0664BF09A217";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1342,8 +1348,8 @@
 		E03C069516FBE667002AC531 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Kevin Hall (T9QG2DZS94)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kevin Hall (T9QG2DZS94)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -1351,6 +1357,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HMFF/HMFF-Prefix.pch";
 				INFOPLIST_FILE = "HMFF/HMFF-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
