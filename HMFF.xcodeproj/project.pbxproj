@@ -8,9 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E00231681704DD1900C78F1A /* HMTwitterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00231671704DD1900C78F1A /* HMTwitterTableViewController.m */; };
+		E004A6D51801E15C001785A6 /* hmffIcon58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = E004A6D21801E15C001785A6 /* hmffIcon58x58.png */; };
+		E004A6D61801E15C001785A6 /* hmffIcon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = E004A6D31801E15C001785A6 /* hmffIcon80x80.png */; };
+		E004A6D91801E1CF001785A6 /* hmffIcon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = E004A6D81801E1CF001785A6 /* hmffIcon120x120.png */; };
 		E006ED57170B1B960062CA5F /* HMTwitterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E006ED56170B1B960062CA5F /* HMTwitterDetailViewController.m */; };
-		E008335217B331E700FEA51C /* hmffIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = E008335117B331E700FEA51C /* hmffIcon.png */; };
-		E008335417B331EB00FEA51C /* hmffIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E008335317B331EB00FEA51C /* hmffIcon@2x.png */; };
 		E00E0A0A170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */; };
 		E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */; };
 		E0257D921728AA0B005D7D52 /* HMBuyTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0257D911728AA0B005D7D52 /* HMBuyTicketsViewController.m */; };
@@ -201,10 +202,11 @@
 /* Begin PBXFileReference section */
 		E00231661704DD1900C78F1A /* HMTwitterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTwitterTableViewController.h; sourceTree = "<group>"; };
 		E00231671704DD1900C78F1A /* HMTwitterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTwitterTableViewController.m; sourceTree = "<group>"; };
+		E004A6D21801E15C001785A6 /* hmffIcon58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon58x58.png; sourceTree = "<group>"; };
+		E004A6D31801E15C001785A6 /* hmffIcon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon80x80.png; sourceTree = "<group>"; };
+		E004A6D81801E1CF001785A6 /* hmffIcon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon120x120.png; sourceTree = "<group>"; };
 		E006ED55170B1B960062CA5F /* HMTwitterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTwitterDetailViewController.h; sourceTree = "<group>"; };
 		E006ED56170B1B960062CA5F /* HMTwitterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTwitterDetailViewController.m; sourceTree = "<group>"; };
-		E008335117B331E700FEA51C /* hmffIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon.png; sourceTree = "<group>"; };
-		E008335317B331EB00FEA51C /* hmffIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hmffIcon@2x.png"; sourceTree = "<group>"; };
 		E00E0A08170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreWebBrowserViewController.h; sourceTree = "<group>"; };
 		E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMMoreWebBrowserViewController.m; sourceTree = "<group>"; };
 		E0139AE7170240C9000AE5B7 /* HMTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTabBarViewController.h; sourceTree = "<group>"; };
@@ -580,8 +582,9 @@
 		E03C065216FBE667002AC531 = {
 			isa = PBXGroup;
 			children = (
-				E008335317B331EB00FEA51C /* hmffIcon@2x.png */,
-				E008335117B331E700FEA51C /* hmffIcon.png */,
+				E004A6D21801E15C001785A6 /* hmffIcon58x58.png */,
+				E004A6D31801E15C001785A6 /* hmffIcon80x80.png */,
+				E004A6D81801E1CF001785A6 /* hmffIcon120x120.png */,
 				E0BC4D8C17A4E24700DCC43D /* Default.png */,
 				E0BC4D8A17A4E24300DCC43D /* Default@2x.png */,
 				E0BC4D8817A4E18000DCC43D /* Default-568h@2x.png */,
@@ -1048,6 +1051,7 @@
 				E0F4538F1715D717000F97D0 /* VimeoImage.png in Resources */,
 				E0F4539A1715E0D4000F97D0 /* YouTubeImage@2x.png in Resources */,
 				E0F4539B1715E0D4000F97D0 /* YouTubeImage.png in Resources */,
+				E004A6D91801E1CF001785A6 /* hmffIcon120x120.png in Resources */,
 				E04B1109171604A6006A52EF /* TwitterImage.png in Resources */,
 				E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */,
 				E09FCFD2171896A500DFD7C9 /* Schedule.storyboard in Resources */,
@@ -1073,6 +1077,7 @@
 				E0CFFCEB177F2FCA00D484E1 /* socialBackground.png in Resources */,
 				E0CFFCEC177F2FCA00D484E1 /* socialBackground@2x.png in Resources */,
 				E0F29F9B17811FC8004D3DEA /* chevronblack.png in Resources */,
+				E004A6D51801E15C001785A6 /* hmffIcon58x58.png in Resources */,
 				E0F29F9C17811FC8004D3DEA /* chevronblack@2x.png in Resources */,
 				E0DCB6C81787D13E00A538FC /* Twitter_Follow_1x.png in Resources */,
 				E0DCB6C91787D13E00A538FC /* Twitter_Follow_1x@2x.png in Resources */,
@@ -1111,6 +1116,7 @@
 				E0473D09179ECD7900BBE3F5 /* musicSubmit.png in Resources */,
 				E0375D0717A471AE00F92474 /* openingImage.png in Resources */,
 				E0375D0817A471AE00F92474 /* openingImage-iph5.png in Resources */,
+				E004A6D61801E15C001785A6 /* hmffIcon80x80.png in Resources */,
 				E0375D0917A471AE00F92474 /* openingImage@2x.png in Resources */,
 				E0375D0E17A475A300F92474 /* morePhotos@2x.png in Resources */,
 				E0BC4D4517A4787D00DCC43D /* blackPayPalBackground.png in Resources */,
@@ -1132,8 +1138,6 @@
 				E07842A917F8F18E00CBECC1 /* backButton@2x.png in Resources */,
 				E0BC4D8B17A4E24300DCC43D /* Default@2x.png in Resources */,
 				E0BC4D8D17A4E24700DCC43D /* Default.png in Resources */,
-				E008335217B331E700FEA51C /* hmffIcon.png in Resources */,
-				E008335417B331EB00FEA51C /* hmffIcon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,6 +14,10 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>hmffIcon120x120</string>
+				<string>hmffIcon80x80</string>
+				<string>hmffIcon58x58</string>
+				<string>hmffIcon</string>
 				<string>hmffIcon@2x.png</string>
 				<string>hmffIcon.png</string>
 			</array>
