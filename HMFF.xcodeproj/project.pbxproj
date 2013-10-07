@@ -11,6 +11,7 @@
 		E004A6D51801E15C001785A6 /* hmffIcon58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = E004A6D21801E15C001785A6 /* hmffIcon58x58.png */; };
 		E004A6D61801E15C001785A6 /* hmffIcon80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = E004A6D31801E15C001785A6 /* hmffIcon80x80.png */; };
 		E004A6D91801E1CF001785A6 /* hmffIcon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = E004A6D81801E1CF001785A6 /* hmffIcon120x120.png */; };
+		E004A6DB18022F6A001785A6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E004A6DA18022F6A001785A6 /* Images.xcassets */; };
 		E006ED57170B1B960062CA5F /* HMTwitterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E006ED56170B1B960062CA5F /* HMTwitterDetailViewController.m */; };
 		E00E0A0A170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E00E0A09170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.m */; };
 		E0139AE9170240C9000AE5B7 /* HMTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0139AE8170240C9000AE5B7 /* HMTabBarViewController.m */; };
@@ -205,6 +206,7 @@
 		E004A6D21801E15C001785A6 /* hmffIcon58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon58x58.png; sourceTree = "<group>"; };
 		E004A6D31801E15C001785A6 /* hmffIcon80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon80x80.png; sourceTree = "<group>"; };
 		E004A6D81801E1CF001785A6 /* hmffIcon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon120x120.png; sourceTree = "<group>"; };
+		E004A6DA18022F6A001785A6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E006ED55170B1B960062CA5F /* HMTwitterDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMTwitterDetailViewController.h; sourceTree = "<group>"; };
 		E006ED56170B1B960062CA5F /* HMTwitterDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMTwitterDetailViewController.m; sourceTree = "<group>"; };
 		E00E0A08170FCC4B001EAAF2 /* HMMoreWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMMoreWebBrowserViewController.h; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 				E03C069E16FBE92F002AC531 /* Social */,
 				E03C069F16FBE932002AC531 /* More */,
 				E03C06A116FBE96F002AC531 /* Images */,
+				E004A6DA18022F6A001785A6 /* Images.xcassets */,
 				E03C066716FBE667002AC531 /* Supporting Files */,
 			);
 			path = HMFF;
@@ -1092,6 +1095,7 @@
 				E0C94C031797847D0007709C /* Guitar@2x.png in Resources */,
 				E0C94C06179785380007709C /* video.png in Resources */,
 				E0C94C07179785380007709C /* video@2x.png in Resources */,
+				E004A6DB18022F6A001785A6 /* Images.xcassets in Resources */,
 				E06D408A1798DADB009E46E8 /* camera.png in Resources */,
 				E06D408B1798DADB009E46E8 /* camera@2x.png in Resources */,
 				E06D40921798DE07009E46E8 /* aboutUs.png in Resources */,
@@ -1331,6 +1335,8 @@
 		E03C069416FBE667002AC531 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1352,6 +1358,8 @@
 		E03C069516FBE667002AC531 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
