@@ -49,6 +49,14 @@
 		E048DF4B1762EA7D00D7232E /* HMBandCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E048DF4A1762EA7D00D7232E /* HMBandCell.m */; };
 		E04B1109171604A6006A52EF /* TwitterImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1107171604A6006A52EF /* TwitterImage.png */; };
 		E04B110A171604A6006A52EF /* TwitterImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E04B1108171604A6006A52EF /* TwitterImage@2x.png */; };
+		E052BAC81835AD0300F40BBB /* hmffIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = E052BAC41835AD0300F40BBB /* hmffIcon40x40.png */; };
+		E052BAC91835AD0300F40BBB /* hmffIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = E052BAC51835AD0300F40BBB /* hmffIcon76x76.png */; };
+		E052BACA1835AD0300F40BBB /* hmffIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = E052BAC61835AD0300F40BBB /* hmffIcon29x29.png */; };
+		E052BACB1835AD0300F40BBB /* hmffIcon152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = E052BAC71835AD0300F40BBB /* hmffIcon152x152.png */; };
+		E052BAD01835B0CD00F40BBB /* launchImage1024x768.png in Resources */ = {isa = PBXBuildFile; fileRef = E052BACC1835B0CD00F40BBB /* launchImage1024x768.png */; };
+		E052BAD11835B0CD00F40BBB /* launchImage2048x1536.png in Resources */ = {isa = PBXBuildFile; fileRef = E052BACD1835B0CD00F40BBB /* launchImage2048x1536.png */; };
+		E052BAD21835B0CD00F40BBB /* launchImage768x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = E052BACE1835B0CD00F40BBB /* launchImage768x1024.png */; };
+		E052BAD31835B0CD00F40BBB /* launchImage1536x2048.png in Resources */ = {isa = PBXBuildFile; fileRef = E052BACF1835B0CD00F40BBB /* launchImage1536x2048.png */; };
 		E059AEB6179EAD9800CE749B /* HMAboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E059AEB5179EAD9800CE749B /* HMAboutUsViewController.m */; };
 		E06D408A1798DADB009E46E8 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = E06D40881798DADB009E46E8 /* camera.png */; };
 		E06D408B1798DADB009E46E8 /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E06D40891798DADB009E46E8 /* camera@2x.png */; };
@@ -259,6 +267,14 @@
 		E048DF4A1762EA7D00D7232E /* HMBandCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMBandCell.m; sourceTree = "<group>"; };
 		E04B1107171604A6006A52EF /* TwitterImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TwitterImage.png; sourceTree = "<group>"; };
 		E04B1108171604A6006A52EF /* TwitterImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TwitterImage@2x.png"; sourceTree = "<group>"; };
+		E052BAC41835AD0300F40BBB /* hmffIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon40x40.png; sourceTree = "<group>"; };
+		E052BAC51835AD0300F40BBB /* hmffIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon76x76.png; sourceTree = "<group>"; };
+		E052BAC61835AD0300F40BBB /* hmffIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon29x29.png; sourceTree = "<group>"; };
+		E052BAC71835AD0300F40BBB /* hmffIcon152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffIcon152x152.png; sourceTree = "<group>"; };
+		E052BACC1835B0CD00F40BBB /* launchImage1024x768.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage1024x768.png; sourceTree = "<group>"; };
+		E052BACD1835B0CD00F40BBB /* launchImage2048x1536.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage2048x1536.png; sourceTree = "<group>"; };
+		E052BACE1835B0CD00F40BBB /* launchImage768x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage768x1024.png; sourceTree = "<group>"; };
+		E052BACF1835B0CD00F40BBB /* launchImage1536x2048.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launchImage1536x2048.png; sourceTree = "<group>"; };
 		E059AEB4179EAD9800CE749B /* HMAboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMAboutUsViewController.h; sourceTree = "<group>"; };
 		E059AEB5179EAD9800CE749B /* HMAboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMAboutUsViewController.m; sourceTree = "<group>"; };
 		E06D40881798DADB009E46E8 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
@@ -584,9 +600,17 @@
 		E03C065216FBE667002AC531 = {
 			isa = PBXGroup;
 			children = (
+				E052BAC41835AD0300F40BBB /* hmffIcon40x40.png */,
+				E052BAC51835AD0300F40BBB /* hmffIcon76x76.png */,
+				E052BAC61835AD0300F40BBB /* hmffIcon29x29.png */,
+				E052BAC71835AD0300F40BBB /* hmffIcon152x152.png */,
 				E004A6D21801E15C001785A6 /* hmffIcon58x58.png */,
 				E004A6D31801E15C001785A6 /* hmffIcon80x80.png */,
 				E004A6D81801E1CF001785A6 /* hmffIcon120x120.png */,
+				E052BACC1835B0CD00F40BBB /* launchImage1024x768.png */,
+				E052BACD1835B0CD00F40BBB /* launchImage2048x1536.png */,
+				E052BACE1835B0CD00F40BBB /* launchImage768x1024.png */,
+				E052BACF1835B0CD00F40BBB /* launchImage1536x2048.png */,
 				E0BC4D8C17A4E24700DCC43D /* Default.png */,
 				E0BC4D8A17A4E24300DCC43D /* Default@2x.png */,
 				E0BC4D8817A4E18000DCC43D /* Default-568h@2x.png */,
@@ -1082,12 +1106,14 @@
 				E0F29F9B17811FC8004D3DEA /* chevronblack.png in Resources */,
 				E004A6D51801E15C001785A6 /* hmffIcon58x58.png in Resources */,
 				E0F29F9C17811FC8004D3DEA /* chevronblack@2x.png in Resources */,
+				E052BACB1835AD0300F40BBB /* hmffIcon152x152.png in Resources */,
 				E0DCB6C81787D13E00A538FC /* Twitter_Follow_1x.png in Resources */,
 				E0DCB6C91787D13E00A538FC /* Twitter_Follow_1x@2x.png in Resources */,
 				E0D7B5BA178D095C000C2EC6 /* Following@2x.png in Resources */,
 				E0D7B5BB178D095C000C2EC6 /* Following.png in Resources */,
 				E0D09CB61794B4A000BA6A11 /* sonicBids@2x.png in Resources */,
 				E0D09CB71794B4A000BA6A11 /* sonicBids.png in Resources */,
+				E052BAC91835AD0300F40BBB /* hmffIcon76x76.png in Resources */,
 				E0860D6A17975A1700D9C172 /* hmffRedLogo@2x.png in Resources */,
 				E0860D6B17975A1700D9C172 /* hmffRedLogo.png in Resources */,
 				E0C94BFA179782550007709C /* morePhotos.png in Resources */,
@@ -1098,10 +1124,13 @@
 				E004A6DB18022F6A001785A6 /* Images.xcassets in Resources */,
 				E06D408A1798DADB009E46E8 /* camera.png in Resources */,
 				E06D408B1798DADB009E46E8 /* camera@2x.png in Resources */,
+				E052BAD01835B0CD00F40BBB /* launchImage1024x768.png in Resources */,
 				E06D40921798DE07009E46E8 /* aboutUs.png in Resources */,
+				E052BAC81835AD0300F40BBB /* hmffIcon40x40.png in Resources */,
 				E06D40931798DE07009E46E8 /* aboutUs@2x.png in Resources */,
 				E0889197179A1E8E0018FFD5 /* ticketsButton.png in Resources */,
 				E0889198179A1E8E0018FFD5 /* ticketsButton@2x.png in Resources */,
+				E052BAD11835B0CD00F40BBB /* launchImage2048x1536.png in Resources */,
 				E08891AF179A23770018FFD5 /* hmffButton.png in Resources */,
 				E08891B0179A23770018FFD5 /* hmffButton@2x.png in Resources */,
 				E08891B3179A251B0018FFD5 /* tweetButton.png in Resources */,
@@ -1120,10 +1149,12 @@
 				E0473D09179ECD7900BBE3F5 /* musicSubmit.png in Resources */,
 				E0375D0717A471AE00F92474 /* openingImage.png in Resources */,
 				E0375D0817A471AE00F92474 /* openingImage-iph5.png in Resources */,
+				E052BAD21835B0CD00F40BBB /* launchImage768x1024.png in Resources */,
 				E004A6D61801E15C001785A6 /* hmffIcon80x80.png in Resources */,
 				E0375D0917A471AE00F92474 /* openingImage@2x.png in Resources */,
 				E0375D0E17A475A300F92474 /* morePhotos@2x.png in Resources */,
 				E0BC4D4517A4787D00DCC43D /* blackPayPalBackground.png in Resources */,
+				E052BAD31835B0CD00F40BBB /* launchImage1536x2048.png in Resources */,
 				E0BC4D4617A4787D00DCC43D /* blackPayPalBackground@2x.png in Resources */,
 				E0BC4D7017A4D93D00DCC43D /* aboutUsBackground.png in Resources */,
 				E0BC4D7117A4D93D00DCC43D /* aboutUsBackground@2x.png in Resources */,
@@ -1137,6 +1168,7 @@
 				E0BC4D7817A4D93D00DCC43D /* twitterDetailBackground.png in Resources */,
 				E0BC4D7917A4D93D00DCC43D /* twitterDetailBackground@2x.png in Resources */,
 				E0BC4D7A17A4D93D00DCC43D /* videoSubmissionBackground.png in Resources */,
+				E052BACA1835AD0300F40BBB /* hmffIcon29x29.png in Resources */,
 				E0BC4D7B17A4D93D00DCC43D /* videoSubmissionBackground@2x.png in Resources */,
 				E0BC4D8917A4E18000DCC43D /* Default-568h@2x.png in Resources */,
 				E07842A917F8F18E00CBECC1 /* backButton@2x.png in Resources */,
@@ -1335,8 +1367,6 @@
 		E03C069416FBE667002AC531 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1358,8 +1388,6 @@
 		E03C069516FBE667002AC531 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
