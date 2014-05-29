@@ -16,7 +16,7 @@
 #define FLICKER_SET_NUMBER @"72157633844444754"
 #define TWITTER_CONSUMER_KEY @"FDj5uDk7unth9kkgL21PA"
 #define TWITTER_CONSUMER_SECRET @"CHlhsqOzU3wZKDiKyIf25w6uxM0sKEpFylAZUa4Gt6U"
-#define NEWS_URL @"http://www.hmff.com/?json=get_recent_posts&count=1000"
+#define NEWS_URL @"http://www.hmff.com/?json=get_recent_posts&category_name=news&count=1000"
 #define FLICKER_URL @"http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&photoset_id=%@&api_key=%@&user_id=%@&format=json&nojsoncallback=1"
 #define SMALL_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_t.jpg"
 #define LARGE_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_m.jpg"
