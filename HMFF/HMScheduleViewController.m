@@ -112,15 +112,24 @@
 -(void)changeDate:(NSString *)date{
     [self.dateForEvent setText:date];
 }
-//changes the images for front and back images 
+//changes the images for front and back images
 -(void)imagesForButton:(NSString*)backImage andFrontImage:(NSString*)frontImage{
     if (backImage!=nil) {
+        
+        
         [self.backButtonImage setImage:[UIImage imageNamed:backImage] forState:UIControlStateNormal];
     }
     if (frontImage!=nil) {
-    [self.forwardButtonImage setImage:[UIImage imageNamed:frontImage] forState:UIControlStateNormal];
+        if ([frontImage isEqualToString:@""]) {
+            [self.forwardButtonImage setEnabled:NO];
+        }
+        else{
+            [self.forwardButtonImage setEnabled:YES];
+        }
+        [self.forwardButtonImage setImage:[UIImage imageNamed:frontImage] forState:UIControlStateNormal];
+        
     }
-
+    
 }
 //Tells the delegate, scroll view to scroll forward
 - (IBAction)forwardButton:(UIButton *)sender {

@@ -603,7 +603,6 @@
 		E03C065216FBE667002AC531 = {
 			isa = PBXGroup;
 			children = (
-				E073DD291937ED1600DC48A4 /* Parse.framework */,
 				E052BAC41835AD0300F40BBB /* hmffIcon40x40.png */,
 				E052BAC51835AD0300F40BBB /* hmffIcon76x76.png */,
 				E052BAC61835AD0300F40BBB /* hmffIcon29x29.png */,
@@ -641,6 +640,7 @@
 				E0BE898517714F68005366A8 /* STTwitter */,
 				E0F8FE81171DE68E005B3AC0 /* libz.1.1.3.dylib */,
 				E0F8FE7F171DE683005B3AC0 /* libsqlite3.dylib */,
+				E073DD291937ED1600DC48A4 /* Parse.framework */,
 				E0F8FE89171DE6F5005B3AC0 /* StoreKit.framework */,
 				E0F8FE87171DE6E6005B3AC0 /* Security.framework */,
 				E0F8FE85171DE6A6005B3AC0 /* QuartzCore.framework */,
