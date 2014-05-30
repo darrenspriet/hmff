@@ -73,8 +73,10 @@
         imageUrl= [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
         
     }
+    
     //Sets all the properties of the cell
     [cell.tweet setText:title];
+    [cell.tweet setDataDetectorTypes:UIDataDetectorTypeLink];
     [cell.userName setText:name];
     [cell.date setText:newDateString];
     
