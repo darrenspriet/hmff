@@ -107,34 +107,34 @@
     HMSocialWebBrowserViewController *webBrowser = segue.destinationViewController;
     //Sends the Facebook url
     if ([segue.identifier isEqualToString:@"facebookSegue"]){
-        [webBrowser setPassedURL:self.facebook];
+        [webBrowser setPassedURL:@"http://www.facebook.com/pages/Hmff/85087895652"];
         [webBrowser setHTMLString:NULL];
 
     }
     //Sends the YouTube url
     else if ([segue.identifier isEqualToString:@"youTubeSegue"]){
-        [webBrowser setPassedURL:self.youtube];
+        [webBrowser setPassedURL:@"http://www.youtube.com/user/HMFFESTIVAL?feature=watch"];
         [webBrowser setHTMLString:NULL];
 
 
     }
     //Sends the TWITTER url
     else if ([segue.identifier isEqualToString:@"twitterSegue"]){
-        [webBrowser setPassedURL:self.twitter];
+        [webBrowser setPassedURL:@"http://twitter.com/HMFFEST"];
         [webBrowser setHTMLString:NULL];
 
 
     }
     //Sends the Vimeo url
     else if ([segue.identifier isEqualToString:@"vimeoSegue"]){
-        [webBrowser setPassedURL:self.vimeo];
+        [webBrowser setPassedURL:@"http://vimeo.com/search?q=hmff"];
         [webBrowser setHTMLString:NULL];
 
 
     }
     //Sends the HMFF url and the HTMLSTRING
     else if ([segue.identifier isEqualToString:@"HMFFSegue"]){
-        [webBrowser setPassedURL:self.hmffWebsite];
+        [webBrowser setPassedURL:@"http://www.hmff.com/"];
         [webBrowser setHTMLString:self.HTMLString];
 
     }

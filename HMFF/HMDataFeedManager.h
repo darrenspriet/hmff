@@ -67,6 +67,8 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 //Holds the pdfdata from the Entry Form pdf in the More View Controller(More)
 @property (nonatomic, strong) NSData *pdfData;
 
+@property (nonatomic, strong)NSData *bandPdfData;
+
 //Holds the submitObjects that will be sent to More View Controller(More)
 @property (nonatomic, strong) NSArray *submitObject;
 

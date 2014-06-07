@@ -72,15 +72,16 @@
     //sets the date from the Data Manager
     [self setDate:[[HMDataFeedManager sharedDataFeedManager] date]];
     //sets the HTMLString from the Data Manager
-    [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
+ //   [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
     //sets the image for the date to the initial date
     [self.dateForEvent setText:[self.date objectAtIndex:0]];
     
-    [self setLinkObject:[[HMDataFeedManager sharedDataFeedManager] linkObject]];
-    //parses the TicketLink into a HTMLString
-    [self parseTicketLink:self.linkObject];
-    //parses through the Social links to save to an array
-    [self parseSocialLinks:self.linkObject];
+    //Loading all this Data locally now, for speed
+//    [self setLinkObject:[[HMDataFeedManager sharedDataFeedManager] linkObject]];
+//    //parses the TicketLink into a HTMLString
+//    [self parseTicketLink:self.linkObject];
+//    //parses through the Social links to save to an array
+//    [self parseSocialLinks:self.linkObject];
     
 }
 - (void)didReceiveMemoryWarning{

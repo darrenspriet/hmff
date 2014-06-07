@@ -29,23 +29,27 @@
 //The init Method
 -(id)init{
     
+    [self setHTMLString: [[NSString alloc]init]];
+    [self setHTMLString:@"http://www.hmff.com/schedule/"];
+
     //Fetches the FlickerFeed
     [self fetchFlickerFeed];
     
-    //Fetches all of the Tweets for HMFFEST from twitter
-    [self fetchTweets];
+
     
     //Fetches all of the News Feeds
     [self fetchNewsFeed];
     
     //Fetches all of the schedule parse objects
     [self fetchSchedule];
+   
+    //Removing for faster launch
     
-    //Fetches all of the links parse objects
-    [self fetchLinks];
-    
-    //Fetches all of the youtube parse objects
-    [self fetchYouTube];
+//    //Fetches all of the links parse objects
+//    [self fetchLinks];
+//    
+//    //Fetches all of the youtube parse objects
+//    [self fetchYouTube];
     
     //Fetches all of the submit page parse objects
     [self fetchSubmit];
@@ -394,6 +398,7 @@
        
         //allocates the memory for the to properties
         [self setPdfData:[[NSData alloc]init]];
+        [self setBandPdfData:[[NSData alloc]init]];
         [self setSubmitArray: [[NSMutableArray alloc]init]];
         
         //iterates through the objects in the submit table

@@ -45,15 +45,17 @@
     {   [self.webView stopLoading];
         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
     }
+    //Disable Cookies
     //calls savecookies
-    [self saveCookies];
+   // [self saveCookies];
 }
 
 -(void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
+   // [self removeCookies];
+    //Disable Cookies
     //loads the cookies
-    [self loadCookies];
+   // [self loadCookies];
     //this checks whether the internet is accessible and if it isn't, it will display a message
     HMCheckInternetAccess *internetAccess = [[HMCheckInternetAccess alloc]init];
     if ([internetAccess isInternetReachable]) {
@@ -100,10 +102,14 @@
     //sets the webview to opaque
     [self.webView setOpaque:NO];
     //creates the base url from the passedURL
-    NSURL *baseURLString = [NSURL URLWithString:self.passedURL];
+  //  NSURL *baseURLString = [NSURL URLWithString:self.passedURL];
     //sets the webview witht he HTMLSTring and baseURL
-    [self.webView loadHTMLString:self.HTMLString baseURL:baseURLString];
+   // [self.webView loadHTMLString:self.HTMLString baseURL:baseURLString];
     //sets the scale to page to fit
+    NSLog(@"what is self %@", self.HTMLString);
+    NSURL*url=[NSURL URLWithString:self.HTMLString];
+    NSURLRequest*request=[NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
     [self.webView setScalesPageToFit : YES];
     
     
@@ -129,6 +135,14 @@
     //iterates through the cookies and sets the cookie to the cookies above
     for (NSHTTPCookie *cookie in cookies){
         [cookieStorage setCookie: cookie];
+    }
+}
+
+-(void)removeCookies{
+    NSHTTPCookie *cookie = [NSKeyedUnarchiver unarchiveObjectWithData: [[NSUserDefaults standardUserDefaults] objectForKey: @"cookies"]];
+    NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+    for (cookie in [storage cookies]) {
+        [storage deleteCookie:cookie];
     }
 }
 

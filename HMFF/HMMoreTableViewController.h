@@ -19,6 +19,9 @@
 //Holds the pdfdata from the Entry Form pdf in the More View Controller(More)
 @property (nonatomic, strong) NSData *pdfData;
 
+//Holds the pdfdata from the Entry Form pdf in the More View Controller(More)
+@property (nonatomic, strong) NSData *BandPdfData;
+
 //Holds the submitObjects that will be sent to More View Controller(More)
 @property (nonatomic, strong) NSArray *submitObject;
 

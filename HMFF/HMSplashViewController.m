@@ -136,13 +136,13 @@
     //centers the hmff image
     self.hmffImage.center = CGPointMake(164, 236);
     //Gets the screen size
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    //if screen size is iphone 5 then load the iphone 5 image...else load default one
-    if (screenSize.height > 480.0f) {
-        [self.splashImage setImage:[UIImage imageNamed:@"openingImage-iph5.png"]];
-    } else {
+//    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+//    //if screen size is iphone 5 then load the iphone 5 image...else load default one
+//    if (screenSize.height > 480.0f) {
+//        [self.splashImage setImage:[UIImage imageNamed:@"openingImage-iph5.png"]];
+//    } else {
         [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
-    }
+//    }
     //start the move up of the hmff logo
     [UIView transitionWithView:self.hmffImage
                       duration:2.5f
@@ -167,22 +167,27 @@
     [self.dateLabel setAlpha:0.0f];
     //holds the schedule objects
     //query from parse
-    PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
-    //Puts all of the querys into an object
-    NSArray *scheduleObjects= [scheduleQuery findObjects];
-    //Goes through and pulls out the date and location
-    for(NSDictionary *diction in scheduleObjects){
-        [self.dateLabel setText:[diction objectForKey:@"dates"]];
-        [self.cityLabel setText:[diction objectForKey:@"location"]];
-    }
+//    PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
+//    //Puts all of the querys into an object
+//    NSArray *scheduleObjects= [scheduleQuery findObjects];
+//    //Goes through and pulls out the date and location
+//    for(NSDictionary *diction in scheduleObjects){
+//        [self.dateLabel setText:[diction objectForKey:@"dates"]];
+//        [self.cityLabel setText:[diction objectForKey:@"location"]];
+//    }
+    //starts loading the data for the app
+    [HMDataFeedManager sharedDataFeedManager];
+    //        }
+    //        else{
+    [self.dateLabel setText:@"Sept 26 - 28 2014"];
+    [self.cityLabel setText:@"Hamilton, Ontario"];
     //stops the animating and removes the large activity indicator from the view
     [self.largeActivitiyIndicator stopAnimating];
     [self.largeActivitiyIndicator removeFromSuperview];
     //show the labels
     [self showLabels];
     
-    //starts loading the data for the app
-    [HMDataFeedManager sharedDataFeedManager];
+
     
     //completion block for the data loading, and will call the segue when it does
     [HMDataFeedManager sharedDataFeedManager].completionBlock = ^(BOOL success){

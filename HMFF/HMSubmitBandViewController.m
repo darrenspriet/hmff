@@ -64,7 +64,7 @@
     //loads the submit data to the submitArray
     [self setSubmit:[[HMDataFeedManager sharedDataFeedManager] submitArray]];
     //loads the pdfData to local pdfData
-    [self setPdfData:[[HMDataFeedManager sharedDataFeedManager] pdfData]];
+    [self setPdfData:[[HMDataFeedManager sharedDataFeedManager] bandPdfData]];
     
     //These are NSString to hold a few needed strings for below
     NSString *lateentries;
@@ -74,7 +74,7 @@
     for (NSDictionary *diction in self.submit){
         NSString * string=[diction objectForKey:@"name"];
         
-        if ([string isEqualToString:@"entryformlink"]) {
+        if ([string isEqualToString:@"entryfromlinkband"]) {
             [self setEntryFormLink :[diction objectForKey:@"details"]];
         }
         else if ([string isEqualToString:@"address"]) {

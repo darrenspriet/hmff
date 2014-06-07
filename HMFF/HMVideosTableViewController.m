@@ -31,10 +31,10 @@
     //this checks whether the internet is accessible and if it isn't, it will display a message
     HMCheckInternetAccess *internetAccess = [[HMCheckInternetAccess alloc]init];
     if ([internetAccess isInternetReachable]) {
-//        NSLog(@"Internet is Working!");
+        //        NSLog(@"Internet is Working!");
     }
     else{
-//        NSLog(@"Something wrong with the internet");
+        //        NSLog(@"Something wrong with the internet");
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This page requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
         [alert show];
     }
@@ -54,7 +54,44 @@
     //Sets the title to Videos
     [self.navigationItem setTitle:@"Videos"];
     //sets the youTube Array to the One in HMData Feed Manager
-    [self setYouTubeArray:[[HMDataFeedManager sharedDataFeedManager] youTubeArray]];
+    
+    [self setYouTubeArray:[self createYouTubeArray]];
+    
+    // [self setYouTubeArray:[[HMDataFeedManager sharedDataFeedManager] youTubeArray]];
+}
+
+-(NSMutableArray*)createYouTubeArray{
+    
+    NSMutableArray *youTubes =[[NSMutableArray alloc]init];
+    
+    NSDictionary *dictionary1 = [[NSDictionary alloc]initWithObjectsAndKeys:
+                                 @"HMFF 7 - 2014", @"title",
+                                 @"http://www.youtube.com/embed/PJArQJnd2Yo", @"link", nil];
+    NSDictionary *dictionary2 = [[NSDictionary alloc]initWithObjectsAndKeys:
+                                 @"HMFF 5 - RUNNING RED LIGHTS (2012)", @"title",
+                                 @"http://www.youtube-nocookie.com/embed/d-xyQGn1wXo?rel=0", @"link", nil];
+    NSDictionary *dictionary3 = [[NSDictionary alloc]initWithObjectsAndKeys:
+                                 @"HMFF 5 - JUMPLE (2012)", @"title",
+                                 @"http://www.youtube-nocookie.com/embed/Dp4tZKztCaI", @"link", nil];
+    NSDictionary *dictionary4 = [[NSDictionary alloc]initWithObjectsAndKeys:
+                                 @"HMFF 5 - WEEKEND RIOT CLUB: Again & Again (2012)", @"title",
+                                 @"http://www.youtube-nocookie.com/embed/jXTERlktBjQ", @"link", nil];
+    NSDictionary *dictionary5 = [[NSDictionary alloc]initWithObjectsAndKeys:
+                                 @"HMFF 5 - TWO CROWN KING (2012)", @"title",
+                                 @"http://www.youtube-nocookie.com/embed/XCsqbSXzdXk", @"link", nil];
+    NSDictionary *dictionary6 = [[NSDictionary alloc]initWithObjectsAndKeys:
+                                 @"HMFF 5 - GRAYDON JAMES & THE YOUNG NOVELISTS (2012)", @"title",
+                                 @"http://www.youtube-nocookie.com/embed/YBFPJNxwq6I", @"link", nil];
+    
+    [youTubes addObject:dictionary1];
+    [youTubes addObject:dictionary2];
+    [youTubes addObject:dictionary3];
+    [youTubes addObject:dictionary4];
+    [youTubes addObject:dictionary5];
+    [youTubes addObject:dictionary6];
+    
+    
+    return youTubes;
 }
 
 - (void)didReceiveMemoryWarning{
@@ -103,10 +140,10 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     //get the application frame
     CGRect applicationFrame = [[UIScreen mainScreen] applicationFrame];
-
+    
     //set the width to the size of application frame.size.width and lenght
     NSInteger height = applicationFrame.size.height;
-
+    
     //for iphone5's landscape view
     if (height == 568) {
         return 345;
