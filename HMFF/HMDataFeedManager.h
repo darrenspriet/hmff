@@ -22,11 +22,15 @@
 #define LARGE_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_m.jpg"
 
 typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
+typedef void (^HMDataFeedManagerScheduleCompletionBlock)(BOOL success);
 
 @interface HMDataFeedManager : NSObject
 
 //As singleton Object that is called at the beginning of the Application
 + (HMDataFeedManager*) sharedDataFeedManager;
+
+//Holds the completion block
+@property(nonatomic, copy)HMDataFeedManagerScheduleCompletionBlock scheduleCompletionBlock;
 
 //Holds the completion block
 @property(nonatomic, copy)HMDataFeedManagerCompletionBlock completionBlock;

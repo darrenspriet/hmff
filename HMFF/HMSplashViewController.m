@@ -128,13 +128,23 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    //starts loading the data for the app
+    [HMDataFeedManager sharedDataFeedManager];
     //set the splash page to 0.0
     [self.splashImage setAlpha:0.0f];
     [self.largeActivitiyIndicator setAlpha:0.0f];
     //start the activity indicator
     [self.largeActivitiyIndicator startAnimating];
+    
     //centers the hmff image
     self.hmffImage.center = CGPointMake(164, 236);
+    
+    [self.hmffImage setHidden:NO];
+    [self.hmffImage removeFromSuperview];
+    [self.hmffImage setTranslatesAutoresizingMaskIntoConstraints:YES];
+    [self.hmffImage setFrame:CGRectMake(160-self.hmffImage.frame.size.width/2, 236, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height)];
+    [self.view addSubview:self.hmffImage];
+    
     //Gets the screen size
 //    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
 //    //if screen size is iphone 5 then load the iphone 5 image...else load default one
@@ -144,11 +154,11 @@
         [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
 //    }
     //start the move up of the hmff logo
-    [UIView transitionWithView:self.hmffImage
+    [UIView transitionWithView:nil
                       duration:2.5f
                        options:UIViewAnimationOptionCurveEaseIn
                     animations:^(void) {
-                        self.hmffImage.frame = CGRectMake(164.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
+                        self.hmffImage.frame = CGRectMake(160-self.hmffImage.frame.size.width/2, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
                         [self.largeActivitiyIndicator setAlpha:1.0f];
                     }
                     completion:^(BOOL finished) {
@@ -175,8 +185,7 @@
 //        [self.dateLabel setText:[diction objectForKey:@"dates"]];
 //        [self.cityLabel setText:[diction objectForKey:@"location"]];
 //    }
-    //starts loading the data for the app
-    [HMDataFeedManager sharedDataFeedManager];
+
     //        }
     //        else{
     [self.dateLabel setText:@"Sept 26 - 28 2014"];
@@ -190,9 +199,13 @@
 
     
     //completion block for the data loading, and will call the segue when it does
+    NSDate *startTime = [NSDate date];
     [HMDataFeedManager sharedDataFeedManager].completionBlock = ^(BOOL success){
         if (success)
         {
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"Total Time: %f", difference);
             //            NSLog(@"Finished loading data");
             [self performSegueWithIdentifier:@"splashSegue" sender:self];
         }

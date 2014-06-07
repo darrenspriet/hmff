@@ -1815,25 +1815,25 @@ M4M 3C3</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="hmffLogoIconSplash.png" translatesAutoresizingMaskIntoConstraints="NO" id="FRj-Jk-1zt">
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="hmffLogoIconSplash.png" translatesAutoresizingMaskIntoConstraints="NO" id="FRj-Jk-1zt">
                                 <rect key="frame" x="118" y="98" width="95" height="36"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FRj-Jk-1zt" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" constant="118" id="1pP-8T-Hs0"/>
+                            <constraint firstItem="FRj-Jk-1zt" firstAttribute="top" secondItem="FEj-Zz-Ujq" secondAttribute="bottom" constant="78" id="2pv-Vr-YST"/>
                             <constraint firstAttribute="bottom" secondItem="rZJ-Gb-yFn" secondAttribute="bottom" id="3gH-mR-xFw"/>
                             <constraint firstItem="fM4-hj-9dd" firstAttribute="top" secondItem="KzG-R3-L1m" secondAttribute="bottom" constant="8" symbolic="YES" id="873-hN-wzS"/>
                             <constraint firstItem="e0V-qF-2nD" firstAttribute="top" secondItem="ybZ-cq-izi" secondAttribute="bottom" constant="265" id="Bqz-xU-GWb"/>
+                            <constraint firstAttribute="trailing" secondItem="KzG-R3-L1m" secondAttribute="trailing" constant="42" id="C42-rk-M0n"/>
                             <constraint firstItem="rZJ-Gb-yFn" firstAttribute="top" secondItem="yyJ-xl-CLe" secondAttribute="top" id="HZu-X1-WU8"/>
                             <constraint firstAttribute="trailing" secondItem="rZJ-Gb-yFn" secondAttribute="trailing" id="KvI-yT-bOb"/>
                             <constraint firstItem="rZJ-Gb-yFn" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" id="NZy-Ae-eol"/>
-                            <constraint firstItem="FRj-Jk-1zt" firstAttribute="top" secondItem="FEj-Zz-Ujq" secondAttribute="bottom" constant="78" id="YG3-6b-y79"/>
+                            <constraint firstAttribute="trailing" secondItem="fM4-hj-9dd" secondAttribute="trailing" constant="41" id="Na8-wf-Yqp"/>
                             <constraint firstItem="e0V-qF-2nD" firstAttribute="top" secondItem="fM4-hj-9dd" secondAttribute="bottom" constant="250" id="bR1-5r-Ves"/>
-                            <constraint firstAttribute="trailing" secondItem="KzG-R3-L1m" secondAttribute="trailing" constant="42" id="dY1-B3-NgX"/>
-                            <constraint firstItem="fM4-hj-9dd" firstAttribute="centerX" secondItem="FRj-Jk-1zt" secondAttribute="centerX" id="gG8-As-SS7"/>
+                            <constraint firstItem="fM4-hj-9dd" firstAttribute="centerX" secondItem="FRj-Jk-1zt" secondAttribute="centerX" id="kk5-Qn-uWw"/>
+                            <constraint firstItem="KzG-R3-L1m" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" constant="51" id="q1V-c7-Jae"/>
                             <constraint firstItem="KzG-R3-L1m" firstAttribute="leading" secondItem="fM4-hj-9dd" secondAttribute="leading" id="vWy-7i-rWl"/>
-                            <constraint firstItem="fM4-hj-9dd" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" constant="51" id="wqZ-y0-gED"/>
                             <constraint firstItem="ybZ-cq-izi" firstAttribute="leading" secondItem="yyJ-xl-CLe" secondAttribute="leading" constant="141" id="x2M-HQ-gZa"/>
                         </constraints>
                     </view>

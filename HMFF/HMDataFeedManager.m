@@ -28,14 +28,14 @@
 
 //The init Method
 -(id)init{
+    //Fetches all of the Tweets for HMFFEST from twitter
+    [self fetchTweets];
     
     [self setHTMLString: [[NSString alloc]init]];
     [self setHTMLString:@"http://www.hmff.com/schedule/"];
 
     //Fetches the FlickerFeed
     [self fetchFlickerFeed];
-    
-
     
     //Fetches all of the News Feeds
     [self fetchNewsFeed];
@@ -59,8 +59,13 @@
 #pragma mark Flicker Fetchers
 //Fetches all of the FlickerFeeds
 -(void)fetchFlickerFeed{
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_queue_t myQueue = dispatch_queue_create("FLICKER FETCH QUE",NULL);
+    dispatch_async(myQueue, ^{
 //        NSLog(@"fetch flicker dispach started");
+        //        NSLog(@"fetch flicker dispach started");
+        NSDate *startTime= [NSDate date];
+        NSLog(@"Flicker Feed Thread:%@",[NSThread currentThread]);
+
         //This is for  a specific Set with a ID number
         NSData* data = [NSData dataWithContentsOfURL:
                         [NSURL URLWithString:[NSString stringWithFormat:FLICKER_URL,FLICKER_SET_NUMBER ,FLICKR_API_KEY, FLICKER_USER_ID ]]];
@@ -70,6 +75,9 @@
                                                       options:kNilOptions
                                                         error:&error]];
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"Flicker Finished Time:%f", difference);
             //            NSLog(@"photos is: %@", self.photos);
 //            NSLog(@"Flicker Feed Dispatch Finished");
             [self loadPhotoArrays];
@@ -81,7 +89,10 @@
 -(void)loadPhotoArrays{
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 //        NSLog(@"photos array dispach started");
-        
+        NSDate *startTime= [NSDate date];
+        NSLog(@"Photos Thread:%@ ",[NSThread currentThread]);
+
+
         // Build an array from the dictionary for easy access to each entry
         //If trying to get the Stream the first object is "photo", other wise if it is a set
         //its a "photoset"
@@ -114,7 +125,10 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"photos array dispach finished");
-            
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"Photos Finished Time:%f", difference);
+
         });
     });
     
@@ -123,9 +137,13 @@
 #pragma mark News Fetcher
 //Goes through the news feed and grabs the data from a JSON object on the MAIN thread
 - (void)fetchNewsFeed{
-    //Must change this Cause it is on the mainQue
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_queue_t myQueue = dispatch_queue_create("NEWS FEED QUE",NULL);
+    dispatch_async(myQueue, ^{
 //        NSLog(@"News Feed dispach started");
+        NSDate *startTime= [NSDate date];
+        NSLog(@"News Feed Thread:%@",[NSThread currentThread]);
+
+
 
         
         NSData* data = [NSData dataWithContentsOfURL:
@@ -141,6 +159,10 @@
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"News Feed dispatch finished");
 //            NSLog(@"News feed is: %@", self.news);
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"News Feed Finished:%f", difference);
+
         });
     });
 }
@@ -149,34 +171,57 @@
 //Goes through the twitter feed and grabs the data from a JSON object on the main queue, utilizes the STTwitter library found at: https://github.com/nst/STTwitter
 - (void)fetchTweets{
     dispatch_async(dispatch_get_main_queue(), ^{
+        NSDate *startTime= [NSDate date];
+        NSLog(@"Twitter Feed Thread:%@",[NSThread currentThread]);
+
+
 //        NSLog(@"twitter dispach started");
         //sets up the credentials the consumer key and the consumber secret
         STTwitterAPIWrapper *twitter = [STTwitterAPIWrapper  twitterAPIApplicationOnlyWithConsumerKey:TWITTER_CONSUMER_KEY
                                                                                        consumerSecret:TWITTER_CONSUMER_SECRET];
         
+        __weak typeof(self) weakSelf = self;
+
+        self.scheduleCompletionBlock = ^(BOOL success){
+            if (success)
+            {
         [twitter verifyCredentialsWithSuccessBlock:^(NSString *bearerToken) {
             
             //sets the username and count of twitter feeds
             [twitter getUserTimelineWithScreenName:@"HMFFEST" count:100 successBlock:^(NSArray *statuses) {
-                
+
                 //sets the tweets to the statuses
-                [self setTweets:statuses];
+                [weakSelf setTweets:statuses];
 //                NSLog(@"Tweets are loaded");
-                
                 //if this executes then the splash screeen will load the schedule page
-                if (self.completionBlock!=nil) {
-                    self.completionBlock(YES);
-                }
+                
+                
+                            if (weakSelf.completionBlock!=nil) {
+                            weakSelf.completionBlock(YES);
+                            }
+                            //            NSLog(@"Finished loading data");
+                
+                    NSDate *endTime= [NSDate date];
+                    CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+                    NSLog(@"Completion Block Tweet Thread:%@ and Time:%f",[NSThread currentThread], difference);
             } errorBlock:^(NSError *error) {
                 // NSLog(@"-- error: %@", error);
             }];
             
+            
         } errorBlock:^(NSError *error) {
             //            NSLog(@"-- error %@", error);
         }];
+            }
+            else{
+                //            NSLog(@"app did not load successfully");
+            }
+        };
         dispatch_async(dispatch_get_main_queue(), ^{
 //            NSLog(@"twitter dispach finished");
-
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"Twitter Finished: %f", difference);
         });
     });
 }
@@ -185,7 +230,12 @@
 //starts the schedule parse
 -(void)fetchSchedule{
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    dispatch_queue_t myQueue = dispatch_queue_create("SCHEDULE QUE",NULL);
+    dispatch_async(myQueue, ^{
+        NSDate *startTime= [NSDate date];
+        NSLog(@"Schedule Feed Thread:%@",[NSThread currentThread]);
+
+
 //        NSLog(@"schedule dispach started");
 
         //creates a pfquery for the schedule
@@ -193,6 +243,10 @@
         //Puts all of the querys into an object
         NSArray *scheduleObjects= [scheduleQuery findObjects];
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"Schedule Finished: %f", difference);
+
 //            NSLog(@"schedule dispatch finished");
             //parse's the schedule objects
             [self parseSchedule:scheduleObjects];
@@ -204,7 +258,8 @@
 }
 //used to parse through the schedule objects
 -(void)parseSchedule:(NSArray*)array{
-    dispatch_async(dispatch_get_main_queue(), ^{
+    dispatch_queue_t myQueue = dispatch_queue_create("PARSE QUE",NULL);
+    dispatch_async(myQueue, ^{
 //        NSLog(@"parseSchedule dispach started");
         
         //Allocating all of the Arrays
@@ -314,6 +369,9 @@
         [self setDate:tempDates];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            if (self.scheduleCompletionBlock!=nil) {
+                self.scheduleCompletionBlock(YES);
+            }
 //            NSLog(@"parseSchedule dispach finished");
             
         });
@@ -369,8 +427,10 @@
 #pragma mark Submit fetcher
 //fetches all of the information for the Submission pages
 -(void)fetchSubmit{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        NSLog(@"submit dispach started");
+    dispatch_queue_t myQueue = dispatch_queue_create("SUBMIT QUE",NULL);
+    dispatch_async(myQueue, ^{
+        NSDate *startTime= [NSDate date];
+        NSLog(@"Submit Feed Thread:%@",[NSThread currentThread]);
 
         self.submitObject = [[NSMutableArray alloc]init];
         
@@ -381,6 +441,9 @@
         self.submitObject= [submitQuery findObjects];
         
         dispatch_async(dispatch_get_main_queue(), ^{
+            NSDate *endTime= [NSDate date];
+            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            NSLog(@"Submit Finished: %f", difference);
 //            NSLog(@"submitParseDone dispatch finished");
             //parse through the submit details
             [self parseSubmitDetails:self.submitObject];
@@ -393,8 +456,9 @@
 //parses through all of the Submit details
 -(void)parseSubmitDetails:(NSArray*)array{
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-//        NSLog(@"parse submit dispach started");
+    dispatch_queue_t myQueue = dispatch_queue_create("SUBMIT QUE",NULL);
+    dispatch_async(myQueue, ^{
+        //        NSLog(@"parse submit dispach started");
        
         //allocates the memory for the to properties
         [self setPdfData:[[NSData alloc]init]];
