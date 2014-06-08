@@ -6,6 +6,14 @@
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
+
+typedef enum LoadingState : NSInteger LoadingState;
+enum LoadingState : NSInteger {
+    PHOTOS_STARTED,
+    PHOTOS_COMPLETE
+};
+
+
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "STTwitterAPIWrapper.h"
@@ -78,5 +86,14 @@ typedef void (^HMDataFeedManagerScheduleCompletionBlock)(BOOL success);
 
 //Holds the linkObjects that will be sent to Social View Controller(Social)
 @property (nonatomic, strong) NSArray *linkObject;
+//To check and resume the any processes if needed
+-(void)checkPhotoLoadingStatus;
+//Cancel any loading processes
+-(void)cancelActions;
+
+@property (nonatomic, readwrite)BOOL isFinishedPhotos;
+@property (nonatomic, readwrite)BOOL mustNotDownloadPhotos;
+
+
 
 @end

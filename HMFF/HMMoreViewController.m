@@ -95,22 +95,30 @@
 }
 
 - (IBAction)SendAnEmail:(UIButton *)sender {
-    // Email Subject
-    NSString *emailTitle = @"HMFF";
-    // Email Content
-    // NSString *messageBody = @"I love HMFF";
-    // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"kevin@hmff.com"];
-    //allocs and sets all of the information for the composer
-    MFMailComposeViewController *messageComposer = [[MFMailComposeViewController alloc] init];
-    [messageComposer setMailComposeDelegate: self];
-    [messageComposer setSubject:emailTitle];
-    // [messageComposer setMessageBody:messageBody isHTML:NO];
-    [messageComposer setToRecipients:toRecipents];
-    [messageComposer.navigationItem.leftBarButtonItem setTintColor:[UIColor blueColor]];
-    
-    // Present mail view controller on screen
-    [self presentViewController:messageComposer animated:YES completion:NULL];
+    if ([MFMailComposeViewController canSendMail]) {
+        // Email Subject
+        NSString *emailTitle = @"HMFF";
+        // Email Content
+        // NSString *messageBody = @"I love HMFF";
+        // To address
+        NSArray *toRecipents = [NSArray arrayWithObject:@"kevin@hmff.com"];
+        //allocs and sets all of the information for the composer
+        MFMailComposeViewController *messageComposer = [[MFMailComposeViewController alloc] init];
+        
+        [messageComposer setMailComposeDelegate: self];
+        [messageComposer setSubject:emailTitle];
+        // [messageComposer setMessageBody:messageBody isHTML:NO];
+        [messageComposer setToRecipients:toRecipents];
+        [messageComposer.navigationItem.leftBarButtonItem setTintColor:[UIColor blueColor]];
+        
+        // Present mail view controller on screen
+        [self presentViewController:messageComposer animated:YES completion:NULL];
+    }
+    else{
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Unable to Send Email" message:@"You must add an email account." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+
 }
 
 #pragma mark - MailComposer Delegate

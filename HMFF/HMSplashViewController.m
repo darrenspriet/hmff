@@ -172,24 +172,22 @@
 
 //load the data into the app
 -(void)loadUpApp{
+//        NSDate *startTime = [NSDate date];
+
     //set the date and city label to 0.0 alpha
     [self.cityLabel setAlpha:0.0f];
     [self.dateLabel setAlpha:0.0f];
     //holds the schedule objects
     //query from parse
-//    PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
-//    //Puts all of the querys into an object
-//    NSArray *scheduleObjects= [scheduleQuery findObjects];
-//    //Goes through and pulls out the date and location
-//    for(NSDictionary *diction in scheduleObjects){
-//        [self.dateLabel setText:[diction objectForKey:@"dates"]];
-//        [self.cityLabel setText:[diction objectForKey:@"location"]];
-//    }
-
-    //        }
-    //        else{
-    [self.dateLabel setText:@"Sept 26 - 28 2014"];
-    [self.cityLabel setText:@"Hamilton, Ontario"];
+    
+    PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
+    //Puts all of the querys into an object
+    NSArray *scheduleObjects= [scheduleQuery findObjects];
+    //Goes through and pulls out the date and location
+    for(NSDictionary *diction in scheduleObjects){
+        [self.dateLabel setText:[diction objectForKey:@"dates"]];
+        [self.cityLabel setText:[diction objectForKey:@"location"]];
+    }
     //stops the animating and removes the large activity indicator from the view
     [self.largeActivitiyIndicator stopAnimating];
     [self.largeActivitiyIndicator removeFromSuperview];
@@ -199,14 +197,12 @@
 
     
     //completion block for the data loading, and will call the segue when it does
-    NSDate *startTime = [NSDate date];
     [HMDataFeedManager sharedDataFeedManager].completionBlock = ^(BOOL success){
         if (success)
         {
-            NSDate *endTime= [NSDate date];
-            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-            NSLog(@"Total Time: %f", difference);
-            //            NSLog(@"Finished loading data");
+//            NSDate *endTime= [NSDate date];
+//            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+//            NSLog(@"Total Time: %f", difference);
             [self performSegueWithIdentifier:@"splashSegue" sender:self];
         }
         else{
