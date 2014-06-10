@@ -6,6 +6,14 @@
 //  Copyright (c) 2013 HMFF. All rights reserved.
 //
 
+
+typedef enum LoadingState : NSInteger LoadingState;
+enum LoadingState : NSInteger {
+    PHOTOS_STARTED,
+    PHOTOS_COMPLETE
+};
+
+
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "STTwitterAPIWrapper.h"
@@ -16,17 +24,21 @@
 #define FLICKER_SET_NUMBER @"72157633844444754"
 #define TWITTER_CONSUMER_KEY @"FDj5uDk7unth9kkgL21PA"
 #define TWITTER_CONSUMER_SECRET @"CHlhsqOzU3wZKDiKyIf25w6uxM0sKEpFylAZUa4Gt6U"
-#define NEWS_URL @"http://www.hmff.com/?json=get_recent_posts&count=1000"
+#define NEWS_URL @"http://www.hmff.com/?json=get_recent_posts&category_name=news&count=1000"
 #define FLICKER_URL @"http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&photoset_id=%@&api_key=%@&user_id=%@&format=json&nojsoncallback=1"
 #define SMALL_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_t.jpg"
 #define LARGE_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_m.jpg"
 
 typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
+typedef void (^HMDataFeedManagerScheduleCompletionBlock)(BOOL success);
 
 @interface HMDataFeedManager : NSObject
 
 //As singleton Object that is called at the beginning of the Application
 + (HMDataFeedManager*) sharedDataFeedManager;
+
+//Holds the completion block
+@property(nonatomic, copy)HMDataFeedManagerScheduleCompletionBlock scheduleCompletionBlock;
 
 //Holds the completion block
 @property(nonatomic, copy)HMDataFeedManagerCompletionBlock completionBlock;
@@ -67,10 +79,21 @@ typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 //Holds the pdfdata from the Entry Form pdf in the More View Controller(More)
 @property (nonatomic, strong) NSData *pdfData;
 
+@property (nonatomic, strong)NSData *bandPdfData;
+
 //Holds the submitObjects that will be sent to More View Controller(More)
 @property (nonatomic, strong) NSArray *submitObject;
 
 //Holds the linkObjects that will be sent to Social View Controller(Social)
 @property (nonatomic, strong) NSArray *linkObject;
+//To check and resume the any processes if needed
+-(void)checkPhotoLoadingStatus;
+//Cancel any loading processes
+-(void)cancelActions;
+
+@property (nonatomic, readwrite)BOOL isFinishedPhotos;
+@property (nonatomic, readwrite)BOOL mustNotDownloadPhotos;
+
+
 
 @end

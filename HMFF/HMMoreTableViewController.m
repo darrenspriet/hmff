@@ -31,21 +31,25 @@
 -(void)loadData{
     [self setSubmitObject:[[HMDataFeedManager sharedDataFeedManager] submitObject]];
     for (NSDictionary *diction in self.submitObject){
-         NSString * string=[diction objectForKey:@"name"];
+        NSString * string=[diction objectForKey:@"name"];
         //if the name is entry form
-         if ([string isEqualToString:@"entryformlink"]) {
+        if ([string isEqualToString:@"entryformlink"]) {
             [self loadPdfData: [diction objectForKey:@"details"]];
-          }
+        }
+        else if([string isEqualToString:@"entryfromlinkband"]) {
+            [self loadBandPdfData: [diction objectForKey:@"details"]];
+        }
+        
     }
 }
 
-  
+
 //takes the string from the url and loads it into nsdata so it can be opened in a document
 -(void)loadPdfData:(NSString*)string{
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //        NSLog(@"parse loadPDF started dispach started");
-            
+        
         //loads the pdf data into the nsdata property
         [self setPdfData:  [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:string]]];
         
@@ -57,18 +61,35 @@
     });
 }
 
+//takes the string from the url and loads it into nsdata so it can be opened in a document
+-(void)loadBandPdfData:(NSString*)string{
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        //        NSLog(@"parse loadPDF started dispach started");
+        
+        //loads the pdf data into the nsdata property
+        [self setBandPdfData:  [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:string]]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //            NSLog(@"loadPDF dispach finished");
+            [[HMDataFeedManager sharedDataFeedManager] setBandPdfData:self.pdfData];
+            ;
+        });
+    });
+}
+
 #pragma mark - Table view data source
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-        //Changes the size if it is the iPhone 5
-        if (screenSize.height > 480.0f) {
-            //returns 60f if it is iPhone 5
-            return 60.0f;
-        }
-        else {
-            //else returns 47f 
-            return 47.0f;
-        }
+    //Changes the size if it is the iPhone 5
+    if (screenSize.height > 480.0f) {
+        //returns 60f if it is iPhone 5
+        return 60.0f;
+    }
+    else {
+        //else returns 47f
+        return 47.0f;
+    }
 }
 
 //Creates a invisible footer to get rid of extra cells created
@@ -109,7 +130,7 @@
             return cell;
             break;
         }
-
+            
         case 2:{
             static NSString *CellIdentifier = PHOTO_CELL;
             HMMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];

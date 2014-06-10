@@ -39,15 +39,15 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     //used to set the pay pal button at the beggining, init with the payPalLink
-    NSString *embeddedHTML = [NSString stringWithFormat:@"<html style=\"background-color:black;\"><head><title>.</title><form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\"><input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\"><input type=\"hidden\" name=\"hosted_button_id\" value=\"%@\"><input type=\"image\" src=\"https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\"><img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\"></form></body></html>", self.payPalLink];
-    //loads up the HTMLString with the embeddedHTML, and no baseURL
-    [self.webView loadHTMLString:embeddedHTML baseURL:nil];
-    //Sets the background to clar
-    [self.webView setBackgroundColor:[UIColor clearColor]];
-    //sets it not to opaque
-    [self.webView setOpaque:NO];
-    //sets the activity indicator to hidden
-    [self.activityIndicator setHidden:YES];
+//    NSString *embeddedHTML = [NSString stringWithFormat:@"<html style=\"background-color:black;\"><head><title>.</title><form action=\"https://www.paypal.com/cgi-bin/webscr\" method=\"post\" target=\"_top\"><input type=\"hidden\" name=\"cmd\" value=\"_s-xclick\"><input type=\"hidden\" name=\"hosted_button_id\" value=\"%@\"><input type=\"image\" src=\"https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif\" border=\"0\" name=\"submit\" alt=\"PayPal - The safer, easier way to pay online!\"><img alt=\"\" border=\"0\" src=\"https://www.paypalobjects.com/en_US/i/scr/pixel.gif\" width=\"1\" height=\"1\"></form></body></html>", self.payPalLink];
+//    //loads up the HTMLString with the embeddedHTML, and no baseURL
+//    [self.webView loadHTMLString:embeddedHTML baseURL:nil];
+//    //Sets the background to clar
+//    [self.webView setBackgroundColor:[UIColor clearColor]];
+//    //sets it not to opaque
+//    [self.webView setOpaque:NO];
+//    //sets the activity indicator to hidden
+//    [self.activityIndicator setHidden:YES];
     //sets the title to Video Submission for when we come back from the webbrowser or detail page
     [self.navigationItem setTitle:@"Video Submission"];
 }
@@ -139,18 +139,15 @@
     HMMoreWebBrowserViewController *webBrowser = segue.destinationViewController;
     //calls the entry form segue and passes some info to the webbrowser
     if([segue.identifier isEqualToString:@"entryForm"]){
-        NSString *currentURL = [self.webView.request.URL absoluteString];
-        //checks to see if the page is equal to the normal pay pal link and set pdf to no
-        if (![currentURL isEqualToString:@"about:blank"]){
-            [webBrowser setPassedURL: currentURL];
-            [webBrowser setIsPDF: NO];
-        }
-        //else it is the pdf and sets the pdfData and isPDF to YES
-        else{
+
             webBrowser.passedURL=self.entryFormLink;
             [webBrowser setIsPDF: YES];
             [webBrowser setPdfData: self.pdfData];
-        }
+    }
+    else if([segue.identifier isEqualToString:@"filmFreeWay"]){
+            [webBrowser setPassedURL: self.payPalLink];
+            [webBrowser setIsPDF: NO];
+       
     }
     //calls the moreDetail segue and sets the details for the controller
     else if([segue.identifier isEqualToString:@"moreDetail"]){
@@ -161,42 +158,42 @@
 }
 
 #pragma WEB VIEW DELEGATE
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    //turns of the activity indicator
-    [self.activityIndicator setHidden:NO];
-    return YES;
-}
-
-- (void)webViewDidStartLoad:(UIWebView *)webView{
-    //Onces started loading set the indicator to visible and start animating
-    [self.activityIndicator setHidden:NO];
-    [self.activityIndicator startAnimating];
-    //also change the back ground to the black pay pal background image
-    [self.imageView setImage:[UIImage imageNamed:@"blackPayPalBackground.png"]];
-}
-
-- (void)webViewDidFinishLoad:(UIWebView *)webView{
-    //once it finishes loading sets the background to clar
-    [self.webView setBackgroundColor:[UIColor clearColor]];
-    //sets the webview to opaque
-    [self.webView setOpaque:YES];
-    //sets the current url to a string
-    NSString *currentURL = [self.webView.request.URL absoluteString];
-    //stops animating the indicator
-    [self.activityIndicator stopAnimating];
-    //checks to see if the current url is the pay pal page that tells you about the app and realoads the view if this is the case
-    if([currentURL isEqualToString:@"https://www.paypal.com/cgi-bin/webscr#m"]){
-        [self.webView reload];
-    }
-    //else if it is the default about:blank then you still have a normal pay pal button page and perform segue
-    else if(![currentURL isEqualToString:@"about:blank"]){
-        [self performSegueWithIdentifier:@"entryForm" sender:self];
-        [self.activityIndicator setHidden:YES];
-        
-    }
-    else{
-        [self.activityIndicator setHidden:YES];
-        [self.imageView setImage:nil];
-    }
-}
+//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+//    //turns of the activity indicator
+//    [self.activityIndicator setHidden:NO];
+//    return YES;
+//}
+//
+//- (void)webViewDidStartLoad:(UIWebView *)webView{
+//    //Onces started loading set the indicator to visible and start animating
+//    [self.activityIndicator setHidden:NO];
+//    [self.activityIndicator startAnimating];
+//    //also change the back ground to the black pay pal background image
+//    [self.imageView setImage:[UIImage imageNamed:@"blackPayPalBackground.png"]];
+//}
+//
+//- (void)webViewDidFinishLoad:(UIWebView *)webView{
+//    //once it finishes loading sets the background to clar
+//    [self.webView setBackgroundColor:[UIColor clearColor]];
+//    //sets the webview to opaque
+//    [self.webView setOpaque:YES];
+//    //sets the current url to a string
+//    NSString *currentURL = [self.webView.request.URL absoluteString];
+//    //stops animating the indicator
+//    [self.activityIndicator stopAnimating];
+//    //checks to see if the current url is the pay pal page that tells you about the app and realoads the view if this is the case
+//    if([currentURL isEqualToString:@"https://www.paypal.com/cgi-bin/webscr#m"]){
+//        [self.webView reload];
+//    }
+//    //else if it is the default about:blank then you still have a normal pay pal button page and perform segue
+//    else if(![currentURL isEqualToString:@"about:blank"]){
+//        [self performSegueWithIdentifier:@"entryForm" sender:self];
+//        [self.activityIndicator setHidden:YES];
+//        
+//    }
+//    else{
+//        [self.activityIndicator setHidden:YES];
+//        [self.imageView setImage:nil];
+//    }
+//}
 @end

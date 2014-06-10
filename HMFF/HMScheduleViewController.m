@@ -72,15 +72,16 @@
     //sets the date from the Data Manager
     [self setDate:[[HMDataFeedManager sharedDataFeedManager] date]];
     //sets the HTMLString from the Data Manager
-    [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
+ //   [self setHTMLString:[[HMDataFeedManager sharedDataFeedManager] HTMLString]];
     //sets the image for the date to the initial date
     [self.dateForEvent setText:[self.date objectAtIndex:0]];
     
-    [self setLinkObject:[[HMDataFeedManager sharedDataFeedManager] linkObject]];
-    //parses the TicketLink into a HTMLString
-    [self parseTicketLink:self.linkObject];
-    //parses through the Social links to save to an array
-    [self parseSocialLinks:self.linkObject];
+    //Loading all this Data locally now, for speed
+//    [self setLinkObject:[[HMDataFeedManager sharedDataFeedManager] linkObject]];
+//    //parses the TicketLink into a HTMLString
+//    [self parseTicketLink:self.linkObject];
+//    //parses through the Social links to save to an array
+//    [self parseSocialLinks:self.linkObject];
     
 }
 - (void)didReceiveMemoryWarning{
@@ -112,15 +113,24 @@
 -(void)changeDate:(NSString *)date{
     [self.dateForEvent setText:date];
 }
-//changes the images for front and back images 
+//changes the images for front and back images
 -(void)imagesForButton:(NSString*)backImage andFrontImage:(NSString*)frontImage{
     if (backImage!=nil) {
+        
+        
         [self.backButtonImage setImage:[UIImage imageNamed:backImage] forState:UIControlStateNormal];
     }
     if (frontImage!=nil) {
-    [self.forwardButtonImage setImage:[UIImage imageNamed:frontImage] forState:UIControlStateNormal];
+        if ([frontImage isEqualToString:@""]) {
+            [self.forwardButtonImage setEnabled:NO];
+        }
+        else{
+            [self.forwardButtonImage setEnabled:YES];
+        }
+        [self.forwardButtonImage setImage:[UIImage imageNamed:frontImage] forState:UIControlStateNormal];
+        
     }
-
+    
 }
 //Tells the delegate, scroll view to scroll forward
 - (IBAction)forwardButton:(UIButton *)sender {

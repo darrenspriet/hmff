@@ -128,27 +128,37 @@
 
 - (void)viewDidLoad{
     [super viewDidLoad];
+    //starts loading the data for the app
+    [HMDataFeedManager sharedDataFeedManager];
     //set the splash page to 0.0
     [self.splashImage setAlpha:0.0f];
     [self.largeActivitiyIndicator setAlpha:0.0f];
     //start the activity indicator
     [self.largeActivitiyIndicator startAnimating];
+    
     //centers the hmff image
     self.hmffImage.center = CGPointMake(164, 236);
+    
+    [self.hmffImage setHidden:NO];
+    [self.hmffImage removeFromSuperview];
+    [self.hmffImage setTranslatesAutoresizingMaskIntoConstraints:YES];
+    [self.hmffImage setFrame:CGRectMake(160-self.hmffImage.frame.size.width/2, 236, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height)];
+    [self.view addSubview:self.hmffImage];
+    
     //Gets the screen size
-    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-    //if screen size is iphone 5 then load the iphone 5 image...else load default one
-    if (screenSize.height > 480.0f) {
-        [self.splashImage setImage:[UIImage imageNamed:@"openingImage-iph5.png"]];
-    } else {
+//    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+//    //if screen size is iphone 5 then load the iphone 5 image...else load default one
+//    if (screenSize.height > 480.0f) {
+//        [self.splashImage setImage:[UIImage imageNamed:@"openingImage-iph5.png"]];
+//    } else {
         [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
-    }
+//    }
     //start the move up of the hmff logo
-    [UIView transitionWithView:self.hmffImage
+    [UIView transitionWithView:nil
                       duration:2.5f
                        options:UIViewAnimationOptionCurveEaseIn
                     animations:^(void) {
-                        self.hmffImage.frame = CGRectMake(164.0f, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
+                        self.hmffImage.frame = CGRectMake(160-self.hmffImage.frame.size.width/2, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
                         [self.largeActivitiyIndicator setAlpha:1.0f];
                     }
                     completion:^(BOOL finished) {
@@ -162,11 +172,14 @@
 
 //load the data into the app
 -(void)loadUpApp{
+//        NSDate *startTime = [NSDate date];
+
     //set the date and city label to 0.0 alpha
     [self.cityLabel setAlpha:0.0f];
     [self.dateLabel setAlpha:0.0f];
     //holds the schedule objects
     //query from parse
+    
     PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
     //Puts all of the querys into an object
     NSArray *scheduleObjects= [scheduleQuery findObjects];
@@ -181,14 +194,15 @@
     //show the labels
     [self showLabels];
     
-    //starts loading the data for the app
-    [HMDataFeedManager sharedDataFeedManager];
+
     
     //completion block for the data loading, and will call the segue when it does
     [HMDataFeedManager sharedDataFeedManager].completionBlock = ^(BOOL success){
         if (success)
         {
-            //            NSLog(@"Finished loading data");
+//            NSDate *endTime= [NSDate date];
+//            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+//            NSLog(@"Total Time: %f", difference);
             [self performSegueWithIdentifier:@"splashSegue" sender:self];
         }
         else{

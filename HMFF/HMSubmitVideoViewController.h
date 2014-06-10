@@ -14,11 +14,11 @@
 //sets the property for the view over the uiimage
 @property (weak, nonatomic) IBOutlet UIView *blackView;
 //the webview for the pay pal button
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
-//the indicator that starts when the pay pal button is loading
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-//used to set overtop of the uiwebview for the pay pal button
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+//@property (weak, nonatomic) IBOutlet UIWebView *webView;
+////the indicator that starts when the pay pal button is loading
+//@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+////used to set overtop of the uiwebview for the pay pal button
+//@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 //access to the submission label
 @property (weak, nonatomic) IBOutlet UILabel *submissionLabel;
 //access to the length label

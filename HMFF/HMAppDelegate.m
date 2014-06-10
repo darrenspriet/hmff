@@ -20,6 +20,7 @@
 
     //Sets all of the Bar Button Items in the entire app to black
       [[UIBarButtonItem appearance] setTintColor:[UIColor colorWithRed:3.0/255.0 green:126.0/255.0 blue:153.0/255.0 alpha:1]];
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:3.0/255.0 green:126.0/255.0 blue:153.0/255.0 alpha:1]];
     
     //Set the status bar style to blackopaque
     [application setStatusBarStyle:UIStatusBarStyleDefault];
@@ -40,6 +41,8 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
+    [[HMDataFeedManager sharedDataFeedManager]cancelActions];
+
     //NSLog(@"application did enter background");
 
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
@@ -48,6 +51,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    [[HMDataFeedManager sharedDataFeedManager]checkPhotoLoadingStatus];
+
     //NSLog(@"application will enter forground");
 
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.

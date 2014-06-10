@@ -11,7 +11,7 @@
 @interface HMTweetCell : UITableViewCell
 
 //sets up the label for the tweet title
-@property (weak, nonatomic) IBOutlet UILabel *tweet;
+@property (weak, nonatomic) IBOutlet UITextView *tweet;
 //sets up the label for the userName
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 //sets up the label for the date
