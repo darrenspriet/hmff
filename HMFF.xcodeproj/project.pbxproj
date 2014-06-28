@@ -21,6 +21,8 @@
 		E02CC3C0173C61A2008C10FF /* HMPhotoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E02CC3BF173C61A2008C10FF /* HMPhotoCollectionCell.m */; };
 		E02CC3C3173C84E8008C10FF /* HMLargePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02CC3C2173C84E8008C10FF /* HMLargePhotoViewController.m */; };
 		E02E39BE177D019400D1FFD6 /* HMNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E02E39BD177D019400D1FFD6 /* HMNavigationViewController.m */; };
+		E033AD18195627C9006E067B /* filmFreeway.png in Resources */ = {isa = PBXBuildFile; fileRef = E033AD16195627C9006E067B /* filmFreeway.png */; };
+		E033AD19195627C9006E067B /* filmFreeway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E033AD17195627C9006E067B /* filmFreeway@2x.png */; };
 		E036B730171CA2600036B8C1 /* LISENCE_HMFF_ICONS.txt in Resources */ = {isa = PBXBuildFile; fileRef = E036B72F171CA2600036B8C1 /* LISENCE_HMFF_ICONS.txt */; };
 		E0375D0717A471AE00F92474 /* openingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = E0375D0417A471AE00F92474 /* openingImage.png */; };
 		E0375D0817A471AE00F92474 /* openingImage-iph5.png in Resources */ = {isa = PBXBuildFile; fileRef = E0375D0517A471AE00F92474 /* openingImage-iph5.png */; };
@@ -68,8 +70,6 @@
 		E07842A917F8F18E00CBECC1 /* backButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E07842A717F8F18E00CBECC1 /* backButton@2x.png */; };
 		E07842B017F9067600CBECC1 /* forwardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E07842AE17F9067600CBECC1 /* forwardButton.png */; };
 		E07842B117F9067600CBECC1 /* forwardButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E07842AF17F9067600CBECC1 /* forwardButton@2x.png */; };
-		E080991C1942A91300C77421 /* filmFreeway.png in Resources */ = {isa = PBXBuildFile; fileRef = E080991A1942A91300C77421 /* filmFreeway.png */; };
-		E080991D1942A91300C77421 /* filmFreeway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E080991B1942A91300C77421 /* filmFreeway@2x.png */; };
 		E0860D6A17975A1700D9C172 /* hmffRedLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E0860D6817975A1700D9C172 /* hmffRedLogo@2x.png */; };
 		E0860D6B17975A1700D9C172 /* hmffRedLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = E0860D6917975A1700D9C172 /* hmffRedLogo.png */; };
 		E0889197179A1E8E0018FFD5 /* ticketsButton.png in Resources */ = {isa = PBXBuildFile; fileRef = E0889195179A1E8E0018FFD5 /* ticketsButton.png */; };
@@ -236,6 +236,8 @@
 		E02CC3C2173C84E8008C10FF /* HMLargePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMLargePhotoViewController.m; sourceTree = "<group>"; };
 		E02E39BC177D019400D1FFD6 /* HMNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HMNavigationViewController.h; sourceTree = "<group>"; };
 		E02E39BD177D019400D1FFD6 /* HMNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HMNavigationViewController.m; sourceTree = "<group>"; };
+		E033AD16195627C9006E067B /* filmFreeway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = filmFreeway.png; sourceTree = "<group>"; };
+		E033AD17195627C9006E067B /* filmFreeway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filmFreeway@2x.png"; sourceTree = "<group>"; };
 		E036B72F171CA2600036B8C1 /* LISENCE_HMFF_ICONS.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LISENCE_HMFF_ICONS.txt; sourceTree = "<group>"; };
 		E0375D0417A471AE00F92474 /* openingImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = openingImage.png; sourceTree = "<group>"; };
 		E0375D0517A471AE00F92474 /* openingImage-iph5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "openingImage-iph5.png"; sourceTree = "<group>"; };
@@ -290,8 +292,6 @@
 		E07842A717F8F18E00CBECC1 /* backButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backButton@2x.png"; sourceTree = "<group>"; };
 		E07842AE17F9067600CBECC1 /* forwardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = forwardButton.png; sourceTree = "<group>"; };
 		E07842AF17F9067600CBECC1 /* forwardButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "forwardButton@2x.png"; sourceTree = "<group>"; };
-		E080991A1942A91300C77421 /* filmFreeway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filmFreeway.png; path = ../../../Desktop/filmFreeway.png; sourceTree = "<group>"; };
-		E080991B1942A91300C77421 /* filmFreeway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "filmFreeway@2x.png"; path = "../../../Desktop/filmFreeway@2x.png"; sourceTree = "<group>"; };
 		E0860D6817975A1700D9C172 /* hmffRedLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hmffRedLogo@2x.png"; sourceTree = "<group>"; };
 		E0860D6917975A1700D9C172 /* hmffRedLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hmffRedLogo.png; sourceTree = "<group>"; };
 		E0889195179A1E8E0018FFD5 /* ticketsButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ticketsButton.png; sourceTree = "<group>"; };
@@ -588,8 +588,8 @@
 		E0375D0F17A476B600F92474 /* submitBandAndVideo Images */ = {
 			isa = PBXGroup;
 			children = (
-				E080991A1942A91300C77421 /* filmFreeway.png */,
-				E080991B1942A91300C77421 /* filmFreeway@2x.png */,
+				E033AD16195627C9006E067B /* filmFreeway.png */,
+				E033AD17195627C9006E067B /* filmFreeway@2x.png */,
 				E0D09CB41794B4A000BA6A11 /* sonicBids@2x.png */,
 				E0D09CB51794B4A000BA6A11 /* sonicBids.png */,
 				E0BC4D4317A4787D00DCC43D /* blackPayPalBackground.png */,
@@ -1084,7 +1084,6 @@
 				E07842A817F8F18E00CBECC1 /* backButton.png in Resources */,
 				E0F4538C1715D717000F97D0 /* FacebookImage.png in Resources */,
 				E0F4538D1715D717000F97D0 /* VimeoImage@2x.png in Resources */,
-				E080991D1942A91300C77421 /* filmFreeway@2x.png in Resources */,
 				E0F4538E1715D717000F97D0 /* FacebookImage@2x.png in Resources */,
 				E0F4538F1715D717000F97D0 /* VimeoImage.png in Resources */,
 				E0F4539A1715E0D4000F97D0 /* YouTubeImage@2x.png in Resources */,
@@ -1113,7 +1112,6 @@
 				E0CFFCE5177F2CE100D484E1 /* moreBackground.png in Resources */,
 				E0CFFCE6177F2CE100D484E1 /* moreBackground@2x.png in Resources */,
 				E0CFFCEB177F2FCA00D484E1 /* socialBackground.png in Resources */,
-				E080991C1942A91300C77421 /* filmFreeway.png in Resources */,
 				E0CFFCEC177F2FCA00D484E1 /* socialBackground@2x.png in Resources */,
 				E0F29F9B17811FC8004D3DEA /* chevronblack.png in Resources */,
 				E004A6D51801E15C001785A6 /* hmffIcon58x58.png in Resources */,
@@ -1122,9 +1120,11 @@
 				E0DCB6C81787D13E00A538FC /* Twitter_Follow_1x.png in Resources */,
 				E0DCB6C91787D13E00A538FC /* Twitter_Follow_1x@2x.png in Resources */,
 				E0D7B5BA178D095C000C2EC6 /* Following@2x.png in Resources */,
+				E033AD19195627C9006E067B /* filmFreeway@2x.png in Resources */,
 				E0D7B5BB178D095C000C2EC6 /* Following.png in Resources */,
 				E0D09CB61794B4A000BA6A11 /* sonicBids@2x.png in Resources */,
 				E0D09CB71794B4A000BA6A11 /* sonicBids.png in Resources */,
+				E033AD18195627C9006E067B /* filmFreeway.png in Resources */,
 				E052BAC91835AD0300F40BBB /* hmffIcon76x76.png in Resources */,
 				E0860D6A17975A1700D9C172 /* hmffRedLogo@2x.png in Resources */,
 				E0860D6B17975A1700D9C172 /* hmffRedLogo.png in Resources */,
