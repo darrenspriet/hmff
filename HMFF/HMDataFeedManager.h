@@ -19,16 +19,16 @@ enum LoadingState : NSInteger {
 #import "STTwitterAPIWrapper.h"
 #define PARSE_APP_ID @"klHQu3ms3Mb6gzVHglLvFwfjdYoyuY0UIKDijxZC"
 #define PARSE_CLIENT_KEY @"tioUMseVIJyFgr85vRqCWAiVBF36SMNE65WbqSD7"
-#define FLICKR_API_KEY @"628288db7c4e7d09c884009576b5eed9"
-#define FLICKER_USER_ID @"95406796"
-#define FLICKER_SET_NUMBER @"72157633844444754"
+#define FLICKR_API_KEY @"6793d1fa492d281b1352f3f1e4b60972"
+#define FLICKER_USER_ID @"125736759@N08"
+#define FLICKER_SET_NUMBER @"72157645002549407"
 #define TWITTER_CONSUMER_KEY @"FDj5uDk7unth9kkgL21PA"
 #define TWITTER_CONSUMER_SECRET @"CHlhsqOzU3wZKDiKyIf25w6uxM0sKEpFylAZUa4Gt6U"
 #define NEWS_URL @"http://www.hmff.com/?json=get_recent_posts&category_name=news&count=1000"
-#define FLICKER_URL @"http://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&photoset_id=%@&api_key=%@&user_id=%@&format=json&nojsoncallback=1"
-#define SMALL_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_t.jpg"
-#define LARGE_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_m.jpg"
+#define FLICKER_URL @"https://api.flickr.com/services/rest/?&method=flickr.photosets.getPhotos&photoset_id=%@&api_key=%@&user_id=%@&format=json&nojsoncallback=1"
 
+#define SMALL_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_t.jpg"
+#define LARGE_FLICKER_PHOTO @"http://farm%@.static.flickr.com/%@/%@_%@_z.jpg"
 typedef void (^HMDataFeedManagerCompletionBlock)(BOOL success);
 typedef void (^HMDataFeedManagerScheduleCompletionBlock)(BOOL success);
 

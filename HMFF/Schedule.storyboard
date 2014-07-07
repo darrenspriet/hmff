@@ -399,7 +399,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
                             <webView contentMode="scaleToFill" id="7GX-Ox-1oe">
-                                <rect key="frame" x="0.0" y="63" width="320" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="263"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>

@@ -36,17 +36,17 @@
     // check if a pathway to a random host exists
     [self setHostReachable: [Reachability reachabilityWithHostName: @"http://www.apple.com"] ];
     [self.hostReachable startNotifier];
-//    NSLog(@"view will appear");
+    //    NSLog(@"view will appear");
     
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-//    NSLog(@"view will dissapear");
+    //    NSLog(@"view will dissapear");
     
 }
 -(void)viewDidDisappear:(BOOL)animated{
-//    NSLog(@"view did disaper");
+    //    NSLog(@"view did disaper");
 }
 -(void) checkNetworkStatus:(NSNotification *)notice
 {
@@ -60,7 +60,7 @@
             UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Internet is not Working" message:@"This app requires access to the internet. Please try again later." delegate:self cancelButtonTitle:nil otherButtonTitles: @"Dismiss", nil];
             [alert show];
             [self.largeActivitiyIndicator setAlpha:0.0f];
-
+            
             
             break;
         }
@@ -69,7 +69,7 @@
             //NSLog(@"The internet is working via WIFI.");
             [self loadUpApp];
             [self.largeActivitiyIndicator setAlpha:1.0f];
-
+            
             
             break;
         }
@@ -78,7 +78,7 @@
             //NSLog(@"The internet is working via WWAN.");
             [self loadUpApp];
             [self.largeActivitiyIndicator setAlpha:1.0f];
-
+            
             break;
         }
     }
@@ -142,23 +142,35 @@
     [self.hmffImage setHidden:NO];
     [self.hmffImage removeFromSuperview];
     [self.hmffImage setTranslatesAutoresizingMaskIntoConstraints:YES];
-    [self.hmffImage setFrame:CGRectMake(160-self.hmffImage.frame.size.width/2, 236, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height)];
+    if ([self isSmallScreen]) {
+        [self.hmffImage setFrame:CGRectMake(160-self.hmffImage.frame.size.width/2, 150, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height)];
+    }
+    else{
+        [self.hmffImage setFrame:CGRectMake(160-self.hmffImage.frame.size.width/2, 236, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height)];
+    }
+    
     [self.view addSubview:self.hmffImage];
     
     //Gets the screen size
-//    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
-//    //if screen size is iphone 5 then load the iphone 5 image...else load default one
-//    if (screenSize.height > 480.0f) {
-//        [self.splashImage setImage:[UIImage imageNamed:@"openingImage-iph5.png"]];
-//    } else {
-        [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
-//    }
+    //    CGSize screenSize = [[UIScreen mainScreen] bounds].size;
+    //    //if screen size is iphone 5 then load the iphone 5 image...else load default one
+    //    if (screenSize.height > 480.0f) {
+    //        [self.splashImage setImage:[UIImage imageNamed:@"openingImage-iph5.png"]];
+    //    } else {
+    [self.splashImage setImage:[UIImage imageNamed:@"openingImage.png"]];
+    //    }
     //start the move up of the hmff logo
     [UIView transitionWithView:nil
                       duration:2.5f
                        options:UIViewAnimationOptionCurveEaseIn
                     animations:^(void) {
-                        self.hmffImage.frame = CGRectMake(160-self.hmffImage.frame.size.width/2, 116.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
+                        if ([self isSmallScreen]) {
+                            self.hmffImage.frame = CGRectMake(160-self.hmffImage.frame.size.width/2, 60.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
+                        }
+                        else{
+                            self.hmffImage.frame = CGRectMake(160-self.hmffImage.frame.size.width/2, 100.0f, self.hmffImage.frame.size.width, self.hmffImage.frame.size.height);
+                        }
+                        
                         [self.largeActivitiyIndicator setAlpha:1.0f];
                     }
                     completion:^(BOOL finished) {
@@ -172,8 +184,8 @@
 
 //load the data into the app
 -(void)loadUpApp{
-//        NSDate *startTime = [NSDate date];
-
+    //        NSDate *startTime = [NSDate date];
+    
     //set the date and city label to 0.0 alpha
     [self.cityLabel setAlpha:0.0f];
     [self.dateLabel setAlpha:0.0f];
@@ -194,21 +206,31 @@
     //show the labels
     [self showLabels];
     
-
+    
     
     //completion block for the data loading, and will call the segue when it does
     [HMDataFeedManager sharedDataFeedManager].completionBlock = ^(BOOL success){
         if (success)
         {
-//            NSDate *endTime= [NSDate date];
-//            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-//            NSLog(@"Total Time: %f", difference);
-            [self performSegueWithIdentifier:@"splashSegue" sender:self];
+            //            NSDate *endTime= [NSDate date];
+            //            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            //            NSLog(@"Total Time: %f", difference);
+              [self performSegueWithIdentifier:@"splashSegue" sender:self];
         }
         else{
             //            NSLog(@"app did not load successfully");
         }
     };
+}
+
+//Check what size the screen is
+-(BOOL)isSmallScreen{
+    if([UIScreen mainScreen].bounds.size.height != 568){
+        return YES;
+    }
+    else{
+        return NO;
+    }
 }
 - (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];

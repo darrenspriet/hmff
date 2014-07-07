@@ -79,29 +79,30 @@
     dispatch_async(myQueue, ^{
         
         [self setPhotos:[[NSDictionary alloc]init] ];
-
-//        NSDate *startTime= [NSDate date];
-//        NSLog(@"Flicker Feed Thread:%@",[NSThread currentThread]);
+        
         
         
         NSData* data = [NSData dataWithContentsOfURL:
-                    [NSURL URLWithString:[NSString stringWithFormat:FLICKER_URL,FLICKER_SET_NUMBER ,FLICKR_API_KEY, FLICKER_USER_ID ]]];
-
+                        [NSURL URLWithString:[NSString stringWithFormat:FLICKER_URL,FLICKER_SET_NUMBER ,FLICKR_API_KEY, FLICKER_USER_ID ]]];
         
-        NSError* error;
+        if (data!=nil) {
+            NSError* error;
             [self setPhotos: [NSJSONSerialization JSONObjectWithData:data
                                                              options:kNilOptions
                                                                error:&error]];
+        }
         
-
+        
+        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
-//            NSDate *endTime= [NSDate date];
-//            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-//            NSLog(@"Flicker Finished Time:%f", difference);
-
-            [self loadPhotoArrays];
+            //            NSDate *endTime= [NSDate date];
+            //            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            //            NSLog(@"Flicker Finished Time:%f", difference);
+            if (data!=nil) {
+                [self loadPhotoArrays];
+            }
         });
     });
     
@@ -111,8 +112,8 @@
 -(void)loadPhotoArrays{
     dispatch_queue_t myQueue = dispatch_queue_create("LOAD PHOTOS ARRAY",NULL);
     dispatch_async(myQueue, ^{
-//        NSDate *startTime= [NSDate date];
-//        NSLog(@"Photos Thread:%@ ",[NSThread currentThread]);
+        //        NSDate *startTime= [NSDate date];
+        //        NSLog(@"Photos Thread:%@ ",[NSThread currentThread]);
         
         // Build an array from the dictionary for easy access to each entry
         //If trying to get the Stream the first object is "photo", other wise if it is a set
@@ -136,7 +137,7 @@
             if (!self.mustNotDownloadPhotos)
             {
                 //Add all of the small photos with NSdata and a urlstring
-
+                
                 NSError *error=nil;
                 NSData *theData =[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString] options:NSDataReadingMappedAlways error:&error];
                 if (error) {
@@ -174,9 +175,9 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self setIsFinishedPhotos:YES];
             
-//            NSDate *endTime= [NSDate date];
-//            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-//            NSLog(@"Photos Finished Time:%f", difference);
+            //            NSDate *endTime= [NSDate date];
+            //            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            //            NSLog(@"Photos Finished Time:%f", difference);
             
         });
     });
@@ -188,8 +189,8 @@
 - (void)fetchNewsFeed{
     dispatch_queue_t myQueue = dispatch_queue_create("NEWS FEED QUE",NULL);
     dispatch_async(myQueue, ^{
-//        NSDate *startTime= [NSDate date];
-//        NSLog(@"News Feed Thread:%@",[NSThread currentThread]);
+        //        NSDate *startTime= [NSDate date];
+        //        NSLog(@"News Feed Thread:%@",[NSThread currentThread]);
         
         
         
@@ -197,18 +198,19 @@
         NSData* data = [NSData dataWithContentsOfURL:
                         [NSURL URLWithString: NEWS_URL]];
         
-        NSError* error;
+        if (data!=nil) {
+            NSError* error;
+            [self setNews: [NSJSONSerialization JSONObjectWithData:data
+                                                           options:kNilOptions
+                                                             error:&error]];
+        }
         
-        
-        [self setNews: [NSJSONSerialization JSONObjectWithData:data
-                                                       options:kNilOptions
-                                                         error:&error]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-
-//            NSDate *endTime= [NSDate date];
-//            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-//            NSLog(@"News Feed Finished:%f", difference);
+            
+            //            NSDate *endTime= [NSDate date];
+            //            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            //            NSLog(@"News Feed Finished:%f", difference);
             
         });
     });
@@ -218,8 +220,8 @@
 //Goes through the twitter feed and grabs the data from a JSON object on the main queue, utilizes the STTwitter library found at: https://github.com/nst/STTwitter
 - (void)fetchTweets{
     dispatch_async(dispatch_get_main_queue(), ^{
-//        NSDate *startTime= [NSDate date];
-//        NSLog(@"Twitter Feed Thread:%@",[NSThread currentThread]);
+        //        NSDate *startTime= [NSDate date];
+        //        NSLog(@"Twitter Feed Thread:%@",[NSThread currentThread]);
         
         
         //sets up the credentials the consumer key and the consumber secret
@@ -246,9 +248,9 @@
                             weakSelf.completionBlock(YES);
                         }
                         
-//                        NSDate *endTime= [NSDate date];
-//                        CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-//                        NSLog(@"Completion Block Tweet Thread:%@ and Time:%f",[NSThread currentThread], difference);
+                        //                        NSDate *endTime= [NSDate date];
+                        //                        CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+                        //                        NSLog(@"Completion Block Tweet Thread:%@ and Time:%f",[NSThread currentThread], difference);
                     } errorBlock:^(NSError *error) {
                         // NSLog(@"-- error: %@", error);
                     }];
@@ -263,9 +265,9 @@
             }
         };
         dispatch_async(dispatch_get_main_queue(), ^{
-//            NSDate *endTime= [NSDate date];
-//            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-//            NSLog(@"Twitter Finished: %f", difference);
+            //            NSDate *endTime= [NSDate date];
+            //            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            //            NSLog(@"Twitter Finished: %f", difference);
         });
     });
 }
@@ -276,8 +278,8 @@
     
     dispatch_queue_t myQueue = dispatch_queue_create("SCHEDULE QUE",NULL);
     dispatch_async(myQueue, ^{
-//        NSDate *startTime= [NSDate date];
-//        NSLog(@"Schedule Feed Thread:%@",[NSThread currentThread]);
+        //        NSDate *startTime= [NSDate date];
+        //        NSLog(@"Schedule Feed Thread:%@",[NSThread currentThread]);
         
         
         //        NSLog(@"schedule dispach started");
@@ -285,15 +287,24 @@
         //creates a pfquery for the schedule
         PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"schedule"];
         //Puts all of the querys into an object
-        NSArray *scheduleObjects= [scheduleQuery findObjects];
+        NSArray *scheduleObjects = nil;
+        if (scheduleQuery!=nil) {
+            scheduleObjects= [scheduleQuery findObjects];
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
-//            NSDate *endTime= [NSDate date];
-//            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-//            NSLog(@"Schedule Finished: %f", difference);
+            //            NSDate *endTime= [NSDate date];
+            //            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            //            NSLog(@"Schedule Finished: %f", difference);
             
             //parse's the schedule objects
-            [self parseSchedule:scheduleObjects];
-            ;
+            if (scheduleQuery!=nil) {
+                [self parseSchedule:scheduleObjects];
+            }
+            else{
+                if (self.scheduleCompletionBlock!=nil) {
+                    self.scheduleCompletionBlock(YES);
+                }
+            }
             
         });
     });
@@ -472,24 +483,29 @@
 -(void)fetchSubmit{
     dispatch_queue_t myQueue = dispatch_queue_create("SUBMIT QUE",NULL);
     dispatch_async(myQueue, ^{
-//        NSDate *startTime= [NSDate date];
-//        NSLog(@"Submit Feed Thread:%@",[NSThread currentThread]);
+        //        NSDate *startTime= [NSDate date];
+        //        NSLog(@"Submit Feed Thread:%@",[NSThread currentThread]);
         
         self.submitObject = [[NSMutableArray alloc]init];
         
         //Creates a query from parse and the submit class
         PFQuery *submitQuery = [PFQuery queryWithClassName:@"submit"];
         
-        //Puts all of the querys into an object
-        self.submitObject= [submitQuery findObjects];
+        if (submitQuery!=nil) {
+            //Puts all of the querys into an object
+            self.submitObject= [submitQuery findObjects];
+        }
+        
         
         dispatch_async(dispatch_get_main_queue(), ^{
-//            NSDate *endTime= [NSDate date];
-//            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
-//            NSLog(@"Submit Finished: %f", difference);
+            //            NSDate *endTime= [NSDate date];
+            //            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
+            //            NSLog(@"Submit Finished: %f", difference);
             //parse through the submit details
-            [self parseSubmitDetails:self.submitObject];
-            ;
+            if (submitQuery!=nil) {
+                [self parseSubmitDetails:self.submitObject];
+                
+            }
             
         });
     });

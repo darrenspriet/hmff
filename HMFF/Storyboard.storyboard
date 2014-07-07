@@ -1601,6 +1601,7 @@ M4M 3C3</string>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OT6-gl-QM1">
                                 <rect key="frame" x="0.0" y="351" width="320" height="44"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Lfq-Tg-VrV"/>
                                 </constraints>
