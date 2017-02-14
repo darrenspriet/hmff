@@ -57,7 +57,6 @@
     
     [self setYouTubeArray:[self createYouTubeArray]];
     
-    // [self setYouTubeArray:[[HMDataFeedManager sharedDataFeedManager] youTubeArray]];
 }
 
 -(NSMutableArray*)createYouTubeArray{

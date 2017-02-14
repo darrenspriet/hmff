@@ -284,32 +284,135 @@
         
         //        NSLog(@"schedule dispach started");
         
-        //creates a pfquery for the schedule
-        PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"schedule"];
         //Puts all of the querys into an object
-        NSArray *scheduleObjects = nil;
-        if (scheduleQuery!=nil) {
-            scheduleObjects= [scheduleQuery findObjects];
-        }
+        NSArray *scheduleObjects = [self scheduleData];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             //            NSDate *endTime= [NSDate date];
             //            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
             //            NSLog(@"Schedule Finished: %f", difference);
             
             //parse's the schedule objects
-            if (scheduleQuery!=nil) {
-                [self parseSchedule:scheduleObjects];
-            }
-            else{
-                if (self.scheduleCompletionBlock!=nil) {
-                    self.scheduleCompletionBlock(YES);
-                }
-            }
+            //            if (scheduleQuery!=nil) {
+            [self parseSchedule:scheduleObjects];
+            //            }
+            //            else{
+            //                if (self.scheduleCompletionBlock!=nil) {
+            //                    self.scheduleCompletionBlock(YES);
+            //                }
+            //            }
             
         });
     });
     
 }
+
+- (NSArray *)scheduleData
+{
+    //http://stackoverflow.com/questions/9267666/nsdateformatter-seems-to-have-the-wrong-month
+    
+    NSString *bandKey = @"band";
+    NSString *bandOrderKey = @"band_order";
+    NSString *dateKey = @"date";
+    NSString *linkKey = @"link";
+    NSString *timeKey = @"time";
+    NSString *venueKey = @"venue";
+    NSString *venueOrderKey = @"venue_order";
+    
+    NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+    [dateFormat setDateFormat:@"yyyy-MM-dd HH:mm:ss Z"];
+    
+    NSDictionary *band3 = @{ bandKey : @(3),
+                             bandOrderKey : @(99),
+                             dateKey : [dateFormat dateFromString:@"2016-11-09 13:18:00 +0000"],
+                             linkKey : @(99),
+                             timeKey : @(99),
+                             venueKey : @(99),
+                             venueOrderKey : @(99)};
+    
+    NSMutableDictionary *band4 = band3.mutableCopy;
+    band4[bandKey] = @(4);
+    band4[dateKey] =[dateFormat dateFromString:@"2016-11-10 13:18:00 +0000"] ;
+    
+    
+    NSMutableDictionary *band5 = band3.mutableCopy;
+    band5[bandKey] = @(5);
+    band5[dateKey] =[dateFormat dateFromString:@"2016-11-11 13:18:00 +0000"] ;
+    
+    
+    NSMutableDictionary *band6 = band3.mutableCopy;
+    band6[bandKey] = @(6);
+    band6[dateKey] = [dateFormat dateFromString:@"2016-11-12 13:18:00 +0000"];
+    
+    
+    NSMutableDictionary *band7 = band3.mutableCopy;
+    band7[bandKey] = @(7);
+    band7[dateKey] = [dateFormat dateFromString:@"2016-11-13 13:18:00 +0000"];
+    
+    
+    NSMutableDictionary *band8 = band3.mutableCopy;
+    band8[bandKey] = @(8);
+    band8[dateKey] = [dateFormat dateFromString:@"2016-11-14 13:18:00 +0000"];
+    
+    
+    NSMutableDictionary *band9 = band3.mutableCopy;
+    band9[bandKey] = @(9);
+    band9[dateKey] = [dateFormat dateFromString:@"2016-11-15 13:18:00 +0000"];
+    
+    
+    NSMutableDictionary *band10 = band3.mutableCopy;
+    band10[bandKey] = @(10);
+    band10[dateKey] = [dateFormat dateFromString:@"2016-11-16 13:18:00 +0000"];
+    
+    
+    
+    NSDictionary *band1 = @{ bandKey : @"Bands TBA",
+                             bandOrderKey : @(1),
+                             dateKey : [dateFormat dateFromString:@"2016-09-23 09:54:00 +0000"],
+                             linkKey : @"http://www.hmff.com/schedule/",
+                             timeKey : @"11:00 PM",
+                             venueKey : @"Venue TBA",
+                             venueOrderKey : @(1) };
+    
+    NSDictionary *band2 = @{ bandKey : @"Music Videos TBA",
+                             bandOrderKey : @(2),
+                             dateKey : [dateFormat dateFromString:@"2016-09-24 23:49:00 +0000"],
+                             linkKey : @"http://www.hmff.com/schedule/",
+                             timeKey : @"1:00 AM",
+                             venueKey : @"Venue TBA",
+                             venueOrderKey : @(2) };
+    
+    NSDictionary *shortFilm = @{ bandKey : @"Short Film Screenings",
+                                 bandOrderKey : @(1),
+                                 dateKey : [dateFormat dateFromString:@"2016-09-25 21:52:00 +0000"],
+                                 linkKey : @"http://www.hmff.com/schedule/",
+                                 timeKey : @"2:00 PM",
+                                 venueKey : @"Venue TBA",
+                                 venueOrderKey : @(1) };
+    
+    NSDictionary *bandAgain = @{ bandKey : @"Bands TBA",
+                                 bandOrderKey : @(1),
+                                 dateKey : [dateFormat dateFromString:@"2016-09-23 09:52:00 +0000"],
+                                 linkKey : @"http://www.hmff.com/schedule/",
+                                 timeKey : @"10:00 PM",
+                                 venueKey : @"Venue TBA",
+                                 venueOrderKey : @(1) };
+    
+    NSDictionary *musicAgain = @{ bandKey : @"Music Videos TBA",
+                                  bandOrderKey : @(2),
+                                  dateKey : [dateFormat dateFromString:@"2016-09-23 09:53:00 +0000"],
+                                  linkKey : @"http://www.hmff.com/schedule/",
+                                  timeKey : @"11:00 PM",
+                                  venueKey : @"Venue TBA",
+                                  venueOrderKey : @(2) };
+    
+    NSArray *sched = [NSArray arrayWithObjects:band3, band4, band5, band6, band7, band8, band9,band10,band1, band2, shortFilm, bandAgain, musicAgain,   nil];
+    
+    return sched;
+    
+}
+
+
 //used to parse through the schedule objects
 -(void)parseSchedule:(NSArray*)array{
     dispatch_queue_t myQueue = dispatch_queue_create("PARSE QUE",NULL);
@@ -382,6 +485,7 @@
             for (NSDictionary *diction in allObjectsSorted){
                 //sets the string to compare to the the date
                 NSString *compareString =[dateFormatter stringFromDate:[diction objectForKey:@"date"]];
+
                 //checks to see what the date for the venue is
                 if ([compareString isEqualToString:[self.date objectAtIndex:i]]) {
                     //adds that to the array venue
@@ -402,17 +506,22 @@
                 
                 //sets the string to compare to the the date
                 NSString *compareString =[dateFormatter stringFromDate:[diction objectForKey:@"date"]];
-                
+
                 //checks to see what the date for the venue is
                 if ([compareString isEqualToString:[self.date objectAtIndex:i]]) {
                     
                     //iterates through the venues
                     for (int j=0; j<[venue count]; j++) {
-                        //if this object is equal to the venue object inside
-                        if ([[diction objectForKey:@"venue"] isEqualToString:[venue objectAtIndex:j]]) {
-                            //Adds the band dictionary to the temband
-                            [tempBand addObject:diction];
+
+                        if ([[diction objectForKey:@"venue"] isKindOfClass:[NSString class]])
+                        {
+                            //if this object is equal to the venue object inside
+                            if ([[diction objectForKey:@"venue"] isEqual:[venue objectAtIndex:j]]) {
+                                //Adds the band dictionary to the temband
+                                [tempBand addObject:diction];
+                            }
                         }
+  
                     }
                 }
             }
@@ -440,11 +549,8 @@
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         //        NSLog(@"youTube dispach started");
         
-        //creates a query to the youtube table
-        PFQuery *youTubeQuery = [PFQuery queryWithClassName:@"youtube"];
-        
         //Puts all of the querys into an object
-        NSArray *youTubeObject= [youTubeQuery findObjects];
+        NSArray *youTubeObject= [NSArray array];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             //            NSLog(@"youTube dispatch finished");
@@ -487,30 +593,121 @@
         //        NSLog(@"Submit Feed Thread:%@",[NSThread currentThread]);
         
         self.submitObject = [[NSMutableArray alloc]init];
-        
+
         //Creates a query from parse and the submit class
-        PFQuery *submitQuery = [PFQuery queryWithClassName:@"submit"];
-        
-        if (submitQuery!=nil) {
+//        PFQuery *submitQuery = [PFQuery queryWithClassName:@"submit"];
+//        
+//        if (submitQuery!=nil) {
             //Puts all of the querys into an object
-            self.submitObject= [submitQuery findObjects];
-        }
+            self.submitObject= [self submitData];
+//        }
         
+        //        <submit:BOMABzUx6s:(null)> {
+        //            details = "Acceptable submissions include: short films including asbtract/experimental/ animated, music videos, documentaries, trailers";
+        //            name = acceptableentries;
+        //        },
+        //        <submit:kgDxvMNSL4:(null)> {
+        //            details = "http://www.hmff.com/wp-content/uploads/2015/07/Entryform.bands15.pdf";
+        //            name = entryfromlinkband;
+        //        },
+        //        <submit:v49C9fdxRI:(null)> {
+        //            details = "https://filmfreeway.com/festival/HMFF";
+        //            name = paypallink;
+        //        },
+        //        <submit:l7PCXQvNX5:(null)> {
+        //            details = "http://www.hmff.com/schedule/";
+        //            name = ticketLink;
+        //        },
+        //        <submit:C8D0RdwzK4:(null)> {
+        //            details = "http://www.sonicbids.com/find-gigs/hamilton-festival-hamilton-music-film-fest-2015/";
+        //            name = sonicbidslink;
+        //        }
+        //        )
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+//        dispatch_async(dispatch_get_main_queue(), ^{
             //            NSDate *endTime= [NSDate date];
             //            CGFloat difference= [endTime timeIntervalSinceDate:startTime];
             //            NSLog(@"Submit Finished: %f", difference);
             //parse through the submit details
-            if (submitQuery!=nil) {
+//            if (submitQuery!=nil) {
                 [self parseSubmitDetails:self.submitObject];
                 
-            }
+//            }
             
-        });
+//        });
     });
     
 }
+
+- (NSArray *)submitData
+{
+    NSString *detailsKey = @"details";
+    NSString *nameKey = @"name";
+    
+    NSDictionary *submit1 = @{ detailsKey : @"Acceptable submissions include: short films including asbtract/experimental/ animated, music videos, documentaries, trailers",
+                                 nameKey : @"acceptableentries" };
+    
+    NSDictionary *submit2 = @{ detailsKey : @"http://www.hmff.com/wp-content/uploads/2016/02/Entryform.bands16.pdf",
+                               nameKey : @"entryfromlinkband" };
+    
+    
+    
+    NSDictionary *submit3 = @{ detailsKey : @"https://filmfreeway.com/festival/HMFF",
+                               nameKey : @"paypallink" };
+    
+    NSDictionary *submit4 = @{ detailsKey : @"http://www.hmff.com/schedule/",
+                               nameKey : @"ticketLink" };
+    
+    NSDictionary *submit5 = @{ detailsKey : @"http://www.sonicbids.com/find-gigs/hamilton-festival-hamilton-music-film-fest-2015/",
+                               nameKey : @"sonicbidslink" };
+    
+    NSDictionary *submit6 = @{ detailsKey : @"SUBMISSION BY PAYPAL/MAIL. Submit your entry fee online with Paypal.  Fill out an ENTRY FORM and mail it, along with your video material.",
+                               nameKey : @"videooption1" };
+    
+    NSDictionary *submit7 = @{ detailsKey : @"SUBMISSION BY MAIL ONLY Fill out an ENTRY FORM and mail it, along with a cheque for $10.00 and your video material",
+                               nameKey : @"videooption2" };
+    
+    NSDictionary *submit8 = @{ detailsKey : @"Submit your information and entry fee via Sonicbids",
+                               nameKey : @"bandoption1" };
+    
+    NSDictionary *submit9 = @{ detailsKey : @"SUBMISSION BY MAIL ONLY Fill out an ENTRY FORM and mail it, along with a cheque for $10.00",
+                               nameKey : @"bandoption2" };
+    
+    NSDictionary *submit10 = @{ detailsKey : @"Hallucid Productions 1435 Dundas Street East Toronto, ON M4M 1S7",
+                               nameKey : @"address" };
+
+    NSDictionary *submit11 = @{ detailsKey : @"http://www.hmff.com/wp-content/uploads/2016/02/Entryform.films16.pdf",
+                                nameKey : @"entryformlink" };
+    
+    NSDictionary *submit12 = @{ detailsKey : @"Late Entries: August 5th, 2016",
+                                nameKey : @"lateentries" };
+    
+    NSDictionary *submit13 = @{ detailsKey : @"JURY SELECTIONS: August 15th, 2016",
+                                nameKey : @"juryselection" };
+    
+    NSDictionary *submit14 = @{ detailsKey : @"FEE: $10.00",
+                                nameKey : @"submissionfee" };
+    
+    NSDictionary *submit15 = @{ detailsKey : @"DEADLINE: August 1st, 2016",
+                                nameKey : @"submissiondeadline" };
+    
+    NSDictionary *submit16 = @{ detailsKey : @"NTSC DVD formats only",
+                                nameKey : @"typeofformat" };
+    
+    NSDictionary *submit17 = @{ detailsKey : @"MAX LENGTH: 15 minutes",
+                                nameKey : @"videolength" };
+    
+    NSDictionary *submit18 = @{ detailsKey : @"MAX SET LENGTH: 30 minutes",
+                                nameKey : @"bandlength" };
+    
+    
+    
+    
+    NSArray *submit = [NSArray arrayWithObjects:submit1, submit2, submit3, submit4, submit5, submit6, submit7, submit8, submit9,submit10,submit11,submit12, submit13,submit14,submit15, submit16, submit17,submit18, nil];
+    
+    return submit;
+}
+
 //parses through all of the Submit details
 -(void)parseSubmitDetails:(NSArray*)array{
     
@@ -552,9 +749,7 @@
         //initializes the strings
         [self setHTMLString: [[NSString alloc]init]];
         
-        //create a query that grabs the objects from the class called links
-        PFQuery *linkQuery = [PFQuery queryWithClassName:@"links"];
-        [self setLinkObject: [linkQuery findObjects]];
+        [self setLinkObject:[[NSArray alloc]init]];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             //            NSLog(@"links dispach finished");

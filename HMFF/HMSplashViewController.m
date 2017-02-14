@@ -192,14 +192,21 @@
     //holds the schedule objects
     //query from parse
     
-    PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
-    //Puts all of the querys into an object
-    NSArray *scheduleObjects= [scheduleQuery findObjects];
+    //    PFQuery *scheduleQuery = [PFQuery queryWithClassName:@"splash"];
+//    //Puts all of the querys into an object
+//    NSArray *scheduleObjects= [scheduleQuery findObjects];
+    
+//    <__NSArrayM 0x7f89ec7225d0>(
+//                                <splash:bhvrzIuxZK:(null)> {
+//                                    dates = "Sept 25 - 27 2015";
+//                                    location = "Hamilton, Ontario";
+//                                }
+//                                )
     //Goes through and pulls out the date and location
-    for(NSDictionary *diction in scheduleObjects){
-        [self.dateLabel setText:[diction objectForKey:@"dates"]];
-        [self.cityLabel setText:[diction objectForKey:@"location"]];
-    }
+//    for(NSDictionary *diction in scheduleObjects){
+        [self.dateLabel setText:@"Sept 23 - 25 2016"];
+        [self.cityLabel setText:@"Hamilton, Ontario"];
+//    }
     //stops the animating and removes the large activity indicator from the view
     [self.largeActivitiyIndicator stopAnimating];
     [self.largeActivitiyIndicator removeFromSuperview];

@@ -15,10 +15,10 @@ enum LoadingState : NSInteger {
 
 
 #import <Foundation/Foundation.h>
-#import <Parse/Parse.h>
+//#import <Parse/Parse.h>
 #import "STTwitterAPIWrapper.h"
-#define PARSE_APP_ID @"klHQu3ms3Mb6gzVHglLvFwfjdYoyuY0UIKDijxZC"
-#define PARSE_CLIENT_KEY @"tioUMseVIJyFgr85vRqCWAiVBF36SMNE65WbqSD7"
+//#define PARSE_APP_ID @"klHQu3ms3Mb6gzVHglLvFwfjdYoyuY0UIKDijxZC"
+//#define PARSE_CLIENT_KEY @"tioUMseVIJyFgr85vRqCWAiVBF36SMNE65WbqSD7"
 #define FLICKR_API_KEY @"6793d1fa492d281b1352f3f1e4b60972"
 #define FLICKER_USER_ID @"125736759@N08"
 #define FLICKER_SET_NUMBER @"72157645002549407"

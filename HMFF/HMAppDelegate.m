@@ -26,7 +26,7 @@
     [application setStatusBarStyle:UIStatusBarStyleDefault];
     
     //sets the parse App_Id and parse client key
-     [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_CLIENT_KEY];
+//     [Parse setApplicationId:PARSE_APP_ID clientKey:PARSE_CLIENT_KEY];
 
     return YES;
 }
